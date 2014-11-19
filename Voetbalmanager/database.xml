@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<divisie id="1">
+  <naam>Eredivisie</naam>
+  <team id="01">
+    <naam>Ajax</naam>
+    <rank>26</rank>
+    <speler id="001">
+      <naam>Arkadiusz Milik</naam>
+      <nummer>42</nummer>
+    </speler>
+    <speler id="002">
+      <naam>Lasse Schöne</naam>
+      <nummer>20</nummer>
+    </speler>
+    <type>nieuwe waarde</type>
+  </team>
+  <team id="02">
+    <naam>Feyenoord</naam>
+    <rank>121</rank>
+    <speler id="003">
+      <naam>Kenneth Vermeer</naam>
+      <nummer>16</nummer>
+    </speler>
+    <speler id="004">
+      <naam>Jordy Clasie</naam>
+      <nummer>6</nummer>
+    </speler>
+  </team>
+</divisie>
