@@ -30,7 +30,12 @@ public class Team {
 	
 	
 	public String toString(){
-		return  "Teamnaam: " + naam + "\n\rRank: " + rank + "\n\rSpelers:\n\r" + spelerList.toString() + "\n\rWinst:\n\r" + winst + "\n\rVerlies:\n\r" + verlies + "\n\rGelijkspel:\n\r" + gelijkspel + "\n\rDoelsaldo:\n\r" + doelsaldo + "\n\rDoelpunten tegen:\n\r" + doeltegen + "\n\rDoelpunten voor\n\r" + doelvoor ;
+		return  "Teamnaam: " + naam + "\nRank: " + rank + 
+				"\nSpelers:\n" + spelerList.toString() + 
+				"\nWinst: " + winst + "\nVerlies: " + verlies + 
+				"\nGelijkspel: " + gelijkspel + "\nDoelsaldo: " + 
+				doelsaldo + "\nDoelpunten tegen: " + doeltegen + 
+				"\nDoelpunten voor: " + doelvoor + "\nBudget: " + budget+ "\n\n" ;
 	}
 
 	/**

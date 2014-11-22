@@ -15,7 +15,8 @@ public class Divisie {
 	}
 	
 	public String toString(){
-		return  "Divisie\n\rNaam: " + naam + "\n\rTeams:\n\r" + teamList.toString() + "\n\rSpeeldag:\n\r"+speeldag;
+		return  "Divisie\nNaam: " + naam + 
+				"\n\nTeams:\n" + teamList.toString() + "\nSpeeldag:"+speeldag + "\nStand:"+stand;
 	}
 
 	/**

@@ -33,13 +33,18 @@ public class XMLwriter {
 			//maak element van <divisie>
 			Element divisieEl = document.getRootElement();
 			
+			if(tag.equals("divisie")){
+				Element elNieuw = new Element(type).setText(waarde);
+				divisieEl.addContent(elNieuw);
+			}else{
+			
 			ElementFilter filter=new org.jdom2.filter.ElementFilter(tag);
 			
 			//zoeken naar <tag> elementen
 			 for(Element element: divisieEl.getDescendants(filter)){
 			//	 System.out.println(element);
 				 //als naam van <tag> element overeenkomt dan:
-				 System.out.println(element.toString() + " " + tag);
+			//	 System.out.println(element.toString() + " " + tag);
 // System.out.println(element.getChildText("naam"));//element.getParentElement().getChildren(tag).size());
 				 if(element.getChildText("naam").equals(naam)){
 					/* 	//als er geen waarde is ingevoer maak nieuwe element
@@ -60,7 +65,7 @@ public class XMLwriter {
 				 }				
 			//	 System.out.println(element.getTextNormalize());
 			  }
-			 
+			}
 			//wegschrivern naar xml file
 			XMLOutputter xmlOutput = new XMLOutputter();
 			xmlOutput.setFormat(Format.getPrettyFormat());

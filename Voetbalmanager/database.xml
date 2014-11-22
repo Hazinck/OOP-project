@@ -30,6 +30,7 @@
       <beschikbaarheid>ja</beschikbaarheid>
       <prijs>2200000</prijs>
     </speler>
+    <budget>0</budget>
   </team>
   <team id="02">
     <naam>Feyenoord</naam>
@@ -60,20 +61,8 @@
       <beschikbaarheid>ja</beschikbaarheid>
       <prijs>4500000</prijs>
     </speler>
+    <budget>0</budget>
   </team>
-  <team id="03">
-    <naam>PSV</naam>
-    <speler id="031">
-      <naam>Memphis Depay</naam>
-    </speler>
-    <speler id="032">
-      <naam>Andrés Guardado</naam>
-    </speler>
-  </team>
-  <team id="04">
-    <naam>FC Groningen</naam>
-    <speler id="041">
-      <naam>Danny Hoesen</naam>
-    </speler>
-  </team>
+  <speeldag>0</speeldag>
+  <stand>0</stand>
 </divisie>
