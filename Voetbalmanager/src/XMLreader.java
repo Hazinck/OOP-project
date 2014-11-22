@@ -21,6 +21,7 @@ public class XMLreader {
 		 ArrayList<Team> teamList = new ArrayList<Team>();
 		 String divisieNaam = "";
 		 int speeldag = -1;
+		 int stand = -1;
 		 try {
 			//open xml
 			Document document = (Document) builder.build(xmlFile);
@@ -31,7 +32,7 @@ public class XMLreader {
 			teamList = readTeam(divisieEl);
 			//parse speeldag
 			speeldag = Integer.parseInt(divisieEl.getChildText("speeldag"));
-			
+			stand = Integer.parseInt(divisieEl.getChildText("stand"));
 			
 		 } catch (IOException io) {
 			 System.out.println(io.getMessage());
@@ -39,7 +40,7 @@ public class XMLreader {
 			 System.out.println(jdomex.getMessage());
 		 }
 		//maak divisie
-		 Divisie divisie = new Divisie(divisieNaam, teamList, speeldag);
+		 Divisie divisie = new Divisie(divisieNaam, teamList, speeldag, stand);
 		 
 		 return divisie;
 	}
@@ -64,8 +65,9 @@ public class XMLreader {
 			int doelsaldo = Integer.parseInt(teamEl.getChildText("doelsaldo"));
 			int doeltegen = Integer.parseInt(teamEl.getChildText("doeltegen"));
 			int doelvoor = Integer.parseInt(teamEl.getChildText("doelvoor"));
+			long budget = Long.parseLong(teamEl.getChildText("budget"));
 			Team team = new Team(teamNaam, rank, spelerList, winst, verlies, 
-										gelijkspel, doelsaldo, doeltegen, doelvoor);
+										gelijkspel, doelsaldo, doeltegen, doelvoor, budget);
 			teamList.add(team);
 		}
 		  

@@ -1,29 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<divisie id="1">
-	<naam>Eredivisie</naam>
-	<team id="01">
-		<naam>Ajax</naam>
-		<rank>26</rank>
-		<speler id="001">
-			<naam>Arkadiusz Milik</naam>
-			<nummer>42</nummer>
-		</speler>
-		<speler id="002">
-			<naam>Lasse Schöne</naam>
-			<nummer>20</nummer>
-		</speler>
-		<type>nieuwe waarde</type>
-	</team>
-	<team id="02">
-		<naam>Feyenoord</naam>
-		<rank>121</rank>
-		<speler id="003">
-			<naam>Kenneth Vermeer</naam>
-			<nummer>16</nummer>
-		</speler>
-		<speler id="004">
-			<naam>Jordy Clasie</naam>
-			<nummer>6</nummer>
-		</speler>
-	</team>
+<divisie id="0">
+  <naam>Eredivisie</naam>
+  <team id="01">
+    <naam>Ajax</naam>
+    <rank>26</rank>
+    <winst>0</winst>
+    <verlies>0</verlies>
+    <gelijkspel>0</gelijkspel>
+    <doelsaldo>0</doelsaldo>
+    <doeltegen>0</doeltegen>
+    <doelvoor>0</doelvoor>
+    <speler id="011">
+      <naam>Arkadiusz Milik</naam>
+      <nummer>42</nummer>
+      <type>Aanvaller</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>2000000</prijs>
+    </speler>
+    <speler id="012">
+      <naam>Lasse Schöne</naam>
+      <nummer>20</nummer>
+      <type>Aanvaller</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>2200000</prijs>
+    </speler>
+  </team>
+  <team id="02">
+    <naam>Feyenoord</naam>
+    <rank>121</rank>
+    <winst>0</winst>
+    <verlies>0</verlies>
+    <gelijkspel>0</gelijkspel>
+    <doelsaldo>0</doelsaldo>
+    <doeltegen>0</doeltegen>
+    <doelvoor>0</doelvoor>
+    <speler id="021">
+      <naam>Kenneth Vermeer</naam>
+      <nummer>16</nummer>
+      <type>Doelman</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>3500000</prijs>
+    </speler>
+    <speler id="022">
+      <naam>Jordy Clasie</naam>
+      <nummer>16</nummer>
+      <type>Middenvelder</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>4500000</prijs>
+    </speler>
+  </team>
+  <team id="03">
+    <naam>PSV</naam>
+    <speler id="031">
+      <naam>Memphis Depay</naam>
+    </speler>
+    <speler id="032">
+      <naam>Andrés Guardado</naam>
+    </speler>
+  </team>
+  <team id="04">
+    <naam>FC Groningen</naam>
+    <speler id="041">
+      <naam>Danny Hoesen</naam>
+    </speler>
+  </team>
 </divisie>

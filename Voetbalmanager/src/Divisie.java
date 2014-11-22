@@ -5,11 +5,13 @@ public class Divisie {
 	private String naam;
 	private ArrayList<Team> teamList = new ArrayList<Team>();
 	private int speeldag;
+	private int stand;
 	
-	public Divisie(String naam, ArrayList<Team> teamList, int speeldag){
+	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand){
 		this.naam = naam;
 		this.teamList = teamList;
 		this.speeldag = speeldag;
+		this.stand =stand;
 	}
 	
 	public String toString(){
@@ -35,4 +37,14 @@ public class Divisie {
 	public void setSpeeldag(int speeldag) {
 		this.speeldag = speeldag;
 	}
+
+	public int getStand() {
+		return stand;
+	}
+
+	public void setStand(int stand) {
+		this.stand = stand;
+	}
+	
+	
 }
