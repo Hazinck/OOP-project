@@ -34,8 +34,15 @@ public class XMLwriter {
 			Element divisieEl = document.getRootElement();
 			
 			if(tag.equals("divisie")){
+				//als element bestaat dan updaten
+			 	if(divisieEl.getChild(type) != null){
+					divisieEl.getChild(type).setText(waarde);
+				}
+				//anders maak nieuwe element
+				else{
 				Element elNieuw = new Element(type).setText(waarde);
 				divisieEl.addContent(elNieuw);
+				}
 			}else{
 			
 			ElementFilter filter=new org.jdom2.filter.ElementFilter(tag);

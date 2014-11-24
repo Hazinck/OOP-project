@@ -10,9 +10,9 @@ public class Driver {
 		System.out.println(divisie.toString());
 /*	*/
 		XMLwriter writer = new XMLwriter();
-/*		writer.updaten("team" , "Ajax", "budget", "0");
+		writer.updaten("team" , "Ajax", "budget", "0");
 		writer.updaten("team" , "Feyenoord", "budget", "0");
-		writer.updaten("divisie" , "Eredivisie", "speeldag", "0");
+		writer.updaten("divisie" , "Eredivisie", "speeldag", "5");
 		writer.updaten("divisie" , "Eredivisie", "stand", "0");
 		writer.updaten("team" , "Feyenoord", "gelijkspel", "0");
 		writer.updaten("team" , "Feyenoord", "doelsaldo", "0");
@@ -26,7 +26,7 @@ public class Driver {
 		writer.updaten("speler" , "Jordy Clasie", "beschikbaarheid", "ja");
 		writer.updaten("speler" , "Jordy Clasie", "prijs", "4500000");
 	
-		writer.add("divisie", "Eredivisie", "team", "PSV");
+/*		writer.add("divisie", "Eredivisie", "team", "PSV");
 		writer.add("divisie", "Eredivisie", "team", "FC Groningen");
 		writer.add("team", "PSV", "speler", "Memphis Depay");
 		writer.add("team", "PSV", "speler", "Andrés Guardado");
