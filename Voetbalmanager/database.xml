@@ -1,29 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<divisie id="1">
+<divisie id="0">
   <naam>Eredivisie</naam>
   <team id="01">
     <naam>Ajax</naam>
     <rank>26</rank>
-    <speler id="001">
+    <winst>0</winst>
+    <verlies>0</verlies>
+    <gelijkspel>0</gelijkspel>
+    <doelsaldo>0</doelsaldo>
+    <doeltegen>0</doeltegen>
+    <doelvoor>0</doelvoor>
+    <speler id="011">
       <naam>Arkadiusz Milik</naam>
       <nummer>42</nummer>
+      <type>Aanvaller</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>2000000</prijs>
     </speler>
-    <speler id="002">
+    <speler id="012">
       <naam>Lasse Schöne</naam>
       <nummer>20</nummer>
+      <type>Aanvaller</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>2200000</prijs>
     </speler>
-    <type>nieuwe waarde</type>
+    <budget>0</budget>
   </team>
   <team id="02">
     <naam>Feyenoord</naam>
     <rank>121</rank>
-    <speler id="003">
+    <winst>0</winst>
+    <verlies>0</verlies>
+    <gelijkspel>0</gelijkspel>
+    <doelsaldo>0</doelsaldo>
+    <doeltegen>0</doeltegen>
+    <doelvoor>0</doelvoor>
+    <speler id="021">
       <naam>Kenneth Vermeer</naam>
       <nummer>16</nummer>
+      <type>Doelman</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>3500000</prijs>
     </speler>
-    <speler id="004">
+    <speler id="022">
       <naam>Jordy Clasie</naam>
-      <nummer>6</nummer>
+      <nummer>16</nummer>
+      <type>Middenvelder</type>
+      <offense>0</offense>
+      <defence>0</defence>
+      <uithouding>0</uithouding>
+      <beschikbaarheid>ja</beschikbaarheid>
+      <prijs>4500000</prijs>
     </speler>
+    <budget>0</budget>
   </team>
+  <speeldag>0</speeldag>
+  <stand>0</stand>
 </divisie>
