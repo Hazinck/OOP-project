@@ -1,4 +1,4 @@
-Aaron Meijers,V,76,52,63,
+﻿Aaron Meijers,V,76,52,63,
 Danny Bakker,M,64,48,66,
 Dion Malone,V,69,44,64,
 Gianni Zuiverloon,V,73,48,65,
