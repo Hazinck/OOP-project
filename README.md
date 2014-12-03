@@ -4,7 +4,7 @@ OOP-project
 //Ons project voor OOP
 
 Voor GUI maken we gebruik van Model-View-Controller ontwerppatroon. 
-Dat betekent in dat we elke van de drie onderdelen van elkaar appart houden.
+Dat betekent in dat we elke van de drie onderdelen van elkaar apart houden.
 
 MODEL.
 Model is kern van de programma, het werkt met database en voert alle berekeningen uit.
