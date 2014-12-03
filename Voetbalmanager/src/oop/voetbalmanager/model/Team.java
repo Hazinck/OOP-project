@@ -1,3 +1,4 @@
+package oop.voetbalmanager.model;
 import java.util.ArrayList;
 
 

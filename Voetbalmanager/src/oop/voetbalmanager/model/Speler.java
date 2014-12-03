@@ -1,3 +1,4 @@
+package oop.voetbalmanager.model;
 
 public class Speler {
 	private String naam;
