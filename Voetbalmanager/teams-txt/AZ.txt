@@ -1,4 +1,4 @@
-Aron J�hannsson,A,78,77,29,
+﻿Aron Jóhannsson,A,78,77,29,
 Celso Ortiz,M,65,54,68,
 Derrick Luckassen,V,76,33,59,
 Djavan Anderson,V,76,34,62,

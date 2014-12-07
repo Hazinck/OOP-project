@@ -1,6 +1,6 @@
-Alex Schalk,A,73,65,29,
+ï»¿Alex Schalk,A,73,65,29,
 Bart Vriends,V,58,31,61,
-Deniz Türüç,M,74,65,53,
+Deniz TÃ¼rÃ¼Ã§,M,74,65,53,
 Fernando Lewis,A,78,60,29,
 Giliano Wijnaldum,V,74,48,65,
 Jeffrey Rijsdijk,M,74,65,39,
