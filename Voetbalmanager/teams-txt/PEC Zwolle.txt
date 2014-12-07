@@ -1,4 +1,4 @@
-Tom� Necid,A,72,76,34,
+﻿Tomáš Necid,A,72,76,34,
 Bart van Hintum,V,67,50,65,
 Ben RienAra,M,60,54,67,
 Bram van Polen,V,74,47,67,

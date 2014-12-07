@@ -1,6 +1,8 @@
 package oop.voetbalmanager.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -18,10 +20,17 @@ public class Tabs extends JPanel{
 		public Tabs(ViewFrame viewFrame, Home home, TeamPanel teamPanel, Competition comp, PandS ps){
 			this.viewFrame = viewFrame;
 		    setBackground(Color.green);
-		    setLayout(new GridLayout());
-
+		    //setLayout(new GridLayout());
+		    setLayout(new BorderLayout());
+		    
 		    //tabs panel toevoegen aan ViewFrame
 		    viewFrame.controlPanel.add(this);  
+		    
+		    //table
+		    Table table = new Table();
+		    table.start("Go Ahead Eagles", "Voornaam Achternaam");
+		    //table toevoegen
+		    add(table, BorderLayout.LINE_START);
 		    
 		    //jtabbedpane aanmaken
 		    JTabbedPane tabbedPane = new JTabbedPane();
@@ -33,7 +42,7 @@ public class Tabs extends JPanel{
 		    tabbedPane.add("Profile and settings",ps);
 		  
 		  //jtabbedpane toevoegen aan deze panel(Tabs)
-		    add(tabbedPane);
+		    add(tabbedPane,BorderLayout.CENTER);
 
 		}  
 		
@@ -45,4 +54,5 @@ public class Tabs extends JPanel{
 			loginPanel.setVisible(false);
 			this.setVisible(true);
 		}
+	
 }
