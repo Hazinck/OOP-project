@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.Box;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -22,12 +24,18 @@ public class Table extends JPanel{
 	//	String col[] = {"Team: ","/*Teamnaam*/"};
 
 	
-	public void start(String teamnaam, String username){
+	public void start(ViewFrame vframe){
 		setLayout(new BorderLayout());
-		ImagePanel img = new ImagePanel(username, null);
-		add(img, BorderLayout.PAGE_START);
+		setBackground(Color.WHITE);
 		
-	       
+		Box main = Box.createVerticalBox();
+		
+		
+		ImagePanel img = new ImagePanel(vframe);
+		img.addNameLable();
+		img.addLogoutButton();
+		main.add(img);
+		
 		 model = new DefaultTableModel()//;col,6
 		 {
 			 public Class getColumnClass(int columnIndex) {
@@ -41,7 +49,7 @@ public class Table extends JPanel{
 						 { "Punten: " }, 
 						 { "Ranking: " }, 
 						 { "Volgende \ntegenstander: " } 
-						 }, new Object[] { "Team", teamnaam });
+						 }, new Object[] { "Team", vframe.getTeamNaam() });
 		table=new JTable(model)
 		{@Override
 		public boolean isCellEditable(int row, int col) {
@@ -59,11 +67,13 @@ public class Table extends JPanel{
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		table.getColumnModel().getColumn(0).setPreferredWidth(95);
 		table.getColumnModel().getColumn(1).setPreferredWidth(100);//teamnaam.length()*8
-		
+	
 		JScrollPane	pane = new JScrollPane(table);
 		pane.getViewport().setBackground(Color.WHITE);
+
+		main.add(pane);
 		
-		add(pane, BorderLayout.CENTER);
+		add(main);
 		setLocation(0,0);
 	}
 	@Override
@@ -78,29 +88,40 @@ public class Table extends JPanel{
 
 class ImagePanel extends JPanel{
 	private BufferedImage image;
-	private String imgPath = System.getProperty("user.dir") + "/images/";
+	
 	JLabel naamLable = new JLabel();
 	private String username;
-    public ImagePanel(String username, String imgName) {
-    	this.username = username;
+    public ImagePanel(ViewFrame vframe) {
+    	this.username = vframe.getUsername();
+    	String imgName = vframe.getImgName();
        try {                
     	   if(imgName == null || imgName.equals("")){
-    		   image = ImageIO.read(new File(imgPath + "user_default.png"));
+    		   image = ImageIO.read(new File(vframe.getImgPath() + "user_default.png"));
     	   }
     	   else{
-    		   image = ImageIO.read(new File(imgPath + imgName));
+    		   image = ImageIO.read(new File(vframe.getImgPath() + imgName));
     	   }
        } catch (IOException ex) {
             // handle exception...
        }
-       naamLable.setFont(new Font("Arial", Font.BOLD, 20)); 
+       
+       
+    }
+    
+    public void addNameLable(){
+    	naamLable.setFont(new Font("Arial", Font.BOLD, 20)); 
 		naamLable.setText("<html><body style='width: 150px'>"+username);
 		naamLable.setForeground(Color.decode("333333"));
 		setBackground(Color.WHITE);
 		add(naamLable, BorderLayout.PAGE_START);
-       
     }
-
+    
+    public void addLogoutButton(){
+		JButton logout = new JButton("Logout and Save");
+		add(Box.createRigidArea(new Dimension(0,image.getHeight()*2 + 30)));
+		add(logout, BorderLayout.PAGE_END);
+    }
+    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -114,5 +135,12 @@ class ImagePanel extends JPanel{
 		int w = 150;
 		int h = 250;// * percent / 100;
 		return new Dimension(w,h);
+	}
+
+	/**
+	 * @return the image
+	 */
+	public BufferedImage getImage() {
+		return image;
 	}
 }

@@ -28,7 +28,7 @@ public class Tabs extends JPanel{
 		    
 		    //table
 		    Table table = new Table();
-		    table.start("Go Ahead Eagles", "Voornaam Achternaam");
+		    table.start(viewFrame);//.getTeamNaam(), viewFrame.getUsername()
 		    //table toevoegen
 		    add(table, BorderLayout.LINE_START);
 		    

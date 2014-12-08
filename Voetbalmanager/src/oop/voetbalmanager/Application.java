@@ -23,8 +23,8 @@ public class Application {
 	  	   	  Login l = new Login(viewFrame);
 	  	   	  Home h = new Home();
 	  	   	  TeamPanel t = new TeamPanel();
-	  	   	  Competition comp = new Competition();
-	  	   	  PandS ps = new PandS();
+	  	   	  Competition comp = new Competition(viewFrame);
+	  	   	  PandS ps = new PandS(viewFrame);
 //	  	   	  p1.showThis(p2); 
               Controller controller = new Controller(viewFrame, l, h, t, comp, ps);
               controller.contol();
