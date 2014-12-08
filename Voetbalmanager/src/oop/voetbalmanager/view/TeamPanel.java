@@ -26,37 +26,18 @@ public class TeamPanel extends JPanel{
 		spelerlijst.setPreferredSize(new Dimension(300, 500));
 		spelerlijst.setBackground(null);
 		
-		JLabel aanvalLabel = new JLabel("Aanvallers");
-		JList aanvalList = new JList();
-		JScrollPane aanvalPane = new JScrollPane(aanvalList,
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		aanvalPane.setPreferredSize(new Dimension( 250, 95));
-		spelerlijst.add(aanvalLabel);
-		spelerlijst.add(aanvalPane);
+
+		spelerlijst.add(new JLabel("Aanvallers"));
+		spelerlijst.add(maakLijst(new Dimension(250, 95)));
 		
-		JLabel middenLabel = new JLabel("Middenvelders");
-		JList middenList = new JList();
-		JScrollPane middenPane = new JScrollPane(middenList,
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		middenPane.setPreferredSize(new Dimension( 250, 95));
-		spelerlijst.add(middenLabel);
-		spelerlijst.add(middenPane);
+		spelerlijst.add(new JLabel("Middenvelders"));
+		spelerlijst.add(maakLijst(new Dimension(250, 95)));
 		
-		JLabel verdedigLabel = new JLabel("Verdedigers");
-		JList verdedigList = new JList();
-		JScrollPane verdedigPane = new JScrollPane(verdedigList,
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		verdedigPane.setPreferredSize(new Dimension( 250, 95));
-		spelerlijst.add(verdedigLabel);
-		spelerlijst.add(verdedigPane);
+		spelerlijst.add(new JLabel("Verdedigers"));
+		spelerlijst.add(maakLijst(new Dimension(250, 95)));
 		
-		JLabel keeperLabel = new JLabel("Keepers");
-		JList keeperList = new JList();
-		JScrollPane keeperPane = new JScrollPane(keeperList,
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		keeperPane.setPreferredSize(new Dimension( 250, 65));
-		spelerlijst.add(keeperLabel);
-		spelerlijst.add(keeperPane);
+		spelerlijst.add(new JLabel("Keepers"));
+		spelerlijst.add(maakLijst(new Dimension(250, 65)));
 		
 		return spelerlijst;
 	}
@@ -71,6 +52,19 @@ public class TeamPanel extends JPanel{
 		
 		
 		return opstelling;
+	}
+	
+	/**
+	 * geeft een nieuwe JScrollPane met een JList
+	 * @param d		de grootte van de lijst
+	 * @return		het nieuwe JScrollPane-object
+	 */
+	public JScrollPane maakLijst(Dimension d) {
+		JScrollPane pane = new JScrollPane(new JList(),
+				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		pane.setPreferredSize(d);
+		
+		return pane;
 	}
 	
 }
