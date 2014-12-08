@@ -1,3 +1,4 @@
+package oop.voetbalmanager.view;
 import javax.swing.*;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
