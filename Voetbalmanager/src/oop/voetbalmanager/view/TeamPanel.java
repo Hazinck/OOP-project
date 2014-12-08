@@ -2,12 +2,15 @@ package oop.voetbalmanager.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.border.TitledBorder;
 
 
@@ -15,7 +18,7 @@ public class TeamPanel extends JPanel{
 	
 	public TeamPanel(){		
         add(spelerlijst());
-        add(opstelling());
+        add(tactiek());
         setBackground(Color.decode("#FFFFFF"));
 	}
 	
@@ -46,12 +49,36 @@ public class TeamPanel extends JPanel{
 		JPanel opstelling = new JPanel();
 		opstelling.setBorder(BorderFactory.createTitledBorder(null, "Opstelling", 
 				TitledBorder.CENTER, TitledBorder.TOP));
-		opstelling.setPreferredSize(new Dimension(400, 500));
+		opstelling.setPreferredSize(new Dimension(350, 350));
 		opstelling.setBackground(null);
 		
 		
 		
 		return opstelling;
+	}
+	
+	public JPanel tactiek() {
+		JPanel tactiek = new JPanel();
+		tactiek.setBorder(BorderFactory.createTitledBorder(null, "Tactiek", 
+				TitledBorder.CENTER, TitledBorder.TOP));
+		tactiek.setPreferredSize(new Dimension(400, 500));
+		tactiek.setBackground(null);
+		
+		tactiek.add(opstelling());
+		
+		JSlider slider = new JSlider();
+		slider.setBackground(null);
+		slider.setPreferredSize(new Dimension(300,100));
+		Hashtable<Integer, JLabel> labels = new Hashtable<Integer, JLabel>();
+		labels.put(new Integer(0), new JLabel("Verdedigend"));
+		labels.put(new Integer(100), new JLabel("Aanvallend"));
+		slider.setLabelTable(labels);
+		slider.setPaintLabels(true);
+		slider.setMajorTickSpacing(25);
+		slider.setPaintTicks(true);
+		tactiek.add(slider);
+		
+		return tactiek;
 	}
 	
 	/**
