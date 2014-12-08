@@ -42,7 +42,7 @@ public class homemidden extends JPanel {
 			System.out.println("Something went wrong");
 		}
 		goals.setEditable(false);
-		image=new imgpanel("football.jpg");
+		image=new imgpanel("images/football.jpg");
 		
 		
 		c.fill=GridBagConstraints.HORIZONTAL;

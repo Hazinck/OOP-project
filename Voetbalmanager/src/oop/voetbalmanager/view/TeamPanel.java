@@ -6,6 +6,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -49,10 +50,16 @@ public class TeamPanel extends JPanel{
 		JPanel opstelling = new JPanel();
 		opstelling.setBorder(BorderFactory.createTitledBorder(null, "Opstelling", 
 				TitledBorder.CENTER, TitledBorder.TOP));
-		opstelling.setPreferredSize(new Dimension(350, 350));
+		opstelling.setPreferredSize(new Dimension(375, 370));
 		opstelling.setBackground(null);
 		
+		JComboBox keuze = new JComboBox();
+		keuze.setPreferredSize(new Dimension(250, 25));
+		opstelling.add(keuze);
 		
+		imgpanel image = new imgpanel("images/opstelling.png");
+		image.setPreferredSize(new Dimension(300,300));
+		opstelling.add(image);
 		
 		return opstelling;
 	}
@@ -68,7 +75,7 @@ public class TeamPanel extends JPanel{
 		
 		JSlider slider = new JSlider();
 		slider.setBackground(null);
-		slider.setPreferredSize(new Dimension(300,100));
+		slider.setPreferredSize(new Dimension(300,80));
 		Hashtable<Integer, JLabel> labels = new Hashtable<Integer, JLabel>();
 		labels.put(new Integer(0), new JLabel("Verdedigend"));
 		labels.put(new Integer(100), new JLabel("Aanvallend"));
