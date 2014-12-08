@@ -1,11 +1,11 @@
-
+package oop.voetbalmanager.view;
 import javax.swing.*;
 
 import java.awt.*;
 
 
-public class home extends JPanel{
-	public home(){
+public class Home extends JPanel{
+	public Home(){
 		GridBagLayout gl=new GridBagLayout();
 		GridBagConstraints c=new GridBagConstraints();
 		setLayout(gl);

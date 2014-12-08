@@ -1,10 +1,16 @@
-import javax.swing.*;
+package oop.voetbalmanager.view;
+
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
-
-import java.awt.*;
 public class homemidden extends JPanel {
 	private JTextPane scores;
 	private JTextPane goals;

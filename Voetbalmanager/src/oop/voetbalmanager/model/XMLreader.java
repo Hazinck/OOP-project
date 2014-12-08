@@ -67,8 +67,9 @@ public class XMLreader {
 			int doeltegen = Integer.parseInt(teamEl.getChildText("doeltegen"));
 			int doelvoor = Integer.parseInt(teamEl.getChildText("doelvoor"));
 			long budget = Long.parseLong(teamEl.getChildText("budget"));
+			int score = Integer.parseInt(teamEl.getChildText("score"));
 			Team team = new Team(teamNaam, rank, spelerList, winst, verlies, 
-										gelijkspel, doelsaldo, doeltegen, doelvoor, budget);
+										gelijkspel, doelsaldo, doeltegen, doelvoor, budget, score);
 			teamList.add(team);
 		}
 		  
