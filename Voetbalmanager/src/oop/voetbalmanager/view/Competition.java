@@ -20,9 +20,9 @@ public class Competition extends JPanel{
         Box main = Box.createHorizontalBox();
         
         main.add(Box.createRigidArea(new Dimension(40,0)));
-        main.add(createTable("Ranking", "Uitgebreide ranking met \ndoelpunten saldo etc"));
+        main.add(createTable("Ranking", "Uitgebreide ranking met doelpunten saldo etc"));
         main.add(Box.createRigidArea(new Dimension(40,0)));
-        main.add(createTable("Transferlijst","(spelers die te koop worden gezet \nof alle spelers van andere \nteams worden hier geshowt en je kan bieden)"));
+        main.add(createTable("Transferlijst","(spelers die te koop worden gezet <br>of alle spelers van andere <br>teams worden hier geshowt en je kan bieden)"));
         main.add(Box.createRigidArea(new Dimension(40,0)));
         
         add(main);
