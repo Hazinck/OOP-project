@@ -13,10 +13,11 @@ public class Team {
 	private int doelsaldo;
 	private int doeltegen;
 	private int doelvoor;
+	private int score;
 	private long budget;
 	
 	public Team(String naam, int rank, ArrayList<Speler> spelerList,int winst,
-					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, long budget){
+					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, long budget, int score){
 		this.naam = naam;
 		this.rank = rank;
 		this.spelerList = spelerList;
@@ -27,9 +28,10 @@ public class Team {
 		this.doeltegen = doeltegen;
 		this.doelvoor = doelvoor;
 		this.budget = budget;
+		this.score = score;
 	}
 	
-	
+
 	public String toString(){
 		return  "Teamnaam: " + naam + "\nRank: " + rank + 
 				"\nSpelers:\n" + spelerList.toString() + 
@@ -136,6 +138,14 @@ public class Team {
 	public void setBudget(long budget) {
 		this.budget = budget;
 	}
-	
+	public int getScore() {
+		return score;
+	}
+
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 
 }
