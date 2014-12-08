@@ -1,19 +1,28 @@
-package oop.voetbalmanager.view;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
+
+import java.awt.*;
 
 
-public class Home extends  JPanel{
-	
-	public Home(){
-        JLabel text = new JLabel("HOME");
-        add(text);
-        setBackground(Color.yellow);
+public class home extends JPanel{
+	public home(){
+		GridBagLayout gl=new GridBagLayout();
+		GridBagConstraints c=new GridBagConstraints();
+		setLayout(gl);
+		JPanel linkertabel=new JPanel();
+		homemidden hm=new homemidden();
+		homerechts hr=new homerechts();
+		c.ipadx = 468;
+		c.weightx = 1.0;
+		c.gridx = 0;
+		c.gridy = 0;
+		add(hm);
+		c.ipadx=0;
+		c.gridx = 2;
+		c.gridy = 0;
+		add(hr);
+		
 	}
 	
+
 }
