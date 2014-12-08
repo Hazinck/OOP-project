@@ -6,7 +6,6 @@ import javax.swing.text.StyledDocument;
 
 import java.awt.*;
 public class homemidden extends JPanel {
-	private JTextPane tabs;
 	private JTextPane scores;
 	private JTextPane goals;
 	private imgpanel image;
@@ -16,19 +15,6 @@ public class homemidden extends JPanel {
 		GridBagConstraints c= new GridBagConstraints();
 		setLayout(gl);
 		
-		tabs=new JTextPane();
-		tabs.setBorder(BorderFactory.createLineBorder(Color.black));
-		StyledDocument tab=tabs.getStyledDocument();
-		Style de = StyleContext.getDefaultStyleContext().getStyle( StyleContext.DEFAULT_STYLE );
-		Style big =tab.addStyle("large",de);
-		StyleConstants.setFontSize( big, 25 );
-		StyleConstants.setBold(big, true);
-		String home="Home	 Team	 Competition   Profile and settings";
-		try{
-			tab.insertString(0,home, big);
-		}catch(Exception e){
-			System.out.println("Something went wrong");
-		}
 		scores=new JTextPane();
 		StyledDocument score=scores.getStyledDocument();
 		Style defaul = StyleContext.getDefaultStyleContext().getStyle( StyleContext.DEFAULT_STYLE );
@@ -54,24 +40,21 @@ public class homemidden extends JPanel {
 		}catch(Exception e){
 			System.out.println("Something went wrong");
 		}
-		image=new imgpanel("C:/Users/HM/workspace/OOP project/Images/football.jpg");
+		image=new imgpanel("football.jpg");
 		
 		
 		c.fill=GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 0;
-		add(tabs,c);
-		c.gridx = 0;
-		c.gridy = 1;
 		add(scores,c);
 		c.ipady = 100;      
 		c.ipadx = 468;
 		c.gridx = 0;
-		c.gridy = 2;
+		c.gridy = 1;
 		add(goals,c);
 		c.ipady= 300;
 		c.gridx = 0;
-		c.gridy = 4;
+		c.gridy = 3;
 		add(image,c);
 		
 	}
