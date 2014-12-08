@@ -29,7 +29,7 @@ public class homemidden extends JPanel {
 		}catch(Exception e){
 			System.out.println("Something went wrong");
 		}
-		
+		scores.setEditable(false);
 		goals=new JTextPane();
 		goals.setBorder(BorderFactory.createLineBorder(Color.black));
 		StyledDocument goal=goals.getStyledDocument();
@@ -41,6 +41,7 @@ public class homemidden extends JPanel {
 		}catch(Exception e){
 			System.out.println("Something went wrong");
 		}
+		goals.setEditable(false);
 		image=new imgpanel("football.jpg");
 		
 		

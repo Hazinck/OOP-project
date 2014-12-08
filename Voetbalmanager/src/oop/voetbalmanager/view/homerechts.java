@@ -17,14 +17,12 @@ import javax.swing.text.StyledDocument;
 
 
 public class homerechts extends JPanel {
-	private JButton logout;
 	private JTextPane titel;
 	private JTextPane rankings;
 	public homerechts(){
 		GridBagLayout gl=new GridBagLayout();
 		GridBagConstraints c= new GridBagConstraints();
 		setLayout(gl);
-		logout=new JButton("Logout and save");
 		
 		titel=new JTextPane();
 		titel.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -39,6 +37,7 @@ public class homerechts extends JPanel {
 	    }catch(Exception e){
 	    	System.out.println("Something went wrong");
 	    }
+	    titel.setEditable(false);
 		
 	    rankings=new JTextPane();
 	    rankings.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -52,17 +51,15 @@ public class homerechts extends JPanel {
 		}catch(Exception e){
 			System.out.println("Something went wrong");
 		}
-		
+		rankings.setEditable(false);
+		c.fill=GridBagConstraints.HORIZONTAL;
+		c.weightx = 50;
 		c.gridx = 0;
 		c.gridy = 0;
-		add(logout, c);
-		c.fill=GridBagConstraints.HORIZONTAL;
+		add(titel,c);
+		c.ipady = 400;      
 		c.gridx = 0;
 		c.gridy = 1;
-		add(titel,c);
-		c.ipady = 300;      
-		c.gridx = 0;
-		c.gridy = 2;
 		add(rankings, c);
 	}
 }
