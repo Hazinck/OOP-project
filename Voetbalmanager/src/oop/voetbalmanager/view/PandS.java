@@ -149,12 +149,13 @@ public class PandS extends JPanel{
 		    JButton del = new JButton("Delete");
 		    
 		    Box buttonBox = Box.createHorizontalBox();
-		    save.add(Box.createRigidArea(new Dimension(70,0)));
+		    save.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));//70
+            
 		    buttonBox.add(imp);
-		    buttonBox.add(Box.createRigidArea(new Dimension(70,0)));
+		    buttonBox.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));
 		    buttonBox.add(exp);
 		//    save.add(buttonBox, BorderLayout.WEST);
-		    buttonBox.add(Box.createRigidArea(new Dimension(70,0)));
+		    buttonBox.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));
 		    buttonBox.add(del);
 		    
 		    save.add(buttonBox, BorderLayout.CENTER);

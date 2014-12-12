@@ -119,6 +119,7 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		  private Image backgroundImage;
 		  private Dimension[] playerPos = new Dimension[11];
 		  private Rectangle[] playerBounds = new Rectangle[11];
+		  private JComboBox[] playersDDList = new JComboBox[11];//players Drop-down list
 		  private int opstCode = 433;
 		  private Image shirt;
 		  private boolean dragging;
@@ -126,6 +127,8 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		  
 		  public Opstelling()  {
 			  String team = "Ajax";
+			  
+			  setLayout(null);
 		    try{
 		    	backgroundImage = ImageIO.read(new File("images/veldTopVert_small.png"));
 		    	shirt = ImageIO.read(new File("images/shirts/"+team+".png"));
@@ -148,6 +151,11 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		    	playerPos[10] = new Dimension(270,130);//aan
 		    	for(int i = 0; i<11; i++){
 		    		playerBounds[i] = new Rectangle(playerPos[i].width -18, playerPos[i].height -20, 36, 40);
+		    		
+		    		playersDDList[i] = new JComboBox();
+		    		playersDDList[i].setBounds((int)playerPos[i].getWidth()-18, (int)playerPos[i].getHeight()+20,
+		    	    		36, 20);
+		    		add(playersDDList[i]);
 		    	}
 		    }
 		    
@@ -164,8 +172,8 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		    for(int i = 0; i<11; i++){
 		    	g.drawImage(shirt, (int)playerPos[i].getWidth()-18, (int)playerPos[i].getHeight()-20, this);
 		    	
-		    	g.setColor(Color.white);
-		    	g.drawString(""+i, (int)playerPos[i].getWidth(), (int)playerPos[i].getHeight()+30);
+//		    	g.setColor(Color.white);
+//		    	g.drawString(""+i, (int)playerPos[i].getWidth(), (int)playerPos[i].getHeight()+30);
 		    }
 		  }
 		  
@@ -204,6 +212,8 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 						  int y = yBounds(point);
 						  playerPos[playerNum] = new Dimension(x, y);
 						  playerBounds[playerNum] = new Rectangle(playerPos[playerNum].width-18 ,playerPos[playerNum].height-20 ,36, 40);
+						  playersDDList[playerNum].setBounds((int)playerPos[playerNum].getWidth()-18, (int)playerPos[playerNum].getHeight()+20,
+				    	    		36, 20);
 					  }
 //				  }
 				  repaint();
