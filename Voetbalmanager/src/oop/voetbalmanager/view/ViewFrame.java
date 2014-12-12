@@ -1,6 +1,7 @@
 package oop.voetbalmanager.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,15 +14,15 @@ public class ViewFrame extends JFrame{
 	public JPanel controlPanel;
 	
 	//tijdelijk
-	private String username = "Voornaam Achternaam";
+	private String username = "Kamran Tadzjibov";
 	private String teamNaam = "Go Ahead Eagles";
 	private String imgPath = System.getProperty("user.dir") + "/images/";
 	private String imgName = "user_default.png";
 	
 	
 	//neem scherm breedte en hoogte
-	private int frameWidth = 1000;//(int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-	private int frameHeight = 600;//(int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+	private static int frameWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();//1000;//
+	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-50;//600;//
 	
 	public ViewFrame(){
 	    setSize(frameWidth,frameHeight);    
@@ -55,14 +56,14 @@ public class ViewFrame extends JFrame{
 	/**
 	 * @return the frameWidth
 	 */
-	public int getFrameWidth() {
+	public static int getFrameWidth() {
 		return frameWidth;
 	}
 
 	/**
 	 * @return the frameHeight
 	 */
-	public int getFrameHeight() {
+	public static int getFrameHeight() {
 		return frameHeight;
 	}
 

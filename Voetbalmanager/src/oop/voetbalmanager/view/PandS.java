@@ -94,7 +94,7 @@ public class PandS extends JPanel{
 	        		Color.decode("333333")));//("Change Username and Password") title);
 		    BoxLayout layoutUP = new BoxLayout(userPass, BoxLayout.Y_AXIS);
 		    userPass.setLayout(layoutUP);
-		    userPass.setPreferredSize(new Dimension(500,170));
+		    userPass.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.283)));//500,170));
 		    userPass.setBackground(null);
 		    
 		    JComponent fields = fields();
@@ -111,7 +111,7 @@ public class PandS extends JPanel{
 	        		Color.decode("333333")));//("Change avatar") title);
 	        BoxLayout layoutAv = new BoxLayout(avatar, BoxLayout.X_AXIS);
 		    avatar.setLayout(layoutAv);
-		    avatar.setPreferredSize(new Dimension(500,200));
+		    avatar.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.33)));//500,200));
 		    avatar.setBackground(null);
 		    
 		    ImagePanel imgP = new ImagePanel(vframe);
@@ -140,7 +140,7 @@ public class PandS extends JPanel{
 	        		Color.decode("333333")));//("Change avatar") title);
 	        BoxLayout layoutAv = new BoxLayout(save, BoxLayout.X_AXIS);
 		    save.setLayout(layoutAv);
-		    save.setPreferredSize(new Dimension(500,100));
+		    save.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.167)));//500,100));
 		    save.setBackground(null);
 		    
 		   

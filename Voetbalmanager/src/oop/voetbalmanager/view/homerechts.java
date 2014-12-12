@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 
 
 
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -57,7 +58,7 @@ public class homerechts extends JPanel {
 		c.gridx = 0;
 		c.gridy = 0;
 		add(titel,c);
-		c.ipady = 400;      
+		c.ipady = (int)(ViewFrame.getFrameHeight()*0.667);//400;      
 		c.gridx = 0;
 		c.gridy = 1;
 		add(rankings, c);

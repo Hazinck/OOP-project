@@ -49,12 +49,12 @@ public class homemidden extends JPanel {
 		c.gridx = 0;
 		c.gridy = 0;
 		add(scores,c);
-		c.ipady = 100;      
-		c.ipadx = 468;
+		c.ipady = (int)(ViewFrame.getFrameHeight()*0.167);//100;      
+		c.ipadx = (int)(ViewFrame.getFrameWidth()*0.5);//468;
 		c.gridx = 0;
 		c.gridy = 1;
 		add(goals,c);
-		c.ipady= 300;
+		c.ipady= (int)(ViewFrame.getFrameHeight()*0.5);//300;
 		c.gridx = 0;
 		c.gridy = 3;
 		add(image,c);
