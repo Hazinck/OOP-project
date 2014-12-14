@@ -8,14 +8,16 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 
+import oop.voetbalmanager.model.User;
+
 
 //window(frame) van programma
 public class ViewFrame extends JFrame{
 	public JPanel controlPanel;
 	
 	//tijdelijk
-	private String username = "Kamran Tadzjibov";
-	private String teamNaam = "Go Ahead Eagles";
+	private String username = User.getNaam();//"Kamran Tadzjibov";
+	private String teamNaam = User.getTeam();//"Go Ahead Eagles";
 	private String imgPath = System.getProperty("user.dir") + "/images/";
 	private String imgName = "user_default.png";
 	

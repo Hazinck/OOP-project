@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import oop.voetbalmanager.controller.Controller;
+import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -19,6 +20,7 @@ public class Application {
 	      
 	    	@Override
 	      public void run() {
+	    		User user = new User("Kamran Tadzjibov", "Ajax");
 	    	  ViewFrame viewFrame = new ViewFrame();
 	  	   	  Login l = new Login(viewFrame);
 	  	   	  Home h = new Home();
