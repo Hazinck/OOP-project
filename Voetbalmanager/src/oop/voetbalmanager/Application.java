@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import oop.voetbalmanager.controller.Controller;
+import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
@@ -21,15 +22,20 @@ public class Application {
 	
 	public static void main(String[] args) {
 		XMLreader reader = new XMLreader();
-		Divisie divisie = reader.readDivisie();
+		final Divisie divisie = reader.readDivisie();
 		final Team ajax = divisie.getTeamList().get(1);
 		
 	    EventQueue.invokeLater(new Runnable() {
 	      
 	    	@Override
 	      public void run() {
-	    	  User.setNaam("Kamran Tadzjibov");
+	    	  User.setNaam("Andy Zaidman");
 	    	  User.setTeam(ajax);
+	    	  
+	    	  Bot.setDivisie(divisie);
+	    	  Bot.setUserTeam(ajax);
+	    	  Bot.volgendeTeam();
+	    	  
 	    	  ViewFrame viewFrame = new ViewFrame();
 	  	   	  Login l = new Login(viewFrame);
 	  	   	  Home h = new Home();

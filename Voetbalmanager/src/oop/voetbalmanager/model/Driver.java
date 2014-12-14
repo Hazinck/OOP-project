@@ -54,35 +54,14 @@ public class Driver {
 		Divisie divisie = reader.readDivisie();
 		Team team1 = divisie.getTeamList().get(1);
 		Team team2 = divisie.getTeamList().get(8);
-		Spel s = new Spel(User.getTeam(), team2, 401);
-		System.out.println(s.winner().getNaam());
-*/		
+		int geluksfactor = RNG.getalTot(800);
+		Spel s = new Spel(team1, team2, geluksfactor);
+		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
+	*/	
 		
 	}
 	
-	/**
-	 * Geeft een willekeurige tegenstander
-	 * @param divisie	de huidige divisie
-	 * @param userTeam	het team van de user
-	 * @return			een willekeurige tegenstander
-	 */
-	public static Team volgendeTeam(Divisie divisie, Team userTeam) {
-		int aantalTeams = 18;
-		Team tegenstander = userTeam;
-		boolean gevonden = false;
-		
-		//zolang een tegenstander niet is gevonden, zoek voor een tegenstander
-		while (!gevonden) {
-			//neem een willekeurig team
-			int i = RNG.getalTot(aantalTeams) + 1;
-			tegenstander = divisie.getTeamList().get(i);
-			
-			//als dit niet het team van de user is, hebben we een tegenstander gevonden
-			gevonden = !(tegenstander.equals(userTeam));
-		}
-		
-		return tegenstander;
-	}
+
 	
 
 }

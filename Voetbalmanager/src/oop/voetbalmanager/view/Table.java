@@ -18,11 +18,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.User;
+
 public class Table extends JPanel{
 	
 	//	String col[] = {"Team: ","/*Teamnaam*/"};
 	private ViewFrame vframe;
 	private ImagePanel img;
+	private int speeldag;
+	private JTable table;
 	
 	public void start(ViewFrame vframe){
 		this.vframe = vframe;
@@ -63,7 +68,7 @@ public class Table extends JPanel{
 	}
 	public JTable newTable(ViewFrame vframe){
 		DefaultTableModel model;
-		JTable table;
+		
 		model = new DefaultTableModel()//;col,6
 		 {
 			 public Class getColumnClass(int columnIndex) {
@@ -72,11 +77,11 @@ public class Table extends JPanel{
 		 };
 		 model.setDataVector(
 				 new Object[][] { 
-						 { "Balans: ", "" },
-						 { "Speeldag: " }, 
-						 { "Punten: " }, 
-						 { "Ranking: " }, 
-						 { "Volgende \ntegenstander: " } 
+						 { "Balans: ", User.getTeam().getBudget() },
+						 { "Speeldag: ", speeldag }, 
+						 { "Punten: ",  User.getTeam().getScore()}, 
+						 { "Ranking: ", User.getTeam().getRank() }, 
+						 { "Volgende \ntegenstander: ", Bot.getBotTeam().getNaam()} 
 						 }, new Object[] { "Team", vframe.getTeamNaam() });
 		table=new JTable(model){
 			@Override
@@ -103,6 +108,24 @@ public class Table extends JPanel{
 	
 	public ImagePanel getImagePanel(){
 		return img;
+	}
+	/**
+	 * @return the table
+	 */
+	public JTable getTable() {
+		return table;
+	}
+	/**
+	 * @return the speeldag
+	 */
+	public int getSpeeldag() {
+		return speeldag;
+	}
+	/**
+	 * @param speeldag the speeldag to set
+	 */
+	public void setSpeeldag(int speeldag) {
+		this.speeldag = speeldag;
 	}
 	
 }

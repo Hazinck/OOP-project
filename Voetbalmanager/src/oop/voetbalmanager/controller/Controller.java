@@ -4,6 +4,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.RNG;
+import oop.voetbalmanager.model.Spel;
+import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -42,6 +46,7 @@ public class Controller {
                 tabs.showThis(l);
              //   controlPanel2();
                 addLogoutListener();
+                play();
              }
        };                
        l.getButton().addActionListener(actionListener);   
@@ -60,16 +65,30 @@ public class Controller {
     	});
 	}
 	
-	public void controlPanel2(){
-		 ActionListener actionListener2 = new ActionListener() {
+	public void play(){
+		JButton playButton = home.getHm().getPlayButton();
+		playButton.addActionListener(new ActionListener() {
 	           public void actionPerformed(ActionEvent actionEvent) { 
-	          	 System.out.println("Terug");
-	              l.showThis(tabs);
-	              
-	           }
-	     };                
+	        	int geluksfactor = RNG.getalTot(600);
+	       		Spel s = new Spel(User.getTeam(), Bot.getBotTeam(), geluksfactor);
+	       		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
+	       		home.getHm().getGoals().setText((s.winner().getNaam()+" heeft gewonnen!"));
+	       		updateStats();
+	       		}
+		});
+		                
 	 //    p2.getButton().addActionListener(actionListener2);   
 		
 	}
-
+	
+	public void updateStats(){
+		Bot.volgendeTeam();
+		int speeldag = tabs.getTable().getSpeeldag() + 1;
+   		home.getHm().getScores().setText(User.getTeam().getNaam() + " VS " + Bot.getBotTeam().getNaam());
+   		tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+   		tabs.getTable().getTable().setValueAt(speeldag,1,1);
+   		tabs.getTable().getTable().setValueAt(User.getTeam().getScore(),2,1);
+   		tabs.getTable().getTable().setValueAt(User.getTeam().getRank(),3,1);
+   		tabs.getTable().getTable().setValueAt(Bot.getBotTeam().getNaam(),4,1);
+	}
 }

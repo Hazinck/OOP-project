@@ -9,16 +9,33 @@ import java.awt.*;
  *
  */
 public class Home extends JPanel{
+
+	private homemidden hm=new homemidden();
+	private homerechts hr=new homerechts();
+	
 	public Home(){
-		
-		homemidden hm=new homemidden();
-		homerechts hr=new homerechts();
+	//	playButton = hm.getPlayButton();
 		
 		add(hm);
 		
 		add(hr);
 		
 	}
+
+	/**
+	 * @return the hm
+	 */
+	public homemidden getHm() {
+		return hm;
+	}
+
+	/**
+	 * @return the hr
+	 */
+	public homerechts getHr() {
+		return hr;
+	}
+
 	
 
 }

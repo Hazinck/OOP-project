@@ -78,4 +78,6 @@ public class Spel {
 		return (int)result;
 	}
 	
+	
+	
 }
