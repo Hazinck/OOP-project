@@ -19,24 +19,50 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class Table extends JPanel{
-	DefaultTableModel model;
-	JTable table;
+	
 	//	String col[] = {"Team: ","/*Teamnaam*/"};
 
 	
 	public void start(ViewFrame vframe){
-		setLayout(new BorderLayout());
+	//	setLayout(new BorderLayout());
+		setLayout(null);
 		setBackground(Color.WHITE);
 		
-		Box main = Box.createVerticalBox();
+	//	Box main = Box.createVerticalBox();
 		
 		
 		ImagePanel img = new ImagePanel(vframe);
 		img.addNameLable();
 		img.addLogoutButton();
-		main.add(img);
+		add(img);//main.add(img);
+		img.setBounds(0, 0 ,(int)(ViewFrame.getFrameWidth()*0.25), (int)(ViewFrame.getFrameHeight()*0.50));
 		
-		 model = new DefaultTableModel()//;col,6
+		JTable tableLeft = newTable(vframe);
+		JScrollPane	pane = new JScrollPane(tableLeft);
+		pane.getViewport().setBackground(Color.WHITE);
+
+		add(pane);//main.add(pane);
+		
+		int w = (int)(ViewFrame.getFrameWidth()*0.20);//d.width * 20 / 100;
+	    //Positie op 20% van frame hoogte naar beneden
+	    int topPos = img.getHeight()+10;
+	    pane.setBounds(0, topPos ,
+	    		w, ViewFrame.getFrameHeight()-topPos);
+		
+	//	add(main);
+	//	setLocation(0,0);
+	}
+	@Override
+	public Dimension getPreferredSize() {
+		Dimension d = getParent().getSize();
+		int w = (int)(ViewFrame.getFrameWidth()*0.20);//d.width * 20 / 100;
+		int h = ViewFrame.getFrameHeight();//d.height;// * percent / 100;
+		return new Dimension(w,h);
+	}
+	public JTable newTable(ViewFrame vframe){
+		DefaultTableModel model;
+		JTable table;
+		model = new DefaultTableModel()//;col,6
 		 {
 			 public Class getColumnClass(int columnIndex) {
 		          return String.class;
@@ -50,11 +76,13 @@ public class Table extends JPanel{
 						 { "Ranking: " }, 
 						 { "Volgende \ntegenstander: " } 
 						 }, new Object[] { "Team", vframe.getTeamNaam() });
-		table=new JTable(model)
-		{@Override
-		public boolean isCellEditable(int row, int col) {
-			return false;
-		}};   
+		table=new JTable(model){
+			@Override
+			public boolean isCellEditable(int row, int col) {
+				return false;
+			}
+			
+		};   
 		
 	//	table.setValueAt("Balans: ",0,0);
 	//	table.setValueAt("Speeldag: ",1,0);
@@ -65,23 +93,10 @@ public class Table extends JPanel{
 		table.setRowHeight(table.getRowHeight() * 3);
 		table.setDefaultRenderer(String.class, new MultiLineCellRenderer());
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.getColumnModel().getColumn(0).setPreferredWidth(95);
-		table.getColumnModel().getColumn(1).setPreferredWidth(100);//teamnaam.length()*8
-	
-		JScrollPane	pane = new JScrollPane(table);
-		pane.getViewport().setBackground(Color.WHITE);
-
-		main.add(pane);
+		table.getColumnModel().getColumn(0).setPreferredWidth((int)(ViewFrame.getFrameWidth()*0.20  - vframe.getTeamNaam().length()*8));//95
+		table.getColumnModel().getColumn(1).setPreferredWidth(vframe.getTeamNaam().length()*8- 5);//100
 		
-		add(main);
-		setLocation(0,0);
-	}
-	@Override
-	public Dimension getPreferredSize() {
-	Dimension d = getParent().getSize();
-	int w = d.width * 20 / 100;
-	int h = d.height;// * percent / 100;
-	return new Dimension(w,h);
+		return table;
 	}
 	
 }
@@ -94,6 +109,7 @@ class ImagePanel extends JPanel{
     public ImagePanel(ViewFrame vframe) {
     	this.username = vframe.getUsername();
     	String imgName = vframe.getImgName();
+    	setLayout(null);
        try {                
     	   if(imgName == null || imgName.equals("")){
     		   image = ImageIO.read(new File(vframe.getImgPath() + "user_default.png"));
@@ -110,30 +126,32 @@ class ImagePanel extends JPanel{
     
     public void addNameLable(){
     	naamLable.setFont(new Font("Arial", Font.BOLD, 20)); 
-		naamLable.setText("<html><body style='width: 150px'>"+username);
+		naamLable.setText("<html><body style='text-align: center; width: "+(int)(ViewFrame.getFrameWidth()*0.15)+"px'>"+username);//150px
 		naamLable.setForeground(Color.decode("333333"));
 		setBackground(Color.WHITE);
-		add(naamLable, BorderLayout.PAGE_START);
+		add(naamLable);//, BorderLayout.PAGE_START);
+		naamLable.setBounds(0, 0 ,(int)(ViewFrame.getFrameWidth()*0.20), (int)(ViewFrame.getFrameHeight()*0.15));//150
     }
     
     public void addLogoutButton(){
 		JButton logout = new JButton("Logout and Save");
-		add(Box.createRigidArea(new Dimension(0,image.getHeight()*2 + 30)));
-		add(logout, BorderLayout.PAGE_END);
+	//	add(Box.createRigidArea(new Dimension(0,(int)(ViewFrame.getFrameHeight()*0.66))));//image.getHeight()*2 + 30
+		add(logout);
+		logout.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.40) ,(int)(ViewFrame.getFrameWidth()*0.20), 30);//150
     }
     
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        int w = image.getWidth(null);
-        int h = image.getHeight(null);
+//        int w = image.getWidth(null);
+//        int h = image.getHeight(null);
 
-        g.drawImage(image, 20, naamLable.getHeight()+5, 150, 150, this);//null); 
+        g.drawImage(image, ((int)(ViewFrame.getFrameWidth()*0.20)-150)/2, naamLable.getHeight(), 150, 150, this);//null); 
     }
 	@Override
 	public Dimension getPreferredSize() {
-		int w = 150;
-		int h = 250;// * percent / 100;
+		int w = (int)(ViewFrame.getFrameWidth()*0.25);//150;
+		int h = (int)(ViewFrame.getFrameHeight()*0.25);//250;// * percent / 100;
 		return new Dimension(w,h);
 	}
 

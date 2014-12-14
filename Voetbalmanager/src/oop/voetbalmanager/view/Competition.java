@@ -56,13 +56,13 @@ public class Competition extends JPanel{
 		table.setRowHeight(table.getRowHeight() * 3);
 		table.setDefaultRenderer(String.class, new MultiLineCellRenderer());
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.getColumnModel().getColumn(0).setPreferredWidth(345);
+		table.getColumnModel().getColumn(0).setPreferredWidth((int)(ViewFrame.getFrameWidth()*0.348));//345);
 	
 		JScrollPane	pane = new JScrollPane(){
 			@Override
 			public Dimension getPreferredSize() {
-			int w = 350;
-			int h = 500;// * percent / 100;
+			int w = (int)(ViewFrame.getFrameWidth()*0.35);//350;
+			int h = (int)(ViewFrame.getFrameHeight()*0.90);//500;// * percent / 100;
 			return new Dimension(w,h);
 			}
 		};

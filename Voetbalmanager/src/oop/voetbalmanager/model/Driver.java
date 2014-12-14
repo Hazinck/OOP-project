@@ -7,9 +7,9 @@ public class Driver {
 
 	final static File folder = new File(TXTreader.pathTxt);
 	
-/*	public static void main(String[] args) {
-		
-		XMLreader reader = new XMLreader();
+	public static void main(String[] args) {
+	
+	/*	XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie();
 		
 		System.out.println(divisie.toString());
@@ -41,6 +41,11 @@ public class Driver {
 		
 /*		//teams, spelers bijvullen
 		TXTreader.listFilesForFolder(folder);
-	}*/
+	
+		//Teams info toevoegen
+		TXTreader.addTeamInfo("teamInfo.txt");
+*/	
+	}
+	
 
 }

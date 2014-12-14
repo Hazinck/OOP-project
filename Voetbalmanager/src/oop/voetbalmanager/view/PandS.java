@@ -94,7 +94,7 @@ public class PandS extends JPanel{
 	        		Color.decode("333333")));//("Change Username and Password") title);
 		    BoxLayout layoutUP = new BoxLayout(userPass, BoxLayout.Y_AXIS);
 		    userPass.setLayout(layoutUP);
-		    userPass.setPreferredSize(new Dimension(500,170));
+		    userPass.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.283)));//500,170));
 		    userPass.setBackground(null);
 		    
 		    JComponent fields = fields();
@@ -111,7 +111,7 @@ public class PandS extends JPanel{
 	        		Color.decode("333333")));//("Change avatar") title);
 	        BoxLayout layoutAv = new BoxLayout(avatar, BoxLayout.X_AXIS);
 		    avatar.setLayout(layoutAv);
-		    avatar.setPreferredSize(new Dimension(500,200));
+		    avatar.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.33)));//500,200));
 		    avatar.setBackground(null);
 		    
 		    ImagePanel imgP = new ImagePanel(vframe);
@@ -140,7 +140,7 @@ public class PandS extends JPanel{
 	        		Color.decode("333333")));//("Change avatar") title);
 	        BoxLayout layoutAv = new BoxLayout(save, BoxLayout.X_AXIS);
 		    save.setLayout(layoutAv);
-		    save.setPreferredSize(new Dimension(500,100));
+		    save.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.167)));//500,100));
 		    save.setBackground(null);
 		    
 		   
@@ -149,12 +149,13 @@ public class PandS extends JPanel{
 		    JButton del = new JButton("Delete");
 		    
 		    Box buttonBox = Box.createHorizontalBox();
-		    save.add(Box.createRigidArea(new Dimension(70,0)));
+		    save.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));//70
+            
 		    buttonBox.add(imp);
-		    buttonBox.add(Box.createRigidArea(new Dimension(70,0)));
+		    buttonBox.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));
 		    buttonBox.add(exp);
 		//    save.add(buttonBox, BorderLayout.WEST);
-		    buttonBox.add(Box.createRigidArea(new Dimension(70,0)));
+		    buttonBox.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));
 		    buttonBox.add(del);
 		    
 		    save.add(buttonBox, BorderLayout.CENTER);
