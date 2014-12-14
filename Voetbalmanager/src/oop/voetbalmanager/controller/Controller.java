@@ -2,6 +2,7 @@ package oop.voetbalmanager.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.swing.JButton;
@@ -9,9 +10,12 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
 import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Spel;
+import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
+import oop.voetbalmanager.model.XMLreader;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -29,6 +33,9 @@ public class Controller {
 	private TeamPanel teamPanel;
 	private Competition comp;
 	private PandS ps;
+	private ArrayList<String> ranglijst = new ArrayList<String>();
+	
+	
 	
 	public Controller(ViewFrame viewFrame, Login l, Home home, TeamPanel teamPanel, Competition comp, PandS ps) {
 		this.viewFrame = viewFrame;
@@ -41,7 +48,7 @@ public class Controller {
 	}
 
 	public void contol() {
-
+		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
 		
 		ActionListener actionListener = new ActionListener() {
              public void actionPerformed(ActionEvent actionEvent) { 
@@ -51,6 +58,7 @@ public class Controller {
              //   controlPanel2();
                 addLogoutListener();
                 play();
+                ranking();
              }
        };                
        l.getButton().addActionListener(actionListener);   
@@ -95,6 +103,8 @@ public class Controller {
    		tabs.getTable().getTable().setValueAt(User.getTeam().getScore(),2,1);
    		tabs.getTable().getTable().setValueAt(User.getTeam().getRank(),3,1);
    		tabs.getTable().getTable().setValueAt(Bot.getBotTeam().getNaam(),4,1);
+   		ranking();
+   	//	teamPanel.get;
 	}
 	
 	public void spel(Spel s){
@@ -124,4 +134,26 @@ public class Controller {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	public void ranking(){
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie();
+		
+		for(int i = 0; i<18; i++){
+			int rank = divisie.getTeamList().get(i).getRank();
+			
+			String team = rank + ". " + divisie.getTeamList().get(i).getNaam() + " " + divisie.getTeamList().get(i).getScore();
+			ranglijst.set(rank-1, team);
+		}
+		
+		String rankList="";
+		
+		for(String s: ranglijst){
+			rankList += s + "\n";
+		}
+		
+		home.getHr().getRankings().setText(rankList);
+	}
+	
 }

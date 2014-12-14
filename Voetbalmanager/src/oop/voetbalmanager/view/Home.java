@@ -18,10 +18,10 @@ public class Home extends JPanel{
 		setLayout(null);
 		
 		add(hm);
-		hm.setBounds(0, 0, (int)(ViewFrame.getFrameWidth()*0.70), (int)(ViewFrame.getFrameHeight()));
+		hm.setBounds(0, 0, (int)(ViewFrame.getFrameWidth()*0.63), (int)(ViewFrame.getFrameHeight()));
 		
 		add(hr);
-		hr.setBounds((int)(ViewFrame.getFrameWidth()*0.70), 0, (int)(ViewFrame.getFrameWidth()*0.29), (int)(ViewFrame.getFrameHeight()));
+		hr.setBounds((int)(ViewFrame.getFrameWidth()*0.63), 0, (int)(ViewFrame.getFrameWidth()*0.46), (int)(ViewFrame.getFrameHeight()));
 	}
 
 	/**

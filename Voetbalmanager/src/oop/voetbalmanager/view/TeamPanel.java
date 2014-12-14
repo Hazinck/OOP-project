@@ -10,6 +10,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 import javax.imageio.ImageIO;
@@ -22,8 +23,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JSlider;
 import javax.swing.border.TitledBorder;
 
+import oop.voetbalmanager.model.User;
+
 
 public class TeamPanel extends JPanel{
+	
+	JPanel opstelling = new JPanel();
 	
 	public TeamPanel(){		
         add(spelerlijst());
@@ -55,7 +60,7 @@ public class TeamPanel extends JPanel{
 	}
 	
 	public JPanel opstelling() {
-		JPanel opstelling = new JPanel();
+		
 		opstelling.setBorder(BorderFactory.createTitledBorder(null, "Opstelling", 
 				TitledBorder.CENTER, TitledBorder.TOP));
 		opstelling.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.375), (int)(ViewFrame.getFrameHeight()*0.75)));//375, 370));
@@ -126,7 +131,12 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		  private int playerNum;
 		  
 		  public Opstelling()  {
-			  String team = "Ajax";
+			  String team = User.getTeam().getNaam();
+			  
+			  ArrayList<String> spelers = new ArrayList<String>();
+			  for(int i = 0; i<11; i++){
+				  spelers.add(User.getTeam().getSpelerList().get(i).getNaam());
+			  }
 			  
 			  setLayout(null);
 		    try{
@@ -152,9 +162,9 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		    	for(int i = 0; i<11; i++){
 		    		playerBounds[i] = new Rectangle(playerPos[i].width -18, playerPos[i].height -20, 36, 40);
 		    		
-		    		playersDDList[i] = new JComboBox();
-		    		playersDDList[i].setBounds((int)playerPos[i].getWidth()-18, (int)playerPos[i].getHeight()+20,
-		    	    		36, 20);
+		    		playersDDList[i] = new JComboBox(spelers.toArray());
+		    		playersDDList[i].setBounds((int)playerPos[i].getWidth()-50, (int)playerPos[i].getHeight()+20,
+		    	    		100, 20);
 		    		add(playersDDList[i]);
 		    	}
 		    }
@@ -212,8 +222,8 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 						  int y = yBounds(point);
 						  playerPos[playerNum] = new Dimension(x, y);
 						  playerBounds[playerNum] = new Rectangle(playerPos[playerNum].width-18 ,playerPos[playerNum].height-20 ,36, 40);
-						  playersDDList[playerNum].setBounds((int)playerPos[playerNum].getWidth()-18, (int)playerPos[playerNum].getHeight()+20,
-				    	    		36, 20);
+						  playersDDList[playerNum].setBounds((int)playerPos[playerNum].getWidth()-50, (int)playerPos[playerNum].getHeight()+20,
+				    	    		100, 20);
 					  }
 //				  }
 				  repaint();

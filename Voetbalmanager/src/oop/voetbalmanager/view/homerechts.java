@@ -60,12 +60,24 @@ public class homerechts extends JPanel {
 //		c.gridy = 0;
 		add(titel);//,c);
 		titel.setBounds(0, 10,
-				(int)(ViewFrame.getFrameWidth()*0.08), (int)(ViewFrame.getFrameHeight()*0.10));
+				(int)(ViewFrame.getFrameWidth()*0.16), (int)(ViewFrame.getFrameHeight()*0.10));
 //		c.ipady = (int)(ViewFrame.getFrameHeight()*0.667);//400;      
 //		c.gridx = 0;
 //		c.gridy = 1;
 		add(rankings);//, c);
 		rankings.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.10+10) ,
-				(int)(ViewFrame.getFrameWidth()*0.08), (int)(ViewFrame.getFrameHeight()*0.80));
+				(int)(ViewFrame.getFrameWidth()*0.16), (int)(ViewFrame.getFrameHeight()*0.80));
+	}
+	/**
+	 * @return the rankings
+	 */
+	public JTextPane getRankings() {
+		return rankings;
+	}
+	/**
+	 * @param rankings the rankings to set
+	 */
+	public void setRankings(JTextPane rankings) {
+		this.rankings = rankings;
 	}
 }
