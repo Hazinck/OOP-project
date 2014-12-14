@@ -16,6 +16,20 @@ public class Team {
 	private int score;
 	private double budget;
 	
+	/**
+	 * 
+	 * @param naam
+	 * @param rank
+	 * @param spelerList
+	 * @param winst
+	 * @param verlies
+	 * @param gelijkspel
+	 * @param doelsaldo
+	 * @param doeltegen
+	 * @param doelvoor
+	 * @param budget
+	 * @param score
+	 */
 	public Team(String naam, int rank, ArrayList<Speler> spelerList,int winst,
 					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, double budget, int score){
 		this.naam = naam;
