@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jdom2.DataConversionException;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -66,7 +67,7 @@ public class XMLreader {
 			int doelsaldo = Integer.parseInt(teamEl.getChildText("doelsaldo"));
 			int doeltegen = Integer.parseInt(teamEl.getChildText("doeltegen"));
 			int doelvoor = Integer.parseInt(teamEl.getChildText("doelvoor"));
-			long budget = Long.parseLong(teamEl.getChildText("budget"));
+			double budget = Double.parseDouble(teamEl.getChildText("budget"));
 			int score = Integer.parseInt(teamEl.getChildText("score"));
 			Team team = new Team(teamNaam, rank, spelerList, winst, verlies, 
 										gelijkspel, doelsaldo, doeltegen, doelvoor, budget, score);
@@ -86,13 +87,21 @@ public class XMLreader {
 			//parse teamNaam, rank, get spelerList ...
 			Element spelerEl = (Element) spelerElementList.get(i);
 			String spelerNaam = spelerEl.getChildText("naam");
-			int nummer = Integer.parseInt(spelerEl.getChildText("nummer"));
+		//	System.out.println(spelerEl.getAttribute("id") + " "+ spelerNaam+" "+team.getChildText("naam"));
+			int nummer=-1;
+			try {
+				nummer = spelerEl.getAttribute("id").getIntValue();
+			} catch (DataConversionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}//Integer.parseInt(spelerEl.getChildText("nummer"));
 			String type = spelerEl.getChildText("type");
-			int offense = Integer.parseInt(spelerEl.getChildText("offense"));
+			int offense = Integer.parseInt(spelerEl.getChildText("offense"));			
 			int defence = Integer.parseInt(spelerEl.getChildText("defence"));
 			int uithouding = Integer.parseInt(spelerEl.getChildText("uithouding"));
 			String beschikbaarheid = spelerEl.getChildText("beschikbaarheid");
-			int prijs = Integer.parseInt(spelerEl.getChildText("prijs"));
+	//		int prijs = Integer.parseInt(spelerEl.getChildText("prijs"));
+			int prijs = 10000;
 			
 			Speler speler = new Speler(spelerNaam, nummer, type, offense, defence, uithouding, beschikbaarheid, prijs);
 			spelerList.add(speler);

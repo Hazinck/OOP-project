@@ -159,6 +159,15 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
+    <rank>9</rank>
+    <winst>12</winst>
+    <gelijkspel>7</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>45</doelvoor>
+    <doeltegen>64</doeltegen>
+    <doelsaldo>-19</doelsaldo>
+    <score>43</score>
+    <budget>13.6</budget>
   </team>
   <team id="02">
     <naam>Ajax</naam>
@@ -293,6 +302,7 @@
       <type>middenvelder</type>
       <uithouding>75</uithouding>
       <offense>51</offense>
+      <defence>60</defence>
     </speler>
     <speler id="0220">
       <naam>Robert Muric</naam>
@@ -357,6 +367,15 @@
       <offense>0</offense>
       <defence>64</defence>
     </speler>
+    <rank>1</rank>
+    <winst>20</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>3</verlies>
+    <doelvoor>69</doelvoor>
+    <doeltegen>28</doeltegen>
+    <doelsaldo>41</doelsaldo>
+    <score>71</score>
+    <budget>65</budget>
   </team>
   <team id="03">
     <naam>AZ</naam>
@@ -372,6 +391,7 @@
       <type>middenvelder</type>
       <uithouding>65</uithouding>
       <defence>68</defence>
+      <offense>70</offense>
     </speler>
     <speler id="033">
       <naam>Derrick Luckassen</naam>
@@ -513,6 +533,15 @@
       <offense>0</offense>
       <defence>60</defence>
     </speler>
+    <rank>8</rank>
+    <winst>13</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>13</verlies>
+    <doelvoor>54</doelvoor>
+    <doeltegen>50</doeltegen>
+    <doelsaldo>4</doelsaldo>
+    <score>47</score>
+    <budget>28</budget>
   </team>
   <team id="04">
     <naam>Excelsior</naam>
@@ -670,6 +699,15 @@
       <offense>64</offense>
       <defence>27</defence>
     </speler>
+    <rank>17</rank>
+    <winst>5</winst>
+    <gelijkspel>15</gelijkspel>
+    <verlies>14</verlies>
+    <doelvoor>54</doelvoor>
+    <doeltegen>82</doeltegen>
+    <doelsaldo>-28</doelsaldo>
+    <score>30</score>
+    <budget>2.7</budget>
   </team>
   <team id="05">
     <naam>FC Dordrecht</naam>
@@ -834,6 +872,15 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
+    <rank>18</rank>
+    <winst>7</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>19</verlies>
+    <doelvoor>44</doelvoor>
+    <doeltegen>69</doeltegen>
+    <doelsaldo>-25</doelsaldo>
+    <score>29</score>
+    <budget>2.1</budget>
   </team>
   <team id="06">
     <naam>FC Groningen</naam>
@@ -984,6 +1031,15 @@
       <offense>0</offense>
       <defence>68</defence>
     </speler>
+    <rank>7</rank>
+    <winst>14</winst>
+    <gelijkspel>9</gelijkspel>
+    <verlies>11</verlies>
+    <doelvoor>57</doelvoor>
+    <doeltegen>53</doeltegen>
+    <doelsaldo>4</doelsaldo>
+    <score>51</score>
+    <budget>18</budget>
   </team>
   <team id="07">
     <naam>FC Twente</naam>
@@ -1162,6 +1218,15 @@
       <offense>0</offense>
       <defence>60</defence>
     </speler>
+    <rank>3</rank>
+    <winst>17</winst>
+    <gelijkspel>12</gelijkspel>
+    <verlies>5</verlies>
+    <doelvoor>72</doelvoor>
+    <doeltegen>37</doeltegen>
+    <doelsaldo>35</doelsaldo>
+    <score>63</score>
+    <budget>46</budget>
   </team>
   <team id="08">
     <naam>FC Utrecht</naam>
@@ -1354,6 +1419,15 @@
       <offense>0</offense>
       <defence>65</defence>
     </speler>
+    <rank>10</rank>
+    <winst>11</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>46</doelvoor>
+    <doeltegen>65</doeltegen>
+    <doelsaldo>-19</doelsaldo>
+    <score>41</score>
+    <budget>17</budget>
   </team>
   <team id="09">
     <naam>Feyenoord</naam>
@@ -1467,6 +1541,7 @@
       <type>verdediger</type>
       <offense>58</offense>
       <defence>67</defence>
+      <uithouding>80</uithouding>
     </speler>
     <speler id="0917">
       <naam>Mitchell te Vrede</naam>
@@ -1552,6 +1627,15 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
+    <rank>2</rank>
+    <winst>20</winst>
+    <gelijkspel>7</gelijkspel>
+    <verlies>7</verlies>
+    <doelvoor>76</doelvoor>
+    <doeltegen>40</doeltegen>
+    <doelsaldo>36</doelsaldo>
+    <score>67</score>
+    <budget>35</budget>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
@@ -1723,9 +1807,18 @@
       <offense>0</offense>
       <defence>57</defence>
     </speler>
+    <rank>13</rank>
+    <winst>10</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>16</verlies>
+    <doelvoor>45</doelvoor>
+    <doeltegen>69</doeltegen>
+    <doelsaldo>-24</doelsaldo>
+    <score>38</score>
+    <budget>5.2</budget>
   </team>
   <team id="011">
-    <naam>Heracles Amelo</naam>
+    <naam>Heracles Almelo</naam>
     <speler id="0111">
       <naam>Aleksei Kangaskolkka</naam>
       <type>aanvaller</type>
@@ -1936,6 +2029,15 @@
       <offense>0</offense>
       <defence>59</defence>
     </speler>
+    <rank>14</rank>
+    <winst>10</winst>
+    <gelijkspel>7</gelijkspel>
+    <verlies>17</verlies>
+    <doelvoor>45</doelvoor>
+    <doeltegen>59</doeltegen>
+    <doelsaldo>-14</doelsaldo>
+    <score>37</score>
+    <budget>9</budget>
   </team>
   <team id="012">
     <naam>NAC Breda</naam>
@@ -1958,6 +2060,7 @@
       <type>middenvelder</type>
       <uithouding>66</uithouding>
       <defence>38</defence>
+      <offense>60</offense>
     </speler>
     <speler id="0124">
       <naam>Gill Swerts</naam>
@@ -2085,6 +2188,15 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
+    <rank>15</rank>
+    <winst>8</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>43</doelvoor>
+    <doeltegen>54</doeltegen>
+    <doelsaldo>-11</doelsaldo>
+    <score>35</score>
+    <budget>14</budget>
   </team>
   <team id="013">
     <naam>PEC Zwolle</naam>
@@ -2249,6 +2361,15 @@
       <offense>0</offense>
       <defence>63</defence>
     </speler>
+    <rank>11</rank>
+    <winst>9</winst>
+    <gelijkspel>13</gelijkspel>
+    <verlies>12</verlies>
+    <doelvoor>47</doelvoor>
+    <doeltegen>49</doeltegen>
+    <doelsaldo>-2</doelsaldo>
+    <score>40</score>
+    <budget>10.9</budget>
   </team>
   <team id="014">
     <naam>PSV</naam>
@@ -2441,6 +2562,15 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
+    <rank>4</rank>
+    <winst>18</winst>
+    <gelijkspel>5</gelijkspel>
+    <verlies>11</verlies>
+    <doelvoor>60</doelvoor>
+    <doeltegen>45</doeltegen>
+    <doelsaldo>15</doelsaldo>
+    <score>59</score>
+    <budget>62</budget>
   </team>
   <team id="015">
     <naam>SC Cambuur</naam>
@@ -2619,6 +2749,15 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
+    <rank>12</rank>
+    <winst>10</winst>
+    <gelijkspel>9</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>40</doelvoor>
+    <doeltegen>50</doeltegen>
+    <doelsaldo>-10</doelsaldo>
+    <score>39</score>
+    <budget>6.5</budget>
   </team>
   <team id="016">
     <naam>SC Heerenveen</naam>
@@ -2811,6 +2950,15 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
+    <rank>5</rank>
+    <winst>16</winst>
+    <gelijkspel>9</gelijkspel>
+    <verlies>9</verlies>
+    <doelvoor>72</doelvoor>
+    <doeltegen>51</doeltegen>
+    <doelsaldo>21</doelsaldo>
+    <score>57</score>
+    <budget>22</budget>
   </team>
   <team id="017">
     <naam>Vitesse</naam>
@@ -2961,6 +3109,15 @@
       <offense>0</offense>
       <defence>60</defence>
     </speler>
+    <rank>6</rank>
+    <winst>15</winst>
+    <gelijkspel>10</gelijkspel>
+    <verlies>9</verlies>
+    <doelvoor>65</doelvoor>
+    <doeltegen>49</doeltegen>
+    <doelsaldo>16</doelsaldo>
+    <score>55</score>
+    <budget>30</budget>
   </team>
   <team id="018">
     <naam>Willem II</naam>
@@ -3132,5 +3289,14 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
+    <rank>16</rank>
+    <winst>7</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>16</verlies>
+    <doelvoor>44</doelvoor>
+    <doeltegen>64</doeltegen>
+    <doelsaldo>-20</doelsaldo>
+    <score>32</score>
+    <budget>5.6</budget>
   </team>
 </divisie>

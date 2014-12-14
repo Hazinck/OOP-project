@@ -15,7 +15,7 @@ public class TXTreader {
 	
 	private static XMLwriter writer = new XMLwriter();
 	
-	public static void read(String teamFile, String teamNaam){
+	public static void readTeam(String teamFile, String teamNaam){
 			String file = pathTxt + teamFile;
 		//	File input = new File(file);
 			Scanner sc;
@@ -30,6 +30,54 @@ public class TXTreader {
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
+	}
+	
+	public static void addTeamInfo(String infoFile){
+		String file = infoFile;
+	//	File input = new File(file);
+		Scanner sc;
+		try {
+			
+			sc = new Scanner(new BufferedReader(new FileReader(file)));
+		//	System.out.println(file+" "+ sc.hasNext());
+			while(sc.hasNextLine()){
+				
+				parseInfo(sc);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void parseInfo(Scanner sc){
+		String team = sc.nextLine();
+		//player array
+		String[] pA = team.split("/");
+		String naam = pA[0];
+		String rank = pA[1];
+		String winst = pA[2];
+		String gelijkspel = pA[3];
+		String verlies = pA[4];
+		String doelvoor = pA[5];
+		String doeltegen = pA[6];
+		String doelsaldo = pA[7];
+		String punten = pA[8];
+		String budget = pA[9];//in mln
+		
+		System.out.println("Team: "+naam+", rank: "+rank+", winst: "+winst+", gelijkspel: "+gelijkspel+
+					", verlies: "+verlies+", doelvoor: "+doelvoor+", doeltegen: "+doeltegen+
+					", doelsaldo: "+doelsaldo+", punten: "+punten+", budget: "+budget);
+		
+	//	toevoegen aan XML
+		writer.updaten("team" , naam, "rank", rank);
+		writer.updaten("team" , naam, "winst", winst);
+		writer.updaten("team" , naam, "gelijkspel", gelijkspel);
+		writer.updaten("team" , naam, "verlies", verlies);
+		writer.updaten("team" , naam, "doelvoor", doelvoor);
+		writer.updaten("team" , naam, "doeltegen", doeltegen);
+		writer.updaten("team" , naam, "doelsaldo", doelsaldo);
+		writer.updaten("team" , naam, "score", punten);
+		writer.updaten("team" , naam, "budget", budget);
 	}
 	
 	public static void parse(Scanner sc, String teamNaam){
@@ -82,7 +130,7 @@ public class TXTreader {
 	            //toevoegen aan XML
 	            writer.add("divisie", "Eredivisie", "team", teamNaam);
 	      //    System.out.println("========================\n"+"Team: "+teamNaam);
-	            read(teamFile, teamNaam);
+	            readTeam(teamFile, teamNaam);
 	        }
 	    }
 	    System.out.println(teams.toString());

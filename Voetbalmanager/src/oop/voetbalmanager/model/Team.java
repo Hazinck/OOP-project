@@ -14,10 +14,10 @@ public class Team {
 	private int doeltegen;
 	private int doelvoor;
 	private int score;
-	private long budget;
+	private double budget;
 	
 	public Team(String naam, int rank, ArrayList<Speler> spelerList,int winst,
-					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, long budget, int score){
+					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, double budget, int score){
 		this.naam = naam;
 		this.rank = rank;
 		this.spelerList = spelerList;
@@ -130,7 +130,7 @@ public class Team {
 	}
 
 
-	public long getBudget() {
+	public double getBudget() {
 		return budget;
 	}
 
