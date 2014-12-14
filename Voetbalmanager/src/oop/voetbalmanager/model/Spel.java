@@ -37,12 +37,12 @@ public class Spel {
 		
 		if(teamUserResult > teamBotResult){
 			winner = userTeam;
-			if(geluksfactor > teamUserResult){
+			if(geluksfactor > teamBotResult){
 				winner  = botTeam;
 			}
 		}else if(teamUserResult < teamBotResult){
 			winner = botTeam;
-			if(geluksfactor > teamBotResult){
+			if(geluksfactor > teamUserResult){
 				winner  = userTeam;
 			}
 		}else{

@@ -18,7 +18,7 @@ public class ViewFrame extends JFrame{
 	
 	//tijdelijk
 	private String username = User.getNaam();//"Kamran Tadzjibov";
-	private String teamNaam = User.getTeam();//"Go Ahead Eagles";
+	private String teamNaam = User.getTeam().getNaam();//"Go Ahead Eagles";
 	private String imgPath = System.getProperty("user.dir") + "/images/";
 	private String imgName = "user_default.png";
 	

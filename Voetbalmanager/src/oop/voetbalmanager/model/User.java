@@ -2,15 +2,15 @@ package oop.voetbalmanager.model;
 
 public class User {
 	private static String naam;
-	private static String team;
+	private static Team team;
 	
-	public User(String naam, String team){
+	public User(String naam, Team team){
 		setNaam(naam);//this.naam = naam;
 		setTeam(team);//this.team = team;
 	}
 	
 	public String toString(){
-		return "Naam:" + naam + "/nTeam:" + "team";
+		return "Naam:" + naam + "/nTeam:" + team.getNaam();
 	}
 
 	public static String getNaam() {
@@ -21,11 +21,11 @@ public class User {
 		User.naam = naam;
 	}
 
-	public static String getTeam() {
+	public static Team getTeam() {
 		return team;
 	}
 
-	public static void setTeam(String team) {
+	public static void setTeam(Team team) {
 		User.team = team;
 	}
 	

@@ -47,16 +47,16 @@ public class Driver {
 	
 		//Teams info toevoegen
 		TXTreader.addTeamInfo("teamInfo.txt");
-*/	
+	
 		
 		//spel
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie();
 		Team team1 = divisie.getTeamList().get(1);
 		Team team2 = divisie.getTeamList().get(8);
-		Spel s = new Spel(team1, team2, 1000);
-		System.out.println(s.winner());
-		
+		Spel s = new Spel(User.getTeam(), team2, 401);
+		System.out.println(s.winner().getNaam());
+*/		
 		
 	}
 	

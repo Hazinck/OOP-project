@@ -1,17 +1,29 @@
 package oop.voetbalmanager.view;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
-
-import java.awt.*;
 public class homemidden extends JPanel {
 	private JTextPane scores;
 	private JTextPane goals;
 	private imgpanel image;
+	private JButton play;
 	
 	public homemidden(){
+		play = new JButton("Play!");
+		add(play);
+		play.setBounds((int)(ViewFrame.getFrameWidth()*0.45), (int)(ViewFrame.getFrameHeight()*0.80),
+	    		100, 30);
+		
 		GridBagLayout gl=new GridBagLayout();
 		GridBagConstraints c= new GridBagConstraints();
 		setLayout(gl);
@@ -44,7 +56,6 @@ public class homemidden extends JPanel {
 		goals.setEditable(false);
 		image=new imgpanel("images/football.jpg");
 		
-		
 		c.fill=GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 0;
@@ -54,11 +65,19 @@ public class homemidden extends JPanel {
 		c.gridx = 0;
 		c.gridy = 1;
 		add(goals,c);
-		c.ipady= (int)(ViewFrame.getFrameHeight()*0.5);//300;
+		c.ipady= (int)(ViewFrame.getFrameHeight()*0.6);//300;*0.5
 		c.gridx = 0;
 		c.gridy = 3;
 		add(image,c);
 		
+		
+	}
+
+	/**
+	 * @return the play
+	 */
+	public JButton getPlay() {
+		return play;
 	}
 	
 }
