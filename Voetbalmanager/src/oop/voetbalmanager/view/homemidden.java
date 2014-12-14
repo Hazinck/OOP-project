@@ -59,7 +59,7 @@ public class homemidden extends JPanel {
 //		c.gridy = 0;
 		add(scores);//,c);
 		scores.setBounds((int)(ViewFrame.getFrameWidth()*0.01), 10 ,
-				(int)(ViewFrame.getFrameWidth()*0.70), (int)(ViewFrame.getFrameHeight()*0.20));
+				(int)(ViewFrame.getFrameWidth()*0.62), (int)(ViewFrame.getFrameHeight()*0.20));
 //		c.ipady = (int)(ViewFrame.getFrameHeight()*0.167);//100;      
 //		c.ipadx = (int)(ViewFrame.getFrameWidth()*0.5);//468;
 //		c.gridx = 0;
@@ -67,7 +67,7 @@ public class homemidden extends JPanel {
 		JScrollPane jspGoals = new JScrollPane(goals);
 		add(jspGoals);//,c);
 		jspGoals.setBounds((int)(ViewFrame.getFrameWidth()*0.01), (int)(ViewFrame.getFrameHeight()*0.20) + 15 ,
-				(int)(ViewFrame.getFrameWidth()*0.70), (int)(ViewFrame.getFrameHeight()*0.30));
+				(int)(ViewFrame.getFrameWidth()*0.62), (int)(ViewFrame.getFrameHeight()*0.30));
 //		c.ipady= (int)(ViewFrame.getFrameHeight()*0.6);//300;*0.5
 //		c.gridx = 0;
 //		c.gridy = 3;

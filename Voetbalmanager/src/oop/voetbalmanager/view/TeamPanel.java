@@ -15,6 +15,7 @@ import java.util.Hashtable;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -69,7 +70,8 @@ public class TeamPanel extends JPanel{
 		JComboBox keuze = new JComboBox();
 		keuze.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.25), (int)(ViewFrame.getFrameHeight()*0.04)));//250, 25));
 		opstelling.add(keuze);
-		
+		JButton opslaan = new JButton("Opstelling opslaan");
+		opstelling.add(opslaan);
 //		imgpanel image = new imgpanel("images/veldTopVert_small.png");
 //		image.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.217), (int)(ViewFrame.getFrameHeight()*0.66)));//297,475));
 		Opstelling opst = new Opstelling();
@@ -162,6 +164,8 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		    	for(int i = 0; i<11; i++){
 		    		playerBounds[i] = new Rectangle(playerPos[i].width -18, playerPos[i].height -20, 36, 40);
 		    		
+		    		roteer(spelers);
+		    		
 		    		playersDDList[i] = new JComboBox(spelers.toArray());
 		    		playersDDList[i].setBounds((int)playerPos[i].getWidth()-50, (int)playerPos[i].getHeight()+20,
 		    	    		100, 20);
@@ -173,7 +177,16 @@ class Opstelling extends JPanel implements MouseListener, MouseMotionListener{
 		    addMouseMotionListener(this);
 		 }
 		  
-
+		  public void roteer(ArrayList<String> list){
+				int n=list.size();
+				String temp = list.get(0);
+				for(int i=0; i<n-2; i++){
+					list.set(i, list.get(i+1));
+				}
+				list.set(n-2, temp);
+				//System.out.println(list);
+		  }
+		  
 		  public void paintComponent(Graphics g) {
 		    super.paintComponent(g);
 		    g.drawImage(backgroundImage, 0, 0, 
