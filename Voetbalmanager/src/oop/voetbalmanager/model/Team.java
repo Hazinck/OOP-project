@@ -169,5 +169,12 @@ public class Team {
 		this.score = score;
 	}
 
-
+	public boolean equals(Object obj) {
+		if (obj instanceof Team){
+			Team that = (Team)obj;
+			return this.naam.equals(that.naam);
+		} else {
+			return false;
+		}
+	}
 }
