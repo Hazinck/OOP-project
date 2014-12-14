@@ -17,8 +17,8 @@ public class ViewFrame extends JFrame{
 	public JPanel controlPanel;
 	
 	//tijdelijk
-	private String username = User.getNaam();//"Kamran Tadzjibov";
-	private String teamNaam = User.getTeam().getNaam();//"Go Ahead Eagles";
+//	private String username = User.getNaam();//"Kamran Tadzjibov";
+//	private String teamNaam = User.getTeam().getNaam();//"Go Ahead Eagles";
 	private String imgPath = System.getProperty("user.dir") + "/images/";
 	private String imgName = "user_default.png";
 	
@@ -73,20 +73,7 @@ public class ViewFrame extends JFrame{
 		return frameHeight;
 	}
 
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
-	}
-
-	/**
-	 * @return the teamNaam
-	 */
-	public String getTeamNaam() {
-		return teamNaam;
-	}
-
+	
 	/**
 	 * @return the imgPath
 	 */

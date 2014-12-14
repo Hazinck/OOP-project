@@ -1,5 +1,9 @@
 package oop.voetbalmanager.model;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class Spel {
 	
 	private Team userTeam;
@@ -78,6 +82,28 @@ public class Spel {
 		return (int)result;
 	}
 	
-	
+	public ArrayList<String> verslag(){
+		String uOpstelling="";
+		String bOpstelling="";
+		for(int i=0; i<11; i++){
+			if(i==userTeam.getSpelerList().size()-1){
+				uOpstelling += userTeam.getSpelerList().get(i).getNaam() + ".";
+				bOpstelling += botTeam.getSpelerList().get(i).getNaam() + ".";
+			}
+			else{
+				uOpstelling += userTeam.getSpelerList().get(i).getNaam() + ", ";
+				bOpstelling += botTeam.getSpelerList().get(i).getNaam() + ", ";
+			}
+		}
+		
+		ArrayList<String> verslag = new ArrayList<String>();
+		
+		verslag.add("Welkom bij het liveverslag van "+userTeam.getNaam()+" thuis tegen "+botTeam.getNaam()+".");		
+		verslag.add("De opstellingen van beide teams zijn bekend en volgen nu.");
+		verslag.add("Opstelling "+userTeam.getNaam()+": "+uOpstelling);
+		verslag.add("Opstelling "+botTeam.getNaam()+": "+bOpstelling);
+		
+		return verslag;
+	}
 	
 }

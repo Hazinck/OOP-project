@@ -42,9 +42,9 @@ public class Driver {
 		writer.add("team", "Ajax", "speler", "Lasse Schöne");*/
 		
 		
-/*		//teams, spelers bijvullen
+		//teams, spelers bijvullen
 		TXTreader.listFilesForFolder(folder);
-	
+/*	
 		//Teams info toevoegen
 		TXTreader.addTeamInfo("teamInfo.txt");
 	

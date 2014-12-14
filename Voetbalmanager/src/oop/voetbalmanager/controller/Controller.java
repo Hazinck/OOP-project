@@ -1,8 +1,12 @@
 package oop.voetbalmanager.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.JButton;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 
 import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.RNG;
@@ -72,8 +76,8 @@ public class Controller {
 	        	int geluksfactor = RNG.getalTot(600);
 	       		Spel s = new Spel(User.getTeam(), Bot.getBotTeam(), geluksfactor);
 	       		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
-	       		home.getHm().getGoals().setText((s.winner().getNaam()+" heeft gewonnen!"));
-	       		updateStats();
+	       		spel(s);
+	       		updateStats(s);
 	       		}
 		});
 		                
@@ -81,14 +85,43 @@ public class Controller {
 		
 	}
 	
-	public void updateStats(){
+	public void updateStats(Spel s){
 		Bot.volgendeTeam();
 		int speeldag = tabs.getTable().getSpeeldag() + 1;
+		tabs.getTable().setSpeeldag(speeldag);
    		home.getHm().getScores().setText(User.getTeam().getNaam() + " VS " + Bot.getBotTeam().getNaam());
    		tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
    		tabs.getTable().getTable().setValueAt(speeldag,1,1);
    		tabs.getTable().getTable().setValueAt(User.getTeam().getScore(),2,1);
    		tabs.getTable().getTable().setValueAt(User.getTeam().getRank(),3,1);
    		tabs.getTable().getTable().setValueAt(Bot.getBotTeam().getNaam(),4,1);
+	}
+	
+	public void spel(Spel s){
+		Document doc = home.getHm().getGoals().getDocument();
+    	for(String v: s.verslag()){
+			Calendar cal = Calendar.getInstance();
+	    	cal.getTime();
+	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
+	    	System.out.println( tijd.format(cal.getTime()) );
+    		try {
+				doc.insertString(doc.getLength(), tijd.format(cal.getTime()) + " " + v + "\n", null);
+			} catch (BadLocationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	//home.getHm().getGoals().setText(tijd.format(cal.getTime()) + " " + v + "\n");
+    	}
+    	//home.getHm().getGoals().setText((s.winner().getNaam()+" heeft gewonnen!"));
+    	try {
+    		Calendar cal = Calendar.getInstance();
+	    	cal.getTime();
+	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
+			doc.insertString(doc.getLength(),tijd.format(cal.getTime()) + " " + s.winner().getNaam()+" heeft gewonnen!"
+					+ "\n\n===================================\n\n", null);
+		} catch (BadLocationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

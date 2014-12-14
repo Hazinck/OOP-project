@@ -82,7 +82,7 @@ public class Table extends JPanel{
 						 { "Punten: ",  User.getTeam().getScore()}, 
 						 { "Ranking: ", User.getTeam().getRank() }, 
 						 { "Volgende \ntegenstander: ", Bot.getBotTeam().getNaam()} 
-						 }, new Object[] { "Team", vframe.getTeamNaam() });
+						 }, new Object[] { "Team", User.getTeam().getNaam() });
 		table=new JTable(model){
 			@Override
 			public boolean isCellEditable(int row, int col) {

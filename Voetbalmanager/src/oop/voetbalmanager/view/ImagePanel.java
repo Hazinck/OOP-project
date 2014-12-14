@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import oop.voetbalmanager.model.User;
+
 public class ImagePanel extends JPanel{
 	private BufferedImage image;
 	private JButton logout;
@@ -20,7 +22,7 @@ public class ImagePanel extends JPanel{
 	JLabel naamLable = new JLabel();
 	private String username;
     public ImagePanel(ViewFrame vframe) {
-    	this.username = vframe.getUsername();
+    	this.username = User.getNaam();
     	String imgName = vframe.getImgName();
     	setLayout(null);
        try {                

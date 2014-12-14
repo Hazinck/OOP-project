@@ -1,12 +1,11 @@
 package oop.voetbalmanager.view;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
@@ -23,14 +22,9 @@ public class homemidden extends JPanel {
 	private String gameResult;
 	
 	public homemidden(){
-		playButton = new JButton("Play!");
-		add(playButton);
-		playButton.setBounds((int)(ViewFrame.getFrameWidth()*0.45), (int)(ViewFrame.getFrameHeight()*0.80),
-	    		100, 30);
-		
-		GridBagLayout gl=new GridBagLayout();
-		GridBagConstraints c= new GridBagConstraints();
-		setLayout(gl);
+//		GridBagLayout gl=new GridBagLayout();
+//		GridBagConstraints c= new GridBagConstraints();
+		setLayout(null);
 		
 		scores=new JTextPane();
 		StyledDocument score=scores.getStyledDocument();
@@ -60,19 +54,33 @@ public class homemidden extends JPanel {
 		goals.setEditable(false);
 		image=new imgpanel("images/football.jpg");
 		
-		c.fill=GridBagConstraints.HORIZONTAL;
-		c.gridx = 0;
-		c.gridy = 0;
-		add(scores,c);
-		c.ipady = (int)(ViewFrame.getFrameHeight()*0.167);//100;      
-		c.ipadx = (int)(ViewFrame.getFrameWidth()*0.5);//468;
-		c.gridx = 0;
-		c.gridy = 1;
-		add(goals,c);
-		c.ipady= (int)(ViewFrame.getFrameHeight()*0.6);//300;*0.5
-		c.gridx = 0;
-		c.gridy = 3;
-		add(image,c);
+//		c.fill=GridBagConstraints.HORIZONTAL;
+//		c.gridx = 0;
+//		c.gridy = 0;
+		add(scores);//,c);
+		scores.setBounds((int)(ViewFrame.getFrameWidth()*0.01), 10 ,
+				(int)(ViewFrame.getFrameWidth()*0.70), (int)(ViewFrame.getFrameHeight()*0.20));
+//		c.ipady = (int)(ViewFrame.getFrameHeight()*0.167);//100;      
+//		c.ipadx = (int)(ViewFrame.getFrameWidth()*0.5);//468;
+//		c.gridx = 0;
+//		c.gridy = 1;
+		JScrollPane jspGoals = new JScrollPane(goals);
+		add(jspGoals);//,c);
+		jspGoals.setBounds((int)(ViewFrame.getFrameWidth()*0.01), (int)(ViewFrame.getFrameHeight()*0.20) + 15 ,
+				(int)(ViewFrame.getFrameWidth()*0.70), (int)(ViewFrame.getFrameHeight()*0.30));
+//		c.ipady= (int)(ViewFrame.getFrameHeight()*0.6);//300;*0.5
+//		c.gridx = 0;
+//		c.gridy = 3;
+		add(image);//,c);
+		image.setBounds((int)(ViewFrame.getFrameWidth()*0.01), (int)(ViewFrame.getFrameHeight()*0.50) + 15 ,
+				(int)(ViewFrame.getFrameWidth()*0.40), (int)(ViewFrame.getFrameHeight()*0.40));
+		
+		playButton = new JButton("Play!");
+		Font playFont = new Font("Serif", Font.BOLD, 25);
+		playButton.setFont(playFont);
+		add(playButton);
+		playButton.setBounds((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.70),
+	    		150, 50);
 		
 		
 	}

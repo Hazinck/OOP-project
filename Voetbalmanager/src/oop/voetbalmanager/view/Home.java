@@ -15,11 +15,13 @@ public class Home extends JPanel{
 	
 	public Home(){
 	//	playButton = hm.getPlayButton();
+		setLayout(null);
 		
 		add(hm);
+		hm.setBounds(0, 0, (int)(ViewFrame.getFrameWidth()*0.70), (int)(ViewFrame.getFrameHeight()));
 		
 		add(hr);
-		
+		hr.setBounds((int)(ViewFrame.getFrameWidth()*0.70), 0, (int)(ViewFrame.getFrameWidth()*0.29), (int)(ViewFrame.getFrameHeight()));
 	}
 
 	/**
