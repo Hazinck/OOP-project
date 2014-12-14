@@ -2,6 +2,8 @@ package oop.voetbalmanager.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -27,6 +29,7 @@ public class Controller {
 		this.teamPanel = teamPanel;
 		this.comp = comp;
 		this.ps = ps;
+
 	}
 
 	public void contol() {
@@ -35,15 +38,26 @@ public class Controller {
 		ActionListener actionListener = new ActionListener() {
              public void actionPerformed(ActionEvent actionEvent) { 
             	 System.out.println("Inloggen");
-            	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
+            	tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
                 tabs.showThis(l);
              //   controlPanel2();
+                addLogoutListener();
              }
        };                
        l.getButton().addActionListener(actionListener);   
        
-      	
+       
 		
+	}
+	
+	public void addLogoutListener(){
+		JButton logout = tabs.getTable().getImagePanel().getLogoutButton();
+       logout.addActionListener(new ActionListener() {
+    	    public void actionPerformed(ActionEvent e)
+    	    {
+    	       viewFrame.dispose();
+    	    }
+    	});
 	}
 	
 	public void controlPanel2(){

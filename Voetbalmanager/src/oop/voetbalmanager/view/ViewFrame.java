@@ -27,6 +27,7 @@ public class ViewFrame extends JFrame{
 	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-50;//600;//
 	
 	public ViewFrame(){
+		setUndecorated(true);
 	    setSize(frameWidth,frameHeight);    
 	    setVisible(true);
 		setResizable(false);

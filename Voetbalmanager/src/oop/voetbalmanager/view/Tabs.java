@@ -13,6 +13,7 @@ import javax.swing.UIManager;
 //tweede panel waar alle andere panels(tabs) in zitten
 public class Tabs extends JPanel{
 		private JButton button = new JButton("Terug");;
+		private Table table;
 		
 		private ViewFrame viewFrame;
 		
@@ -27,7 +28,7 @@ public class Tabs extends JPanel{
 		    viewFrame.controlPanel.add(this);  
 		    
 		    //table
-		    Table table = new Table();
+		  /*Table*/ table = new Table();
 		    table.start(viewFrame);//.getTeamNaam(), viewFrame.getUsername()
 		    //table toevoegen
 		    add(table, BorderLayout.LINE_START);
@@ -53,6 +54,13 @@ public class Tabs extends JPanel{
 		public void showThis(Login loginPanel){
 			loginPanel.setVisible(false);
 			this.setVisible(true);
+		}
+
+		/**
+		 * @return the table
+		 */
+		public Table getTable() {
+			return table;
 		}
 	
 }
