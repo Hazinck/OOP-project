@@ -1,4 +1,4 @@
-package src.oop.voetbalmanager.model;
+package oop.voetbalmanager.model;
 
 import static org.junit.Assert.*;
 

@@ -1,6 +1,9 @@
-package src.oop.voetbalmanager.model;
+package oop.voetbalmanager.model;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+
+import java.util.ArrayList;
 
 import org.junit.Test;
 
