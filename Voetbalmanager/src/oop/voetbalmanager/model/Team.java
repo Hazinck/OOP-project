@@ -13,8 +13,9 @@ public class Team {
 	private int doelsaldo;
 	private int doeltegen;
 	private int doelvoor;
-	private int score;
 	private long budget;
+	private int score;
+	
 	
 	public Team(String naam, int rank, ArrayList<Speler> spelerList,int winst,
 					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, long budget, int score){
@@ -33,12 +34,12 @@ public class Team {
 	
 
 	public String toString(){
-		return  "Teamnaam: " + naam + "\nRank: " + rank + 
+		return  "Teamnaam:" + naam + "\nRank:" + rank + 
 				"\nSpelers:\n" + spelerList.toString() + 
-				"\nWinst: " + winst + "\nVerlies: " + verlies + 
-				"\nGelijkspel: " + gelijkspel + "\nDoelsaldo: " + 
-				doelsaldo + "\nDoelpunten tegen: " + doeltegen + 
-				"\nDoelpunten voor: " + doelvoor + "\nBudget: " + budget+ "\n\n" ;
+				"\nWinst:" + winst + "\nVerlies:" + verlies + 
+				"\nGelijkspel:" + gelijkspel + "\nDoelsaldo:" + 
+				doelsaldo + "\nDoelpunten tegen:" + doeltegen + 
+				"\nDoelpunten voor:" + doelvoor + "\nBudget:" + budget+ "\nScore:"+score+"\n" ;
 	}
 
 	/**
@@ -67,6 +68,14 @@ public class Team {
 	 */
 	public void setRank(int rank) {
 		this.rank = rank;
+	}
+	
+	public ArrayList<Speler> getSpelerList(){
+		return spelerList;
+	}
+	
+	public void setSpelerList(ArrayList<Speler> changelist){
+		spelerList=changelist;
 	}
 
 

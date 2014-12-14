@@ -10,7 +10,7 @@ public class User {
 	}
 	
 	public String toString(){
-		return "Naam: " + naam + "/nTeam: " + "team";
+		return "Naam:" + naam + "/nTeam:" + "team";
 	}
 
 	public String getNaam() {

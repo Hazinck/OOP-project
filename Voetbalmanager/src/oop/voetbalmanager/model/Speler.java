@@ -22,9 +22,9 @@ public class Speler {
 	}
 	
 	public String toString(){
-		return "Naam: " + naam + " - Nummer: " + nummer + "\n" + "Type:" +type +
+		return "Naam:" + naam + " - Nummer:" + nummer + "\n" + "Type:" +type +
 				"\nOffense:" + offense + "\nDefence:" + defence +"\nConditie:" + uithouding + 
-				"\nBeschikbaarheid:"+beschikbaarheid+"\nPrijs:"+prijs +"\n\n" ;
+				"\nBeschikbaarheid:"+beschikbaarheid+"\nPrijs:"+prijs +"\n" ;
 	}
 
 	/**

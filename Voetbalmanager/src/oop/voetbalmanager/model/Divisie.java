@@ -1,4 +1,6 @@
 package oop.voetbalmanager.model;
+import Team;
+
 import java.util.ArrayList;
 
 
@@ -16,8 +18,8 @@ public class Divisie {
 	}
 	
 	public String toString(){
-		return  "Divisie\nNaam: " + naam + 
-				"\n\nTeams:\n" + teamList.toString() + "\nSpeeldag:"+speeldag + "\nStand:"+stand;
+		return  "Divisie\nNaam:" + naam + 
+				"\nTeams:\n" + teamList.toString() + "\nSpeeldag:"+speeldag + "\nStand:"+stand;
 	}
 
 	/**
@@ -28,6 +30,9 @@ public class Divisie {
 	}
 	public int getSpeeldag() {
 		return speeldag;
+	}
+	public ArrayList<Team> getTeamList(){
+		return teamList;
 	}
 
 	/**
@@ -47,6 +52,11 @@ public class Divisie {
 	public void setStand(int stand) {
 		this.stand = stand;
 	}
+	public void setTeamList(ArrayList<Team> nieuw){
+		teamList=nieuw;
+	}
+	
+	
 	
 	
 }
