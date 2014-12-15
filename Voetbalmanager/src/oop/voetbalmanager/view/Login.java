@@ -3,8 +3,13 @@ package oop.voetbalmanager.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Insets;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,15 +17,18 @@ import javax.swing.JPanel;
 //eerste panel
 public class Login extends JPanel{
 	
+	private LoginPanel loginpanel;
 	private JButton button = new JButton("Inloggen");	
 	private ViewFrame viewFrame;
 	/**
 	 * @param view
 	 */
+	
+	
 	public Login(ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 		
-		setBackground(Color.black);
+	    setBackground(Color.black);
 		
 		//Absolute positionering binnen deze panel
 	    setLayout(null);
@@ -28,7 +36,7 @@ public class Login extends JPanel{
 	    //deze panel toevoegen aan View frame
 	    viewFrame.controlPanel.add(this);  
 	    Insets insets = this.getInsets();
-	   
+	    
 	    //tekst aanmaken
 	    JLabel label  = new JLabel();        
 	    label.setText("<Voetbalmanager>");
@@ -37,7 +45,12 @@ public class Login extends JPanel{
 	    label.setBackground(Color.yellow);
 	    label.setForeground(Color.black);
 
-	    //tekst en button positioneren
+	    //loginpanel aanmaken
+	    loginpanel = new LoginPanel();
+
+//	    loginpanel.setForeground(Color.black);
+	    
+	    //tekst, button en loginpanel positioneren
 	    
 	    add(label);
 	    Dimension sizeText = label.getPreferredSize();
@@ -56,7 +69,15 @@ public class Login extends JPanel{
 	    int buttonTop = viewFrame.getHeight()*50/100 + insets.top;
 	    button.setBounds(buttonLeft, buttonTop,
 	    		sizeButton.width, sizeButton.height);
-
+	    
+	    
+	    add(loginpanel);
+	    Dimension sizePanel = loginpanel.getPreferredSize();
+	    int loginpanelLeft = viewFrame.getFrameWidth()*50/100 + insets.left - sizePanel.width/2;
+	    int loginpanelTop = viewFrame.getHeight()*40/100 + insets.top;
+	    loginpanel.setBounds(loginpanelLeft, loginpanelTop, sizePanel.width, sizePanel.height);
+//	    loginpanel.setOpaque(false);
+//	    loginpanel.setBackground(null);
 	}
 	/**
 	 * @return the button
@@ -69,5 +90,20 @@ public class Login extends JPanel{
 		tabsPanel.setVisible(false);
 		this.setVisible(true);
 	}
+	
+	@Override
+    protected void paintComponent(Graphics g) {
+    	super.paintComponent(g);
+    	Image image;
+		try {
+			image = ImageIO.read(new File(viewFrame.getImgPath() + "football.jpg"));
+			g.drawImage(image, 0, 0,(int)(ViewFrame.getFrameWidth()),(int)(ViewFrame.getFrameHeight()), null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         
+  }
+
 	
 }

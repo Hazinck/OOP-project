@@ -31,7 +31,7 @@ public class XMLreader {
 			Element divisieEl = document.getRootElement();
 			//parse naam en get teamlist
 			divisieNaam = divisieEl.getChildText("naam");
-			teamList = readTeam(divisieEl);
+			teamList = readTeamList(divisieEl);
 			//parse speeldag
 			speeldag = Integer.parseInt(divisieEl.getChildText("speeldag"));
 			stand = Integer.parseInt(divisieEl.getChildText("stand"));
@@ -47,7 +47,7 @@ public class XMLreader {
 		 return divisie;
 	}
 	
-	public ArrayList<Team> readTeam(Element divisie){
+	public ArrayList<Team> readTeamList(Element divisie){
 		ArrayList<Team> teamList = new ArrayList<Team>();
 
 		//maak lijst van alle <team>
@@ -58,9 +58,19 @@ public class XMLreader {
 			//parse teamNaam, rank en get spelerList
 			Element teamEl = (Element) teamElementList.get(i);
 			//parse naam, rank, spelerslijst, winst ....
+			
+			teamList.add(readTeam(teamEl));
+		}
+		  
+		return teamList;
+	}
+	
+	public Team readTeam(Element teamEl){
+
+			//parse naam, rank, spelerslijst, winst ....
 			String teamNaam = teamEl.getChildText("naam");
 			int rank = Integer.parseInt(teamEl.getChildText("rank"));
-			ArrayList<Speler> spelerList = readSpeler(teamNaam, teamEl);
+			ArrayList<Speler> spelerList = readSpelerList(teamNaam, teamEl);
 			int winst  = Integer.parseInt(teamEl.getChildText("winst"));
 			int verlies = Integer.parseInt(teamEl.getChildText("verlies"));
 			int gelijkspel = Integer.parseInt(teamEl.getChildText("gelijkspel"));
@@ -71,13 +81,12 @@ public class XMLreader {
 			int score = Integer.parseInt(teamEl.getChildText("score"));
 			Team team = new Team(teamNaam, rank, spelerList, winst, verlies, 
 										gelijkspel, doelsaldo, doeltegen, doelvoor, budget, score);
-			teamList.add(team);
-		}
 		  
-		return teamList;
+		return team;
 	}
 	
-	public ArrayList<Speler> readSpeler(String teamNaam, Element team){
+	
+	public ArrayList<Speler> readSpelerList(String teamNaam, Element team){
 		ArrayList<Speler> spelerList = new ArrayList<Speler>();
 		
 		//maak lijst van alle <team>
@@ -86,6 +95,13 @@ public class XMLreader {
 		for (int i = 0; i < spelerElementList.size(); i++) {
 			//parse teamNaam, rank, get spelerList ...
 			Element spelerEl = (Element) spelerElementList.get(i);
+			spelerList.add(readSpeler(spelerEl));
+		}
+		
+		return spelerList;
+	}
+	
+	public Speler readSpeler(Element spelerEl){
 			String spelerNaam = spelerEl.getChildText("naam");
 		//	System.out.println(spelerEl.getAttribute("id") + " "+ spelerNaam+" "+team.getChildText("naam"));
 			int nummer=-1;
@@ -104,10 +120,9 @@ public class XMLreader {
 			int prijs = 10000;
 			
 			Speler speler = new Speler(spelerNaam, nummer, type, offense, defence, uithouding, beschikbaarheid, prijs);
-			spelerList.add(speler);
-		}
+
 		
-		return spelerList;
+		return speler;
 	}
 
 }

@@ -10,6 +10,17 @@ public class Speler {
 	private String beschikbaarheid;
 	private int prijs;
 	
+	/**
+	 * 
+	 * @param naam
+	 * @param nummer
+	 * @param type
+	 * @param offense
+	 * @param defence
+	 * @param uithouding
+	 * @param beschikbaarheid
+	 * @param prijs
+	 */
 	public Speler(String naam, int nummer, String type, int offense, int defence, int uithouding, String beschikbaarheid, int prijs){
 		this.naam = naam;
 		this.nummer = nummer;

@@ -18,12 +18,19 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.User;
+
 public class Table extends JPanel{
 	
 	//	String col[] = {"Team: ","/*Teamnaam*/"};
-
+	private ViewFrame vframe;
+	private ImagePanel img;
+	private int speeldag;
+	private JTable table;
 	
 	public void start(ViewFrame vframe){
+		this.vframe = vframe;
 	//	setLayout(new BorderLayout());
 		setLayout(null);
 		setBackground(Color.WHITE);
@@ -31,7 +38,7 @@ public class Table extends JPanel{
 	//	Box main = Box.createVerticalBox();
 		
 		
-		ImagePanel img = new ImagePanel(vframe);
+		img = new ImagePanel(vframe);
 		img.addNameLable();
 		img.addLogoutButton();
 		add(img);//main.add(img);
@@ -61,7 +68,7 @@ public class Table extends JPanel{
 	}
 	public JTable newTable(ViewFrame vframe){
 		DefaultTableModel model;
-		JTable table;
+		
 		model = new DefaultTableModel()//;col,6
 		 {
 			 public Class getColumnClass(int columnIndex) {
@@ -70,12 +77,12 @@ public class Table extends JPanel{
 		 };
 		 model.setDataVector(
 				 new Object[][] { 
-						 { "Balans: ", "" },
-						 { "Speeldag: " }, 
-						 { "Punten: " }, 
-						 { "Ranking: " }, 
-						 { "Volgende \ntegenstander: " } 
-						 }, new Object[] { "Team", vframe.getTeamNaam() });
+						 { "Balans: ", User.getTeam().getBudget() },
+						 { "Speeldag: ", speeldag }, 
+						 { "Punten: ",  User.getTeam().getScore()}, 
+						 { "Ranking: ", User.getTeam().getRank() }, 
+						 { "Volgende \ntegenstander: ", Bot.getBotTeam().getNaam()} 
+						 }, new Object[] { "Team", User.getTeam().getNaam() });
 		table=new JTable(model){
 			@Override
 			public boolean isCellEditable(int row, int col) {
@@ -93,72 +100,34 @@ public class Table extends JPanel{
 		table.setRowHeight(table.getRowHeight() * 3);
 		table.setDefaultRenderer(String.class, new MultiLineCellRenderer());
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		table.getColumnModel().getColumn(0).setPreferredWidth((int)(ViewFrame.getFrameWidth()*0.20  - vframe.getTeamNaam().length()*8));//95
-		table.getColumnModel().getColumn(1).setPreferredWidth(vframe.getTeamNaam().length()*8- 5);//100
+		table.getColumnModel().getColumn(0).setPreferredWidth((int)(ViewFrame.getFrameWidth()*0.20  * 0.60));//95
+		table.getColumnModel().getColumn(1).setPreferredWidth((int)(ViewFrame.getFrameWidth()*0.20 * 0.39));//100
 		
 		return table;
 	}
 	
-}
-
-class ImagePanel extends JPanel{
-	private BufferedImage image;
-	
-	JLabel naamLable = new JLabel();
-	private String username;
-    public ImagePanel(ViewFrame vframe) {
-    	this.username = vframe.getUsername();
-    	String imgName = vframe.getImgName();
-    	setLayout(null);
-       try {                
-    	   if(imgName == null || imgName.equals("")){
-    		   image = ImageIO.read(new File(vframe.getImgPath() + "user_default.png"));
-    	   }
-    	   else{
-    		   image = ImageIO.read(new File(vframe.getImgPath() + imgName));
-    	   }
-       } catch (IOException ex) {
-            // handle exception...
-       }
-       
-       
-    }
-    
-    public void addNameLable(){
-    	naamLable.setFont(new Font("Arial", Font.BOLD, 20)); 
-		naamLable.setText("<html><body style='text-align: center; width: "+(int)(ViewFrame.getFrameWidth()*0.15)+"px'>"+username);//150px
-		naamLable.setForeground(Color.decode("333333"));
-		setBackground(Color.WHITE);
-		add(naamLable);//, BorderLayout.PAGE_START);
-		naamLable.setBounds(0, 0 ,(int)(ViewFrame.getFrameWidth()*0.20), (int)(ViewFrame.getFrameHeight()*0.15));//150
-    }
-    
-    public void addLogoutButton(){
-		JButton logout = new JButton("Logout and Save");
-	//	add(Box.createRigidArea(new Dimension(0,(int)(ViewFrame.getFrameHeight()*0.66))));//image.getHeight()*2 + 30
-		add(logout);
-		logout.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.40) ,(int)(ViewFrame.getFrameWidth()*0.20), 30);//150
-    }
-    
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-//        int w = image.getWidth(null);
-//        int h = image.getHeight(null);
-
-        g.drawImage(image, ((int)(ViewFrame.getFrameWidth()*0.20)-150)/2, naamLable.getHeight(), 150, 150, this);//null); 
-    }
-	@Override
-	public Dimension getPreferredSize() {
-		int w = (int)(ViewFrame.getFrameWidth()*0.25);//150;
-		int h = (int)(ViewFrame.getFrameHeight()*0.25);//250;// * percent / 100;
-		return new Dimension(w,h);
+	public ImagePanel getImagePanel(){
+		return img;
 	}
-
 	/**
-	 * @return the image
+	 * @return the table
 	 */
-	public BufferedImage getImage() {
-		return image;
+	public JTable getTable() {
+		return table;
 	}
+	/**
+	 * @return the speeldag
+	 */
+	public int getSpeeldag() {
+		return speeldag;
+	}
+	/**
+	 * @param speeldag the speeldag to set
+	 */
+	public void setSpeeldag(int speeldag) {
+		this.speeldag = speeldag;
+	}
+	
 }
+
+

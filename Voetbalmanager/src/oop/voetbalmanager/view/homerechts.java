@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 
 
 
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -21,9 +22,9 @@ public class homerechts extends JPanel {
 	private JTextPane titel;
 	private JTextPane rankings;
 	public homerechts(){
-		GridBagLayout gl=new GridBagLayout();
-		GridBagConstraints c= new GridBagConstraints();
-		setLayout(gl);
+//		GridBagLayout gl=new GridBagLayout();
+//		GridBagConstraints c= new GridBagConstraints();
+		setLayout(null);
 		
 		titel=new JTextPane();
 		titel.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -53,14 +54,30 @@ public class homerechts extends JPanel {
 			System.out.println("Something went wrong");
 		}
 		rankings.setEditable(false);
-		c.fill=GridBagConstraints.HORIZONTAL;
-		c.weightx = 50;
-		c.gridx = 0;
-		c.gridy = 0;
-		add(titel,c);
-		c.ipady = (int)(ViewFrame.getFrameHeight()*0.667);//400;      
-		c.gridx = 0;
-		c.gridy = 1;
-		add(rankings, c);
+//		c.fill=GridBagConstraints.HORIZONTAL;
+//		c.weightx = 50;
+//		c.gridx = 0;
+//		c.gridy = 0;
+		add(titel);//,c);
+		titel.setBounds(0, 10,
+				(int)(ViewFrame.getFrameWidth()*0.16), (int)(ViewFrame.getFrameHeight()*0.10));
+//		c.ipady = (int)(ViewFrame.getFrameHeight()*0.667);//400;      
+//		c.gridx = 0;
+//		c.gridy = 1;
+		add(rankings);//, c);
+		rankings.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.10+10) ,
+				(int)(ViewFrame.getFrameWidth()*0.16), (int)(ViewFrame.getFrameHeight()*0.80));
+	}
+	/**
+	 * @return the rankings
+	 */
+	public JTextPane getRankings() {
+		return rankings;
+	}
+	/**
+	 * @param rankings the rankings to set
+	 */
+	public void setRankings(JTextPane rankings) {
+		this.rankings = rankings;
 	}
 }

@@ -1,6 +1,7 @@
 package oop.voetbalmanager.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -8,14 +9,16 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 
+import oop.voetbalmanager.model.User;
+
 
 //window(frame) van programma
 public class ViewFrame extends JFrame{
 	public JPanel controlPanel;
 	
 	//tijdelijk
-	private String username = "Kamran Tadzjibov";
-	private String teamNaam = "Go Ahead Eagles";
+//	private String username = User.getNaam();//"Kamran Tadzjibov";
+//	private String teamNaam = User.getTeam().getNaam();//"Go Ahead Eagles";
 	private String imgPath = System.getProperty("user.dir") + "/images/";
 	private String imgName = "user_default.png";
 	
@@ -25,7 +28,10 @@ public class ViewFrame extends JFrame{
 	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-50;//600;//
 	
 	public ViewFrame(){
+		setUndecorated(true);
 	    setSize(frameWidth,frameHeight);    
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2-20);
 	    setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,20 +73,7 @@ public class ViewFrame extends JFrame{
 		return frameHeight;
 	}
 
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
-	}
-
-	/**
-	 * @return the teamNaam
-	 */
-	public String getTeamNaam() {
-		return teamNaam;
-	}
-
+	
 	/**
 	 * @return the imgPath
 	 */

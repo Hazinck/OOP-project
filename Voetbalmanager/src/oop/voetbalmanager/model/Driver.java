@@ -1,5 +1,8 @@
-package oop.voetbalmanager.model;
+﻿package oop.voetbalmanager.model;
 import java.io.File;
+import java.util.List;
+
+import org.jdom2.Element;
 
 
 public class Driver {
@@ -11,6 +14,11 @@ public class Driver {
 	
 	/*	XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie();
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie();
+		Team team1 = divisie.getTeamList().get(8);
+		Wedstrijdteam wt = new Wedstrijdteam(team1.naam, team1.rank, team1.spelerList, team1.winst, team1.verlies, team1.gelijkspel, team1.doelsaldo, team1.doeltegen,
+				team1.doelvoor, team1.budget, team1.score);
 		
 		System.out.println(divisie.toString());
 	
@@ -39,13 +47,26 @@ public class Driver {
 		writer.add("team", "Ajax", "speler", "Lasse Schöne");*/
 		
 		
-/*		//teams, spelers bijvullen
+		//teams, spelers bijvullen
 		TXTreader.listFilesForFolder(folder);
-	
+/*	
 		//Teams info toevoegen
 		TXTreader.addTeamInfo("teamInfo.txt");
-*/	
+	
+		
+		//spel
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie();
+		Team team1 = divisie.getTeamList().get(1);
+		Team team2 = divisie.getTeamList().get(8);
+		int geluksfactor = RNG.getalTot(800);
+		Spel s = new Spel(team1, team2, geluksfactor);
+		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
+	*/	
+		
 	}
+	
+
 	
 
 }

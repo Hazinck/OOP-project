@@ -3,162 +3,8 @@
   <naam>Eredivisie</naam>
   <speeldag>5</speeldag>
   <stand>0</stand>
-  <team>
+  <team id="01">
     <naam>ADO Den Haag</naam>
-    <speler id="01">
-      <naam>Aaron Meijers</naam>
-      <type>verdediger</type>
-      <uithouding>76</uithouding>
-      <offense>52</offense>
-      <defence>63</defence>
-    </speler>
-    <speler id="02">
-      <naam>Danny Bakker</naam>
-      <type>middenvelder</type>
-      <uithouding>64</uithouding>
-      <offense>48</offense>
-      <defence>66</defence>
-    </speler>
-    <speler id="03">
-      <naam>Dion Malone</naam>
-      <type>verdediger</type>
-      <uithouding>69</uithouding>
-      <offense>44</offense>
-      <defence>64</defence>
-    </speler>
-    <speler id="04">
-      <naam>Gianni Zuiverloon</naam>
-      <type>verdediger</type>
-      <uithouding>73</uithouding>
-      <offense>48</offense>
-      <defence>65</defence>
-    </speler>
-    <speler id="05">
-      <naam>Kevin Jansen</naam>
-      <type>middenvelder</type>
-      <uithouding>66</uithouding>
-      <offense>54</offense>
-      <defence>57</defence>
-    </speler>
-    <speler id="06">
-      <naam>Mathias Gehrt</naam>
-      <type>middenvelder</type>
-      <uithouding>79</uithouding>
-      <offense>60</offense>
-      <defence>28</defence>
-    </speler>
-    <speler id="07">
-      <naam>Michiel Kramer</naam>
-      <type>aanvaller</type>
-      <uithouding>63</uithouding>
-      <offense>65</offense>
-      <defence>34</defence>
-    </speler>
-    <speler id="08">
-      <naam>Mike van Duinen</naam>
-      <type>aanvaller</type>
-      <uithouding>75</uithouding>
-      <offense>67</offense>
-      <defence>45</defence>
-    </speler>
-    <speler id="09">
-      <naam>Mitchell de Vlugt</naam>
-      <type>aanvaller</type>
-      <uithouding>72</uithouding>
-      <offense>58</offense>
-      <defence>43</defence>
-    </speler>
-    <speler id="010">
-      <naam>Mitchell Schet</naam>
-      <type>aanvaller</type>
-      <uithouding>85</uithouding>
-      <offense>62</offense>
-      <defence>33</defence>
-    </speler>
-    <speler id="011">
-      <naam>Richelo Fecunda</naam>
-      <type>verdediger</type>
-      <uithouding>70</uithouding>
-      <offense>31</offense>
-      <defence>57</defence>
-    </speler>
-    <speler id="012">
-      <naam>Robin Buwalda</naam>
-      <type>verdediger</type>
-      <uithouding>67</uithouding>
-      <offense>33</offense>
-      <defence>57</defence>
-    </speler>
-    <speler id="013">
-      <naam>Roland Alberg</naam>
-      <type>middenvelder</type>
-      <uithouding>75</uithouding>
-      <offense>66</offense>
-      <defence>44</defence>
-    </speler>
-    <speler id="014">
-      <naam>Thomas KriAensen</naam>
-      <type>middenvelder</type>
-      <uithouding>63</uithouding>
-      <offense>62</offense>
-      <defence>60</defence>
-    </speler>
-    <speler id="015">
-      <naam>Timothy Derijck</naam>
-      <type>verdediger</type>
-      <uithouding>63</uithouding>
-      <offense>44</offense>
-      <defence>66</defence>
-    </speler>
-    <speler id="016">
-      <naam>Tyronne Ebuehi</naam>
-      <type>verdediger</type>
-      <uithouding>80</uithouding>
-      <offense>33</offense>
-      <defence>59</defence>
-    </speler>
-    <speler id="017">
-      <naam>Vidarell Merencia</naam>
-      <type>middenvelder</type>
-      <uithouding>64</uithouding>
-      <offense>44</offense>
-      <defence>58</defence>
-    </speler>
-    <speler id="018">
-      <naam>Vito Wormgoor</naam>
-      <type>verdediger</type>
-      <uithouding>50</uithouding>
-      <offense>36</offense>
-      <defence>64</defence>
-    </speler>
-    <speler id="019">
-      <naam>Wilfried Kanon</naam>
-      <type>verdediger</type>
-      <uithouding>60</uithouding>
-      <offense>38</offense>
-      <defence>66</defence>
-    </speler>
-    <speler id="020">
-      <naam>Xander Houtkoop</naam>
-      <type>aanvaller</type>
-      <uithouding>84</uithouding>
-      <offense>62</offense>
-      <defence>24</defence>
-    </speler>
-    <speler id="021">
-      <naam>Robert Zwinkels</naam>
-      <type>doelman</type>
-      <uithouding>0</uithouding>
-      <offense>0</offense>
-      <defence>65</defence>
-    </speler>
-    <speler id="022">
-      <naam>Tim Coremans</naam>
-      <type>doelman</type>
-      <uithouding>0</uithouding>
-      <offense>0</offense>
-      <defence>61</defence>
-    </speler>
     <rank>9</rank>
     <winst>12</winst>
     <gelijkspel>7</gelijkspel>
@@ -168,11 +14,174 @@
     <doelsaldo>-19</doelsaldo>
     <score>43</score>
     <budget>13.6</budget>
+    <speler id="011">
+      <naam>﻿Aaron Meijers</naam>
+      <type>verdediger</type>
+      <uithouding>76</uithouding>
+      <offense>52</offense>
+      <defence>63</defence>
+    </speler>
+    <speler id="012">
+      <naam>Danny Bakker</naam>
+      <type>middenvelder</type>
+      <uithouding>64</uithouding>
+      <offense>48</offense>
+      <defence>66</defence>
+    </speler>
+    <speler id="013">
+      <naam>Dion Malone</naam>
+      <type>verdediger</type>
+      <uithouding>69</uithouding>
+      <offense>44</offense>
+      <defence>64</defence>
+    </speler>
+    <speler id="014">
+      <naam>Gianni Zuiverloon</naam>
+      <type>verdediger</type>
+      <uithouding>73</uithouding>
+      <offense>48</offense>
+      <defence>65</defence>
+    </speler>
+    <speler id="015">
+      <naam>Kevin Jansen</naam>
+      <type>middenvelder</type>
+      <uithouding>66</uithouding>
+      <offense>54</offense>
+      <defence>57</defence>
+    </speler>
+    <speler id="016">
+      <naam>Mathias Gehrt</naam>
+      <type>middenvelder</type>
+      <uithouding>79</uithouding>
+      <offense>60</offense>
+      <defence>28</defence>
+    </speler>
+    <speler id="017">
+      <naam>Michiel Kramer</naam>
+      <type>aanvaller</type>
+      <uithouding>63</uithouding>
+      <offense>65</offense>
+      <defence>34</defence>
+    </speler>
+    <speler id="018">
+      <naam>Mike van Duinen</naam>
+      <type>aanvaller</type>
+      <uithouding>75</uithouding>
+      <offense>67</offense>
+      <defence>45</defence>
+    </speler>
+    <speler id="019">
+      <naam>Mitchell de Vlugt</naam>
+      <type>aanvaller</type>
+      <uithouding>72</uithouding>
+      <offense>58</offense>
+      <defence>43</defence>
+    </speler>
+    <speler id="0110">
+      <naam>Mitchell Schet</naam>
+      <type>aanvaller</type>
+      <uithouding>85</uithouding>
+      <offense>62</offense>
+      <defence>33</defence>
+    </speler>
+    <speler id="0111">
+      <naam>Richelo Fecunda</naam>
+      <type>verdediger</type>
+      <uithouding>70</uithouding>
+      <offense>31</offense>
+      <defence>57</defence>
+    </speler>
+    <speler id="0112">
+      <naam>Robin Buwalda</naam>
+      <type>verdediger</type>
+      <uithouding>67</uithouding>
+      <offense>33</offense>
+      <defence>57</defence>
+    </speler>
+    <speler id="0113">
+      <naam>Roland Alberg</naam>
+      <type>middenvelder</type>
+      <uithouding>75</uithouding>
+      <offense>66</offense>
+      <defence>44</defence>
+    </speler>
+    <speler id="0114">
+      <naam>Thomas KriAensen</naam>
+      <type>middenvelder</type>
+      <uithouding>63</uithouding>
+      <offense>62</offense>
+      <defence>60</defence>
+    </speler>
+    <speler id="0115">
+      <naam>Timothy Derijck</naam>
+      <type>verdediger</type>
+      <uithouding>63</uithouding>
+      <offense>44</offense>
+      <defence>66</defence>
+    </speler>
+    <speler id="0116">
+      <naam>Tyronne Ebuehi</naam>
+      <type>verdediger</type>
+      <uithouding>80</uithouding>
+      <offense>33</offense>
+      <defence>59</defence>
+    </speler>
+    <speler id="0117">
+      <naam>Vidarell Merencia</naam>
+      <type>middenvelder</type>
+      <uithouding>64</uithouding>
+      <offense>44</offense>
+      <defence>58</defence>
+    </speler>
+    <speler id="0118">
+      <naam>Vito Wormgoor</naam>
+      <type>verdediger</type>
+      <uithouding>50</uithouding>
+      <offense>36</offense>
+      <defence>64</defence>
+    </speler>
+    <speler id="0119">
+      <naam>Wilfried Kanon</naam>
+      <type>verdediger</type>
+      <uithouding>60</uithouding>
+      <offense>38</offense>
+      <defence>66</defence>
+    </speler>
+    <speler id="0120">
+      <naam>Xander Houtkoop</naam>
+      <type>aanvaller</type>
+      <uithouding>84</uithouding>
+      <offense>62</offense>
+      <defence>24</defence>
+    </speler>
+    <speler id="0121">
+      <naam>Robert Zwinkels</naam>
+      <type>doelman</type>
+      <uithouding>0</uithouding>
+      <offense>0</offense>
+      <defence>65</defence>
+    </speler>
+    <speler id="0122">
+      <naam>Tim Coremans</naam>
+      <type>doelman</type>
+      <uithouding>0</uithouding>
+      <offense>0</offense>
+      <defence>61</defence>
+    </speler>
   </team>
   <team id="02">
     <naam>Ajax</naam>
+    <rank>1</rank>
+    <winst>20</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>3</verlies>
+    <doelvoor>69</doelvoor>
+    <doeltegen>28</doeltegen>
+    <doelsaldo>41</doelsaldo>
+    <score>71</score>
+    <budget>65</budget>
     <speler id="021">
-      <naam>Anwar El Ghazi</naam>
+      <naam>﻿Anwar El Ghazi</naam>
       <type>aanvaller</type>
       <uithouding>77</uithouding>
       <offense>66</offense>
@@ -193,14 +202,14 @@
       <defence>65</defence>
     </speler>
     <speler id="024">
-      <naam>Ja�ro Riedewald</naam>
+      <naam>Jaïro Riedewald</naam>
       <type>verdediger</type>
       <uithouding>65</uithouding>
       <offense>44</offense>
       <defence>62</defence>
     </speler>
     <speler id="025">
-      <naam>Jo�l Veltman</naam>
+      <naam>Joël Veltman</naam>
       <type>verdediger</type>
       <uithouding>69</uithouding>
       <offense>37</offense>
@@ -214,14 +223,14 @@
       <defence>62</defence>
     </speler>
     <speler id="027">
-      <naam>Kolbeinn Sig��rsson</naam>
+      <naam>Kolbeinn Sigþórsson</naam>
       <type>aanvaller</type>
       <uithouding>69</uithouding>
       <offense>72</offense>
       <defence>42</defence>
     </speler>
     <speler id="028">
-      <naam>Lasse Sch�ne</naam>
+      <naam>Lasse Schøne</naam>
       <type>aanvaller</type>
       <uithouding>67</uithouding>
       <offense>77</offense>
@@ -291,7 +300,7 @@
       <defence>70</defence>
     </speler>
     <speler id="0218">
-      <naam>Richairo �ivkovic</naam>
+      <naam>Richairo Živkovic</naam>
       <type>aanvaller</type>
       <uithouding>79</uithouding>
       <offense>72</offense>
@@ -302,7 +311,7 @@
       <type>middenvelder</type>
       <uithouding>75</uithouding>
       <offense>51</offense>
-      <defence>60</defence>
+      <defence>61</defence>
     </speler>
     <speler id="0220">
       <naam>Robert Muric</naam>
@@ -367,20 +376,20 @@
       <offense>0</offense>
       <defence>64</defence>
     </speler>
-    <rank>1</rank>
-    <winst>20</winst>
-    <gelijkspel>11</gelijkspel>
-    <verlies>3</verlies>
-    <doelvoor>69</doelvoor>
-    <doeltegen>28</doeltegen>
-    <doelsaldo>41</doelsaldo>
-    <score>71</score>
-    <budget>65</budget>
   </team>
   <team id="03">
     <naam>AZ</naam>
+    <rank>8</rank>
+    <winst>13</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>13</verlies>
+    <doelvoor>54</doelvoor>
+    <doeltegen>50</doeltegen>
+    <doelsaldo>4</doelsaldo>
+    <score>47</score>
+    <budget>28</budget>
     <speler id="031">
-      <naam>Aron J�hannsson</naam>
+      <naam>﻿Aron Jóhannsson</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>77</offense>
@@ -390,8 +399,8 @@
       <naam>Celso Ortiz</naam>
       <type>middenvelder</type>
       <uithouding>65</uithouding>
+      <offense>54</offense>
       <defence>68</defence>
-      <offense>70</offense>
     </speler>
     <speler id="033">
       <naam>Derrick Luckassen</naam>
@@ -506,45 +515,52 @@
       <defence>55</defence>
     </speler>
     <speler id="0319">
+      <naam>Viktor EM</naam>
+      <type>middenvelder</type>
+      <uithouding>34</uithouding>
+      <offense>70</offense>
+      <defence>64</defence>
+    </speler>
+    <speler id="0320">
       <naam>Wesley Hoedt</naam>
       <type>verdediger</type>
       <uithouding>53</uithouding>
       <offense>34</offense>
       <defence>61</defence>
     </speler>
-    <speler id="0320">
+    <speler id="0321">
       <naam>Yves De Winter</naam>
       <type>doelman</type>
       <uithouding>71</uithouding>
       <offense>65</offense>
       <defence>48</defence>
     </speler>
-    <speler id="0321">
+    <speler id="0322">
       <naam>Ridgeciano Haps</naam>
       <type>verdediger</type>
       <uithouding>84</uithouding>
       <offense>48</offense>
       <defence>63</defence>
     </speler>
-    <speler id="0322">
+    <speler id="0323">
       <naam>Martin Hansen</naam>
       <type>doelman</type>
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>60</defence>
     </speler>
-    <rank>8</rank>
-    <winst>13</winst>
-    <gelijkspel>8</gelijkspel>
-    <verlies>13</verlies>
-    <doelvoor>54</doelvoor>
-    <doeltegen>50</doeltegen>
-    <doelsaldo>4</doelsaldo>
-    <score>47</score>
-    <budget>28</budget>
   </team>
   <team id="04">
     <naam>Excelsior</naam>
+    <rank>17</rank>
+    <winst>5</winst>
+    <gelijkspel>15</gelijkspel>
+    <verlies>14</verlies>
+    <doelvoor>54</doelvoor>
+    <doeltegen>82</doeltegen>
+    <doelsaldo>-28</doelsaldo>
+    <score>30</score>
+    <budget>2.7</budget>
     <speler id="041">
       <naam>Adil Auassar</naam>
       <type>middenvelder</type>
@@ -623,32 +639,32 @@
       <defence>57</defence>
     </speler>
     <speler id="0412">
-      <naam>Kevin van Diermen</naam>
-      <type>verdediger</type>
-      <uithouding>61</uithouding>
-      <offense>27</offense>
-      <defence>63</defence>
-    </speler>
-    <speler id="0413">
       <naam>Kevin Vermeulen</naam>
       <type>middenvelder</type>
       <uithouding>65</uithouding>
       <offense>56</offense>
       <defence>56</defence>
     </speler>
-    <speler id="0414">
+    <speler id="0413">
       <naam>Khalid Karami</naam>
       <type>verdediger</type>
       <uithouding>70</uithouding>
       <offense>38</offense>
       <defence>61</defence>
     </speler>
-    <speler id="0415">
+    <speler id="0414">
       <naam>Lars Hutten</naam>
       <type>middenvelder</type>
       <uithouding>69</uithouding>
       <offense>66</offense>
       <defence>36</defence>
+    </speler>
+    <speler id="0415">
+      <naam>Marko Maletic</naam>
+      <type>aanvaller</type>
+      <uithouding>53</uithouding>
+      <offense>61</offense>
+      <defence>29</defence>
     </speler>
     <speler id="0416">
       <naam>Ninos Gouriye</naam>
@@ -699,18 +715,25 @@
       <offense>64</offense>
       <defence>27</defence>
     </speler>
-    <rank>17</rank>
-    <winst>5</winst>
-    <gelijkspel>15</gelijkspel>
-    <verlies>14</verlies>
-    <doelvoor>54</doelvoor>
-    <doeltegen>82</doeltegen>
-    <doelsaldo>-28</doelsaldo>
-    <score>30</score>
-    <budget>2.7</budget>
+    <speler id="0423">
+      <naam>Kevin van Diermen</naam>
+      <type>verdediger</type>
+      <uithouding>61</uithouding>
+      <offense>27</offense>
+      <defence>63</defence>
+    </speler>
   </team>
   <team id="05">
     <naam>FC Dordrecht</naam>
+    <rank>18</rank>
+    <winst>7</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>19</verlies>
+    <doelvoor>44</doelvoor>
+    <doeltegen>69</doeltegen>
+    <doelsaldo>-25</doelsaldo>
+    <score>29</score>
+    <budget>2.1</budget>
     <speler id="051">
       <naam>Adnan Alisic</naam>
       <type>middenvelder</type>
@@ -872,20 +895,20 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
-    <rank>18</rank>
-    <winst>7</winst>
-    <gelijkspel>8</gelijkspel>
-    <verlies>19</verlies>
-    <doelvoor>44</doelvoor>
-    <doeltegen>69</doeltegen>
-    <doelsaldo>-25</doelsaldo>
-    <score>29</score>
-    <budget>2.1</budget>
   </team>
   <team id="06">
     <naam>FC Groningen</naam>
+    <rank>7</rank>
+    <winst>14</winst>
+    <gelijkspel>9</gelijkspel>
+    <verlies>11</verlies>
+    <doelvoor>57</doelvoor>
+    <doeltegen>53</doeltegen>
+    <doelsaldo>4</doelsaldo>
+    <score>51</score>
+    <budget>18</budget>
     <speler id="061">
-      <naam>Burak Saban</naam>
+      <naam>﻿Burak Saban</naam>
       <type>middenvelder</type>
       <uithouding>67</uithouding>
       <offense>50</offense>
@@ -913,7 +936,7 @@
       <defence>76</defence>
     </speler>
     <speler id="065">
-      <naam>G�nero Zeefuik</naam>
+      <naam>Género Zeefuik</naam>
       <type>aanvaller</type>
       <uithouding>40</uithouding>
       <offense>67</offense>
@@ -1018,7 +1041,7 @@
       <defence>65</defence>
     </speler>
     <speler id="0620">
-      <naam>Yo�ll van Nieff</naam>
+      <naam>Yoëll van Nieff</naam>
       <type>middenvelder</type>
       <uithouding>66</uithouding>
       <offense>63</offense>
@@ -1031,20 +1054,20 @@
       <offense>0</offense>
       <defence>68</defence>
     </speler>
-    <rank>7</rank>
-    <winst>14</winst>
-    <gelijkspel>9</gelijkspel>
-    <verlies>11</verlies>
-    <doelvoor>57</doelvoor>
-    <doeltegen>53</doeltegen>
-    <doelsaldo>4</doelsaldo>
-    <score>51</score>
-    <budget>18</budget>
   </team>
   <team id="07">
     <naam>FC Twente</naam>
+    <rank>3</rank>
+    <winst>17</winst>
+    <gelijkspel>12</gelijkspel>
+    <verlies>5</verlies>
+    <doelvoor>72</doelvoor>
+    <doeltegen>37</doeltegen>
+    <doelsaldo>35</doelsaldo>
+    <score>63</score>
+    <budget>46</budget>
     <speler id="071">
-      <naam>Andreas Bjelland</naam>
+      <naam>﻿Andreas Bjelland</naam>
       <type>verdediger</type>
       <uithouding>54</uithouding>
       <offense>44</offense>
@@ -1079,7 +1102,7 @@
       <defence>66</defence>
     </speler>
     <speler id="076">
-      <naam>Felipe Guti�rrez</naam>
+      <naam>Felipe Gutiérrez</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>68</offense>
@@ -1093,7 +1116,7 @@
       <defence>42</defence>
     </speler>
     <speler id="078">
-      <naam>Jes�s Corona</naam>
+      <naam>Jesús Corona</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>62</offense>
@@ -1177,14 +1200,14 @@
       <defence>66</defence>
     </speler>
     <speler id="0720">
-      <naam>Tim H�lscher</naam>
+      <naam>Tim Hölscher</naam>
       <type>aanvaller</type>
       <uithouding>71</uithouding>
       <offense>60</offense>
       <defence>43</defence>
     </speler>
     <speler id="0721">
-      <naam>Torgeir B�rven</naam>
+      <naam>Torgeir Børven</naam>
       <type>aanvaller</type>
       <uithouding>76</uithouding>
       <offense>66</offense>
@@ -1218,20 +1241,20 @@
       <offense>0</offense>
       <defence>60</defence>
     </speler>
-    <rank>3</rank>
-    <winst>17</winst>
-    <gelijkspel>12</gelijkspel>
-    <verlies>5</verlies>
-    <doelvoor>72</doelvoor>
-    <doeltegen>37</doeltegen>
-    <doelsaldo>35</doelsaldo>
-    <score>63</score>
-    <budget>46</budget>
   </team>
   <team id="08">
     <naam>FC Utrecht</naam>
+    <rank>10</rank>
+    <winst>11</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>46</doelvoor>
+    <doeltegen>65</doeltegen>
+    <doelsaldo>-19</doelsaldo>
+    <score>41</score>
+    <budget>17</budget>
     <speler id="081">
-      <naam>Adam Sarota</naam>
+      <naam>﻿Adam Sarota</naam>
       <type>middenvelder</type>
       <uithouding>69</uithouding>
       <offense>58</offense>
@@ -1273,7 +1296,7 @@
       <defence>43</defence>
     </speler>
     <speler id="087">
-      <naam>G�vero Markiet</naam>
+      <naam>Gévero Markiet</naam>
       <type>verdediger</type>
       <uithouding>63</uithouding>
       <offense>31</offense>
@@ -1419,27 +1442,27 @@
       <offense>0</offense>
       <defence>65</defence>
     </speler>
-    <rank>10</rank>
-    <winst>11</winst>
-    <gelijkspel>8</gelijkspel>
-    <verlies>15</verlies>
-    <doelvoor>46</doelvoor>
-    <doeltegen>65</doeltegen>
-    <doelsaldo>-19</doelsaldo>
-    <score>41</score>
-    <budget>17</budget>
   </team>
   <team id="09">
     <naam>Feyenoord</naam>
+    <rank>2</rank>
+    <winst>20</winst>
+    <gelijkspel>7</gelijkspel>
+    <verlies>7</verlies>
+    <doelvoor>76</doelvoor>
+    <doeltegen>40</doeltegen>
+    <doelsaldo>36</doelsaldo>
+    <score>67</score>
+    <budget>35</budget>
     <speler id="091">
-      <naam>Anass Achahbar</naam>
+      <naam>﻿Anass Achahbar</naam>
       <type>aanvaller</type>
       <uithouding>71</uithouding>
       <offense>63</offense>
       <defence>29</defence>
     </speler>
     <speler id="092">
-      <naam>Bilal Basa�ikoglu</naam>
+      <naam>Bilal Basaçikoglu</naam>
       <type>aanvaller</type>
       <uithouding>89</uithouding>
       <offense>65</offense>
@@ -1460,7 +1483,7 @@
       <defence>28</defence>
     </speler>
     <speler id="095">
-      <naam>Jean-Paul Bo�tius</naam>
+      <naam>Jean-Paul Boëtius</naam>
       <type>aanvaller</type>
       <uithouding>88</uithouding>
       <offense>71</offense>
@@ -1539,9 +1562,9 @@
     <speler id="0916">
       <naam>Miquel Nelom</naam>
       <type>verdediger</type>
+      <uithouding>80</uithouding>
       <offense>58</offense>
       <defence>67</defence>
-      <uithouding>80</uithouding>
     </speler>
     <speler id="0917">
       <naam>Mitchell te Vrede</naam>
@@ -1627,20 +1650,20 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
-    <rank>2</rank>
-    <winst>20</winst>
-    <gelijkspel>7</gelijkspel>
-    <verlies>7</verlies>
-    <doelvoor>76</doelvoor>
-    <doeltegen>40</doeltegen>
-    <doelsaldo>36</doelsaldo>
-    <score>67</score>
-    <budget>35</budget>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
+    <rank>13</rank>
+    <winst>10</winst>
+    <gelijkspel>8</gelijkspel>
+    <verlies>16</verlies>
+    <doelvoor>45</doelvoor>
+    <doeltegen>69</doeltegen>
+    <doelsaldo>-24</doelsaldo>
+    <score>38</score>
+    <budget>5.2</budget>
     <speler id="0101">
-      <naam>Alex Schalk</naam>
+      <naam>﻿Alex Schalk</naam>
       <type>aanvaller</type>
       <uithouding>73</uithouding>
       <offense>65</offense>
@@ -1654,7 +1677,7 @@
       <defence>61</defence>
     </speler>
     <speler id="0103">
-      <naam>Deniz T�r��</naam>
+      <naam>Deniz Türüç</naam>
       <type>middenvelder</type>
       <uithouding>74</uithouding>
       <offense>65</offense>
@@ -1807,18 +1830,18 @@
       <offense>0</offense>
       <defence>57</defence>
     </speler>
-    <rank>13</rank>
-    <winst>10</winst>
-    <gelijkspel>8</gelijkspel>
-    <verlies>16</verlies>
-    <doelvoor>45</doelvoor>
-    <doeltegen>69</doeltegen>
-    <doelsaldo>-24</doelsaldo>
-    <score>38</score>
-    <budget>5.2</budget>
   </team>
   <team id="011">
     <naam>Heracles Almelo</naam>
+    <rank>14</rank>
+    <winst>10</winst>
+    <gelijkspel>7</gelijkspel>
+    <verlies>17</verlies>
+    <doelvoor>45</doelvoor>
+    <doeltegen>59</doeltegen>
+    <doelsaldo>-14</doelsaldo>
+    <score>37</score>
+    <budget>9</budget>
     <speler id="0111">
       <naam>Aleksei Kangaskolkka</naam>
       <type>aanvaller</type>
@@ -2029,20 +2052,20 @@
       <offense>0</offense>
       <defence>59</defence>
     </speler>
-    <rank>14</rank>
-    <winst>10</winst>
-    <gelijkspel>7</gelijkspel>
-    <verlies>17</verlies>
-    <doelvoor>45</doelvoor>
-    <doeltegen>59</doeltegen>
-    <doelsaldo>-14</doelsaldo>
-    <score>37</score>
-    <budget>9</budget>
   </team>
   <team id="012">
     <naam>NAC Breda</naam>
+    <rank>15</rank>
+    <winst>8</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>43</doelvoor>
+    <doeltegen>54</doeltegen>
+    <doelsaldo>-11</doelsaldo>
+    <score>35</score>
+    <budget>14</budget>
     <speler id="0121">
-      <naam>Adnane Tighadouini</naam>
+      <naam>﻿Adnane Tighadouini</naam>
       <type>aanvaller</type>
       <uithouding>77</uithouding>
       <offense>64</offense>
@@ -2059,8 +2082,8 @@
       <naam>Erik Falkenburg</naam>
       <type>middenvelder</type>
       <uithouding>66</uithouding>
+      <offense>69</offense>
       <defence>38</defence>
-      <offense>60</offense>
     </speler>
     <speler id="0124">
       <naam>Gill Swerts</naam>
@@ -2133,7 +2156,7 @@
       <defence>40</defence>
     </speler>
     <speler id="01214">
-      <naam>R�my Amieux</naam>
+      <naam>Rémy Amieux</naam>
       <type>verdediger</type>
       <uithouding>76</uithouding>
       <offense>54</offense>
@@ -2154,7 +2177,7 @@
       <defence>29</defence>
     </speler>
     <speler id="01217">
-      <naam>Uro� Matic</naam>
+      <naam>Uroš Matic</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>62</offense>
@@ -2175,7 +2198,7 @@
       <defence>70</defence>
     </speler>
     <speler id="01220">
-      <naam>G�bor Babos</naam>
+      <naam>Gábor Babos</naam>
       <type>doelman</type>
       <uithouding>0</uithouding>
       <offense>0</offense>
@@ -2188,20 +2211,20 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
-    <rank>15</rank>
-    <winst>8</winst>
-    <gelijkspel>11</gelijkspel>
-    <verlies>15</verlies>
-    <doelvoor>43</doelvoor>
-    <doeltegen>54</doeltegen>
-    <doelsaldo>-11</doelsaldo>
-    <score>35</score>
-    <budget>14</budget>
   </team>
   <team id="013">
     <naam>PEC Zwolle</naam>
+    <rank>11</rank>
+    <winst>9</winst>
+    <gelijkspel>13</gelijkspel>
+    <verlies>12</verlies>
+    <doelvoor>47</doelvoor>
+    <doeltegen>49</doeltegen>
+    <doelsaldo>-2</doelsaldo>
+    <score>40</score>
+    <budget>10.9</budget>
     <speler id="0131">
-      <naam>Tom� Necid</naam>
+      <naam>﻿Tomáš Necid</naam>
       <type>aanvaller</type>
       <uithouding>72</uithouding>
       <offense>76</offense>
@@ -2361,20 +2384,20 @@
       <offense>0</offense>
       <defence>63</defence>
     </speler>
-    <rank>11</rank>
-    <winst>9</winst>
-    <gelijkspel>13</gelijkspel>
-    <verlies>12</verlies>
-    <doelvoor>47</doelvoor>
-    <doeltegen>49</doeltegen>
-    <doelsaldo>-2</doelsaldo>
-    <score>40</score>
-    <budget>10.9</budget>
   </team>
   <team id="014">
     <naam>PSV</naam>
+    <rank>4</rank>
+    <winst>18</winst>
+    <gelijkspel>5</gelijkspel>
+    <verlies>11</verlies>
+    <doelvoor>60</doelvoor>
+    <doeltegen>45</doeltegen>
+    <doelsaldo>15</doelsaldo>
+    <score>59</score>
+    <budget>62</budget>
     <speler id="0141">
-      <naam>Abel Tamata</naam>
+      <naam>﻿Abel Tamata</naam>
       <type>verdediger</type>
       <uithouding>71</uithouding>
       <offense>48</offense>
@@ -2388,7 +2411,7 @@
       <defence>53</defence>
     </speler>
     <speler id="0143">
-      <naam>Andr�s Guardado</naam>
+      <naam>Andrés Guardado</naam>
       <type>verdediger</type>
       <uithouding>82</uithouding>
       <offense>67</offense>
@@ -2444,7 +2467,7 @@
       <defence>67</defence>
     </speler>
     <speler id="01411">
-      <naam>J�rgen Locadia</naam>
+      <naam>Jürgen Locadia</naam>
       <type>aanvaller</type>
       <uithouding>74</uithouding>
       <offense>74</offense>
@@ -2562,20 +2585,20 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
-    <rank>4</rank>
-    <winst>18</winst>
-    <gelijkspel>5</gelijkspel>
-    <verlies>11</verlies>
-    <doelvoor>60</doelvoor>
-    <doeltegen>45</doeltegen>
-    <doelsaldo>15</doelsaldo>
-    <score>59</score>
-    <budget>62</budget>
   </team>
   <team id="015">
     <naam>SC Cambuur</naam>
+    <rank>12</rank>
+    <winst>10</winst>
+    <gelijkspel>9</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>40</doelvoor>
+    <doeltegen>50</doeltegen>
+    <doelsaldo>-10</doelsaldo>
+    <score>39</score>
+    <budget>6.5</budget>
     <speler id="0151">
-      <naam>Albert Rusn�k</naam>
+      <naam>﻿Albert Rusnák</naam>
       <type>middenvelder</type>
       <uithouding>76</uithouding>
       <offense>53</offense>
@@ -2624,7 +2647,7 @@
       <defence>48</defence>
     </speler>
     <speler id="0158">
-      <naam>Eti�nne Reijnen</naam>
+      <naam>Etiënne Reijnen</naam>
       <type>verdediger</type>
       <uithouding>42</uithouding>
       <offense>32</offense>
@@ -2708,7 +2731,7 @@
       <defence>44</defence>
     </speler>
     <speler id="01520">
-      <naam>Vytautas Andriu�kevicius</naam>
+      <naam>Vytautas Andriuškevicius</naam>
       <type>verdediger</type>
       <uithouding>67</uithouding>
       <offense>40</offense>
@@ -2749,20 +2772,20 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
-    <rank>12</rank>
-    <winst>10</winst>
-    <gelijkspel>9</gelijkspel>
-    <verlies>15</verlies>
-    <doelvoor>40</doelvoor>
-    <doeltegen>50</doeltegen>
-    <doelsaldo>-10</doelsaldo>
-    <score>39</score>
-    <budget>6.5</budget>
   </team>
   <team id="016">
     <naam>SC Heerenveen</naam>
+    <rank>5</rank>
+    <winst>16</winst>
+    <gelijkspel>9</gelijkspel>
+    <verlies>9</verlies>
+    <doelvoor>72</doelvoor>
+    <doeltegen>51</doeltegen>
+    <doelsaldo>21</doelsaldo>
+    <score>57</score>
+    <budget>22</budget>
     <speler id="0161">
-      <naam>Daley Sinkgraven</naam>
+      <naam>﻿Daley Sinkgraven</naam>
       <type>middenvelder</type>
       <uithouding>73</uithouding>
       <offense>48</offense>
@@ -2860,7 +2883,7 @@
       <defence>63</defence>
     </speler>
     <speler id="01615">
-      <naam>Michael Chac�n</naam>
+      <naam>Michael Chacón</naam>
       <type>middenvelder</type>
       <uithouding>74</uithouding>
       <offense>44</offense>
@@ -2881,7 +2904,7 @@
       <defence>27</defence>
     </speler>
     <speler id="01618">
-      <naam>Pel� van Anholt</naam>
+      <naam>Pelé van Anholt</naam>
       <type>verdediger</type>
       <uithouding>77</uithouding>
       <offense>53</offense>
@@ -2950,27 +2973,27 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
-    <rank>5</rank>
-    <winst>16</winst>
-    <gelijkspel>9</gelijkspel>
-    <verlies>9</verlies>
-    <doelvoor>72</doelvoor>
-    <doeltegen>51</doeltegen>
-    <doelsaldo>21</doelsaldo>
-    <score>57</score>
-    <budget>22</budget>
   </team>
   <team id="017">
     <naam>Vitesse</naam>
+    <rank>6</rank>
+    <winst>15</winst>
+    <gelijkspel>10</gelijkspel>
+    <verlies>9</verlies>
+    <doelvoor>65</doelvoor>
+    <doeltegen>49</doeltegen>
+    <doelsaldo>16</doelsaldo>
+    <score>55</score>
+    <budget>30</budget>
     <speler id="0171">
-      <naam>Arnold Kruiswijk</naam>
+      <naam>﻿Arnold Kruiswijk</naam>
       <type>verdediger</type>
       <uithouding>52</uithouding>
       <offense>44</offense>
       <defence>71</defence>
     </speler>
     <speler id="0172">
-      <naam>Bertrand Traor�</naam>
+      <naam>Bertrand Traoré</naam>
       <type>aanvaller</type>
       <uithouding>87</uithouding>
       <offense>66</offense>
@@ -2984,7 +3007,7 @@
       <defence>66</defence>
     </speler>
     <speler id="0174">
-      <naam>Davy Pr�pper</naam>
+      <naam>Davy Pröpper</naam>
       <type>middenvelder</type>
       <uithouding>70</uithouding>
       <offense>70</offense>
@@ -3061,7 +3084,7 @@
       <defence>65</defence>
     </speler>
     <speler id="01715">
-      <naam>Uro� �urdevic</naam>
+      <naam>Uroš Ðurdevic</naam>
       <type>aanvaller</type>
       <uithouding>69</uithouding>
       <offense>67</offense>
@@ -3109,18 +3132,18 @@
       <offense>0</offense>
       <defence>60</defence>
     </speler>
-    <rank>6</rank>
-    <winst>15</winst>
-    <gelijkspel>10</gelijkspel>
-    <verlies>9</verlies>
-    <doelvoor>65</doelvoor>
-    <doeltegen>49</doeltegen>
-    <doelsaldo>16</doelsaldo>
-    <score>55</score>
-    <budget>30</budget>
   </team>
   <team id="018">
     <naam>Willem II</naam>
+    <rank>16</rank>
+    <winst>7</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>16</verlies>
+    <doelvoor>44</doelvoor>
+    <doeltegen>64</doeltegen>
+    <doelsaldo>-20</doelsaldo>
+    <score>32</score>
+    <budget>5.6</budget>
     <speler id="0181">
       <naam>Ali Messaoud</naam>
       <type>middenvelder</type>
@@ -3289,14 +3312,5 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
-    <rank>16</rank>
-    <winst>7</winst>
-    <gelijkspel>11</gelijkspel>
-    <verlies>16</verlies>
-    <doelvoor>44</doelvoor>
-    <doeltegen>64</doeltegen>
-    <doelsaldo>-20</doelsaldo>
-    <score>32</score>
-    <budget>5.6</budget>
   </team>
 </divisie>

@@ -1,5 +1,4 @@
 package oop.voetbalmanager.model;
-import Team;
 
 import java.util.ArrayList;
 
