@@ -19,6 +19,7 @@ import oop.voetbalmanager.model.XMLreader;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
+import oop.voetbalmanager.view.LoginPanel;
 import oop.voetbalmanager.view.PandS;
 import oop.voetbalmanager.view.Tabs;
 import oop.voetbalmanager.view.TeamPanel;
@@ -59,6 +60,7 @@ public class Controller {
                 addLogoutListener();
                 play();
                 ranking();
+                User.setNaam(LoginPanel.setName());
              }
        };                
        l.getButton().addActionListener(actionListener);   

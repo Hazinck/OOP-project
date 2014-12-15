@@ -40,7 +40,13 @@ public class Login extends JPanel{
 	    label.setBackground(Color.yellow);
 	    label.setForeground(Color.black);
 
-	    //tekst en button positioneren
+	    //loginpanel aanmaken
+	    loginpanel = new LoginPanel();
+	    loginpanel.setOpaque(false);
+	    loginpanel.setBackground(Color.black);
+	    loginpanel.setForeground(Color.black);
+	    
+	    //tekst, button en loginpanel positioneren
 	    
 	    add(label);
 	    Dimension sizeText = label.getPreferredSize();
@@ -60,10 +66,7 @@ public class Login extends JPanel{
 	    button.setBounds(buttonLeft, buttonTop,
 	    		sizeButton.width, sizeButton.height);
 	    
-	    loginpanel = new LoginPanel();
-	    loginpanel.setOpaque(false);
-	    loginpanel.setBackground(Color.black);
-	    loginpanel.setForeground(Color.black);
+	    
 	    add(loginpanel);
 	    Dimension sizePanel = loginpanel.getPreferredSize();
 	    int loginpanelLeft = viewFrame.getFrameWidth()*50/100 + insets.left - sizePanel.width/2;

@@ -10,11 +10,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import oop.voetbalmanager.model.User;
+
 public class LoginPanel extends JPanel{
+	
+	private static String Username;
+	private String Password;
 	
 	private JLabel userLabel = new JLabel("Gebruikersnaam");
 	private JLabel passLabel = new JLabel("Wachtwoord       ");
-	private JTextField userText = new JTextField(10);
+	private static JTextField userText = new JTextField(10);
 	private JTextField passText = new JTextField(10);
 	private JPanel user = new JPanel();
 	private JPanel pass = new JPanel();
@@ -35,5 +40,25 @@ public class LoginPanel extends JPanel{
 		
 		add(loginpanel);
 	}
+	
+	public static String setName(){
+		Username = userText.getText();
+		if(Username.length() == 0){
+			return Username = "Andy Zaidman";
+		}
+		else{
+				return Username;
+			}
+				
+		}
 
+
+	public String getUser(){
+		return Username = userText.getText();
+	}
+	
+	public String getPass(){
+		return Password = passText.getText();
+	}
 }
+
