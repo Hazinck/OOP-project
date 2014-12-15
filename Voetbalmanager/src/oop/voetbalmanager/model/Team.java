@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class Team {
 	
-	private String naam;
-	private int rank;
-	private ArrayList<Speler> spelerList = new ArrayList<Speler>();
-	private int winst;
-	private int verlies;
-	private int gelijkspel;
-	private int doelsaldo;
-	private int doeltegen;
-	private int doelvoor;
-	private int score;
-	private double budget;
+	protected String naam;
+	protected int rank;
+	protected ArrayList<Speler> spelerList = new ArrayList<Speler>();
+	protected int winst;
+	protected int verlies;
+	protected int gelijkspel;
+	protected int doelsaldo;
+	protected int doeltegen;
+	protected int doelvoor;
+	protected int score;
+	protected double budget;
 	
 	/**
 	 * 
