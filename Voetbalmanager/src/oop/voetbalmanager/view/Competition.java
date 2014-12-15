@@ -38,16 +38,14 @@ public class Competition extends JPanel{
 		        }
 		 };
 		 model.setDataVector(
-				 new Object[][] { 
-						 
-						 }, new Object[] { "<html><center>"+title+"<br>"+description });
+				 new Object[20][1] , new Object[] { "<html><center>"+title+"<br>"+description });
 		JTable table=new JTable(model)
 		{@Override
 		public boolean isCellEditable(int row, int col) {
 			return false;
 		}};   
 		
-	//	table.setValueAt("Balans: ",0,0);
+		table.setValueAt("Balans: ",0,0);
 	//	table.setValueAt("Speeldag: ",1,0);
 	//	table.setValueAt("Punten: ",2,0);
 	//	table.setValueAt("Ranking: ",3,0);
