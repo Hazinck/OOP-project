@@ -14,10 +14,10 @@ import org.jdom2.output.XMLOutputter;
 
 public class XMLwriter {
 	private	SAXBuilder builder = new SAXBuilder();
-	private File xmlFile = new File(Driver.path);
+	private File xmlFile; 
 	
-	public XMLwriter(){
-		
+	public XMLwriter(String infile){
+		xmlFile=new File(infile);
 	}
 	/**Voegt een waarde toe in de vorm van "<type>waarde</type>"
 	 * 
@@ -77,7 +77,7 @@ public class XMLwriter {
 			//wegschrivern naar xml file
 			XMLOutputter xmlOutput = new XMLOutputter();
 			xmlOutput.setFormat(Format.getPrettyFormat());
-			xmlOutput.output(document, new FileWriter(Driver.path));
+			xmlOutput.output(document, new FileWriter(xmlFile));
 			
 			System.out.println("Toegevoegd/gewijzigd in "+"<"+tag+">"+naam+"</"+tag+">"+
 			" :\n" + "<"+type+">" + waarde +"</"+type+">\n");
@@ -147,7 +147,7 @@ public class XMLwriter {
 				//wegschrivern naar xml file
 				XMLOutputter xmlOutput = new XMLOutputter();
 				xmlOutput.setFormat(Format.getPrettyFormat());
-				xmlOutput.output(document, new FileWriter(Driver.path));
+				xmlOutput.output(document, new FileWriter(xmlFile));
 					
 				 System.out.println("Toegevoegd " + "<"+childTag+">" + childNaam +"</"+childTag+">" + 
 						 				" in " + parentNaam);
