@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<divisie>
+  <naam>Eredivisie</naam>
+  <speeldag>35</speeldag>
+  <stand>0</stand>
+  <rank>16</rank>
+  <winst>7</winst>
+  <gelijkspel>11</gelijkspel>
+  <verlies>16</verlies>
+  <doelvoor>44</doelvoor>
+  <doeltegen>64</doeltegen>
+  <doelsaldo>-20</doelsaldo>
+  <score>32</score>
+  <budget>5.6</budget>
+</divisie>

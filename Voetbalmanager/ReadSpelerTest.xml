@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <team id="02">
+    <naam>Ajax</naam>
+<speler id="0222">
+      <naam>Aefano Denswil</naam>
+      <type>verdediger</type>
+      <uithouding>64</uithouding>
+      <offense>56</offense>
+      <defence>70</defence>
+      <beschikbaarheid>beschikbaar</beschikbaarheid>
+      <prijs>200</prijs>
+    </speler>
+    <speler id="0223">
+      <naam>Thulani Serero</naam>
+      <type>middenvelder</type>
+      <uithouding>85</uithouding>
+      <offense>59</offense>
+      <defence>48</defence>
+      <beschikbaarheid>niet beschikbaar</beschikbaarheid>
+      <prijs>250</prijs>
+    </speler>
+    <rank>1</rank>
+    <winst>20</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>3</verlies>
+    <doelvoor>69</doelvoor>
+    <doeltegen>28</doeltegen>
+    <doelsaldo>41</doelsaldo>
+    <score>71</score>
+    <budget>65</budget>
+  </team>

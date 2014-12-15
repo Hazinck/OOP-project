@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<divisie>
+<naam>Champions League</naam>
+<speeldag>10</speeldag>
+<stand>4</stand>
+<team>
+    <naam>Ajax</naam>
+    <rank>1</rank>
+    <winst>20</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>3</verlies>
+    <doelvoor>69</doelvoor>
+    <doeltegen>28</doeltegen>
+    <doelsaldo>41</doelsaldo>
+    <score>71</score>
+    <budget>65</budget>
+  </team>
+</divisie>
