@@ -12,15 +12,18 @@ import javax.swing.JPanel;
 //eerste panel
 public class Login extends JPanel{
 	
+	private LoginPanel loginpanel;
 	private JButton button = new JButton("Inloggen");	
 	private ViewFrame viewFrame;
 	/**
 	 * @param view
 	 */
+	
+	
 	public Login(ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 		
-		setBackground(Color.black);
+	    setBackground(Color.black);
 		
 		//Absolute positionering binnen deze panel
 	    setLayout(null);
@@ -28,7 +31,7 @@ public class Login extends JPanel{
 	    //deze panel toevoegen aan View frame
 	    viewFrame.controlPanel.add(this);  
 	    Insets insets = this.getInsets();
-	   
+	    
 	    //tekst aanmaken
 	    JLabel label  = new JLabel();        
 	    label.setText("<Voetbalmanager>");
@@ -56,6 +59,16 @@ public class Login extends JPanel{
 	    int buttonTop = viewFrame.getHeight()*50/100 + insets.top;
 	    button.setBounds(buttonLeft, buttonTop,
 	    		sizeButton.width, sizeButton.height);
+	    
+	    loginpanel = new LoginPanel();
+	    loginpanel.setOpaque(false);
+	    loginpanel.setBackground(Color.black);
+	    loginpanel.setForeground(Color.black);
+	    add(loginpanel);
+	    Dimension sizePanel = loginpanel.getPreferredSize();
+	    int loginpanelLeft = viewFrame.getFrameWidth()*50/100 + insets.left - sizePanel.width/2;
+	    int loginpanelTop = viewFrame.getHeight()*40/100 + insets.top;
+	    loginpanel.setBounds(loginpanelLeft, loginpanelTop, sizePanel.width, sizePanel.height);
 
 	}
 	/**
