@@ -13,7 +13,6 @@ import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Spel;
-import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.XMLreader;
 import oop.voetbalmanager.view.Competition;
@@ -126,6 +125,7 @@ public class Controller {
 				e.printStackTrace();
 			}
 	    	//home.getHm().getGoals().setText(tijd.format(cal.getTime()) + " " + v + "\n");
+    	
     	}
     	//home.getHm().getGoals().setText((s.winner().getNaam()+" heeft gewonnen!"));
     	try {
