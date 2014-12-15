@@ -29,7 +29,7 @@ public class Application {
 	      
 	    	@Override
 	      public void run() {
-	    	  User.setNaam("Henk de Vijfde");
+	    	  User.setNaam("Andy Zaidman");
 	    	  User.setTeam(feyenoord);
 	    	  
 	    	  Bot.setDivisie(divisie);

@@ -54,13 +54,13 @@ public class Controller {
 		ActionListener actionListener = new ActionListener() {
              public void actionPerformed(ActionEvent actionEvent) { 
             	 System.out.println("Inloggen");
-            	tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
+            	 User.setNaam(LoginPanel.setName());
+            	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
                 tabs.showThis(l);
              //   controlPanel2();
                 addLogoutListener();
                 play();
                 ranking();
-                User.setNaam(LoginPanel.setName());
              }
        };                
        l.getButton().addActionListener(actionListener);   
