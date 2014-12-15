@@ -4,32 +4,18 @@ import java.util.ArrayList;
 
 public class Team {
 	
-	protected String naam;
-	protected int rank;
-	protected ArrayList<Speler> spelerList = new ArrayList<Speler>();
-	protected int winst;
-	protected int verlies;
-	protected int gelijkspel;
-	protected int doelsaldo;
-	protected int doeltegen;
-	protected int doelvoor;
-	protected int score;
-	protected double budget;
+	private String naam;
+	private int rank;
+	private ArrayList<Speler> spelerList = new ArrayList<Speler>();
+	private int winst;
+	private int verlies;
+	private int gelijkspel;
+	private int doelsaldo;
+	private int doeltegen;
+	private int doelvoor;
+	private int score;
+	private double budget;
 	
-	/**
-	 * 
-	 * @param naam
-	 * @param rank
-	 * @param spelerList
-	 * @param winst
-	 * @param verlies
-	 * @param gelijkspel
-	 * @param doelsaldo
-	 * @param doeltegen
-	 * @param doelvoor
-	 * @param budget
-	 * @param score
-	 */
 	public Team(String naam, int rank, ArrayList<Speler> spelerList,int winst,
 					int verlies,int gelijkspel,int doelsaldo,int doeltegen, int doelvoor, double budget, int score){
 		this.naam = naam;
@@ -157,7 +143,7 @@ public class Team {
 	}
 
 
-	public void setBudget(long budget) {
+	public void setBudget(double budget) {
 		this.budget = budget;
 	}
 	public int getScore() {
@@ -169,12 +155,5 @@ public class Team {
 		this.score = score;
 	}
 
-	public boolean equals(Object obj) {
-		if (obj instanceof Team){
-			Team that = (Team)obj;
-			return this.naam.equals(that.naam);
-		} else {
-			return false;
-		}
-	}
+
 }

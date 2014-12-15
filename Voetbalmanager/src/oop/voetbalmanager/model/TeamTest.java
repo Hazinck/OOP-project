@@ -1,12 +1,10 @@
 package oop.voetbalmanager.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-
-import java.util.ArrayList;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import java.util.*;
 public class TeamTest {
 
 	@Test
@@ -89,12 +87,13 @@ public class TeamTest {
 		assertNotEquals(8,test.getScore());
 	}
 	
+	
 	@Test
 	public void testGetBudget(){
 		ArrayList<Speler> spelerlist=new ArrayList<Speler>();
 		Team test=new Team("Feyenoord", 5, spelerlist, 3, 2, 1, 2, 4, 6, 254563, 7);
-		assertEquals(254563,test.getBudget());
-		assertNotEquals(4421485,test.getBudget());
+		assertEquals(254563.0,test.getBudget(),1e-10);
+		assertNotEquals(4421485.0,test.getBudget(),1e-10);
 	}
 	
 	@Test
@@ -190,20 +189,21 @@ public class TeamTest {
 		assertNotEquals(7,test.getScore());
 	}
 	
+	
 	@Test
 	public void testSetBudget(){
 		ArrayList<Speler> spelerlist=new ArrayList<Speler>();
 		Team test=new Team("Feyenoord", 5, spelerlist, 3, 2, 1, 2, 4, 6, 254563, 7);
-		test.setBudget(999999);
-		assertEquals(999999,test.getBudget());
-		assertNotEquals(254563,test.getBudget());
+		test.setBudget(500.0);
+		assertEquals(500.0,test.getBudget(),1e-10);
+		assertNotEquals(254563.0,test.getBudget(),1e-10);
 	}
 	
 	@Test
 	public void testToString(){
 		ArrayList<Speler> spelerlist=new ArrayList<Speler>();
 		Team test=new Team("Feyenoord", 5, spelerlist, 3, 2, 1, 2, 4, 6, 254563, 7);
-		assertEquals("Teamnaam:Feyenoord\nRank:5\nSpelers:\n[]\nWinst:3\nVerlies:2\nGelijkspel:1\nDoelsaldo:2\nDoelpunten tegen:4\nDoelpunten voor:6\nBudget:254563\nScore:7\n",test.toString());
+		assertEquals("Teamnaam:Feyenoord\nRank:5\nSpelers:\n[]\nWinst:3\nVerlies:2\nGelijkspel:1\nDoelsaldo:2\nDoelpunten tegen:4\nDoelpunten voor:6\nBudget:254563.0\nScore:7\n",test.toString());
 	}
 
 }

@@ -1,32 +1,32 @@
 package oop.voetbalmanager.model;
 
 public class User {
-	private static String naam;
-	private static Team team;
+	private String naam;
+	private String team;
 	
-	public User(String naam, Team team){
-		setNaam(naam);//this.naam = naam;
-		setTeam(team);//this.team = team;
+	public User(String naam, String team){
+		this.naam = naam;
+		this.team = team;
 	}
 	
 	public String toString(){
-		return "Naam:" + naam + "/nTeam:" + team.getNaam();
+		return "Naam:" + naam + "/nTeam:" + team;
 	}
 
-	public static String getNaam() {
+	public String getNaam() {
 		return naam;
 	}
 
-	public static void setNaam(String naam) {
-		User.naam = naam;
+	public void setNaam(String naam) {
+		this.naam = naam;
 	}
 
-	public static Team getTeam() {
+	public String getTeam() {
 		return team;
 	}
 
-	public static void setTeam(Team team) {
-		User.team = team;
+	public void setTeam(String team) {
+		this.team = team;
 	}
 	
 	
