@@ -9,9 +9,6 @@ public class Bot {
 	
 	/**
 	 * Geeft een willekeurige tegenstander
-	 * @param divisie	de huidige divisie
-	 * @param userTeam	het team van de user
-	 * @return			een willekeurige tegenstander
 	 */
 	public static void volgendeTeam() {//Team 
 		int aantalTeams = 18;
