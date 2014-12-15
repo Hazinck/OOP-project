@@ -26,6 +26,14 @@ public class LoginPanel extends JPanel{
 	private JPanel loginpanel = new JPanel();
 	
 	public LoginPanel(){
+		setBackground(Color.white);
+		setOpaque(true);
+		user.setOpaque(false);
+		pass.setOpaque(false);
+		loginpanel.setOpaque(false);
+		user.setBackground(null);
+		pass.setBackground(null);
+		loginpanel.setBackground(null);
 		
 		
 		user.setLayout(new FlowLayout());

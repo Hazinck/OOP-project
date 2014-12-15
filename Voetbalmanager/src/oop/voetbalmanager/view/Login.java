@@ -3,8 +3,13 @@ package oop.voetbalmanager.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Insets;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -42,9 +47,8 @@ public class Login extends JPanel{
 
 	    //loginpanel aanmaken
 	    loginpanel = new LoginPanel();
-	    loginpanel.setOpaque(false);
-	    loginpanel.setBackground(Color.black);
-	    loginpanel.setForeground(Color.black);
+
+//	    loginpanel.setForeground(Color.black);
 	    
 	    //tekst, button en loginpanel positioneren
 	    
@@ -72,7 +76,8 @@ public class Login extends JPanel{
 	    int loginpanelLeft = viewFrame.getFrameWidth()*50/100 + insets.left - sizePanel.width/2;
 	    int loginpanelTop = viewFrame.getHeight()*40/100 + insets.top;
 	    loginpanel.setBounds(loginpanelLeft, loginpanelTop, sizePanel.width, sizePanel.height);
-
+//	    loginpanel.setOpaque(false);
+//	    loginpanel.setBackground(null);
 	}
 	/**
 	 * @return the button
@@ -85,5 +90,20 @@ public class Login extends JPanel{
 		tabsPanel.setVisible(false);
 		this.setVisible(true);
 	}
+	
+	@Override
+    protected void paintComponent(Graphics g) {
+    	super.paintComponent(g);
+    	Image image;
+		try {
+			image = ImageIO.read(new File(viewFrame.getImgPath() + "football.jpg"));
+			g.drawImage(image, 0, 0,(int)(ViewFrame.getFrameWidth()),(int)(ViewFrame.getFrameHeight()), null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         
+  }
+
 	
 }
