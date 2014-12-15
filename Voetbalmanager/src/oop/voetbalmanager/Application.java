@@ -23,17 +23,17 @@ public class Application {
 	public static void main(String[] args) {
 		XMLreader reader = new XMLreader();
 		final Divisie divisie = reader.readDivisie();
-		final Team feyenoord = divisie.getTeamList().get(8);
+		final Team team = divisie.getTeamList().get(8);
 		
 	    EventQueue.invokeLater(new Runnable() {
 	      
 	    	@Override
 	      public void run() {
 	    	  User.setNaam("Andy Zaidman");
-	    	  User.setTeam(feyenoord);
+	    	  User.setTeam(team);
 	    	  
 	    	  Bot.setDivisie(divisie);
-	    	  Bot.setUserTeam(feyenoord);
+	    	  Bot.setUserTeam(team);
 	    	  Bot.volgendeTeam();
 	    	  
 	    	  ViewFrame viewFrame = new ViewFrame();

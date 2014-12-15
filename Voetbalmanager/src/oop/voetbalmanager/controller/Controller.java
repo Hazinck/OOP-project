@@ -13,6 +13,7 @@ import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Spel;
+import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.XMLreader;
@@ -55,11 +56,9 @@ public class Controller {
              public void actionPerformed(ActionEvent actionEvent) { 
             	 System.out.println("Inloggen");
             	 User.setNaam(LoginPanel.setName());
+                 vulSpelerlijst(User.getTeam());
             	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
                 tabs.showThis(l);
-                teamPanel.addAanvaller("Andy Zaidman");
-                teamPanel.addAanvaller("Henk");
-                teamPanel.removeAanvaller("Henk");
              //   controlPanel2();
                 addLogoutListener();
                 play();
@@ -159,6 +158,22 @@ public class Controller {
 		}
 		
 		home.getHr().getRankings().setText(rankList);
+	}
+	
+	public void vulSpelerlijst(Team team){
+		ArrayList<Speler> spelers = team.getSpelerList();
+		for (int i = 0; i < spelers.size(); i++){
+			Speler speler = spelers.get(i);
+			if (speler.getType().equals("doelman")){
+				teamPanel.addKeeper(speler.getNaam());
+			}else if (speler.getType().equals("aanvaller")){
+				teamPanel.addAanvaller(speler.getNaam());
+			}else if(speler.getType().equals("middenvelder")){
+				teamPanel.addMiddenvelder(speler.getNaam());
+			}else if(speler.getType().equals("verdediger")){
+				teamPanel.addVerdediger(speler.getNaam());
+			}
+		}
 	}
 	
 }
