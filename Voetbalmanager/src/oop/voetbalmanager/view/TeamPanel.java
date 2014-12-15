@@ -15,6 +15,7 @@ import java.util.Hashtable;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -22,6 +23,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSlider;
+import javax.swing.ListModel;
 import javax.swing.border.TitledBorder;
 
 import oop.voetbalmanager.model.User;
@@ -29,8 +31,11 @@ import oop.voetbalmanager.model.User;
 
 public class TeamPanel extends JPanel{
 	
-	JPanel opstelling = new JPanel();
-	
+	private DefaultListModel<String> aanvallers = new DefaultListModel<String>();
+	private DefaultListModel<String> middenvelders = new DefaultListModel<String>();
+	private DefaultListModel<String> verdedigers = new DefaultListModel<String>();
+	private DefaultListModel<String> keepers = new DefaultListModel<String>();
+		
 	public TeamPanel(){		
         add(spelerlijst());
         add(tactiek());
@@ -46,21 +51,22 @@ public class TeamPanel extends JPanel{
 		
 
 		spelerlijst.add(new JLabel("Aanvallers"));
-		spelerlijst.add(maakLijst(new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
+		spelerlijst.add(maakLijst(aanvallers, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
 		
 		spelerlijst.add(new JLabel("Middenvelders"));
-		spelerlijst.add(maakLijst(new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
+		spelerlijst.add(maakLijst(middenvelders, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
 		
 		spelerlijst.add(new JLabel("Verdedigers"));
-		spelerlijst.add(maakLijst(new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
+		spelerlijst.add(maakLijst(verdedigers, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
 		
 		spelerlijst.add(new JLabel("Keepers"));
-		spelerlijst.add(maakLijst(new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 65)));
+		spelerlijst.add(maakLijst(keepers, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 65)));
 		
 		return spelerlijst;
 	}
 	
 	public JPanel opstelling() {
+		JPanel opstelling = new JPanel();
 		
 		opstelling.setBorder(BorderFactory.createTitledBorder(null, "Opstelling", 
 				TitledBorder.CENTER, TitledBorder.TOP));
@@ -110,12 +116,60 @@ public class TeamPanel extends JPanel{
 	 * @param d		de grootte van de lijst
 	 * @return		het nieuwe JScrollPane-object
 	 */
-	public JScrollPane maakLijst(Dimension d) {
-		JScrollPane pane = new JScrollPane(new JList(),
+	public JScrollPane maakLijst(ListModel<String> model, Dimension d) {
+		JScrollPane pane = new JScrollPane(new JList<String>(model),
 				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		pane.setPreferredSize(d);
 		
 		return pane;
+	}
+	
+	public void addAanvaller(String aanvaller){
+		this.aanvallers.addElement(aanvaller);
+	}
+	
+	public String[] getAanvallers() {
+		return (String[])this.aanvallers.toArray();
+	}
+	
+	public void removeAanvaller(String aanvaller){
+		this.aanvallers.removeElement(aanvaller);
+	}
+	
+	public void addMiddenvelder(String middenvelder){
+		this.middenvelders.addElement(middenvelder);
+	}
+	
+	public String[] getMiddenvelders() {
+		return (String[])this.middenvelders.toArray();
+	}
+	
+	public void removeMiddenvelder(String middenvelder){
+		this.middenvelders.removeElement(middenvelder);
+	}
+	
+	public void addVerdediger(String verdediger){
+		this.verdedigers.addElement(verdediger);
+	}
+	
+	public String[] getVerdedigers() {
+		return (String[]) this.verdedigers.toArray();
+	}
+	
+	public void removeVerdediger(String verdediger){
+		this.verdedigers.removeElement(verdediger);
+	}
+	
+	public void addKeeper(String keeper){
+		this.keepers.addElement(keeper);
+	}
+	
+	public String[] getKeepers() {
+		return (String[]) this.keepers.toArray();
+	}
+	
+	public void removeKeepers(String keeper){
+		this.keepers.removeElement(keeper);
 	}
 	
 

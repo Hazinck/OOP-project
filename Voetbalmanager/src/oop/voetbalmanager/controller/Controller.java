@@ -57,6 +57,9 @@ public class Controller {
             	 User.setNaam(LoginPanel.setName());
             	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
                 tabs.showThis(l);
+                teamPanel.addAanvaller("Andy Zaidman");
+                teamPanel.addAanvaller("Henk");
+                teamPanel.removeAanvaller("Henk");
              //   controlPanel2();
                 addLogoutListener();
                 play();
