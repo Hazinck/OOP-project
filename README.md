@@ -17,6 +17,3 @@ in view kan je wel Model gebruiken(liever niet) maar GEEN Controller
 CONTROLLER.
 Hier komen View en Model bij elkaar.
 
-
-Tot maandag 8 december moeten we alleen View af hebben.
-
