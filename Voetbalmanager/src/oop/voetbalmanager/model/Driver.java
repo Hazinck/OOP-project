@@ -47,14 +47,14 @@ public class Driver {
 		writer.add("team", "Ajax", "speler", "Lasse Schöne");*/
 		
 		
-		//teams, spelers bijvullen
+/*		//teams, spelers bijvullen
 		TXTreader.listFilesForFolder(folder);
-/*	
+	
 		//Teams info toevoegen
 		TXTreader.addTeamInfo("teamInfo.txt");
 	
 		
-		//spel
+	*/	//spel
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie();
 		Team team1 = divisie.getTeamList().get(1);
@@ -62,7 +62,7 @@ public class Driver {
 		int geluksfactor = RNG.getalTot(800);
 		Spel s = new Spel(team1, team2, geluksfactor);
 		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
-	*/	
+		
 		
 	}
 	

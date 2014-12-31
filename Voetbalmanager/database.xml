@@ -3313,4 +3313,44 @@
       <defence>58</defence>
     </speler>
   </team>
+  <Wedstrijdteam>
+    <naam>Wedstrijdteam</naam>
+    <offence>51</offence>
+    <defence>52</defence>
+    <uithouding>62</uithouding>
+    <opstelling>442</opstelling>
+    <tactiek>17</tactiek>
+    <spelers>Erwin Mulder,Tonny Vilhena,Rodny Lopes Cabral,Rick Karsdorp,Luke Wilkshire,Lucas Woudenberg,Lex Immers,Joris Mathijsen,Jens ToornAra,Colin Kazim-Richards,﻿Anass Achahbar</spelers>
+  </Wedstrijdteam>
+  <opstellingen id="99">
+    <naam>opstellingen</naam>
+    <opstelling_posities id="1">
+      <naam>433</naam>
+      <doelman0>145,395</doelman0>
+      <aanvaller1>75,355</aanvaller1>
+      <aanvaller2>220,355</aanvaller2>
+      <aanvaller3>35,330</aanvaller3>
+      <aanvaller4>250,330</aanvaller4>
+      <aanvaller5>150,240</aanvaller5>
+      <middenvelder6>50,210</middenvelder6>
+      <middenvelder7>240,210</middenvelder7>
+      <middenvelder8>150,80</middenvelder8>
+      <verdediger9>35,130</verdediger9>
+      <middenvelder10>270,130</middenvelder10>
+    </opstelling_posities>
+    <opstelling_posities id="2">
+      <naam>442</naam>
+      <doelman0>145,395</doelman0>
+      <verdediger1>75,355</verdediger1>
+      <verdediger2>220,355</verdediger2>
+      <verdediger3>35,330</verdediger3>
+      <verdediger4>250,330</verdediger4>
+      <middenvelder5>223,229</middenvelder5>
+      <middenvelder6>79,242</middenvelder6>
+      <middenvelder7>265,191</middenvelder7>
+      <aanvaller8>98,92</aanvaller8>
+      <middenvelder9>31,202</middenvelder9>
+      <aanvaller10>208,94</aanvaller10>
+    </opstelling_posities>
+  </opstellingen>
 </divisie>

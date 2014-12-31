@@ -2,6 +2,8 @@ package oop.voetbalmanager.model;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.jdom2.DataConversionException;
@@ -86,6 +88,7 @@ public class XMLreader {
 	}
 	
 	
+	
 	public ArrayList<Speler> readSpelerList(String teamNaam, Element team){
 		ArrayList<Speler> spelerList = new ArrayList<Speler>();
 		
@@ -125,4 +128,126 @@ public class XMLreader {
 		return speler;
 	}
 
+	
+	public ArrayList<Opstelling> readOpstellingList(){
+		SAXBuilder builder = new SAXBuilder();
+		File xmlFile = new File(Driver.path);
+		
+		ArrayList<Opstelling> opstellingen = new  ArrayList<Opstelling>();
+		
+		try {
+			//open xml
+			Document document = (Document) builder.build(xmlFile);
+			//maak element van <divisie>
+			Element divisieEl = document.getRootElement();
+			Element opsteling = divisieEl.getChild("opstellingen");
+			//maak lijst van alle opstellingen
+			List<Element> opstElementList = opsteling.getChildren("opstelling_posities");
+			//<opstelling> als element in arrraylist toevoegen
+			for (int i = 0; i < opstElementList.size(); i++) {
+				//parse teamNaam, rank, get spelerList ...
+				Element opstEl = (Element) opstElementList.get(i);
+				opstellingen.add(readOpstelling(opstEl));
+			}
+		 } catch (IOException io) {
+			 System.out.println(io.getMessage());
+		 } catch (JDOMException jdomex) {
+			 System.out.println(jdomex.getMessage());
+		 }
+		//parse naam, rank, spelerslijst, winst ....
+		
+	  
+		return opstellingen;
+	}
+	
+	public Opstelling readOpstelling(Element opstEl){
+		
+//		Element keeper = opstEl.getChild("doelman0");
+//		//maak lijst van alle opstellingen
+//		List<Element> midList = opstEl.getChildren("middenvelder");
+//		List<Element> verdList = opstEl.getChildren("verdediger");
+//		List<Element> aanvList = opstEl.getChildren("aanvaller");
+		
+		List<Element> positiesList = opstEl.getChildren();
+		
+//		System.out.println(positiesList.get(1).getName());
+		ArrayList<Positie> posities = new ArrayList<Positie>();
+//		int xk = Integer.parseInt(keeper.getText().split(",")[0]);
+//		int yk = Integer.parseInt(keeper.getText().split(",")[1]);
+//		Positie doelman = new Positie(xk, yk, "doelman");
+//		posities.add(doelman);
+		//<opstelling> als element in arrraylist toevoegen
+//		for (int i = 0; i < midList.size(); i++) {
+//			int x = Integer.parseInt(midList.get(i).getText().split(",")[0]);
+//			int y = Integer.parseInt(midList.get(i).getText().split(",")[1]);
+//			Positie middenvelder = new Positie(x, y, "middenvelder");
+//			posities.add(middenvelder);
+//		}
+//		for (int i = 0; i < verdList.size(); i++) {
+//			int x = Integer.parseInt(verdList.get(i).getText().split(",")[0]);
+//			int y = Integer.parseInt(verdList.get(i).getText().split(",")[1]);
+//			Positie verdediger = new Positie(x, y, "verdediger");
+//			posities.add(verdediger);
+//		}
+		for (int i = 1; i < positiesList.size(); i++) {
+			int x = Integer.parseInt(positiesList.get(i).getText().split(",")[0]);
+			int y = Integer.parseInt(positiesList.get(i).getText().split(",")[1]);
+			String type = positiesList.get(i).getName();
+			type = type.substring(0, type.length()-1);
+			Positie speler = new Positie(x, y, type);
+			posities.add(speler);
+		}
+		Collections.sort(posities, new Comparator<Positie>() {
+		    @Override
+		    public int compare(Positie p1, Positie p2) {
+		        return Integer.compare(p2.getY(), p1.getY());
+		    }
+		});
+		//parse naam, spelerslijst ....
+		Opstelling opstelling = new  Opstelling(opstEl.getChildText("naam"), posities);
+	  
+		return opstelling;
+	}
+	
+	public Wedstrijdteam readWedstrijdteam(Team userteam){
+		SAXBuilder builder = new SAXBuilder();
+		File xmlFile = new File(Driver.path);
+		Wedstrijdteam wteam = new Wedstrijdteam(userteam);;
+		try {
+			//open xml
+			Document document = (Document) builder.build(xmlFile);
+			//maak element van <divisie>
+			Element divisieEl = document.getRootElement();
+			Element wteamElement = divisieEl.getChild("Wedstrijdteam");
+			//parse naam, rank, spelerslijst, winst ....
+			String opstelling = wteamElement.getChildText("opstelling");
+			int tactiek = Integer.parseInt(wteamElement.getChildText("tactiek"));
+			String spelers = wteamElement.getChildText("spelers");
+			ArrayList<Speler> spelerList = new ArrayList<Speler>();
+			for(Speler s: wteam.getSpelerList()){
+				if(spelers.contains(s.getNaam())){
+					spelerList.add(s);
+				}
+			}
+			Collections.reverse(spelerList);
+			Speler[] spelersArray = new Speler[11];
+			spelerList.toArray(spelersArray);
+			
+			ArrayList<Opstelling> opstellingen = readOpstellingList();
+			for(Opstelling op: opstellingen){
+				if(op.getNaam().equals(opstelling)){
+					wteam.setOpstelling(op);
+				}
+			}
+			wteam.setTactiek(tactiek);
+			wteam.setWSpelers(spelersArray);
+			
+			
+		} catch (IOException io) {
+			System.out.println(io.getMessage());
+		} catch (JDOMException jdomex) {
+			 System.out.println(jdomex.getMessage());
+		}
+		return wteam;
+	}
 }

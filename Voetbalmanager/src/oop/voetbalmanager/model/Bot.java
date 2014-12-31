@@ -1,11 +1,39 @@
 package oop.voetbalmanager.model;
 
+import java.util.ArrayList;
+
 public class Bot {
 	
 	private static Divisie divisie;
 	private static Team userTeam;
 	private static Team botTeam;
+	private static Wedstrijdteam wteam;
 	
+	
+	public static void teamToWTeam(ArrayList<Opstelling> opstellingen){
+		wteam = new Wedstrijdteam(botTeam);
+		
+		int opIdx = RNG.getalTot(opstellingen.size());
+		Opstelling opstelling = opstellingen.get(opIdx);
+		
+		int tactiek = RNG.getalTot(101);
+		
+		ArrayList<Speler> wSpelerList = new ArrayList<Speler>();
+		
+		for(Speler s: botTeam.getSpelerList()){
+			if(s.getType().equals("doelman")){
+				wteam.getWSpelers()[0] = s;
+				break;
+			}
+		}
+		for(int i = 1; i < wteam.getWSpelers().length; i++){
+			wteam.getWSpelers()[i] = botTeam.getSpelerList().get(i);
+		}
+		
+		wteam.setOpstelling(opstelling);
+		wteam.setTactiek(tactiek);
+	//	System.out.println("Bot wedstrijdteam: " + wteam.toString());
+	}
 	
 	/**
 	 * Geeft een willekeurige tegenstander
@@ -67,5 +95,12 @@ public class Bot {
 	 */
 	public static Team getBotTeam() {
 		return botTeam;
+	}
+
+	/**
+	 * @return the wteam
+	 */
+	public static Wedstrijdteam getWteam() {
+		return wteam;
 	}
 }

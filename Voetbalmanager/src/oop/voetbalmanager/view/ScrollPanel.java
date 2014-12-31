@@ -51,12 +51,12 @@ public class ScrollPanel {
 
 		return pane;
 	}
-	@Override
+/*	@Override
 	public Dimension getPreferredSize() {
 	Dimension d = getParent().getSize();
 	int w = d.width * 20 / 100;
 	int h = d.height;// * percent / 100;
 	return new Dimension(w,h);
 	}
-
+*/
 }

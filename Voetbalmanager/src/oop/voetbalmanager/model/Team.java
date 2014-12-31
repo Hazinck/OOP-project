@@ -44,6 +44,19 @@ public class Team {
 		this.budget = budget;
 		this.score = score;
 	}
+	protected Team(Team team){
+		this.naam = team.naam;
+		this.rank = team.rank;
+		this.spelerList = team.spelerList;
+		this.winst = team.winst;
+		this.verlies = team.verlies;
+		this.gelijkspel = team.gelijkspel;
+		this.doelsaldo = team.doelsaldo;
+		this.doeltegen = team.doeltegen;
+		this.doelvoor = team.doelvoor;
+		this.budget = team.budget;
+		this.score = team.score;
+	}
 	
 
 	public String toString(){

@@ -54,6 +54,7 @@ public class XMLwriter {
 				 //als naam van <tag> element overeenkomt dan:
 			//	 System.out.println(element.toString() + " " + tag);
 // System.out.println(element.getChildText("naam"));//element.getParentElement().getChildren(tag).size());
+				// System.out.println(element.getParentElement().getChildren().toString() + " == " + naam + " filter: " + filter.toString() );
 				 if(element.getChildText("naam").equals(naam)){
 					/* 	//als er geen waarde is ingevoer maak nieuwe element
 					 	if(waarde.equals("")){
@@ -134,6 +135,9 @@ public class XMLwriter {
 				 }
 			 }
 			if(bestaat == false){
+				if(parent == null && parentNaam.equals("opstellingen")){
+					parent = divisieEl.getChild("opstellingen");
+				}
 				String id = plaats + Integer.toString(parent.getChildren(childTag).size() + 1);
 
 				 Element childNieuw = new Element(childTag);
@@ -163,5 +167,20 @@ public class XMLwriter {
 			
 		
 		 
+	}
+	
+	public void createWedstrijdteam(Wedstrijdteam wteam){
+		try {
+			//open xml
+			Document document = (Document) builder.build(xmlFile);
+			//maak element van <divisie>
+			Element divisieEl = document.getRootElement();
+			
+			
+		}catch (IOException io) {
+			System.out.println(io.getMessage());
+		} catch (JDOMException jdomex) {
+			System.out.println(jdomex.getMessage());
+		}
 	}
 }

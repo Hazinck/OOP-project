@@ -1,13 +1,12 @@
 package oop.voetbalmanager;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-
 import oop.voetbalmanager.controller.Controller;
 import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
+import oop.voetbalmanager.model.Wedstrijdteam;
 import oop.voetbalmanager.model.XMLreader;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
@@ -24,6 +23,7 @@ public class Application {
 		XMLreader reader = new XMLreader();
 		final Divisie divisie = reader.readDivisie();
 		final Team team = divisie.getTeamList().get(8);
+		final Wedstrijdteam wteam = reader.readWedstrijdteam(team);
 		
 	    EventQueue.invokeLater(new Runnable() {
 	      
@@ -31,6 +31,7 @@ public class Application {
 	      public void run() {
 	    	  User.setNaam("Andy Zaidman");
 	    	  User.setTeam(team);
+	    	  User.setWteam(wteam);
 	    	  
 	    	  Bot.setDivisie(divisie);
 	    	  Bot.setUserTeam(team);
@@ -42,6 +43,9 @@ public class Application {
 	  	   	  TeamPanel t = new TeamPanel();
 	  	   	  Competition comp = new Competition(viewFrame);
 	  	   	  PandS ps = new PandS(viewFrame);
+	  	   	  
+
+	  	   	  Bot.teamToWTeam(t.getOpst().getOpstellingen());
 //	  	   	  p1.showThis(p2); 
               Controller controller = new Controller(viewFrame, l, h, t, comp, ps);
               controller.contol();

@@ -1,8 +1,6 @@
 package oop.voetbalmanager.model;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class Spel {
 	
@@ -85,14 +83,15 @@ public class Spel {
 	public ArrayList<String> verslag(){
 		String uOpstelling="";
 		String bOpstelling="";
+		
 		for(int i=0; i<11; i++){
 			if(i==userTeam.getSpelerList().size()-1){
-				uOpstelling += userTeam.getSpelerList().get(i).getNaam() + ".";
-				bOpstelling += botTeam.getSpelerList().get(i).getNaam() + ".";
+				uOpstelling += User.getWteam().getWSpelers()[i].getNaam() + ".";
+				bOpstelling += Bot.getWteam().getWSpelers()[i].getNaam() + ".";
 			}
 			else{
-				uOpstelling += userTeam.getSpelerList().get(i).getNaam() + ", ";
-				bOpstelling += botTeam.getSpelerList().get(i).getNaam() + ", ";
+				uOpstelling += User.getWteam().getWSpelers()[i].getNaam() + ", ";
+				bOpstelling += Bot.getWteam().getWSpelers()[i].getNaam() + ", ";
 			}
 		}
 		

@@ -1,35 +1,27 @@
 package oop.voetbalmanager.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import oop.voetbalmanager.view.TeamPanel;
+import oop.voetbalmanager.view.TeamPanel.OpstellingPanel;
+
 
 public class Wedstrijdteam extends Team{
 	
 	private int off = 0;//offensieve kracht
 	private int def = 0;//defensieve kracht
 	private int uith = 0;//uithoudingsvermogen
-	private String opstelling = "";//opstelling
+	private Opstelling opstelling;//opstelling
 	private int tactiek = 0;//tactiek
-	
-	
+	private Speler[] wSpelers = new Speler[11];
+	private ArrayList<Opstelling> opstellingen;
 	
 	/**
-	 * @param naam
-	 * @param rank
-	 * @param spelerList
-	 * @param winst
-	 * @param verlies
-	 * @param gelijkspel
-	 * @param doelsaldo
-	 * @param doeltegen
-	 * @param doelvoor
-	 * @param budget
-	 * @param score
+	 * @param team
 	 */
-	public Wedstrijdteam(String naam, int rank, ArrayList<Speler> spelerList,
-			int winst, int verlies, int gelijkspel, int doelsaldo,
-			int doeltegen, int doelvoor, double budget, int score) {
-		super(naam, rank, spelerList, winst, verlies, gelijkspel, doelsaldo, doeltegen,
-				doelvoor, budget, score);
+	public Wedstrijdteam(Team team) {
+		super(team);
 		teamOffence();
 		teamDefence();
 		teamUithouding();
@@ -41,11 +33,11 @@ public class Wedstrijdteam extends Team{
 		for(Speler s: spelerList){
 			off += s.getOffense();
 		}
-		System.out.println(off);
+	//	System.out.println(off);
 		off /= spelerList.size();
 		
 		this.off = off;
-		System.out.println("Offence: "+off);
+	//	System.out.println("Offence: "+off);
 	}
 	
 	public void teamDefence(){
@@ -57,7 +49,7 @@ public class Wedstrijdteam extends Team{
 		def /= spelerList.size();
 		
 		this.def = def;
-		System.out.println("Defence: "+def);
+	//	System.out.println("Defence: "+def);
 	}
 	
 	public void teamUithouding(){
@@ -69,8 +61,10 @@ public class Wedstrijdteam extends Team{
 		uith /= spelerList.size();
 		
 		this.uith = uith;
-		System.out.println("Uithouding: "+uith);
+	//	System.out.println("Uithouding: "+uith);
 	}
+		
+	
 	/**
 	 * @return the off
 	 */
@@ -110,13 +104,13 @@ public class Wedstrijdteam extends Team{
 	/**
 	 * @return the opstelling
 	 */
-	public String getOpstelling() {
+	public Opstelling getOpstelling() {
 		return opstelling;
 	}
 	/**
 	 * @param opstelling the opstelling to set
 	 */
-	public void setOpstelling(String opstelling) {
+	public void setOpstelling(Opstelling opstelling) {
 		this.opstelling = opstelling;
 	}
 	/**
@@ -131,4 +125,44 @@ public class Wedstrijdteam extends Team{
 	public void setTactiek(int tactiek) {
 		this.tactiek = tactiek;
 	}
+
+	/**
+	 * @return the def
+	 */
+	public int getDef() {
+		return def;
+	}
+
+	/**
+	 * @return the spelers
+	 */
+	public Speler[] getWSpelers() {
+		return wSpelers;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Wedstrijdteam: "+getNaam()+"\nOffensieve kracht: " + off + "\nDefensieve kracht: " + def + "\nUithoudingsvermogen: " + uith
+				+ "\n" + opstelling + "\nTactiek: " + tactiek
+				+ "\nSpelers:\n" + Arrays.toString(wSpelers);
+	}
+
+
+
+	/**
+	 * @param wSpelers the wSpelers to set
+	 */
+	public void setWSpelers(Speler[] wSpelers) {
+		this.wSpelers = wSpelers;
+	}
+
+//	/**
+//	 * @return the opstellingen
+//	 */
+//	public ArrayList<Opstelling> getOpstellingen() {
+//		return opstellingen;
+//	}
 }
