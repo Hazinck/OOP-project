@@ -96,11 +96,19 @@ public class Bot {
 	public static Team getBotTeam() {
 		return botTeam;
 	}
+	
+	public static void setBotTeam(Team botTeam){
+		Bot.botTeam=botTeam;
+	}
 
 	/**
 	 * @return the wteam
 	 */
 	public static Wedstrijdteam getWteam() {
 		return wteam;
+	}
+	
+	public static void setWteam(Wedstrijdteam wteam){
+		Bot.wteam=wteam;
 	}
 }

@@ -13,7 +13,7 @@ public class TXTreader {
 	
 	public static ArrayList<String> teams = new ArrayList<String>();
 	
-	private static XMLwriter writer = new XMLwriter();
+	private static XMLwriter writer = new XMLwriter(Driver.path);
 	
 	public static void readTeam(String teamFile, String teamNaam){
 			String file = pathTxt + teamFile;

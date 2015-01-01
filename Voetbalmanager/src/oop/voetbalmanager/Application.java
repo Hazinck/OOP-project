@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import oop.voetbalmanager.controller.Controller;
 import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
+import oop.voetbalmanager.model.Driver;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.Wedstrijdteam;
@@ -21,9 +22,9 @@ public class Application {
 	
 	public static void main(String[] args) {
 		XMLreader reader = new XMLreader();
-		final Divisie divisie = reader.readDivisie();
+		final Divisie divisie = reader.readDivisie(Driver.path);
 		final Team team = divisie.getTeamList().get(8);
-		final Wedstrijdteam wteam = reader.readWedstrijdteam(team);
+		final Wedstrijdteam wteam = reader.readWedstrijdteam(team, Driver.path);
 		
 	    EventQueue.invokeLater(new Runnable() {
 	      

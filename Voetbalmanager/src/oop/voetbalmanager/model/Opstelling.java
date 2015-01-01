@@ -42,6 +42,10 @@ public class Opstelling {
 	public ArrayList<Positie> getPosities() {
 		return posities;
 	}
+	
+	public void setPosities(ArrayList<Positie> posities){
+		this.posities=posities;
+	}
 
 
 }

@@ -28,6 +28,7 @@ import javax.swing.ListModel;
 import javax.swing.border.TitledBorder;
 
 import oop.voetbalmanager.controller.Controller;
+import oop.voetbalmanager.model.Driver;
 import oop.voetbalmanager.model.Opstelling;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
@@ -222,7 +223,7 @@ public class TeamPanel extends JPanel{
 			  
 			  public OpstellingPanel(TeamPanel teamPanel)  {
 				  //wedstrijdteam laden
-				  opstellingen = reader.readOpstellingList();
+				  opstellingen = reader.readOpstellingList(Driver.path);
 				  String team = User.getTeam().getNaam();
 				  
 //				  ArrayList<String> spelers = new ArrayList<String>();

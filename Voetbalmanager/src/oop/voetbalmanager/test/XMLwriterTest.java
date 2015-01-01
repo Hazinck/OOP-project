@@ -33,13 +33,13 @@ public class XMLwriterTest {
 			Element divisieEl = document.getRootElement();
 			List<Element> teamElementList = divisieEl.getChildren("team");
 			Element teamEl = (Element) teamElementList.get(0);
-			spelerList=testing.readSpeler("Ajax",teamEl);
+			spelerList=testing.readSpelerList("Ajax",teamEl);
 		} catch (IOException io) {
 			 System.out.println(io.getMessage());
 		 } catch (JDOMException jdomex) {
 			 System.out.println(jdomex.getMessage());
 		 }
-		assertEquals("[Naam:Aefano Denswil - Nummer:222\nType:aanvaller\nOffense:56\nDefence:70\nConditie:64\nBeschikbaarheid:beschikbaar\nPrijs:200\n, Naam:Thulani Serero - Nummer:223\nType:middenvelder\nOffense:59\nDefence:48\nConditie:85\nBeschikbaarheid:niet beschikbaar\nPrijs:250\n]",spelerList.toString());
+		assertEquals("[Naam:Aefano Denswil - Nummer:222\nType:aanvaller\nOffense:56\nDefence:70\nConditie:64\nBeschikbaarheid:beschikbaar\nPrijs:10000\n, Naam:Thulani Serero - Nummer:223\nType:middenvelder\nOffense:59\nDefence:48\nConditie:85\nBeschikbaarheid:niet beschikbaar\nPrijs:10000\n]",spelerList.toString());
 	}
 	
 	@Test

@@ -13,6 +13,7 @@ import javax.swing.text.Document;
 
 import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
+import oop.voetbalmanager.model.Driver;
 import oop.voetbalmanager.model.Opstelling;
 import oop.voetbalmanager.model.Positie;
 import oop.voetbalmanager.model.RNG;
@@ -43,7 +44,7 @@ public class Controller {
 	private Competition comp;
 	private PandS ps;
 	private ArrayList<String> ranglijst = new ArrayList<String>();
-	private XMLwriter writer = new XMLwriter();
+	private XMLwriter writer = new XMLwriter(Driver.path);
 //	private VeldPanel veldPanel;
 	
 	
@@ -158,7 +159,7 @@ public class Controller {
 	
 	public void ranking(){
 		XMLreader reader = new XMLreader();
-		Divisie divisie = reader.readDivisie();
+		Divisie divisie = reader.readDivisie(Driver.path);
 		
 		for(int i = 0; i<18; i++){
 			int rank = divisie.getTeamList().get(i).getRank();
@@ -394,7 +395,7 @@ public class Controller {
 		Wedstrijdteam wteam = User.getWteam();
 		
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "offence", Integer.toString(wteam.getOff()));
-		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "defence", Integer.toString(wteam.getDef()));
+		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "defence", Integer.toString(wteam.getdef()));
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "uithouding", Integer.toString(wteam.getUith()));
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "opstelling", wteam.getOpstelling().getNaam());
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "tactiek", Integer.toString(wteam.getTactiek()));

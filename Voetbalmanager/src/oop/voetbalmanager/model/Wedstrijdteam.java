@@ -129,9 +129,7 @@ public class Wedstrijdteam extends Team{
 	/**
 	 * @return the def
 	 */
-	public int getDef() {
-		return def;
-	}
+	
 
 	/**
 	 * @return the spelers

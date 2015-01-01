@@ -18,9 +18,9 @@ public class XMLreader {
 		
 	}
 	
-	public Divisie readDivisie(){
+	public Divisie readDivisie(String infile){
 		 SAXBuilder builder = new SAXBuilder();
-		 File xmlFile = new File(Driver.path);
+		 File xmlFile = new File(infile);
 		 
 		 ArrayList<Team> teamList = new ArrayList<Team>();
 		 String divisieNaam = "";
@@ -129,9 +129,9 @@ public class XMLreader {
 	}
 
 	
-	public ArrayList<Opstelling> readOpstellingList(){
+	public ArrayList<Opstelling> readOpstellingList(String infile){
 		SAXBuilder builder = new SAXBuilder();
-		File xmlFile = new File(Driver.path);
+		File xmlFile = new File(infile);
 		
 		ArrayList<Opstelling> opstellingen = new  ArrayList<Opstelling>();
 		
@@ -209,9 +209,9 @@ public class XMLreader {
 		return opstelling;
 	}
 	
-	public Wedstrijdteam readWedstrijdteam(Team userteam){
+	public Wedstrijdteam readWedstrijdteam(Team userteam, String infile){
 		SAXBuilder builder = new SAXBuilder();
-		File xmlFile = new File(Driver.path);
+		File xmlFile = new File(infile);
 		Wedstrijdteam wteam = new Wedstrijdteam(userteam);;
 		try {
 			//open xml
@@ -233,7 +233,7 @@ public class XMLreader {
 			Speler[] spelersArray = new Speler[11];
 			spelerList.toArray(spelersArray);
 			
-			ArrayList<Opstelling> opstellingen = readOpstellingList();
+			ArrayList<Opstelling> opstellingen = readOpstellingList(infile);
 			for(Opstelling op: opstellingen){
 				if(op.getNaam().equals(opstelling)){
 					wteam.setOpstelling(op);

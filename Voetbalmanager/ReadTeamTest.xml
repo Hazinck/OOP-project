@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<divisie>
-<naam>Champions League</naam>
-<speeldag>10</speeldag>
-<stand>4</stand>
 <team>
     <naam>Ajax</naam>
     <rank>1</rank>
@@ -15,4 +11,3 @@
     <score>71</score>
     <budget>65</budget>
   </team>
-</divisie>

@@ -56,7 +56,7 @@ public class Driver {
 		
 	*/	//spel
 		XMLreader reader = new XMLreader();
-		Divisie divisie = reader.readDivisie();
+		Divisie divisie = reader.readDivisie(Driver.path);
 		Team team1 = divisie.getTeamList().get(1);
 		Team team2 = divisie.getTeamList().get(8);
 		int geluksfactor = RNG.getalTot(800);
