@@ -9,6 +9,7 @@ import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.Wedstrijdteam;
 import oop.voetbalmanager.model.XMLreader;
+import oop.voetbalmanager.spel2D.VeldPanel;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -49,7 +50,7 @@ public class Application {
 	  	   	  Bot.teamToWTeam(t.getOpst().getOpstellingen());
 //	  	   	  p1.showThis(p2); 
               Controller controller = new Controller(viewFrame, l, h, t, comp, ps);
-              controller.contol();
+              controller.control();
               
               
 //              viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

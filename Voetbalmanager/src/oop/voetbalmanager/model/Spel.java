@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Spel {
 	
-	private Team userTeam;
-	private Team botTeam;
+	private Wedstrijdteam userTeam;
+	private Wedstrijdteam botTeam;
 	private int geluksfactor;
 	
 	/**
@@ -13,14 +13,14 @@ public class Spel {
 	 * @param tegenstander
 	 * @param geluksfactor
 	 */
-	public Spel(Team userTeam, Team botTeam, int geluksfactor) {
+	public Spel(Wedstrijdteam userTeam, Wedstrijdteam botTeam, int geluksfactor) {
 		this.userTeam = userTeam;
 		this.botTeam = botTeam;
 		this.geluksfactor = geluksfactor;
 	}
 	
-	public Team winner(){
-		Team winner;
+	public Wedstrijdteam winner(){
+		Wedstrijdteam winner;
 		
 		int spelerUResult = 0;
 		for(Speler s: userTeam.getSpelerList()){
@@ -66,7 +66,7 @@ public class Spel {
 		return (int)result;
 	}
 	
-	public int teamAnalyse(Team team, int spelerResult){
+	public int teamAnalyse(Wedstrijdteam team, int spelerResult){
 		double result = 0;
 		
 		double w = team.getWinst()*2;

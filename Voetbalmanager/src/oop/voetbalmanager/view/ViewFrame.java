@@ -14,7 +14,7 @@ import oop.voetbalmanager.model.User;
 
 //window(frame) van programma
 public class ViewFrame extends JFrame{
-	public JPanel controlPanel;
+	private JPanel controlPanel;
 	
 	//tijdelijk
 //	private String username = User.getNaam();//"Kamran Tadzjibov";
@@ -86,6 +86,13 @@ public class ViewFrame extends JFrame{
 	 */
 	public String getImgName() {
 		return imgName;
+	}
+
+	/**
+	 * @return the controlPanel
+	 */
+	public JPanel getControlPanel() {
+		return controlPanel;
 	}
 	 
 	

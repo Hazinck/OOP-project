@@ -34,7 +34,7 @@ public class Login extends JPanel{
 	    setLayout(null);
 	    
 	    //deze panel toevoegen aan View frame
-	    viewFrame.controlPanel.add(this);  
+	    viewFrame.getControlPanel().add(this);  
 	    Insets insets = this.getInsets();
 	    
 	    //tekst aanmaken

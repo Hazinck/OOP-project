@@ -25,7 +25,7 @@ public class Tabs extends JPanel{
 		    setLayout(new BorderLayout());
 		    
 		    //tabs panel toevoegen aan ViewFrame
-		    viewFrame.controlPanel.add(this);  
+		    viewFrame.getControlPanel().add(this);  
 		    
 		    //table
 		  /*Table*/ table = new Table();

@@ -1,4 +1,5 @@
 package oop.voetbalmanager.controller;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +25,7 @@ import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.Wedstrijdteam;
 import oop.voetbalmanager.model.XMLreader;
 import oop.voetbalmanager.model.XMLwriter;
+import oop.voetbalmanager.spel2D.VeldPanel;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -45,8 +47,8 @@ public class Controller {
 	private PandS ps;
 	private ArrayList<String> ranglijst = new ArrayList<String>();
 	private XMLwriter writer = new XMLwriter(Driver.path);
-//	private VeldPanel veldPanel;
-	
+	private VeldPanel veldPanel;
+	private boolean pause = false;
 	
 	public Controller(ViewFrame viewFrame, Login l, Home home, TeamPanel teamPanel, Competition comp, PandS ps) {
 		this.viewFrame = viewFrame;
@@ -55,10 +57,9 @@ public class Controller {
 		this.teamPanel = teamPanel;
 		this.comp = comp;
 		this.ps = ps;
-
 	}
 
-	public void contol() {
+	public void control() {
 		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
 		
 		ActionListener actionListener = new ActionListener() {
@@ -102,15 +103,49 @@ public class Controller {
 		playButton.addActionListener(new ActionListener() {
 	           public void actionPerformed(ActionEvent actionEvent) { 
 	        	int geluksfactor = RNG.getalTot(600);
-	       		Spel s = new Spel(User.getTeam(), Bot.getBotTeam(), geluksfactor);
+	       		Spel s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
 	       		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
 	       		spel(s);
+	       		veldPanel = new VeldPanel(viewFrame);
+	       		veldPanel.showThis(tabs);
+	       		addPauseListener();
+	       		addGoBackListener();
 	       		updateStats(s);
 	       		}
 		});
 		                
 	 //    p2.getButton().addActionListener(actionListener2);   
 		
+	}
+	
+	public void addGoBackListener(){
+		JButton goBack = veldPanel.getTerugButton();
+       goBack.addActionListener(new ActionListener() {
+    	    public void actionPerformed(ActionEvent e)
+    	    {
+    	    	veldPanel.getGr().stop();
+    	    	viewFrame.remove(veldPanel);
+    	    	tabs.showThis(veldPanel);
+    	    }
+    	});
+	}
+	
+	public void addPauseListener(){
+		JButton pauseResume = veldPanel.getPauseResume();
+		pauseResume.addActionListener(new ActionListener() {
+    	    public void actionPerformed(ActionEvent e)
+    	    {
+    	    	if(pause){
+    	    		veldPanel.getGr().start();
+    	    		pause = false;
+    	    		veldPanel.getPauseResume().setText("Pause");
+    	    	}else{
+    	    		veldPanel.getGr().stop();
+    	    		pause = true;
+    	    		veldPanel.getPauseResume().setText("Resume");
+    	    	}
+    	    }
+    	});
 	}
 	
 	public void updateStats(Spel s){
@@ -395,7 +430,7 @@ public class Controller {
 		Wedstrijdteam wteam = User.getWteam();
 		
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "offence", Integer.toString(wteam.getOff()));
-		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "defence", Integer.toString(wteam.getdef()));
+		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "defence", Integer.toString(wteam.getDef()));
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "uithouding", Integer.toString(wteam.getUith()));
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "opstelling", wteam.getOpstelling().getNaam());
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "tactiek", Integer.toString(wteam.getTactiek()));
