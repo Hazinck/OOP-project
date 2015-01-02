@@ -23,9 +23,10 @@ public class Ball {
 //		}else{
 //			x-=5;
 //		}
-		if(kick){
-			kick();
-		}else if (owner!=null){
+//		if(kick){
+//			kick();
+//		}else 
+			if (owner!=null){
 			xforP = startX = x = owner.getX();
 			yforP = startY = y = owner.getY();
 		}else{
@@ -37,19 +38,19 @@ public class Ball {
 	}
 	
 	public void kick(){
-		if((x>targetX-1 && x<targetX+1) && (y>targetY-1 && y<targetY+1)){
-			x = targetX;
-			y = targetY;
-			startX = x;
-			startY = y;
-			t=0;
-			kick = false;
-			if (owner!=null){
-				owner.setBallOwner(true);
-     			
-			}
-		}else{
-//			
+//		if((x>targetX-1 && x<targetX+1) && (y>targetY-1 && y<targetY+1)){
+//			x = targetX;
+//			y = targetY;
+//			startX = x;
+//			startY = y;
+//			t=0;
+//			kick = false;
+//			if (owner!=null){
+//				owner.setBallOwner(true);
+//     			
+//			}
+//		}else{
+		if(kick){	
 			double g = 9.81;
 			//y-snelheid met max tijd = 10
 			double Vy0=(-targetY+startY+0.5*g*100)/10;//+-inverse omdat voordinaten systeem voor y omgekeerd is
@@ -65,8 +66,12 @@ public class Ball {
 			
 			owner.runTo((int)targetX, (int)targetY);
 		//	System.out.println(targetX + ";"+ targetY);
+
 			t+=0.1;
+			System.out.println("Ball class: "+ xforP + "," + yforP + "  " + x+","+y);
+			
 		}
+//		}
 	}
 
 	/**

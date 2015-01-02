@@ -31,6 +31,7 @@ public class GameRunnable implements Runnable {
 		
 		control = new Controller(playerListAll, gp.getBall());
 		control.topPlayers();
+		gp.setController(control);
 	}
 	
 	
@@ -63,11 +64,13 @@ public class GameRunnable implements Runnable {
 		  ActionListener updateRun = new ActionListener() {
 		         @Override
 		         public void actionPerformed(ActionEvent evt) {
-		        	 Collision.collide(playerListAll);
 		        	 for(Player p: playerListAll){
+		        		 
 			     			p.move(bounds,  (int)gp.getBall().getXforP(),  (int)gp.getBall().getYforP());//targetX,Y
-			     			//System.out.println(p.getX());
+//			     		System.out.println("gameRunnable: " + p.getTargetX() + " = " + (int)gp.getBall().getXforP());	
 			     	 }
+		        	// Collision.collide(playerListAll);
+		        	 Collision.collision(playerListAll);
 		        	 gp.getBall().move();
 		        	 autoCam(gp.getBall());
 
@@ -83,17 +86,18 @@ public class GameRunnable implements Runnable {
 	public void autoCam(Ball b){
 		
 //		System.out.println(VeldFrame.getFrameWidth()/2  +" "+ b.getX() + gp.getViewX());
-		if(ViewFrame.getFrameWidth()/2  > b.getX() + gp.getViewX() + 50){
-			gp.setViewX(gp.getViewX()+3);
-		}else if(ViewFrame.getFrameWidth()/2 < b.getX() + gp.getViewX() - 50){
-			gp.setViewX(gp.getViewX()-3);
-		}
 		
-		if(ViewFrame.getFrameHeight()/2  > b.getY() + gp.getViewY() + 50){
-			gp.setViewY(gp.getViewY()+3);
-		}else if(ViewFrame.getFrameHeight()/2 < b.getY() + gp.getViewY() - 50){
-			gp.setViewY(gp.getViewY()-3);
-		}
+			if(ViewFrame.getFrameWidth()/2  > b.getX() + gp.getViewX() + 50){
+				gp.setViewX(gp.getViewX()+3);
+			}else if(ViewFrame.getFrameWidth()/2 < b.getX() + gp.getViewX() - 50){
+				gp.setViewX(gp.getViewX()-3);
+			}
+			
+			if(ViewFrame.getFrameHeight()/2  > b.getY() + gp.getViewY() + 50){
+				gp.setViewY(gp.getViewY()+3);
+			}else if(ViewFrame.getFrameHeight()/2 < b.getY() + gp.getViewY() - 50){
+				gp.setViewY(gp.getViewY()-3);
+			}
 		
 	}
 	

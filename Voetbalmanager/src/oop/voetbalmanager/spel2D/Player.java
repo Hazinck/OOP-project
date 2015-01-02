@@ -1,9 +1,11 @@
 package oop.voetbalmanager.spel2D;
 import java.awt.Dimension;
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
+import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.Wedstrijdteam;
 import oop.voetbalmanager.view.ViewFrame;
@@ -26,10 +28,13 @@ public class Player {
 	private String richting="";
 	private int team12;
 	private Rectangle boundsAnchor;
-	private Rectangle bounds = new Rectangle();
+	//private Rectangle bounds = new Rectangle();
+	private Ellipse2D.Double circleBounds;
 	private boolean collision = false;
 	private Controller controlBall;
 	private GamePanel gp;
+	private Wedstrijdteam wteam;
+	private int collisionCount = 0;
 	
 	/**
 	 * 
@@ -47,6 +52,7 @@ public class Player {
 		this.ball = ball;
 		this.team12 = team12;
 		this.gp = gp;
+		this.wteam = wteam;
 		boundsAnchor = new Rectangle();
 		setSpeed();
 		
@@ -57,7 +63,11 @@ public class Player {
 			myTeam = gp.getPlayerListTeam2();
 		}
 		controlBall = new Controller(myTeam, ball);
-		
+		xMinGrens =  ViewFrame.getFrameWidth()/2 - 1275;//-600;//bounds.getMinX();
+		xMaxGrens =  ViewFrame.getFrameWidth()/2 + 1750;//3000;//bounds.getMaxX();
+		yMinGrens = ViewFrame.getFrameHeight()/2 - 300;//-805//bounds.getMinY();
+		yMaxGrens = ViewFrame.getFrameHeight()/2 + 1241;//bounds.getMaxY();
+		circleBounds = new Ellipse2D.Double(x-15, y-30, 40, 48);
 	}
 	private double xMinGrens;
 	private double xMaxGrens;
@@ -65,23 +75,21 @@ public class Player {
 	private double yMaxGrens;
 	
 	public void move(Rectangle2D bounds, int targetX, int targetY ) {
-		this.bounds.setRect((int)x-15, (int)y-30, 40, 48);
+//		this.bounds.setRect((int)x-15, (int)y-30, 40, 48);
+		circleBounds.setFrame(x-22, y-30, 48, 48);
 		
 		controlBall.controlBallPerPlayer(this);
-		
+//		System.out.println("player before: "+ targetX);
 		Dimension target = runTo(targetX, targetY);
 		targetX = target.width;
 		targetY = target.height;
-		
+//		System.out.println("player after: "+ targetX);
 
 		count++;
 		checkTired();
 		 	String type = speler.getType();
 		 //	System.out.println("Speed: " + speedX + ", " + speedY +" " + speler.getNaam()+" Pos: "+x + ", "+y);
-			xMinGrens =  ViewFrame.getFrameWidth()/2 - 1275;//-600;//bounds.getMinX();
-			xMaxGrens =  ViewFrame.getFrameWidth()/2 + 1750;//3000;//bounds.getMaxX();
-			yMinGrens = ViewFrame.getFrameHeight()/2 - 805;//bounds.getMinY();
-			yMaxGrens = ViewFrame.getFrameHeight()/2 + 1241;//bounds.getMaxY();
+			
 		//	System.out.println("xMaxGrens" + xMaxGrens);
 			oldX = x;
 			oldY = y;
@@ -130,13 +138,13 @@ public class Player {
 	  }
 	
 	public void findRichting(){
-		
 		double dx = x - oldX;
 		double dy = y - oldY;
 		if(xA[2]!=null && Math.abs(xA[2]-xA[0])<=1 && Math.abs(yA[2]-yA[0])<=1){
 			
 		//	System.out.println((Math.abs(dy)+Math.abs(dx))/2);
 			spriteObj.setIdle(true);
+			
 		//	System.out.println(richting);
 		}else{
 			spriteObj.setIdle(false);
@@ -196,7 +204,7 @@ public class Player {
 			x= this.targetX;
 			y = this.targetY;
 		}else{
-			if(ballOwner && bounds.contains(ball.getXforP(), ball.getYforP())){//this.x == ball.getX() && this.y ==  ball.getY()){
+			if(ballOwner){// && bounds.contains(ball.getXforP(), ball.getYforP())){//this.x == ball.getX() && this.y ==  ball.getY()){
 			//	System.out.println(speler.getNaam() + " got another target");
 				if(team12==1){
 					x = 2256;
@@ -212,7 +220,14 @@ public class Player {
 			}else{//!boundsAnchor.contains(this.x, this.y)){//
 				x = boundsAnchor.x + boundsAnchor.width/2;
 				y = boundsAnchor.height/2 + boundsAnchor.y;
+				if(x==this.x && y==this.y){
+					x = boundsAnchor.getCenterX() + RNG.getalTot(boundsAnchor.width/2);
+					y = boundsAnchor.getCenterY() + RNG.getalTot(boundsAnchor.height/2);
+				//	System.out.println("player target: "+x + ", "+ y);
+				}
 			}
+			this.targetX = x;
+			this.targetY = y;
 		}
 		return new Dimension((int)x, (int)y);
 	}
@@ -386,12 +401,7 @@ public class Player {
 		return boundsAnchor;
 	}
 
-	/**
-	 * @return the bounds
-	 */
-	public Rectangle getBounds() {
-		return bounds;
-	}
+	
 
 	/**
 	 * @return the targetX
@@ -447,6 +457,48 @@ public class Player {
 	 */
 	public GamePanel getGp() {
 		return gp;
+	}
+
+	/**
+	 * @return the ball
+	 */
+	public Ball getBall() {
+		return ball;
+	}
+
+	/**
+	 * @return the wteam
+	 */
+	public Wedstrijdteam getWteam() {
+		return wteam;
+	}
+
+	/**
+	 * @return the team12
+	 */
+	public int getTeam12() {
+		return team12;
+	}
+
+	/**
+	 * @return the circleBounds
+	 */
+	public Ellipse2D.Double getCircleBounds() {
+		return circleBounds;
+	}
+
+	/**
+	 * @return the collisionCount
+	 */
+	public int getCollisionCount() {
+		return collisionCount;
+	}
+
+	/**
+	 * @param collisionCount the collisionCount to set
+	 */
+	public void setCollisionCount(int collisionCount) {
+		this.collisionCount = collisionCount;
 	}
 
 	

@@ -17,7 +17,7 @@ public class Controller {
 	private Ball ball;
 	
 	private ArrayList<Player> sortTeam1 = new ArrayList<Player>();
-	
+	private boolean kickToPlayer = false;
 	//score voorlopig hardcoded   //(team1 score, team2 score)
 	private Dimension score = new Dimension(3, 2);
 	private long currentTimeFalse = 0;
@@ -46,7 +46,7 @@ public class Controller {
 	
 	public void controlBallPerPlayer(final Player p){
 
-		if(p.getBounds().contains(ball.getXforP(), ball.getYforP())){
+		if(p.getCircleBounds().contains(ball.getXforP(), ball.getYforP())){
 			long currentTime = System.currentTimeMillis()/1000;
 		//	System.out.println(currentTimeFalse);
 			if(currentTimeFalse+5 <= currentTime){
@@ -61,11 +61,12 @@ public class Controller {
 		
 	}
 	
-	public void controlBal(final VeldPanel frame){//VeldFrame frame){
-			
-		ActionListener updateAnim = new ActionListener() {
-	         @Override
-	         public void actionPerformed(ActionEvent evt) {
+	public void controlBall(final VeldPanel frame){//VeldFrame frame){
+		if(kickToPlayer){	
+			ActionListener updateAnim = new ActionListener() {
+		         @Override
+		         public void actionPerformed(ActionEvent evt) {
+		
 	        	int pIdx = RNG.getalTot(7);
 	     		
 	     		if( !sortTeam1.get(pIdx).isBallOwner() ){
@@ -80,13 +81,17 @@ public class Controller {
 	     		//	System.out.println(sortTeam1.get(pIdx).getSpeler().getNaam() + " has ball");
 	     		}
 	     		
-	            frame.repaint();  // Refresh the JFrame, callback paintComponent()
+	            frame.repaint(); // Refresh the JFrame, callback paintComponent()
+		         
+			
 	         }
 	      };
-	      // Fullocate a Timer to run updateTask's actionPerformed() after every delay msec
-	      Timer t =  new Timer(10000, updateAnim);
+	      Timer t =  new Timer(50, updateAnim);
 	      frame.getGr().getTimers().add(t);
 	      t.start();
+		}
+//	      // Fullocate a Timer to run updateTask's actionPerformed() after every delay msec
+	     
 		
 	}
 
@@ -102,6 +107,20 @@ public class Controller {
 	 */
 	public void setCurrentTimeFalse(long currentTimeFalse) {
 		this.currentTimeFalse = currentTimeFalse;
+	}
+
+	/**
+	 * @return the kickToPlayer
+	 */
+	public boolean isKickToPlayer() {
+		return kickToPlayer;
+	}
+
+	/**
+	 * @param kickToPlayer the kickToPlayer to set
+	 */
+	public void setKickToPlayer(boolean kickToPlayer) {
+		this.kickToPlayer = kickToPlayer;
 	}
 	
 }

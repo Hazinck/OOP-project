@@ -15,12 +15,13 @@ public class GamePanel extends JPanel{
 	private ArrayList<Player> playerListTeam1 = new ArrayList<Player>();
 	private ArrayList<Player> playerListTeam2 = new ArrayList<Player>();
 	private Ball ball;
+	private Controller controller;
 	
 	private int viewX;
 	private int viewY;
 	
 	public GamePanel(Ball ball){
-		viewX = -500-1275 + ViewFrame.getFrameWidth()/2;
+		viewX = -1275 + ViewFrame.getFrameWidth()/2;
 		viewY = -805 + ViewFrame.getFrameHeight()/2;
 		this.ball = ball;
 	}
@@ -61,18 +62,19 @@ public class GamePanel extends JPanel{
 		
 		Image ballSprite = Toolkit.getDefaultToolkit().getImage("ball_small.png");//"field_satur=45.png");
 		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
-		
+//		System.out.println("GamePanel:  "+(int)ball.getX() +" "+ (int)ball.getY());
 		ArrayList<Player> playerList = new ArrayList<Player>();
 		playerList.addAll(playerListTeam1);
 		playerList.addAll(playerListTeam2);
 		
 		for(Player p: playerList){
 			g.drawImage(p.getSpriteObj().getSprite(), (int)p.getX()-30+viewX, (int)p.getY()-30+viewY,  this);//was -30 -30 sprite, x, y, this);
-			
+//			System.out.println(p.getTargetY()+"=="+ball.getTargetY());
 			g.setColor(Color.black);
-			g.drawRect(p.getBounds().x + viewX, p.getBounds().y + viewY, p.getBounds().width, p.getBounds().height);
+//			g.drawRect(p.getBounds().x + viewX, p.getBounds().y + viewY, p.getBounds().width, p.getBounds().height);
+			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
 			if(p.isBallOwner() && p.getX()==ball.getX() && p.getY()==ball.getY()){
-			//	System.out.println(p.getY()+"=="+ball.getY());
+				
 				g.setColor(Color.red);
 				g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 				g.drawString(p.getSpeler().getType(), (int)p.getX() - 30 + viewX, (int)p.getY() + 25 + viewY);
@@ -140,5 +142,23 @@ public class GamePanel extends JPanel{
 	 */
 	public ArrayList<Player> getPlayerListTeam2() {
 		return playerListTeam2;
+	}
+
+
+
+	/**
+	 * @return the controll
+	 */
+	public Controller getController() {
+		return controller;
+	}
+
+
+
+	/**
+	 * @param controll the controll to set
+	 */
+	public void setController(Controller controller) {
+		this.controller = controller;
 	}
 }
