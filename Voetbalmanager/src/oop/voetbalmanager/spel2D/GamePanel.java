@@ -2,6 +2,7 @@ package oop.voetbalmanager.spel2D;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Polygon;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
@@ -16,6 +17,8 @@ public class GamePanel extends JPanel{
 	private ArrayList<Player> playerListTeam2 = new ArrayList<Player>();
 	private Ball ball;
 	private Controller controller;
+	private Polygon goal1 = new Polygon();
+	private Polygon goal2 = new Polygon();
 	
 	private int viewX;
 	private int viewY;
@@ -24,6 +27,18 @@ public class GamePanel extends JPanel{
 		viewX = -1275 + ViewFrame.getFrameWidth()/2;
 		viewY = -805 + ViewFrame.getFrameHeight()/2;
 		this.ball = ball;
+		
+		goal1.addPoint(270, 733);
+		goal1.addPoint(324, 692);
+		goal1.addPoint(332, 741);
+		goal1.addPoint(294, 884);
+		goal1.addPoint(237, 887);
+		
+		goal2.addPoint(2234, 693);
+		goal2.addPoint(2234, 744);
+		goal2.addPoint(2273, 879);
+		goal2.addPoint(2330, 884);
+		goal2.addPoint(2293, 744);
 	}
 		
 	
@@ -60,8 +75,17 @@ public class GamePanel extends JPanel{
 		Image veld = Toolkit.getDefaultToolkit().getImage("veld_big_end.png");//"field_satur=45.png");
 		g.drawImage(veld, viewX ,  viewY ,  this);//g.drawImage(veld, -500 + viewX, -500 + viewY,  this);//this.getWidth(), this.getHeight(),
 		
+		
+		goal1.translate(viewX, viewY);
+		g.drawPolygon(goal1);
+		
+		
+		goal2.translate(viewX, viewY);
+		g.drawPolygon(goal2);
+		
 		Image ballSprite = Toolkit.getDefaultToolkit().getImage("ball_small.png");//"field_satur=45.png");
 		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
+		
 //		System.out.println("GamePanel:  "+(int)ball.getX() +" "+ (int)ball.getY());
 		ArrayList<Player> playerList = new ArrayList<Player>();
 		playerList.addAll(playerListTeam1);
@@ -70,9 +94,9 @@ public class GamePanel extends JPanel{
 		for(Player p: playerList){
 			g.drawImage(p.getSpriteObj().getSprite(), (int)p.getX()-30+viewX, (int)p.getY()-30+viewY,  this);//was -30 -30 sprite, x, y, this);
 //			System.out.println(p.getTargetY()+"=="+ball.getTargetY());
-			g.setColor(Color.black);
-//			g.drawRect(p.getBounds().x + viewX, p.getBounds().y + viewY, p.getBounds().width, p.getBounds().height);
-			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
+//			g.setColor(Color.black);
+////			g.drawRect(p.getBoundsAnchor().x + viewX, p.getBoundsAnchor().y + viewY, p.getBoundsAnchor().width, p.getBoundsAnchor().height);
+//			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
 			if(p.isBallOwner() && p.getX()==ball.getX() && p.getY()==ball.getY()){
 				
 				g.setColor(Color.red);
@@ -160,5 +184,23 @@ public class GamePanel extends JPanel{
 	 */
 	public void setController(Controller controller) {
 		this.controller = controller;
+	}
+
+
+
+	/**
+	 * @return the goal1
+	 */
+	public Polygon getGoal1() {
+		return goal1;
+	}
+
+
+
+	/**
+	 * @return the goal2
+	 */
+	public Polygon getGoal2() {
+		return goal2;
 	}
 }

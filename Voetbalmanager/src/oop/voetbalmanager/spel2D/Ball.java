@@ -6,13 +6,14 @@ public class Ball {
 	private double t = 0;
 	private boolean kick = false;
 	private Player owner;
+	private boolean ballInGoal = false;
 	
 	public Ball(){
-		xforP = startX = 1275;
-		yforP = startY = 805;
+		x = xforP = startX = 1275;
+		y = yforP = startY = 805;
 		targetX = 1000;
 		targetY = 500;
-		move();
+	//	move();
 //		x = startX;
 //		y = startY;
 	}
@@ -23,15 +24,18 @@ public class Ball {
 //		}else{
 //			x-=5;
 //		}
-//		if(kick){
-//			kick();
-//		}else 
+		if(kick){
+			kick();
+		}else 
 			if (owner!=null){
 			xforP = startX = x = owner.getX();
 			yforP = startY = y = owner.getY();
-		}else{
-			x = xforP = startX;
-			y = yforP = startY;
+		//		System.out.println("Ball class move: Owner "+ x+","+y);
+		}
+			else{
+			startX = xforP = x;
+			startY = yforP = y;
+			System.out.println("Ball start: " + x+","+y);
 		}
 		
 	//	System.out.println(x);
@@ -50,7 +54,7 @@ public class Ball {
 //     			
 //			}
 //		}else{
-		if(kick){	
+	//	if(kick){	
 			double g = 9.81;
 			//y-snelheid met max tijd = 10
 			double Vy0=(-targetY+startY+0.5*g*100)/10;//+-inverse omdat voordinaten systeem voor y omgekeerd is
@@ -64,16 +68,30 @@ public class Ball {
 			xforP = x;
 			yforP = startY + Vy0*t;
 			
-			owner.runTo((int)targetX, (int)targetY);
+		//	owner.runTo((int)targetX, (int)targetY);
 		//	System.out.println(targetX + ";"+ targetY);
 
 			t+=0.1;
-			System.out.println("Ball class: "+ xforP + "," + yforP + "  " + x+","+y);
-			
-		}
+//			System.out.println("Ball class: "+ targetX + "," + targetY + "  " + (int)x+","+(int)y);
+			if(targetX+20 > (int)x && targetX-20 < (int)x && targetY+20 > (int)y && targetY-20 < (int)y){
+				System.out.println("Ball class: Landed "+ targetX + "," + targetY + "  " + (int)x+","+(int)y);
+				xforP = startX = x;
+				yforP = startY = y;
+				owner = null;
+				kick = false;
+				t = 0;
+			}
+	//	}
 //		}
 	}
-
+	
+	public void reset(){
+		x = xforP = startX = 1275;
+		y = yforP = startY = 805;
+		targetX = 1000;
+		targetY = 500;
+	}
+	
 	/**
 	 * @return the x
 	 */
@@ -163,5 +181,19 @@ public class Ball {
 	 */
 	public double getYforP() {
 		return yforP;
+	}
+
+	/**
+	 * @return the ballInGoal
+	 */
+	public boolean isBallInGoal() {
+		return ballInGoal;
+	}
+
+	/**
+	 * @param ballInGoal the ballInGoal to set
+	 */
+	public void setBallInGoal(boolean ballInGoal) {
+		this.ballInGoal = ballInGoal;
 	}
 }

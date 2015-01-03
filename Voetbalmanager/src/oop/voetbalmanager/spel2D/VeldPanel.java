@@ -23,6 +23,7 @@ public class VeldPanel extends JPanel {
 	private JButton terugButton = new JButton("Terug");
 	private JButton pauseResume = new JButton("Pause");
 	private GameRunnable gr;
+	
 	  public VeldPanel(ViewFrame viewFrame) {
 		  setLayout(new BorderLayout());;
 		  viewFrame.getControlPanel().add(this);  
@@ -45,11 +46,11 @@ public class VeldPanel extends JPanel {
 			gp.addPlayer(p2, 2);
 		}
 		
-		Position position1 = new Position();
-		position1.setPosition(gp.getPlayerListTeam1(), team1.getOpstelling(), 1);
-		
-		Position position2 = new Position();
-		position2.setPosition(gp.getPlayerListTeam2(), team2.getOpstelling(), 2);
+//		Position position1 = new Position(gp.getPlayerListTeam1(), team1.getOpstelling(), 1);
+//		position1.setPosition();
+//		
+//		Position position2 = new Position(gp.getPlayerListTeam2(), team2.getOpstelling(), 2);
+//		position2.setPosition();
 		
 		gr = new GameRunnable(gp, this);
 	//	thread = new Thread(gr);

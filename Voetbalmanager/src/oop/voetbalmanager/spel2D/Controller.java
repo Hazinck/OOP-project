@@ -46,22 +46,29 @@ public class Controller {
 	
 	public void controlBallPerPlayer(final Player p){
 
-		if(p.getCircleBounds().contains(ball.getXforP(), ball.getYforP())){
-			long currentTime = System.currentTimeMillis()/1000;
+		if(p.getCircleBounds().contains((int)ball.getXforP(), (int)ball.getYforP())){
+//			long currentTime = System.currentTimeMillis()/1000;
 		//	System.out.println(currentTimeFalse);
-			if(currentTimeFalse+5 <= currentTime){
-	  			System.out.println(p.getSpeler().getNaam() + " heeft bal" + currentTimeFalse + " "+ currentTime);
-	  			ball.setOwner(p);
+		//	if(currentTimeFalse+5 <= currentTime){
+//	  			System.out.println("Controller: "+p.getSpeler().getNaam() + " heeft bal" + currentTimeFalse + " "+ currentTime);
+		//	System.out.println("Controller: "+p.getSpeler().getNaam() +" boundsCenterX "+p.getCircleBounds().getCenterX() + "  bal: " + (int)ball.getX() + "," + (int)ball.getY());	
+//			System.out.println("Controller: "+p.getSpeler().getNaam() + " heeft bal " + (int)ball.getX() + "," + (int)ball.getY());
+				ball.setOwner(p);
 	  			p.setBallOwner(true);
-	  			p.getGp().setBallControllerFalseTimer(p, currentTime);
-			}
+//	  			p.getGp().setBallControllerFalseTimer(p, currentTime);
+		//	}
   		}else{
   			p.setBallOwner(false);
   		}
 		
+		
+		if(p.getGp().getGoal1().contains(ball.getX(), ball.getY()) || p.getGp().getGoal2().contains(ball.getX(), ball.getY())){
+			ball.setBallInGoal(true) ;
+		}
+		
 	}
-	
-	public void controlBall(final VeldPanel frame){//VeldFrame frame){
+	/*
+	public void controlBal(final VeldPanel frame){//VeldFrame frame){
 		if(kickToPlayer){	
 			ActionListener updateAnim = new ActionListener() {
 		         @Override
@@ -93,7 +100,7 @@ public class Controller {
 //	      // Fullocate a Timer to run updateTask's actionPerformed() after every delay msec
 	     
 		
-	}
+	}*/
 
 	/**
 	 * @return the currentTimeFalse

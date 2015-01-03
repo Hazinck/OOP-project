@@ -14,28 +14,19 @@ public class Position {
 	private String type;
 	private int playerID;
 	private Player player;
-	private ArrayList<Opstelling> opstellingen;
+	private ArrayList<Player> playerList;
+	private Opstelling opstelling;
+	private int team12;
 	
 	
-	public Position(){//Player p, String type, int i){
-//		this.type = type;
-//		this.playerID = i;
-//		x = playerXPlaats(type, i);
-//		y = playerYPlaats(type, i);
-//		p.setX(x);
-//		p.setY(y);
-//		this.player = p;
-		
-//		//============
-//		XMLreader reader = new XMLreader();
-//		opstellingen = reader.readOpstellingList();
-		//=============
-		
-	//	System.out.println(opstellingen.toString());
+	public Position(ArrayList<Player> playerList, Opstelling opstelling, int team12){//Player p, String type, int i){
+		this.playerList = playerList;
+		this.opstelling = opstelling;
+		this.team12 = team12;
 	}
 	
 	
-	public void setPosition(ArrayList<Player> playerList, Opstelling opstelling, int team12){
+	public void setPosition(){
 //		Opstelling opstelling = null;
 //		for(int i = 0; i < opstellingen.size(); i++){
 //			if(opstellingen.get(i).getNaam().equals(opstellingNaam)){

@@ -26,25 +26,36 @@ public class Collision{
 		        	double normX = ((p1Bounds.getCenterX())) - (p2Bounds.getCenterX()) / distance;
 		        	double normY = ((p1Bounds.getCenterY())) - (p2Bounds.getCenterY()) / distance;
 		        	
-		        	double correctieX = (int)Math.cos(normX*(p1Bounds.getWidth()/2 + p2Bounds.getWidth()/2))*(p1Bounds.getWidth()/2);
-		        	double correctieY = (int)Math.sin(normY*(p1Bounds.getHeight()/2 + p2Bounds.getHeight()/2))*(p1Bounds.getHeight()/2);
+		        	double correctieXp1 = (int)Math.cos(normX*(p2Bounds.getWidth()/2 + p1Bounds.getWidth()/2))*(p2Bounds.getWidth()/2);
+		        	double correctieYp1 = (int)Math.sin(normY*(p2Bounds.getHeight()/2 + p1Bounds.getHeight()/2))*(p2Bounds.getHeight()/2);
+
+		        	double correctieXp2 = (int)Math.cos(normX*(p1Bounds.getWidth()/2 + p2Bounds.getWidth()/2))*(p1Bounds.getWidth()/2);
+		        	double correctieYp2 = (int)Math.sin(normY*(p1Bounds.getHeight()/2 + p2Bounds.getHeight()/2))*(p1Bounds.getHeight()/2);
 		            //p1 move
-		        	
-		            double newX = (p2Bounds.getCenterX())+correctieX;
-		            double newY = (p2Bounds.getCenterY())+correctieY;
+
+		            double newXp1 = (p1Bounds.getCenterX())+correctieXp1;
+		            double newYp1 = (p1Bounds.getCenterY())+correctieYp1;
 		            
+		            double newXp2 = (p2Bounds.getCenterX())+correctieXp2;
+		            double newYp2 = (p2Bounds.getCenterY())+correctieYp2;
 		            
-//		            System.out.println("New collision old coordinates: "+p2.getX() + "," + p2.getY());
-		            p2.setX((int)newX);
-		            p2.setY((int)newY);
-//		            System.out.println("New collision new coordinates: "+newX + "," + newY);
-		            
+		            if(p2Bounds.getCenterY()< p1Bounds.getCenterY()){
+	//		            System.out.println("New collision old coordinates: "+p2.getX() + "," + p2.getY());
+			            p2.setX((int)newXp2);
+			            p2.setY((int)newYp2);
+	//		            System.out.println("New collision new coordinates: "+newX + "," + newY);
+		            }else{
+		            	p1.setX((int)newXp1);
+			            p1.setY((int)newYp1);
+		            }
 		            //kick the ball
 		            
 					if(p1.isBallOwner()){
 						System.out.println(p1.getSpeler().getNaam() + " kick it");
-					}else{
+						kickBal(p1);
+					}else if(p2.isBallOwner()){
 						System.out.println(p2.getSpeler().getNaam() + " kick it");
+						kickBal(p2);
 					}
 					
 		        }
@@ -52,6 +63,29 @@ public class Collision{
 		}
     }
 	
+	public static void kickBal(Player p){
+		passBal(p);
+	}
+	
+	public static void passBal(Player p){
+		ArrayList<Player> alle = new ArrayList<Player>();
+		
+		alle.addAll(p.getGp().getPlayerListTeam1());
+		alle.addAll(p.getGp().getPlayerListTeam2());
+		
+		int pIdx = RNG.getalTot(22);
+		p.setBallOwner(false);
+		p.getBall().setTargetX(alle.get(pIdx).getX());
+		p.getBall().setTargetY(alle.get(pIdx).getY());
+	//	sortTeam1.get(pIdx).setBallOwner(true);
+	//	p.getBall().setOwner(alle.get(pIdx));
+		p.getBall().setKick(true);
+	}
+	
+	
+	public void goal(){
+		
+	}
 /*	public static void collide(ArrayList<Player> players){
 
 		for (int i = 0; i < players.size(); i++){  

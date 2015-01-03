@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 import javax.swing.Timer;
 
+import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.view.ViewFrame;
 
 
@@ -21,6 +23,9 @@ public class GameRunnable implements Runnable {
 	private ArrayList<Player> playerListAll = new ArrayList<Player>();
 	private ArrayList<Timer> timers = new ArrayList<Timer>(); 
 	private boolean stop = false;
+	private Position position1;
+	private Position position2;
+	private boolean goal = false;
 	
 	public GameRunnable(GamePanel gp, VeldPanel frame){// VeldFrame frame){
 		this.gp = gp;
@@ -32,16 +37,37 @@ public class GameRunnable implements Runnable {
 		control = new Controller(playerListAll, gp.getBall());
 		control.topPlayers();
 		gp.setController(control);
+		
+		position1 = new Position(gp.getPlayerListTeam1(), User.getWteam().getOpstelling(), 1);
+		position1.setPosition();
+		
+		position2 = new Position(gp.getPlayerListTeam2(), Bot.getWteam().getOpstelling(), 2);
+		position2.setPosition();
 	}
 	
 	
 	public void run() {
+		goalAgain();
 		//  control.controlBall(frame);
 		  animatePlayer();
 		//  moveCam();
 		  moveAll();
 		  
 	  }
+	
+	public void goalAgain(){
+		if(gp.getBall().isBallInGoal()){
+			goal = true;
+			System.out.println("GOAL!!!");
+			for(Timer t: timers){
+				t.stop();
+				stop = true;
+				position1.setPosition();
+				position2.setPosition();
+				gp.getBall().reset();
+			}
+		}
+	}
 	
 	public void animatePlayer(){
 		 ActionListener updateAnim = new ActionListener() {
