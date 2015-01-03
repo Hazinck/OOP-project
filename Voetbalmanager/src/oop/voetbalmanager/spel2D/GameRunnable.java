@@ -47,26 +47,38 @@ public class GameRunnable implements Runnable {
 	
 	
 	public void run() {
-		goalAgain();
 		//  control.controlBall(frame);
 		  animatePlayer();
 		//  moveCam();
 		  moveAll();
+		  goalAgain();
 		  
 	  }
 	
 	public void goalAgain(){
-		if(gp.getBall().isBallInGoal()){
-			goal = true;
-			System.out.println("GOAL!!!");
-			for(Timer t: timers){
-				t.stop();
-				stop = true;
-				position1.setPosition();
-				position2.setPosition();
-				gp.getBall().reset();
-			}
-		}
+		ActionListener reset = new ActionListener() {
+	         @Override
+	         public void actionPerformed(ActionEvent evt) {
+	        	 if(gp.getBall().isBallInGoal()){
+	     			goal = true;
+	     			System.out.println("GameRunnable: GOAL!!!");
+	     			for(Timer t: timers){
+	     				t.stop();
+	     				stop = true;
+	     				position1.setPosition();
+	     				position2.setPosition();
+	     				gp.getBall().reset();
+	     				resetCam();
+	     				frame.repaint();
+	     				gp.getBall().setBallInGoal(false);
+	     			}
+	     		}
+	         }
+	      };
+	      Timer t =  new Timer(50, reset);
+	      timers.add(t);
+	      t.start();
+		
 	}
 	
 	public void animatePlayer(){
@@ -155,6 +167,12 @@ public class GameRunnable implements Runnable {
             }
             
         });
+	}
+	
+	
+	public void resetCam(){
+		gp.setViewX(-1275 + ViewFrame.getFrameWidth()/2);
+		gp.setViewY(-805 + ViewFrame.getFrameHeight()/2);
 	}
 	
 	public void stop(){

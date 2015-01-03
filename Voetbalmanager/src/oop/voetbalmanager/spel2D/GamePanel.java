@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Polygon;
 import java.awt.Toolkit;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -17,8 +18,6 @@ public class GamePanel extends JPanel{
 	private ArrayList<Player> playerListTeam2 = new ArrayList<Player>();
 	private Ball ball;
 	private Controller controller;
-	private Polygon goal1 = new Polygon();
-	private Polygon goal2 = new Polygon();
 	
 	private int viewX;
 	private int viewY;
@@ -28,19 +27,8 @@ public class GamePanel extends JPanel{
 		viewY = -805 + ViewFrame.getFrameHeight()/2;
 		this.ball = ball;
 		
-		goal1.addPoint(270, 733);
-		goal1.addPoint(324, 692);
-		goal1.addPoint(332, 741);
-		goal1.addPoint(294, 884);
-		goal1.addPoint(237, 887);
 		
-		goal2.addPoint(2234, 693);
-		goal2.addPoint(2234, 744);
-		goal2.addPoint(2273, 879);
-		goal2.addPoint(2330, 884);
-		goal2.addPoint(2293, 744);
 	}
-		
 	
 	
 //	public void addSprite(Sprite s){
@@ -75,13 +63,12 @@ public class GamePanel extends JPanel{
 		Image veld = Toolkit.getDefaultToolkit().getImage("veld_big_end.png");//"field_satur=45.png");
 		g.drawImage(veld, viewX ,  viewY ,  this);//g.drawImage(veld, -500 + viewX, -500 + viewY,  this);//this.getWidth(), this.getHeight(),
 		
+//		ball.getGoal2().setLocation(ball.getGoal2().x+viewX, ball.getGoal2().y + viewY);
+//		g.drawRect(ball.getGoal2().x, ball.getGoal2().y, ball.getGoal2().width, ball.getGoal2().height);
+//		
+//		ball.getGoal1().setLocation(ball.getGoal1().x+viewX, ball.getGoal1().y + viewY);
+//		g.drawRect(ball.getGoal1().x, ball.getGoal1().y, ball.getGoal1().width, ball.getGoal1().height);
 		
-		goal1.translate(viewX, viewY);
-		g.drawPolygon(goal1);
-		
-		
-		goal2.translate(viewX, viewY);
-		g.drawPolygon(goal2);
 		
 		Image ballSprite = Toolkit.getDefaultToolkit().getImage("ball_small.png");//"field_satur=45.png");
 		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
@@ -188,19 +175,4 @@ public class GamePanel extends JPanel{
 
 
 
-	/**
-	 * @return the goal1
-	 */
-	public Polygon getGoal1() {
-		return goal1;
-	}
-
-
-
-	/**
-	 * @return the goal2
-	 */
-	public Polygon getGoal2() {
-		return goal2;
-	}
 }

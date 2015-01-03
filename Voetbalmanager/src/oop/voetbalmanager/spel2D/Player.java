@@ -35,7 +35,6 @@ public class Player {
 	private GamePanel gp;
 	private Wedstrijdteam wteam;
 	private int collisionCount = 0;
-	
 	/**
 	 * 
 	 * @param speler
@@ -144,7 +143,6 @@ public class Player {
 			
 		//	System.out.println((Math.abs(dy)+Math.abs(dx))/2);
 			spriteObj.setIdle(true);
-			
 		//	System.out.println(richting);
 		}else{
 			spriteObj.setIdle(false);
@@ -211,7 +209,6 @@ public class Player {
 				}else{
 					x = 300;
 				}
-				
 				y = 806;
 			}else if((ballAfstand() < anchorAfstand() && anchorAfstand() < boundsAnchor.width*2) || 
 				boundsAnchor.contains(ball.getXforP(), ball.getYforP())){//!bounds.contains(this.x, this.y)){//
@@ -220,17 +217,16 @@ public class Player {
 			}else{//!boundsAnchor.contains(this.x, this.y)){//
 				x = boundsAnchor.x + boundsAnchor.width/2;
 				y = boundsAnchor.height/2 + boundsAnchor.y;
-				if(x==this.x && y==this.y){
-					x = boundsAnchor.getCenterX() + RNG.getalTot(boundsAnchor.width/2);
-					y = boundsAnchor.getCenterY() + RNG.getalTot(boundsAnchor.height/2);
-				//	System.out.println("player target: "+x + ", "+ y);
-				}
 			}
 			this.targetX = x;
 			this.targetY = y;
 		}
 		return new Dimension((int)x, (int)y);
 	}
+	
+//	public void randomRun(){
+//		
+//	}
 	
 	public void setGrenzen(int anchorX, int anchorY){
 		

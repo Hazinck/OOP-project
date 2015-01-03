@@ -62,10 +62,6 @@ public class Controller {
   		}
 		
 		
-		if(p.getGp().getGoal1().contains(ball.getX(), ball.getY()) || p.getGp().getGoal2().contains(ball.getX(), ball.getY())){
-			ball.setBallInGoal(true) ;
-		}
-		
 	}
 	/*
 	public void controlBal(final VeldPanel frame){//VeldFrame frame){

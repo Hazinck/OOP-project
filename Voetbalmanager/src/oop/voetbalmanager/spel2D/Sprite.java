@@ -138,6 +138,13 @@ public class Sprite{
 		this.idle = idle;
 	}
 
+	/**
+	 * @return the idle
+	 */
+	public boolean isIdle() {
+		return idle;
+	}
+
 
 	
     

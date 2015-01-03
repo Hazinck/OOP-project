@@ -64,7 +64,12 @@ public class Collision{
     }
 	
 	public static void kickBal(Player p){
-		passBal(p);
+		if((p.getTeam12() == 1 && p.getBall().getGoalRToKick().contains(p.getX(), p.getY())) || 
+				(p.getTeam12() == 2 && p.getBall().getGoalLToKick().contains(p.getX(), p.getY()))){
+			goal(p);
+		}else{
+			passBal(p);
+		}
 	}
 	
 	public static void passBal(Player p){
@@ -75,6 +80,7 @@ public class Collision{
 		
 		int pIdx = RNG.getalTot(22);
 		p.setBallOwner(false);
+		p.getBall().setT(0);
 		p.getBall().setTargetX(alle.get(pIdx).getX());
 		p.getBall().setTargetY(alle.get(pIdx).getY());
 	//	sortTeam1.get(pIdx).setBallOwner(true);
@@ -83,8 +89,23 @@ public class Collision{
 	}
 	
 	
-	public void goal(){
+	public static void goal(Player p){
+		int targetGoalX;
+		int targetGoalY;
+		if(p.getTeam12()==1){
+			targetGoalX = 2256;
+		}else{
+			targetGoalX = 300;
+		}
+		targetGoalY = 700 + RNG.getalTot(81);
 		
+		p.setBallOwner(false);
+		p.getBall().setT(0);
+		p.getBall().setTargetX(targetGoalX);
+		p.getBall().setTargetY(targetGoalY);
+	//	sortTeam1.get(pIdx).setBallOwner(true);
+	//	p.getBall().setOwner(alle.get(pIdx));
+		p.getBall().setKick(true);
 	}
 /*	public static void collide(ArrayList<Player> players){
 
