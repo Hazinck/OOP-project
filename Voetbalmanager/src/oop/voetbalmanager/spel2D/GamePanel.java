@@ -27,7 +27,6 @@ public class GamePanel extends JPanel{
 		viewY = -805 + ViewFrame.getFrameHeight()/2;
 		this.ball = ball;
 		
-		
 	}
 	
 	
@@ -59,7 +58,7 @@ public class GamePanel extends JPanel{
 	
 	@Override
     public void paintComponent(Graphics g) {
-		
+		super.paintComponent(g);
 		Image veld = Toolkit.getDefaultToolkit().getImage("veld_big_end.png");//"field_satur=45.png");
 		g.drawImage(veld, viewX ,  viewY ,  this);//g.drawImage(veld, -500 + viewX, -500 + viewY,  this);//this.getWidth(), this.getHeight(),
 		
@@ -70,10 +69,9 @@ public class GamePanel extends JPanel{
 //		g.drawRect(ball.getGoal1().x, ball.getGoal1().y, ball.getGoal1().width, ball.getGoal1().height);
 		
 		
-		Image ballSprite = Toolkit.getDefaultToolkit().getImage("ball_small.png");//"field_satur=45.png");
-		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
 		
 //		System.out.println("GamePanel:  "+(int)ball.getX() +" "+ (int)ball.getY());
+		
 		ArrayList<Player> playerList = new ArrayList<Player>();
 		playerList.addAll(playerListTeam1);
 		playerList.addAll(playerListTeam2);
@@ -92,7 +90,9 @@ public class GamePanel extends JPanel{
 			} 
 		
 		}
-		
+		Image ballSprite = Toolkit.getDefaultToolkit().getImage("ball_small.png");//"field_satur=45.png");
+		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
+	
     }
 
 	

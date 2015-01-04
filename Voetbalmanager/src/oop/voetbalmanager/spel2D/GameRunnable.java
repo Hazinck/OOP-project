@@ -6,7 +6,9 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.swing.Timer;
 
@@ -18,7 +20,7 @@ import oop.voetbalmanager.view.ViewFrame;
 public class GameRunnable implements Runnable {
 	
 	private GamePanel gp;
-	private VeldPanel frame;
+	private VeldPanel veldPanel;
 	private Controller control;
 	private ArrayList<Player> playerListAll = new ArrayList<Player>();
 	private ArrayList<Timer> timers = new ArrayList<Timer>(); 
@@ -26,10 +28,11 @@ public class GameRunnable implements Runnable {
 	private Position position1;
 	private Position position2;
 	private boolean goal = false;
+	private ArrayList<String> verslag = new ArrayList<String>();
 	
-	public GameRunnable(GamePanel gp, VeldPanel frame){// VeldFrame frame){
+	public GameRunnable(GamePanel gp, VeldPanel veldPanel){// VeldFrame veldPanel){
 		this.gp = gp;
-		this.frame = frame;
+		this.veldPanel = veldPanel;
 		
 		playerListAll.addAll(gp.getPlayerListTeam1());
 		playerListAll.addAll(gp.getPlayerListTeam2());
@@ -47,12 +50,11 @@ public class GameRunnable implements Runnable {
 	
 	
 	public void run() {
-		//  control.controlBall(frame);
+		//  control.controlBall(veldPanel);
 		  animatePlayer();
 		//  moveCam();
 		  moveAll();
 		  goalAgain();
-		  
 	  }
 	
 	public void goalAgain(){
@@ -62,6 +64,7 @@ public class GameRunnable implements Runnable {
 	        	 if(gp.getBall().isBallInGoal()){
 	     			goal = true;
 	     			System.out.println("GameRunnable: GOAL!!!");
+	     			verslag(gp.getBall().getToVerslag());
 	     			for(Timer t: timers){
 	     				t.stop();
 	     				stop = true;
@@ -69,7 +72,7 @@ public class GameRunnable implements Runnable {
 	     				position2.setPosition();
 	     				gp.getBall().reset();
 	     				resetCam();
-	     				frame.repaint();
+	     				veldPanel.repaint();
 	     				gp.getBall().setBallInGoal(false);
 	     			}
 	     		}
@@ -89,7 +92,7 @@ public class GameRunnable implements Runnable {
 	     			p.getSpriteObj().update();
 	     			
 	     		}
-	            frame.repaint();  // Refresh the JFrame, callback paintComponent()
+	            veldPanel.repaint();  // Refresh the JFrame, callback paintComponent()
 	         }
 	      };
 	      Timer t =  new Timer(50, updateAnim);
@@ -98,7 +101,7 @@ public class GameRunnable implements Runnable {
 	}
 	
 	public void moveAll(){
-		final Rectangle bounds = frame.getBounds();
+		final Rectangle bounds = veldPanel.getBounds();
 		  ActionListener updateRun = new ActionListener() {
 		         @Override
 		         public void actionPerformed(ActionEvent evt) {
@@ -111,8 +114,11 @@ public class GameRunnable implements Runnable {
 		        	 Collision.collision(playerListAll);
 		        	 gp.getBall().move();
 		        	 autoCam(gp.getBall());
-
-		        	 frame.repaint(); 
+		        	 
+		        	 verslag(Collision.getToVerslag());
+		        	 
+		        	 veldPanel.repaint(); 
+		        	 
 		         }
 		      };
 		      // Fullocate a Timer to run updateTask's actionPerformed() after every delay msec
@@ -126,15 +132,23 @@ public class GameRunnable implements Runnable {
 //		System.out.println(VeldFrame.getFrameWidth()/2  +" "+ b.getX() + gp.getViewX());
 		
 			if(ViewFrame.getFrameWidth()/2  > b.getX() + gp.getViewX() + 50){
-				gp.setViewX(gp.getViewX()+3);
+				if(gp.getViewX()<-5){
+					gp.setViewX(gp.getViewX()+3);
+				}
 			}else if(ViewFrame.getFrameWidth()/2 < b.getX() + gp.getViewX() - 50){
-				gp.setViewX(gp.getViewX()-3);
+				if(gp.getViewX()>-1190){
+					gp.setViewX(gp.getViewX()-3);
+				}
 			}
 			
 			if(ViewFrame.getFrameHeight()/2  > b.getY() + gp.getViewY() + 50){
-				gp.setViewY(gp.getViewY()+3);
+				if(gp.getViewY()<-5){
+					gp.setViewY(gp.getViewY()+3);
+				}
 			}else if(ViewFrame.getFrameHeight()/2 < b.getY() + gp.getViewY() - 50){
-				gp.setViewY(gp.getViewY()-3);
+				if(gp.getViewY()>-760){
+					gp.setViewY(gp.getViewY()-3);
+				}
 			}
 		
 	}
@@ -145,30 +159,50 @@ public class GameRunnable implements Runnable {
             @Override
             public boolean dispatchKeyEvent(KeyEvent ke) {
             	if(ke.getID() == KeyEvent.KEY_PRESSED){
-                    switch (ke.getKeyCode()) {
-                    case KeyEvent.VK_LEFT:
-                        gp.setViewX(gp.getViewX()+5);
-                        break;
-                    case KeyEvent.VK_RIGHT:
-                    	gp.setViewX(gp.getViewX()-5);
-                        break;
-                    case KeyEvent.VK_UP:
-                    	gp.setViewY(gp.getViewY()+5);
-                        break;
-                    case KeyEvent.VK_DOWN:
-                    	gp.setViewY(gp.getViewY()-5);
-                        break;
-                    }
-                    if(stop){
-                    	gp.repaint();
-                    }
-                }
-                    return false;
+            //		System.out.println("GameRunnable: "+gp.getViewY());
+	                    switch (ke.getKeyCode()) {
+	                    case KeyEvent.VK_LEFT:
+	                    	if(gp.getViewX()<-5){
+	                    		gp.setViewX(gp.getViewX()+5);
+	                    	}
+	                        break;
+	                    case KeyEvent.VK_RIGHT:
+	                    	if(gp.getViewX()>-1190){
+	                    		gp.setViewX(gp.getViewX()-5);
+	                    	}
+	                        break;
+	                    case KeyEvent.VK_UP:
+	                    	if(gp.getViewY()<-5){
+	                    		gp.setViewY(gp.getViewY()+5);
+	                    	}
+	                        break;
+	                    case KeyEvent.VK_DOWN:
+	                    	if(gp.getViewY()>-760){
+	                    		gp.setViewY(gp.getViewY()-5);
+	                    	}
+	                        break;
+	                    }
+	                    if(stop){
+	                    	veldPanel.repaint();
+	                    }
+	                }
+                   return false;
+            
             }
             
         });
 	}
 	
+	public void verslag(String line){
+		System.out.println(verslag.size()==0);
+		if(verslag.size()<2 || !line.equals(verslag.get(verslag.size()-1))){
+			verslag.add(line);
+			Calendar cal = Calendar.getInstance();
+	    	cal.getTime();
+	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
+			veldPanel.getVerslagPanel().getVerslag().append( tijd.format(cal.getTime()) + " " + line + "\n");
+		}
+	}
 	
 	public void resetCam(){
 		gp.setViewX(-1275 + ViewFrame.getFrameWidth()/2);

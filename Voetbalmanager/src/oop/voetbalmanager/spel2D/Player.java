@@ -128,12 +128,7 @@ public class Player {
 		    findRichting();
 		    xA[pointIdx] = x;
 		    yA[pointIdx] = y;
-//		    if(xA[3]!=null){
-//			    System.out.println(x  +" " + speler.getNaam());
-	//		    System.out.println(xA[0]+ " " + xA[1] + " " + xA[2]+ " " +  xA[3]);
-//		    }
-//		    spriteObj.setX(x);
-//		    spriteObj.setY(y);
+		    
 	  }
 	
 	public void findRichting(){
@@ -168,8 +163,8 @@ public class Player {
 		
 		if(speedX<0.5){
 			speedX = 0.5;
-		}else if(speedX>5){
-			speedX = 5;
+		}else if(speedX>2){
+			speedX = 2;
 		}
 		speedY =  speedX;
 //		if(speedY<0.5){

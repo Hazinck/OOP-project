@@ -1,5 +1,6 @@
 package oop.voetbalmanager.model;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 
 public class Spel {
@@ -7,6 +8,7 @@ public class Spel {
 	private Wedstrijdteam userTeam;
 	private Wedstrijdteam botTeam;
 	private int geluksfactor;
+	private Dimension score = new Dimension();
 	
 	/**
 	 * @param userTeam
@@ -21,6 +23,17 @@ public class Spel {
 	
 	public Wedstrijdteam winner(){
 		Wedstrijdteam winner;
+		
+		int score1 = RNG.getalTot(4);
+		int score2 = RNG.getalTot(4);
+		int w, l;
+		if(score1>score2){
+			w = score1;
+			l = score2;
+		}else{
+			w = score2;
+			l = score1;
+		}
 		
 		int spelerUResult = 0;
 		for(Speler s: userTeam.getSpelerList()){
@@ -41,15 +54,20 @@ public class Spel {
 			winner = userTeam;
 			if(geluksfactor > teamBotResult){
 				winner  = botTeam;
+				score.setSize(l, w);
 			}
 		}else if(teamUserResult < teamBotResult){
 			winner = botTeam;
 			if(geluksfactor > teamUserResult){
 				winner  = userTeam;
+				score.setSize(w, l);
 			}
 		}else{
 			winner = null;
+			score.setSize(w, w);
 		}
+		
+		
 		
 		return winner;
 	}
@@ -103,6 +121,13 @@ public class Spel {
 		verslag.add("Opstelling "+botTeam.getNaam()+": "+bOpstelling);
 		
 		return verslag;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public Dimension getScore() {
+		return score;
 	}
 	
 }

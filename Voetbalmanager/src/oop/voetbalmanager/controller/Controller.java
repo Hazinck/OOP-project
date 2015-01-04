@@ -104,10 +104,12 @@ public class Controller {
 	           public void actionPerformed(ActionEvent actionEvent) { 
 	        	int geluksfactor = RNG.getalTot(600);
 	       		Spel s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
-	       		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
-	       		spel(s);
+	       		s.winner();
+	       		System.out.println(User.getWteam().getNaam() + ": " + s.getScore().width + " " +
+	       				Bot.getWteam().getNaam() + ": " + s.getScore().height + " - geluksfactor: "+geluksfactor);
 	       		veldPanel = new VeldPanel(viewFrame);
 	       		veldPanel.showThis(tabs);
+	       		spel(s);
 	       		addPauseListener();
 	       		addGoBackListener();
 	       		updateStats(s);
@@ -170,6 +172,10 @@ public class Controller {
 	    	cal.getTime();
 	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
 	    	System.out.println( tijd.format(cal.getTime()) );
+//	    	String old =veldPanel.getVerslagPanel().getVerslag().getText();
+//	    	veldPanel.getVerslagPanel().getVerslag().setText();
+	    	veldPanel.getVerslagPanel().getVerslag().append( tijd.format(cal.getTime()) + " " + v + "\n");
+//	    	veldPanel.getVerslagPanel().getVerslag().setCaretPosition(veldPanel.getVerslagPanel().getVerslag().getDocument().getLength());
     		try {
 				doc.insertString(doc.getLength(), tijd.format(cal.getTime()) + " " + v + "\n", null);
 			} catch (BadLocationException e) {
@@ -328,21 +334,7 @@ public class Controller {
    // 	System.out.println("item selected " + spelers.getSelectedItem()+ " " + spelers.getName());
     	int min = 1;//0;
     	int max = 11;//0;
-//    	if(Integer.parseInt(spelers.getName())==0){
-//    		min = 0;
-//			max = 1;
-//		}else if(Integer.parseInt(spelers.getName())<5){
-//			min = 1;
-//			max = 5;
-//		}
-//		else if(Integer.parseInt(spelers.getName())<8){
-//			min = 5;
-//			max = 8;
-//		}else if(Integer.parseInt(spelers.getName())<11){
-//			min = 8;
-//			max = 11;
-//		}
-    	   
+	   
     	for(int j = min; j<max; j++){
     	   	JComboBox b = teamPanel.getOpst().getPlayersDDList()[j];
     	   	ArrayList<String> spelerList = new ArrayList<String>();
@@ -372,51 +364,18 @@ public class Controller {
 				opstelling = op;
 			}
 		}
-
-    	ArrayList<Speler> mid = new ArrayList<Speler>();
-    	ArrayList<Speler> verd = new ArrayList<Speler>();
-    	ArrayList<Speler> aanv = new ArrayList<Speler>();
-    	
-   // 	System.out.println("Wedstrijdteam: " + this.getNaam());
-   // 	System.out.println(teamPanel.getOpst().getPlayersDDList().length);
-    	for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
+	for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
     		String naam = (String)teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem();
     		for(Speler s :  User.getWteam().getSpelerList()){
     	        if(s.getNaam() != null && s.getNaam().contains(naam)){
     	        	User.getWteam().getWSpelers()[i] = s;
-//    	        	if(s.getType().equals("doelman")){
-//    	        		User.getWteam().getWSpelers()[0] = s;
-//    	        	}else if(s.getType().equals("middenvelder")){
-//    	        		mid.add(s);
-//    	        	}else if(s.getType().equals("verdediger")){
-//    	        		verd.add(s);
-//    	        	}else if(s.getType().equals("aanvaller")){
-//    	        		aanv.add(s);
-//    	        	}
-    	        	
-    	        //	System.out.println("Naam: " + naam + " Type: " + s.getType());
     	        }
-    	           //something here
+    	        
     	    }
     		
     	}
-//    	int k = 0;
-//    	for(int i = 1; i<5;i++){
-//    	//	System.out.println(k+ " " + mid.size());
-//    		User.getWteam().getWSpelers()[i] = mid.get(k);
-//    		k++;
-//   		}
-//    	k = 0;
-//    	for(int i = 5; i<8;i++){
-//    		User.getWteam().getWSpelers()[i] = verd.get(k);
-//    		k++;
-//   		}
-//    	k = 0;
-//    	for(int i = 8; i<11;i++){
-//    		User.getWteam().getWSpelers()[i] = aanv.get(k);
-//    		k++;
-//   		}
-    	int tactiek = teamPanel.getSlider().getValue();
+
+		int tactiek = teamPanel.getSlider().getValue();
     	User.getWteam().setTactiek(tactiek); 
     	
     	User.getWteam().setOpstelling(opstelling);

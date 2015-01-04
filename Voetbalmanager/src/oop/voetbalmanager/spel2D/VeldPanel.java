@@ -23,14 +23,15 @@ public class VeldPanel extends JPanel {
 	private JButton terugButton = new JButton("Terug");
 	private JButton pauseResume = new JButton("Pause");
 	private GameRunnable gr;
+	private VerslagPanel verslagPanel;
 	
 	  public VeldPanel(ViewFrame viewFrame) {
-		  setLayout(new BorderLayout());;
+		  setLayout(null);
 		  viewFrame.getControlPanel().add(this);  
 
 		Wedstrijdteam team1 = User.getWteam();
 		Wedstrijdteam team2 = Bot.getWteam();
-		Ball ball = new Ball();
+		Ball ball = new Ball(team1, team2);
 		
 		final GamePanel gp = new GamePanel(ball);
 		
@@ -67,11 +68,17 @@ public class VeldPanel extends JPanel {
 	    buttonPanel.add(startButton);
 		buttonPanel.add(pauseResume);
 	    buttonPanel.add(terugButton);
+	    
+	    verslagPanel = new VerslagPanel(this);
 		
-	    add(buttonPanel, BorderLayout.SOUTH);
-		
+		add(verslagPanel);
+		verslagPanel.setBounds(0, (int)(frameHeight*0.70), (int)(frameWidth*0.30), (int)(frameHeight*0.25));
 		  
 		add(gp);
+		gp.setBounds(0, 0, frameWidth, (int)(frameHeight*0.95));
+		
+	    add(buttonPanel);
+	    buttonPanel.setBounds(0, (int)(frameHeight*0.95), frameWidth, (int)(frameHeight*0.05));
 	  }
 	  
 	  public void addButton(Container c, String title, ActionListener listener) {
@@ -126,6 +133,13 @@ public class VeldPanel extends JPanel {
 	 */
 	public JButton getPauseResume() {
 		return pauseResume;
+	}
+
+	/**
+	 * @return the verslagPanel
+	 */
+	public VerslagPanel getVerslagPanel() {
+		return verslagPanel;
 	}
 
 	
