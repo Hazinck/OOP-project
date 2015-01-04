@@ -21,7 +21,7 @@ public class Ball {
 	private Wedstrijdteam team1;
 	private Wedstrijdteam team2;
 	private String toVerslag = "";
-	private Dimension finalResult = new Dimension();
+	private Dimension finalResult;
 	
 	public Ball(Wedstrijdteam team1, Wedstrijdteam team2){
 		this.team1 = team1;
@@ -313,6 +313,7 @@ public class Ball {
 	 */
 	public void setFinalResult(Dimension finalResult) {
 		this.finalResult = finalResult;
+		System.out.println("Ball: setFinalResult: " + finalResult.toString());
 	}
 
 	/**

@@ -105,10 +105,11 @@ public class Controller {
 	        	int geluksfactor = RNG.getalTot(600);
 	       		Spel s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
 	       		s.winner();
-	       		System.out.println(User.getWteam().getNaam() + ": " + s.getScore().width + " " +
-	       				Bot.getWteam().getNaam() + ": " + s.getScore().height + " - geluksfactor: "+geluksfactor);
+	       		Dimension score = s.getScore();
+	       		System.out.println(User.getWteam().getNaam() + ": " + score.width + " " +
+	       				Bot.getWteam().getNaam() + ": " + score.height + " - geluksfactor: "+geluksfactor);
 	       		veldPanel = new VeldPanel(viewFrame);
-	       		veldPanel.getBall().setFinalResult(s.getScore());
+	       		veldPanel.getBall().setFinalResult(score);
 	       		veldPanel.showThis(tabs);
 	       		spel(s);
 	       		addPauseListener();

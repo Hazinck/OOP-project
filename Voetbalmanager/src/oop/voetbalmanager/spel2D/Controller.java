@@ -65,6 +65,7 @@ public class Controller {
 				(p.getTeam12() == 2 && p.getBall().getGoalLToKick().contains(p.getX(), p.getY())))){
 			if(toGoal(p)){
 				boolean wtf =  p.getBall().getScore().width < p.getBall().getFinalResult().width;
+				System.out.println(p.getBall().getFinalResult().toString());
 				System.out.println("CONTROLLER: "+wtf+" " + p.getBall().getScore().width +" < "+ p.getBall().getFinalResult().width);
 				goal(p);
 			}else{

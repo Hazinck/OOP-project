@@ -1,10 +1,9 @@
 package oop.voetbalmanager.spel2D;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Polygon;
 import java.awt.Toolkit;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -59,7 +58,7 @@ public class GamePanel extends JPanel{
 	@Override
     public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		Image veld = Toolkit.getDefaultToolkit().getImage("veld_big_end.png");//"field_satur=45.png");
+		Image veld = Toolkit.getDefaultToolkit().getImage("images/veld_big_end.png");//"field_satur=45.png");
 		g.drawImage(veld, viewX ,  viewY ,  this);//g.drawImage(veld, -500 + viewX, -500 + viewY,  this);//this.getWidth(), this.getHeight(),
 		
 //		ball.getGoal2().setLocation(ball.getGoal2().x+viewX, ball.getGoal2().y + viewY);
@@ -80,7 +79,7 @@ public class GamePanel extends JPanel{
 			g.drawImage(p.getSpriteObj().getSprite(), (int)p.getX()-30+viewX, (int)p.getY()-30+viewY,  this);//was -30 -30 sprite, x, y, this);
 //			System.out.println(p.getTargetY()+"=="+ball.getTargetY());
 //			g.setColor(Color.black);
-////			g.drawRect(p.getBoundsAnchor().x + viewX, p.getBoundsAnchor().y + viewY, p.getBoundsAnchor().width, p.getBoundsAnchor().height);
+//			g.drawRect(p.getBoundsAnchor().x + viewX, p.getBoundsAnchor().y + viewY, p.getBoundsAnchor().width, p.getBoundsAnchor().height);
 //			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
 			if(p.isBallOwner() && p.getX()==ball.getX() && p.getY()==ball.getY()){
 				if(p.getTeam12()==1){
@@ -93,9 +92,27 @@ public class GamePanel extends JPanel{
 			} 
 		
 		}
-		Image ballSprite = Toolkit.getDefaultToolkit().getImage("ball_small.png");//"field_satur=45.png");
+		Image ballSprite = Toolkit.getDefaultToolkit().getImage("images/ball_small.png");//"field_satur=45.png");
 		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
-	
+		
+		
+		Image scoreBalk = Toolkit.getDefaultToolkit().getImage("images/logo-score.png");//"field_satur=45.png");
+		g.drawImage(scoreBalk, 120, 50, this);//
+		g.setColor(Color.black);
+		
+		String team1 = ball.getTeam1().getNaam();
+		team1 = team1.replaceAll(" ", "");
+		team1 = team1.substring(0, Math.min(team1.length(), 3));
+		String team2 = ball.getTeam2().getNaam();
+		team2 = team2.replaceAll(" ", "");
+		team2 = team2.substring(0, Math.min(team2.length(), 3));
+	    g.setFont (new Font ("Arial", Font.BOLD , 14));
+		g.drawString(team1, 235, 75);
+		g.drawString(team2, 330, 75);
+		
+		g.setColor(Color.white);
+		g.drawString(ball.getScore().width+" - "+ball.getScore().height, 280, 75);
+		
     }
 
 	

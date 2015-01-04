@@ -70,8 +70,8 @@ public class VeldPanel extends JPanel {
 	    
 	    verslagPanel = new VerslagPanel(this);
 		
-		add(verslagPanel);
-		verslagPanel.setBounds(0, (int)(frameHeight*0.70), (int)(frameWidth*0.30), (int)(frameHeight*0.25));
+//		add(verslagPanel);
+//		verslagPanel.setBounds(0, (int)(frameHeight*0.70), (int)(frameWidth*0.30), (int)(frameHeight*0.25));
 		  
 		add(gp);
 		gp.setBounds(0, 0, frameWidth, (int)(frameHeight*0.95));

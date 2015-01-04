@@ -228,8 +228,8 @@ public class Player {
 		
 		boundsAnchor.x =  anchorX - 100;
 		boundsAnchor.width = 300;
-		boundsAnchor.y = anchorY - 200;
-		boundsAnchor.height = 400;
+		boundsAnchor.y = anchorY - 400;
+		boundsAnchor.height = 800;
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
 			boundsAnchor.x =  anchorX - 500;

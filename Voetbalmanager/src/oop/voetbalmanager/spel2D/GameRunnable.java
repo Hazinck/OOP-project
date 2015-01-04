@@ -73,7 +73,9 @@ public class GameRunnable implements Runnable {
 	        	 }
 	        	 else{
 	        		 if(gp.getBall().isBallInGoal()){
-	        			 resetAll();
+	        	 		System.out.println("GameRunnable: GOAL!!!");
+	        	 		verslag(gp.getBall().getToVerslag());
+	        			resetAll();
 	        		 }
 	        	 }
 	         }
@@ -110,8 +112,6 @@ public class GameRunnable implements Runnable {
 	public void resetAll(){
 		
  			goal = true;
- 			System.out.println("GameRunnable: GOAL!!!");
- 			verslag(gp.getBall().getToVerslag());
  			for(Timer t: timers){
  				t.stop();
  				stop = true;
