@@ -31,6 +31,7 @@ public class VerslagPanel extends JPanel{
 		pane.setBackground(null);
 		pane.getViewport().setOpaque(false);
 		pane.setBorder(null);
+		pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 		add(pane, BorderLayout.WEST);
 	}
 	

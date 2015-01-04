@@ -60,7 +60,7 @@ public class Spel {
 			winner = botTeam;
 			if(geluksfactor > teamUserResult){
 				winner  = userTeam;
-				score.setSize(w, l);
+				score.setSize(l, w);
 			}
 		}else{
 			winner = null;

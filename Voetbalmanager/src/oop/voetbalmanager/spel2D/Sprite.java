@@ -38,8 +38,8 @@ public class Sprite{
 //    	this.x = x;
 //    	this.y = y;
     	try {
-    		spriteFull = ImageIO.read(new File(imgFile));
-    		idle_sprite = ImageIO.read(new File("player/idle.png"));//idle_E
+    		spriteFull = ImageIO.read(new File(imgFile+"/run.png"));
+    		idle_sprite = ImageIO.read(new File(imgFile+"/idle.png"));//idle_E
     		update();
 		} catch (IOException e) {
 			e.printStackTrace();

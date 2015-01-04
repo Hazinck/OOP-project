@@ -21,7 +21,7 @@ public class Ball {
 	private Wedstrijdteam team1;
 	private Wedstrijdteam team2;
 	private String toVerslag = "";
-	
+	private Dimension finalResult = new Dimension();
 	
 	public Ball(Wedstrijdteam team1, Wedstrijdteam team2){
 		this.team1 = team1;
@@ -127,6 +127,16 @@ public class Ball {
 			}
 	//	}
 //		}
+	}
+	
+	public int winner(){
+		if(score.getWidth() > score.getHeight()){
+			return 1;
+		}else if(score.getWidth() < score.getHeight()){
+			return 2;
+		}else{
+			return 0;
+		}
 	}
 	
 	public void reset(){
@@ -296,5 +306,40 @@ public class Ball {
 	 */
 	public String getToVerslag() {
 		return toVerslag;
+	}
+
+	/**
+	 * @param finalResult the finalResult to set
+	 */
+	public void setFinalResult(Dimension finalResult) {
+		this.finalResult = finalResult;
+	}
+
+	/**
+	 * @return the finalResult
+	 */
+	public Dimension getFinalResult() {
+		return finalResult;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public Dimension getScore() {
+		return score;
+	}
+
+	/**
+	 * @return the team1
+	 */
+	public Wedstrijdteam getTeam1() {
+		return team1;
+	}
+
+	/**
+	 * @return the team2
+	 */
+	public Wedstrijdteam getTeam2() {
+		return team2;
 	}
 }

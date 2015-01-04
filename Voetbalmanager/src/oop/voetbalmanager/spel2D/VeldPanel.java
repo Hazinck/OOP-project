@@ -1,7 +1,7 @@
 package oop.voetbalmanager.spel2D;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,8 +13,6 @@ import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.Wedstrijdteam;
-import oop.voetbalmanager.view.Login;
-import oop.voetbalmanager.view.Tabs;
 import oop.voetbalmanager.view.ViewFrame;
 
 public class VeldPanel extends JPanel {
@@ -24,6 +22,7 @@ public class VeldPanel extends JPanel {
 	private JButton pauseResume = new JButton("Pause");
 	private GameRunnable gr;
 	private VerslagPanel verslagPanel;
+	private Ball ball;
 	
 	  public VeldPanel(ViewFrame viewFrame) {
 		  setLayout(null);
@@ -31,7 +30,7 @@ public class VeldPanel extends JPanel {
 
 		Wedstrijdteam team1 = User.getWteam();
 		Wedstrijdteam team2 = Bot.getWteam();
-		Ball ball = new Ball(team1, team2);
+		ball = new Ball(team1, team2);
 		
 		final GamePanel gp = new GamePanel(ball);
 		
@@ -141,6 +140,14 @@ public class VeldPanel extends JPanel {
 	public VerslagPanel getVerslagPanel() {
 		return verslagPanel;
 	}
+
+	/**
+	 * @return the ball
+	 */
+	public Ball getBall() {
+		return ball;
+	}
+
 
 	
 }

@@ -83,8 +83,11 @@ public class GamePanel extends JPanel{
 ////			g.drawRect(p.getBoundsAnchor().x + viewX, p.getBoundsAnchor().y + viewY, p.getBoundsAnchor().width, p.getBoundsAnchor().height);
 //			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
 			if(p.isBallOwner() && p.getX()==ball.getX() && p.getY()==ball.getY()){
-				
-				g.setColor(Color.red);
+				if(p.getTeam12()==1){
+					g.setColor(Color.blue);
+				}else{
+					g.setColor(Color.red);
+				}
 				g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 				g.drawString(p.getSpeler().getType(), (int)p.getX() - 30 + viewX, (int)p.getY() + 25 + viewY);
 			} 

@@ -11,6 +11,7 @@ import java.util.Comparator;
 import javax.swing.Timer;
 
 import oop.voetbalmanager.model.RNG;
+import oop.voetbalmanager.model.User;
 
 
 public class Controller {
@@ -55,17 +56,25 @@ public class Controller {
   		}
 		
 		
+		
 	}
 	
 	public static void kickBal(Player p){
 		p.getBall().setT(0);
-		if((p.getTeam12() == 1 && p.getBall().getGoalRToKick().contains(p.getX(), p.getY())) || 
-				(p.getTeam12() == 2 && p.getBall().getGoalLToKick().contains(p.getX(), p.getY()))){
-			goal(p);
+		if(((p.getTeam12() == 1 && p.getBall().getGoalRToKick().contains(p.getX(), p.getY())) || 
+				(p.getTeam12() == 2 && p.getBall().getGoalLToKick().contains(p.getX(), p.getY())))){
+			if(toGoal(p)){
+				boolean wtf =  p.getBall().getScore().width < p.getBall().getFinalResult().width;
+				System.out.println("CONTROLLER: "+wtf+" " + p.getBall().getScore().width +" < "+ p.getBall().getFinalResult().width);
+				goal(p);
+			}else{
+				passBal(p);
+			}
 		}else{
 			passBal(p);
 		}
 	}
+	
 	
 	public static void passBal(Player p){
 		p.getBall().setT(0);
@@ -103,6 +112,20 @@ public class Controller {
 	//	p.getBall().setOwner(alle.get(pIdx));
 		p.getBall().setKick(true);
 		p.getBall().setKickedToGoal(p);
+	}
+	
+	public static boolean toGoal(Player p){
+		if(p.getTeam12()==1 && 
+					p.getBall().getScore().width < p.getBall().getFinalResult().width){
+			return true;
+			
+		}else if(p.getTeam12()==2 && 
+					p.getBall().getScore().height < p.getBall().getFinalResult().height){
+			return true;
+			
+		}else{
+			return false;
+		}
 	}
 	
 	/**

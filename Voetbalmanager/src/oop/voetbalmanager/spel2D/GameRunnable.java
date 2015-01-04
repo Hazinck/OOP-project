@@ -29,7 +29,7 @@ public class GameRunnable implements Runnable {
 	private Position position2;
 	private boolean goal = false;
 	private ArrayList<String> verslag = new ArrayList<String>();
-	
+	private long tStart;
 	public GameRunnable(GamePanel gp, VeldPanel veldPanel){// VeldFrame veldPanel){
 		this.gp = gp;
 		this.veldPanel = veldPanel;
@@ -50,38 +50,79 @@ public class GameRunnable implements Runnable {
 	
 	
 	public void run() {
+		tStart = System.currentTimeMillis();
 		//  control.controlBall(veldPanel);
 		  animatePlayer();
 		//  moveCam();
 		  moveAll();
 		  goalAgain();
+		  
 	  }
+	
 	
 	public void goalAgain(){
 		ActionListener reset = new ActionListener() {
 	         @Override
 	         public void actionPerformed(ActionEvent evt) {
-	        	 if(gp.getBall().isBallInGoal()){
-	     			goal = true;
-	     			System.out.println("GameRunnable: GOAL!!!");
-	     			verslag(gp.getBall().getToVerslag());
-	     			for(Timer t: timers){
-	     				t.stop();
-	     				stop = true;
-	     				position1.setPosition();
-	     				position2.setPosition();
-	     				gp.getBall().reset();
-	     				resetCam();
-	     				veldPanel.repaint();
-	     				gp.getBall().setBallInGoal(false);
-	     			}
-	     		}
+	        	 long tEnd = System.currentTimeMillis();
+	        	 long tDelta = tEnd - tStart;
+	        	 double elapsedMinutes = tDelta / 1000.0 / 60;
+	        	 
+	        	 if(elapsedMinutes > 3 && gp.getBall().getFinalResult().equals(gp.getBall().getScore())){
+	        		 endspiel();
+	        	 }
+	        	 else{
+	        		 if(gp.getBall().isBallInGoal()){
+	        			 resetAll();
+	        		 }
+	        	 }
 	         }
 	      };
 	      Timer t =  new Timer(50, reset);
 	      timers.add(t);
 	      t.start();
 		
+	}
+	
+	public void endspiel(){
+		
+		 String winner = "Afgelopen! ";
+  		 if(gp.getBall().winner()==0){
+  			 winner += gp.getBall().getTeam1().getNaam()+" en "+
+  					 	gp.getBall().getTeam2().getNaam()+
+  					 	" delen de punten: "+gp.getBall().getScore().width+"-"+gp.getBall().getScore().height+".";
+  		 }else{
+  			 if(gp.getBall().winner()==1){
+  				winner +=  gp.getBall().getTeam1().getNaam()+" wint met "+gp.getBall().getScore().width+"-"+gp.getBall().getScore().height+
+  							" van "+gp.getBall().getTeam2().getNaam()+".";
+  			 }else if(gp.getBall().winner()==2){
+  				 winner +=  gp.getBall().getTeam2().getNaam()+" wint met "+gp.getBall().getScore().width+"-"+gp.getBall().getScore().height+
+  							" van "+gp.getBall().getTeam1().getNaam()+".";
+  			 }
+  			 
+  		 }
+  		 verslag(winner);
+  		 veldPanel.getPauseResume().setEnabled(false);
+  		 resetAll();
+		       
+	}
+	
+	public void resetAll(){
+		
+ 			goal = true;
+ 			System.out.println("GameRunnable: GOAL!!!");
+ 			verslag(gp.getBall().getToVerslag());
+ 			for(Timer t: timers){
+ 				t.stop();
+ 				stop = true;
+ 				position1.setPosition();
+ 				position2.setPosition();
+ 				gp.getBall().reset();
+ 				resetCam();
+ 				veldPanel.repaint();
+ 				gp.getBall().setBallInGoal(false);
+ 			}
+ 		
 	}
 	
 	public void animatePlayer(){
@@ -194,7 +235,7 @@ public class GameRunnable implements Runnable {
 	}
 	
 	public void verslag(String line){
-		System.out.println(verslag.size()==0);
+	//	System.out.println(verslag.size()==0);
 		if(verslag.size()<2 || !line.equals(verslag.get(verslag.size()-1))){
 			verslag.add(line);
 			Calendar cal = Calendar.getInstance();

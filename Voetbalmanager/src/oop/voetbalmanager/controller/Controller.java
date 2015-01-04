@@ -108,6 +108,7 @@ public class Controller {
 	       		System.out.println(User.getWteam().getNaam() + ": " + s.getScore().width + " " +
 	       				Bot.getWteam().getNaam() + ": " + s.getScore().height + " - geluksfactor: "+geluksfactor);
 	       		veldPanel = new VeldPanel(viewFrame);
+	       		veldPanel.getBall().setFinalResult(s.getScore());
 	       		veldPanel.showThis(tabs);
 	       		spel(s);
 	       		addPauseListener();

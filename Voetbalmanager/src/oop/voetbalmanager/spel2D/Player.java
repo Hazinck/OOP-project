@@ -42,9 +42,10 @@ public class Player {
 	 */
 	public Player(Speler speler,  int team12, int playerID, Ball ball, Wedstrijdteam wteam, GamePanel gp){
 		this.speler = speler;
-		this.spriteObj = new Sprite("player/general/ALL_run_fit.png", team12);
-		if(wteam.getNaam().equals("Feyenoord") || wteam.getNaam().equals("Ajax") || wteam.getNaam().equals("ADO Den Haag")){
-			this.spriteObj = new Sprite("player/general/"+wteam.getNaam()+"_run.png", team12);
+		if(wteam.getNaam().equals("Feyenoord")){
+			this.spriteObj = new Sprite("images/"+wteam.getNaam(), team12);
+		}else{
+			this.spriteObj = new Sprite("images/general", team12);
 		}
 		this.playerID = playerID;
 	//	position = new Position(this, speler.getType(), playerID);
@@ -227,8 +228,20 @@ public class Player {
 		
 		boundsAnchor.x =  anchorX - 100;
 		boundsAnchor.width = 300;
-		boundsAnchor.y = anchorY - 100;
+		boundsAnchor.y = anchorY - 200;
 		boundsAnchor.height = 400;
+		
+		if(speler.getType().equals("doelman") && team12 == 1){
+			boundsAnchor.x =  anchorX - 500;
+			boundsAnchor.width = 600;
+			boundsAnchor.y = anchorY - 400;
+			boundsAnchor.height = 800;
+		}else if(speler.getType().equals("doelman") && team12 == 2){
+			boundsAnchor.x =  anchorX - 50;
+			boundsAnchor.width = 600;
+			boundsAnchor.y = anchorY - 400;
+			boundsAnchor.height = 800;
+		}
 		
 	//	System.out.println(boundsAnchor.x + " " + boundsAnchor.width + " " + speler.getNaam());
 		
