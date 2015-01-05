@@ -224,6 +224,7 @@ public class TeamPanel extends JPanel{
 			  public OpstellingPanel(TeamPanel teamPanel)  {
 				  //wedstrijdteam laden
 				  opstellingen = reader.readOpstellingList(Driver.path);
+				  System.out.println(Driver.path);
 				  String team = User.getTeam().getNaam();
 				  
 //				  ArrayList<String> spelers = new ArrayList<String>();

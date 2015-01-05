@@ -1,14 +1,21 @@
 package oop.voetbalmanager.controller;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
@@ -28,10 +35,11 @@ import oop.voetbalmanager.model.XMLwriter;
 import oop.voetbalmanager.spel2D.VeldPanel;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
+import oop.voetbalmanager.view.LoadGamePanel;
 import oop.voetbalmanager.view.Login;
 import oop.voetbalmanager.view.LoginPanel;
 import oop.voetbalmanager.view.PandS;
-import oop.voetbalmanager.view.SaveOpstellingDialog;
+import oop.voetbalmanager.view.SaveDialog;
 import oop.voetbalmanager.view.Tabs;
 import oop.voetbalmanager.view.TeamPanel;
 import oop.voetbalmanager.view.ViewFrame;
@@ -46,9 +54,11 @@ public class Controller {
 	private Competition comp;
 	private PandS ps;
 	private ArrayList<String> ranglijst = new ArrayList<String>();
-	private XMLwriter writer = new XMLwriter(Driver.path);
+	private XMLwriter writer;
 	private VeldPanel veldPanel;
 	private boolean pause = false;
+	private ArrayList<Positie> positiesToSave;
+	private String opstellingnaamToSave;
 	
 	public Controller(ViewFrame viewFrame, Login l, Home home, TeamPanel teamPanel, Competition comp, PandS ps) {
 		this.viewFrame = viewFrame;
@@ -58,42 +68,119 @@ public class Controller {
 		this.comp = comp;
 		this.ps = ps;
 	}
+	public Controller(ViewFrame viewFrame, Login l) {
+		this.viewFrame = viewFrame;
+		this.l = l;
+	}
 
 	public void control() {
 		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
 		
-		ActionListener actionListener = new ActionListener() {
-             public void actionPerformed(ActionEvent actionEvent) { 
-            	 System.out.println("Inloggen");
-            	 User.setNaam(LoginPanel.setName());
-                 vulSpelerlijst(User.getTeam());
-            	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
-                tabs.showThis(l);
-             //   controlPanel2();
-                addLogoutListener();
-                play();
-                ranking();
-                opstellingOpslaan();
-                for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
-                	removeItems(teamPanel.getOpst().getPlayersDDList()[i]);
-                }
-                addItemRemover();
-                wedstrijdteamOpslaan();
-                opstellingKiezen();
-             }
-       };                
-       l.getButton().addActionListener(actionListener);   
+		newGame();
+		loadGame();
+		exitGame();
        
        
 		
 	}
 	
+	public void newGame(){
+		ActionListener actionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) { 
+            	startGame();
+            }
+      };                
+      l.getNewGame().addActionListener(actionListener); 
+	}
+	
+	public void startGame(){
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie(Driver.path);
+		Team team = divisie.getTeamList().get(8);
+		Wedstrijdteam wteam = reader.readWedstrijdteam(team, Driver.path);
+		User.setTeam(team);
+	  	User.setWteam(wteam);
+	  	  
+	  	Bot.setDivisie(divisie);
+	  	Bot.setUserTeam(team);
+	  	Bot.volgendeTeam();
+		
+		home =  new Home();
+		teamPanel = new TeamPanel();
+		comp = new Competition(viewFrame);
+		ps = new PandS(viewFrame);
+		Bot.teamToWTeam(teamPanel.getOpst().getOpstellingen());
+		
+		System.out.println("Inloggen");
+      	 User.setNaam(LoginPanel.setName());
+           vulSpelerlijst(User.getTeam());
+      	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
+          tabs.showThis(l);
+       //   controlPanel2();
+          addLogoutListener();
+          play();
+          ranking();
+          opstellingOpslaan();
+          for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
+          	removeItems(teamPanel.getOpst().getPlayersDDList()[i]);
+          }
+          addItemRemover();
+          wedstrijdteamOpslaan();
+          opstellingKiezen();
+       
+	}
+	
+	
+	public void loadGame(){
+		ActionListener actionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) { 
+        		final LoadGamePanel lgp = new LoadGamePanel(); 
+            	for(int i = 0; i < lgp.getLoadButtons().size(); i++){
+            		final int idx = i;
+            		ActionListener actionListener = new ActionListener() {
+                        public void actionPerformed(ActionEvent actionEvent) { 
+                        	Driver.path = System.getProperty("user.dir") + "/saved/"+lgp.getSaveFiles().get(idx)+".xml";
+                        	
+                        	startGame();
+                        	System.out.println("Load button: "+idx);
+                        }
+	                };                
+	                lgp.getLoadButtons().get(idx).addActionListener(actionListener); 
+            	}
+            	SaveDialog.loadGamePopup(lgp);
+            }
+      };                
+      l.getLoadGame().addActionListener(actionListener); 
+	}
+	
+	public void exitGame(){
+		ActionListener actionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) { 
+            	viewFrame.dispose();
+            }
+      };                
+      l.getExit().addActionListener(actionListener); 
+	}
+	
 	public void addLogoutListener(){
 		JButton logout = tabs.getTable().getImagePanel().getLogoutButton();
        logout.addActionListener(new ActionListener() {
-    	    public void actionPerformed(ActionEvent e)
-    	    {
-    	       viewFrame.dispose();
+    	    public void actionPerformed(ActionEvent e){
+    	    	String saveFile = SaveDialog.saveGamePopup();
+    	    	if(!saveFile.equals("cancel")){
+	    	    	if(!saveFile.equals("")){
+	    	    		if(Driver.path.equals(System.getProperty("user.dir") + "/database.xml")){
+	    	    			createSaveFile(saveFile);
+	    	    		}
+	    	    		writer = new XMLwriter(saveFile);
+	    	    		wedstrijdteamToXML();
+	    	    		if(opstellingnaamToSave!=null){
+	    	    			System.out.println(opstellingnaamToSave);
+	    	    			opstellingToXML(positiesToSave, opstellingnaamToSave);
+	    	    		}
+	    	    	}
+	    	    	viewFrame.dispose();
+    	    	}
     	    }
     	});
 	}
@@ -128,6 +215,16 @@ public class Controller {
     	    public void actionPerformed(ActionEvent e)
     	    {
     	    	veldPanel.getGr().stop();
+    	    	
+    	    	Document doc = home.getHm().getGoals().getDocument();
+    	    	try {
+    				doc.insertString(doc.getLength(), "\n============================\n" + veldPanel.getVerslagPanel().getVerslag().getText(), null);
+    			} catch (BadLocationException ble) {
+    				// TODO Auto-generated catch block
+    				ble.printStackTrace();
+    			}
+    	    	
+    	    	
     	    	viewFrame.remove(veldPanel);
     	    	tabs.showThis(veldPanel);
     	    }
@@ -168,7 +265,7 @@ public class Controller {
 	}
 	
 	public void spel(Spel s){
-		Document doc = home.getHm().getGoals().getDocument();
+//		Document doc = home.getHm().getGoals().getDocument();
     	for(String v: s.verslag()){
 			Calendar cal = Calendar.getInstance();
 	    	cal.getTime();
@@ -178,25 +275,25 @@ public class Controller {
 //	    	veldPanel.getVerslagPanel().getVerslag().setText();
 	    	veldPanel.getVerslagPanel().getVerslag().append( tijd.format(cal.getTime()) + " " + v + "\n");
 //	    	veldPanel.getVerslagPanel().getVerslag().setCaretPosition(veldPanel.getVerslagPanel().getVerslag().getDocument().getLength());
-    		try {
-				doc.insertString(doc.getLength(), tijd.format(cal.getTime()) + " " + v + "\n", null);
-			} catch (BadLocationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//    		try {
+//				doc.insertString(doc.getLength(), tijd.format(cal.getTime()) + " " + v + "\n", null);
+//			} catch (BadLocationException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 	    	//home.getHm().getGoals().setText(tijd.format(cal.getTime()) + " " + v + "\n");
     	}
     	//home.getHm().getGoals().setText((s.winner().getNaam()+" heeft gewonnen!"));
-    	try {
-    		Calendar cal = Calendar.getInstance();
-	    	cal.getTime();
-	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
-			doc.insertString(doc.getLength(),tijd.format(cal.getTime()) + " " + s.winner().getNaam()+" heeft gewonnen!"
-					+ "\n\n===================================\n\n", null);
-		} catch (BadLocationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//    	try {
+//    		Calendar cal = Calendar.getInstance();
+//	    	cal.getTime();
+//	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
+//			doc.insertString(doc.getLength(),tijd.format(cal.getTime()) + " " + s.winner().getNaam()+" heeft gewonnen!"
+//					+ "\n\n===================================\n\n", null);
+//		} catch (BadLocationException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 	
@@ -262,7 +359,7 @@ public class Controller {
     	    public void actionPerformed(ActionEvent e)
     	    {
     	    	ArrayList<Positie> posities = new ArrayList<Positie>();
-    	    	String opstellingNaam = SaveOpstellingDialog.popup();
+    	    	String opstellingNaam = SaveDialog.saveOpstellingPopup();
     	    	System.out.println("Opstelling: " + opstellingNaam);
     	    	if(!opstellingNaam.equals("")){
 	    	    	for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
@@ -283,10 +380,20 @@ public class Controller {
 	    	    		posities.add(positie);
 	    	    	//	System.out.println(positie.toString());//type + " op: " + pos.width + "," + pos.height);
 	    	    	}
-	    	    	opstellingToXML(posities, opstellingNaam);
+	    	    //	opstellingToXML(posities, opstellingNaam);
+	    	    	positiesToSave = posities;
+	    	    	opstellingnaamToSave = opstellingNaam;
+	    	    	nieweOpstellingGebruiken(posities, opstellingNaam);
     	    	}
     	    }	
     	});
+	}
+	
+	public void nieweOpstellingGebruiken(ArrayList<Positie> posities, String naam){
+		Opstelling nieweOpst = new Opstelling(naam, posities);
+		teamPanel.getOpst().getOpstellingen().add(nieweOpst);
+		teamPanel.getOpstellingKeuze().addItem(naam);
+		teamPanel.getOpstellingKeuze().setSelectedItem(naam);
 	}
 	
 	public static Speler getSpelerByName(String name){
@@ -366,7 +473,7 @@ public class Controller {
 				opstelling = op;
 			}
 		}
-	for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
+		for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
     		String naam = (String)teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem();
     		for(Speler s :  User.getWteam().getSpelerList()){
     	        if(s.getNaam() != null && s.getNaam().contains(naam)){
@@ -382,7 +489,7 @@ public class Controller {
     	
     	User.getWteam().setOpstelling(opstelling);
     	
-    	wedstrijdteamToXML();
+    //	wedstrijdteamToXML();
     	System.out.println(User.getWteam().toString());
     	//System.out.println(wSpelers[0].getNaam() + "\n" +wSpelers[10].getNaam() + "\nTactiek = "+ tactiek);
 	}
@@ -415,6 +522,25 @@ public class Controller {
 			String coordinaten = posities.get(i).getX() + "," + posities.get(i).getY();
 			writer.updaten("opstelling_posities" , naam , posities.get(i).getType() + i, coordinaten);
 			
+		}
+	}
+	
+	public void createSaveFile(String destination){
+		File source = new File(Driver.path);
+		File dest = new File(destination);
+
+		FileChannel inputChannel = null;
+		FileChannel outputChannel = null;
+		try {
+			inputChannel = new FileInputStream(source).getChannel();
+			outputChannel = new FileOutputStream(dest).getChannel();
+			outputChannel.transferFrom(inputChannel, 0, inputChannel.size());
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
