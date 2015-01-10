@@ -3318,9 +3318,9 @@
     <offence>51</offence>
     <defence>52</defence>
     <uithouding>62</uithouding>
-    <opstelling>45</opstelling>
+    <opstelling>442</opstelling>
     <tactiek>81</tactiek>
-    <spelers>Kenneth Vermeer,Tonny Vilhena,Rodny Lopes Cabral,Rick Karsdorp,Luke Wilkshire,Lucas Woudenberg,Lex Immers,Joris Mathijsen,Jens ToornAra,Colin Kazim-Richards,﻿Anass Achahbar</spelers>
+    <spelers>Erwin Mulder,Tonny Vilhena,Rodny Lopes Cabral,Rick Karsdorp,Luke Wilkshire,Lucas Woudenberg,Lex Immers,Joris Mathijsen,Jens ToornAra,Colin Kazim-Richards,﻿Anass Achahbar</spelers>
   </Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
@@ -3350,48 +3350,6 @@
       <middenvelder7>265,191</middenvelder7>
       <aanvaller8>98,92</aanvaller8>
       <middenvelder9>31,202</middenvelder9>
-      <aanvaller10>208,94</aanvaller10>
-    </opstelling_posities>
-    <opstelling_posities id="3">
-      <naam>1245</naam>
-      <doelman0>145,395</doelman0>
-      <middenvelder1>52,343</middenvelder1>
-      <verdediger2>220,355</verdediger2>
-      <middenvelder3>43,261</middenvelder3>
-      <verdediger4>250,330</verdediger4>
-      <verdediger5>41,174</verdediger5>
-      <middenvelder6>223,229</middenvelder6>
-      <verdediger7>34,96</verdediger7>
-      <middenvelder8>265,191</middenvelder8>
-      <aanvaller9>208,94</aanvaller9>
-      <aanvaller10>136,209</aanvaller10>
-    </opstelling_posities>
-    <opstelling_posities id="4">
-      <naam>45</naam>
-      <doelman0>145,395</doelman0>
-      <middenvelder1>220,355</middenvelder1>
-      <verdediger2>52,343</verdediger2>
-      <middenvelder3>250,330</middenvelder3>
-      <verdediger4>43,261</verdediger4>
-      <verdediger5>223,229</verdediger5>
-      <middenvelder6>123,78</middenvelder6>
-      <verdediger7>265,191</verdediger7>
-      <middenvelder8>128,162</middenvelder8>
-      <aanvaller9>129,226</aanvaller9>
-      <aanvaller10>131,295</aanvaller10>
-    </opstelling_posities>
-    <opstelling_posities id="5">
-      <naam>ai</naam>
-      <doelman0>145,395</doelman0>
-      <middenvelder1>220,355</middenvelder1>
-      <verdediger2>52,343</verdediger2>
-      <middenvelder3>250,330</middenvelder3>
-      <verdediger4>43,261</verdediger4>
-      <verdediger5>223,229</verdediger5>
-      <middenvelder6>136,209</middenvelder6>
-      <verdediger7>265,191</verdediger7>
-      <middenvelder8>41,174</middenvelder8>
-      <aanvaller9>114,69</aanvaller9>
       <aanvaller10>208,94</aanvaller10>
     </opstelling_posities>
   </opstellingen>

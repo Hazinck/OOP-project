@@ -20,9 +20,12 @@ public class VeldPanel extends JPanel {
 	private static int frameHeight = ViewFrame.getFrameHeight();
 	private JButton terugButton = new JButton("Terug");
 	private JButton pauseResume = new JButton("Pause");
+	private JButton speelZelf = new JButton("Manual Play");
 	private GameRunnable gr;
+	private  GamePanel gp;
 	private VerslagPanel verslagPanel;
 	private Ball ball;
+	private boolean pause = false;
 	
 	  public VeldPanel(ViewFrame viewFrame) {
 		  setLayout(null);
@@ -30,9 +33,9 @@ public class VeldPanel extends JPanel {
 
 		Wedstrijdteam team1 = User.getWteam();
 		Wedstrijdteam team2 = Bot.getWteam();
-		ball = new Ball(team1, team2);
+		ball = new Ball(team1, team2); 
 		
-		final GamePanel gp = new GamePanel(ball);
+		gp = new GamePanel(ball);
 		
 		for(int i = 0; i < team1.getWSpelers().length; i++){//team1.getSpelerList()
 			Speler s1 = team1.getWSpelers()[i];
@@ -60,13 +63,17 @@ public class VeldPanel extends JPanel {
 	    startButton.addActionListener(new ActionListener() {
 	      public void actionPerformed(ActionEvent event) {
 	    	//  thread.start();
+	    	  gp.setStart(false);
 	    	  gr.run();
 	    	  startButton.setEnabled(false);
+	    	  gr.playSound("wav/Start_ref.wav");
 	      }
 	    });
 	    buttonPanel.add(startButton);
 		buttonPanel.add(pauseResume);
 	    buttonPanel.add(terugButton);
+	    buttonPanel.add(speelZelf);
+	    
 	    
 	    verslagPanel = new VerslagPanel(this);
 		
@@ -146,6 +153,41 @@ public class VeldPanel extends JPanel {
 	 */
 	public Ball getBall() {
 		return ball;
+	}
+
+	/**
+	 * @return the pause
+	 */
+	public boolean isPause() {
+		return pause;
+	}
+
+	/**
+	 * @param pause the pause to set
+	 */
+	public void setPause(boolean pause) {
+		this.pause = pause;
+	}
+
+	/**
+	 * @return the gp
+	 */
+	public GamePanel getGp() {
+		return gp;
+	}
+
+	/**
+	 * @return the speelZelf
+	 */
+	public JButton getSpeelZelf() {
+		return speelZelf;
+	}
+
+	/**
+	 * @param speelZelf the speelZelf to set
+	 */
+	public void setSpeelZelf(JButton speelZelf) {
+		this.speelZelf = speelZelf;
 	}
 
 

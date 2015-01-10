@@ -1,6 +1,9 @@
 package oop.voetbalmanager.spel2D;
 import java.awt.Dimension;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -30,11 +33,19 @@ public class Player {
 	private Rectangle boundsAnchor;
 	//private Rectangle bounds = new Rectangle();
 	private Ellipse2D.Double circleBounds;
+	private Ellipse2D.Double circleBallBounds;
 	private boolean collision = false;
-	private Controller controlBall;
+	private Controller2D controlBall;
 	private GamePanel gp;
 	private Wedstrijdteam wteam;
 	private int collisionCount = 0;
+	private boolean isUpPressed = false;
+	private boolean isDownPressed = false;
+	private boolean isLeftPressed = false;
+	private boolean isRightPressed = false;
+	private boolean isQPressed = false;
+	private boolean runsByUser = false;
+	private boolean randomRun = false;
 	/**
 	 * 
 	 * @param speler
@@ -42,7 +53,7 @@ public class Player {
 	 */
 	public Player(Speler speler,  int team12, int playerID, Ball ball, Wedstrijdteam wteam, GamePanel gp){
 		this.speler = speler;
-		if(wteam.getNaam().equals("Feyenoord")){
+		if(wteam.getNaam().equals("Feyenoord") || wteam.getNaam().equals("ADO Den Haag")){
 			this.spriteObj = new Sprite("images/"+wteam.getNaam(), team12);
 		}else{
 			this.spriteObj = new Sprite("images/general", team12);
@@ -62,25 +73,51 @@ public class Player {
 		}else{
 			myTeam = gp.getPlayerListTeam2();
 		}
-		controlBall = new Controller(myTeam, ball);
-		xMinGrens =  ViewFrame.getFrameWidth()/2 - 1275;//-600;//bounds.getMinX();
-		xMaxGrens =  ViewFrame.getFrameWidth()/2 + 1750;//3000;//bounds.getMaxX();
-		yMinGrens = ViewFrame.getFrameHeight()/2 - 300;//-805//bounds.getMinY();
-		yMaxGrens = ViewFrame.getFrameHeight()/2 + 1241;//bounds.getMaxY();
+		controlBall = new Controller2D(myTeam, ball);
+		xMinGrens =  100;//-600;//bounds.getMinX();
+		xMaxGrens =  2300;//3000;//bounds.getMaxX();
+		yMinGrens =  350;//-805//bounds.getMinY();
+		yMaxGrens = 1400;//bounds.getMaxY();
 		circleBounds = new Ellipse2D.Double(x-15, y-30, 40, 48);
+		circleBallBounds = new Ellipse2D.Double(x-15, y-15, 40, 33);
 	}
 	private double xMinGrens;
 	private double xMaxGrens;
 	private double yMinGrens;
 	private double yMaxGrens;
 	
-	public void move(Rectangle2D bounds, int targetX, int targetY ) {
+	public void move(int targetX, int targetY ) {
 //		this.bounds.setRect((int)x-15, (int)y-30, 40, 48);
-		circleBounds.setFrame(x-22, y-30, 48, 48);
+		circleBounds.setFrame(x, y-30, 18, 48);
+		circleBallBounds.setFrame(x-10, y-10, 38, 28);
 		
 		controlBall.controlBallPerPlayer(this);
 //		System.out.println("player before: "+ targetX);
-		Dimension target = runTo(targetX, targetY);
+		Dimension target;
+		if(gp.isManualPlay() && team12==1 && ballOwner){
+			// ball.getOwner().getSpeler().getNaam().equals(speler.getNaam())){
+			ball.getLastBallOwner().setRunsByUser(false);
+			runsByUser = true;
+			target = runByUser();
+//			speedX = 2;
+//			speedY = 2;
+			//	System.out.println("Player: "+ballOwner);
+		}else if(gp.isManualPlay() && team12==1 && 
+				ball.getLastBallOwner()!=null && 
+				ball.getLastBallOwner().getSpeler().getNaam().equals(speler.getNaam()) &&
+				(ball.getOwner()==null || ball.getOwner().getTeam12()==2)){
+			
+				runsByUser = true;
+				target = runByUser();
+//				speedX = 2;
+//				speedY = 2;
+			
+		}else{
+			runsByUser = false;
+			target = runTo(targetX, targetY);
+			setSpeed();
+		}
+		
 		targetX = target.width;
 		targetY = target.height;
 //		System.out.println("player after: "+ targetX);
@@ -117,20 +154,21 @@ public class Player {
 			
 			//bounds
 			if (x - spriteHalfWidth<= xMinGrens) {
-			      x=oldX;//x += (speedX+1);
+			      x=oldX + 2;//x += (speedX+1);
 			}else  if (x + spriteHalfWidth >= xMaxGrens) {
-		    	x=oldX;//x -= (speedX+1);
+		    	x=oldX - 2;//x -= (speedX+1);
 		    }
 		    if (y - spriteHalfHeight <= yMinGrens) {
-		    	y=oldY;//y += (speedY+1);
-		    }else  if (y + spriteHalfHeight >= yMaxGrens) {
-		    	y=oldY;// y -= (speedY+1);
+		    	y=oldY + 2;//y += (speedY+1);
+		    }else  if (y + spriteHalfHeight > yMaxGrens) {
+		    	y=oldY - 2;// y -= (speedY+1);
 		    }
 		    findRichting();
 		    xA[pointIdx] = x;
 		    yA[pointIdx] = y;
 		    
 	  }
+	
 	
 	public void findRichting(){
 		double dx = x - oldX;
@@ -192,11 +230,12 @@ public class Player {
 	}
 	
 	public Dimension runTo(double targetX, double targetY){
-		double x;
-		double y;
+		double x=0;
+		double y=0;
 		if(collision){
 			x= this.targetX;
 			y = this.targetY;
+			randomRun = false;
 		}else{
 			if(ballOwner){// && bounds.contains(ball.getXforP(), ball.getYforP())){//this.x == ball.getX() && this.y ==  ball.getY()){
 			//	System.out.println(speler.getNaam() + " got another target");
@@ -206,18 +245,95 @@ public class Player {
 					x = 300;
 				}
 				y = 806;
+				randomRun = false;
 			}else if((ballAfstand() < anchorAfstand() && anchorAfstand() < boundsAnchor.width*2) || 
 				boundsAnchor.contains(ball.getXforP(), ball.getYforP())){//!bounds.contains(this.x, this.y)){//
+				
 				x = targetX;
 				y = targetY;
-			}else{//!boundsAnchor.contains(this.x, this.y)){//
+				randomRun = false;
+			}
+//			else if(count%30==0){
+//				x = boundsAnchor.x + boundsAnchor.width/2 + RNG.getalTot(150) - RNG.getalTot(150);
+//				y = boundsAnchor.height/2 + boundsAnchor.y + RNG.getalTot(150)  - RNG.getalTot(150);
+//				this.targetX = x;
+//				this.targetY = y;
+//				randomRun = true;
+//			}
+			else if(randomRun == false){//!boundsAnchor.contains(this.x, this.y)){//
 				x = boundsAnchor.x + boundsAnchor.width/2;
 				y = boundsAnchor.height/2 + boundsAnchor.y;
 			}
-			this.targetX = x;
-			this.targetY = y;
+		}
+		if(x == 0 || y == 0){
+			x= this.targetX;
+			y = this.targetY;
 		}
 		return new Dimension((int)x, (int)y);
+	}
+	
+	public Dimension runByUser(){
+		keyListener();
+		//run left
+		if(isLeftPressed){
+        	targetX = x - 5;
+        }
+          //run right
+        if(isRightPressed){
+        	targetX = x + 5;
+        }
+          //run up
+        if(isUpPressed){
+        	targetY =  y - 5;
+        }
+          //run down
+        if(isDownPressed){
+        	targetY = y + 5;
+        }
+        if(isDownPressed){
+        	targetY = y + 5;
+        }
+        if(isQPressed){
+
+    		System.out.println("Player: " + Controller2D.isKicked());
+        	if(Controller2D.isKicked()==false && ballOwner==true){
+        		System.out.println("Player: kicked");
+        		Controller2D.kickBal(this);
+        	}
+        }
+		return new Dimension((int)targetX, (int)targetY);
+		
+	}
+	
+	public void keyListener(){
+		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
+			@Override
+            public boolean dispatchKeyEvent(KeyEvent ke) {
+            	if(ke.getID() == KeyEvent.KEY_PRESSED){
+            		switch(ke.getKeyCode()) {
+		            case KeyEvent.VK_A: isLeftPressed = true; break;
+		            case KeyEvent.VK_D: isRightPressed = true; break;
+		            case KeyEvent.VK_W: isUpPressed = true; break;
+		            case KeyEvent.VK_S: isDownPressed = true; break;
+		            case KeyEvent.VK_Q: isQPressed = true; break;
+            		}
+            	}
+            	if(ke.getID() == KeyEvent.KEY_RELEASED){
+            		switch(ke.getKeyCode()) {
+		            case KeyEvent.VK_A: isLeftPressed = false; break;
+		            case KeyEvent.VK_D: isRightPressed = false; break;
+		            case KeyEvent.VK_W: isUpPressed = false; break;
+		            case KeyEvent.VK_S: isDownPressed = false; break;
+		            case KeyEvent.VK_Q: isQPressed = false; break;
+            		}
+	                    
+	                }
+                   return false;
+            
+            }
+            
+        });
+		
 	}
 	
 //	public void randomRun(){
@@ -452,7 +568,7 @@ public class Player {
 	/**
 	 * @return the controlBall
 	 */
-	public Controller getControlBall() {
+	public Controller2D getController2DBall() {
 		return controlBall;
 	}
 
@@ -503,6 +619,38 @@ public class Player {
 	 */
 	public void setCollisionCount(int collisionCount) {
 		this.collisionCount = collisionCount;
+	}
+
+
+	/**
+	 * @return the runsByUser
+	 */
+	public boolean isRunsByUser() {
+		return runsByUser;
+	}
+
+
+	/**
+	 * @param runsByUser the runsByUser to set
+	 */
+	public void setRunsByUser(boolean runsByUser) {
+		this.runsByUser = runsByUser;
+	}
+
+
+	/**
+	 * @return the richting
+	 */
+	public String getRichting() {
+		return richting;
+	}
+
+
+	/**
+	 * @return the circleBallBounds
+	 */
+	public Ellipse2D.Double getCircleBallBounds() {
+		return circleBallBounds;
 	}
 
 	

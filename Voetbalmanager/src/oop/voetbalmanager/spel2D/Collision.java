@@ -42,23 +42,29 @@ public class Collision{
 		            
 		            if(p2Bounds.getCenterY()< p1Bounds.getCenterY()){
 	//		            System.out.println("New collision old coordinates: "+p2.getX() + "," + p2.getY());
-			            p2.setX((int)newXp2);
+//			            p2.setX((int)newXp2);
 			            p2.setY((int)newYp2);
 	//		            System.out.println("New collision new coordinates: "+newX + "," + newY);
 		            }else{
-		            	p1.setX((int)newXp1);
+//		            	p1.setX((int)newXp1);
 			            p1.setY((int)newYp1);
 		            }
+		            if(p2Bounds.getCenterX()< p1Bounds.getCenterX()){
+		           
+		            	p2.setX((int)newXp2);
+		            }else{
+		            	p1.setX((int)newXp1);
+		            }		            
 		            //kick the ball
 		            
 					if(p1.isBallOwner()){
 						System.out.println("Collision: "+p1.getSpeler().getNaam() + " kick it    t=" + p1.getBall().getT() + " ball: " + p2.getBall().getX() + "," + p2.getBall().getY());
 						toVerslag = "Nu probeert "+p1.getSpeler().getNaam()+" langs "+p2.getSpeler().getNaam()+" te gaan met een vloeiende beweging, maar hij speelt de bal te ver voor zich uit.";
-						Controller.kickBal(p1);
+						Controller2D.kickBal(p1);
 					}else if(p2.isBallOwner()){
 						System.out.println("Collision: "+p2.getSpeler().getNaam() + " kick it    t=" + p2.getBall().getT() + " ball: " + p2.getBall().getX() + "," + p2.getBall().getY());
 						toVerslag = "Nu probeert "+p2.getSpeler().getNaam()+" langs "+p1.getSpeler().getNaam()+" te gaan met een vloeiende beweging, maar hij speelt de bal te ver voor zich uit.";
-						Controller.kickBal(p2);
+						Controller2D.kickBal(p2);
 					}
 					
 		        }

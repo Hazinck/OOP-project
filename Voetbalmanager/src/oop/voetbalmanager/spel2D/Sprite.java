@@ -50,9 +50,9 @@ public class Sprite{
     public void update(){
     	if(idle){
     		if(richting.contains("E")){
-    			sprite = idle_sprite.getSubimage(0, 0, 60, 48);
+    			sprite = idle_sprite.getSubimage(0, 0, 85, 48);
     		}else{
-    			sprite = idle_sprite.getSubimage(0, 48, 60, 48);
+    			sprite = idle_sprite.getSubimage(0, 48, 85, 48);
     		}
     	//	sprite = idle_sprite;
     	}else{

@@ -14,7 +14,7 @@ import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.User;
 
 
-public class Controller {
+public class Controller2D {
 	
 	private ArrayList<Player> team1 = new ArrayList<Player>();
 	private Ball ball;
@@ -23,10 +23,12 @@ public class Controller {
 	private boolean kickToPlayer = false;
 	
 	private long currentTimeFalse = 0;
+	private static boolean kicked;
 	
-	public Controller(ArrayList<Player> team1, Ball ball){
+	public Controller2D(ArrayList<Player> team1, Ball ball){
 		this.team1 = team1;
 		this.ball = ball;
+		kicked = false;
 	}
 	
 	//voorlopig 1 team
@@ -47,22 +49,33 @@ public class Controller {
 	}
 	
 	public void controlBallPerPlayer(final Player p){
-
-		if(p.getCircleBounds().contains((int)ball.getXforP(), (int)ball.getYforP())){
+  		if(!kicked && p.getCircleBallBounds().contains((int)ball.getXforP(), (int)ball.getYforP()) && p.getSpeler().getType().equals("doelman")&&
+  				(p.getBall().getLastBallOwner()==null || !p.getBall().getLastBallOwner().getSpeler().getNaam().equals(p.getSpeler().getNaam()))){
+			Controller2D.kickBal(p);
+		}
+  		else if(!kicked && p.getCircleBallBounds().contains((int)ball.getXforP(), (int)ball.getYforP()) ){//zonder Ball
+		//	System.out.println("Controller: " + p.getSpeler().getNaam());
 			ball.setOwner(p);
 	  		p.setBallOwner(true);
+
   		}else{
   			p.setBallOwner(false);
   		}
 		
-		
+		if(p.getGp().isManualPlay() && p.getBall().getLastBallOwner()==null && p.getTeam12()==1){
+			topPlayers();
+			p.getBall().setLastBallOwner(sortTeam1.get(0));
+		}
 		
 	}
 	
 	public static void kickBal(Player p){
+		kicked = true;
 		p.getBall().setT(0);
 		if(((p.getTeam12() == 1 && p.getBall().getGoalRToKick().contains(p.getX(), p.getY())) || 
 				(p.getTeam12() == 2 && p.getBall().getGoalLToKick().contains(p.getX(), p.getY())))){
+			System.out.println("Controller: check toGoal()");
+			
 			if(toGoal(p)){
 				boolean wtf =  p.getBall().getScore().width < p.getBall().getFinalResult().width;
 				System.out.println(p.getBall().getFinalResult().toString());
@@ -72,26 +85,38 @@ public class Controller {
 				passBal(p);
 			}
 		}else{
+			
 			passBal(p);
 		}
 	}
 	
 	
 	public static void passBal(Player p){
-		p.getBall().setT(0);
-		ArrayList<Player> alle = new ArrayList<Player>();
+			
+			p.getBall().setT(0);
+			ArrayList<Player> alle = new ArrayList<Player>();
+			
+			alle.addAll(p.getGp().getPlayerListTeam1());
+			alle.addAll(p.getGp().getPlayerListTeam2());
+			
+			int pIdx = RNG.getalTot(22);
+			p.setBallOwner(false);
+			if(p.getTeam12()==1){
+				p.getBall().setLastBallOwner(p);
+			}
+			p.getBall().setTargetX(alle.get(pIdx).getX());
+			p.getBall().setTargetY(alle.get(pIdx).getY());
+		//	sortTeam1.get(pIdx).setBallOwner(true);
+		//	p.getBall().setOwner(alle.get(pIdx));
+			if(p.getGp().isManualPlay() && p.getTeam12()==1){
+				double toX = alle.get(pIdx).getX(), toY = alle.get(pIdx).getY();
+				Dimension d = targetByRichting(p,toX, toY);
+				p.getBall().setTargetX(d.width);
+				p.getBall().setTargetY(d.height);
+			}
+			
+			p.getBall().setKick(true);
 		
-		alle.addAll(p.getGp().getPlayerListTeam1());
-		alle.addAll(p.getGp().getPlayerListTeam2());
-		
-		int pIdx = RNG.getalTot(22);
-		p.setBallOwner(false);
-		
-		p.getBall().setTargetX(alle.get(pIdx).getX());
-		p.getBall().setTargetY(alle.get(pIdx).getY());
-	//	sortTeam1.get(pIdx).setBallOwner(true);
-	//	p.getBall().setOwner(alle.get(pIdx));
-		p.getBall().setKick(true);
 	}
 	
 	
@@ -107,12 +132,57 @@ public class Controller {
 		targetGoalY = 700 + RNG.getalTot(81);
 		
 		p.setBallOwner(false);
+		
+		if(p.getTeam12()==1){
+			p.getBall().setLastBallOwner(p);
+		}
+		
 		p.getBall().setTargetX(targetGoalX);
 		p.getBall().setTargetY(targetGoalY);
 	//	sortTeam1.get(pIdx).setBallOwner(true);
 	//	p.getBall().setOwner(alle.get(pIdx));
 		p.getBall().setKick(true);
 		p.getBall().setKickedToGoal(p);
+	}
+	
+	public static Dimension targetByRichting(Player p, double toX, double toY){
+		p.findRichting();
+		String r = p.getRichting();
+		switch(r){
+    	case "N"://niet
+    		toX=p.getX();
+    		toY=p.getY()-250;
+    		break;
+    	case "NE":
+    		toX=p.getX()+250;
+    		toY=p.getY()-250;
+    		break;
+    	case "NW":
+    		toX=p.getX()-250;
+    		toY=p.getY()-250;
+    		break;
+    	case "E":
+    		toX=p.getX()+250;
+    		toY=p.getY();
+        	break;
+    	case "W":
+    		toX=p.getX()-250;
+    		toY=p.getY();
+    		break;
+    	case "SE"://niet
+    		toX=p.getX()+250;
+    		toY=p.getY()+250;
+    		break;
+    	case "SW"://niet
+    		toX=p.getX()-250;
+    		toY=p.getY()+250;
+    		break;
+    	case "S"://niet
+    		toX=p.getX();
+    		toY=p.getY()+250;
+    		break;
+    	}
+		return new Dimension((int)toX, (int)toY);
 	}
 	
 	public static boolean toGoal(Player p){
@@ -156,5 +226,21 @@ public class Controller {
 	public void setKickToPlayer(boolean kickToPlayer) {
 		this.kickToPlayer = kickToPlayer;
 	}
+
+	/**
+	 * @return the kicked
+	 */
+	public static boolean isKicked() {
+		return kicked;
+	}
+
+	/**
+	 * @param kicked the kicked to set
+	 */
+	public static void setKicked(boolean kicked) {
+		Controller2D.kicked = kicked;
+	}
+
+	
 	
 }

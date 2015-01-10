@@ -7,14 +7,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
@@ -56,7 +58,6 @@ public class Controller {
 	private ArrayList<String> ranglijst = new ArrayList<String>();
 	private XMLwriter writer;
 	private VeldPanel veldPanel;
-	private boolean pause = false;
 	private ArrayList<Positie> positiesToSave;
 	private String opstellingnaamToSave;
 	
@@ -87,7 +88,7 @@ public class Controller {
 	public void newGame(){
 		ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) { 
-            	startGame();
+            	startGame(); 
             }
       };                
       l.getNewGame().addActionListener(actionListener); 
@@ -201,6 +202,7 @@ public class Controller {
 	       		spel(s);
 	       		addPauseListener();
 	       		addGoBackListener();
+	       		addSpeelZelfListener();
 	       		updateStats(s);
 	       		}
 		});
@@ -236,14 +238,49 @@ public class Controller {
 		pauseResume.addActionListener(new ActionListener() {
     	    public void actionPerformed(ActionEvent e)
     	    {
-    	    	if(pause){
-    	    		veldPanel.getGr().start();
-    	    		pause = false;
-    	    		veldPanel.getPauseResume().setText("Pause");
+    	    	pauze();
+    	    }
+    	});
+	}
+	
+	public void pauze(){
+		if(veldPanel.isPause()){
+    		veldPanel.getGp().setGoal(false);
+    		veldPanel.getGr().start();
+    	    veldPanel.setPause(false);// = false;
+    	    veldPanel.getPauseResume().setText("Pause");
+    	}else{
+    		veldPanel.getGr().stop();
+    	    veldPanel.setPause(true);// pause = true;
+    	    veldPanel.getPauseResume().setText("Resume");
+    	}
+	}
+	
+	public void addSpeelZelfListener(){
+		JButton playAutoManual = veldPanel.getSpeelZelf();
+		playAutoManual.addActionListener(new ActionListener() {
+    	    public void actionPerformed(ActionEvent e)
+    	    {
+    	    	if(veldPanel.getGp().isManualPlay()){
+    	    		veldPanel.getGp().setManualPlay(false);
+    	    		veldPanel.getSpeelZelf().setText("Manual Play");
     	    	}else{
-    	    		veldPanel.getGr().stop();
-    	    		pause = true;
-    	    		veldPanel.getPauseResume().setText("Resume");
+    	    		pauze();
+    	    		veldPanel.getGp().setManualPlay(true);// pause = true;
+    	    		veldPanel.getSpeelZelf().setText("AutoPlay");
+    	    		ImageIcon icon = new ImageIcon("images/manual.png");
+					int ok = JOptionPane.showConfirmDialog(
+                            null,
+                            "",
+                            "Manual play", JOptionPane.OK_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                            icon);
+					if(ok == JOptionPane.OK_OPTION){
+						pauze();
+					}else{
+						veldPanel.getGp().setManualPlay(false);
+	    	    		veldPanel.getSpeelZelf().setText("Manual Play");
+						pauze();
+					}
     	    	}
     	    }
     	});
@@ -543,4 +580,5 @@ public class Controller {
 			e.printStackTrace();
 		}
 	}
+	
 }

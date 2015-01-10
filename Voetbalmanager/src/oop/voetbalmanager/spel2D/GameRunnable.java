@@ -6,10 +6,15 @@ import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.swing.Timer;
 
 import oop.voetbalmanager.model.Bot;
@@ -21,7 +26,7 @@ public class GameRunnable implements Runnable {
 	
 	private GamePanel gp;
 	private VeldPanel veldPanel;
-	private Controller control;
+	private Controller2D control;
 	private ArrayList<Player> playerListAll = new ArrayList<Player>();
 	private ArrayList<Timer> timers = new ArrayList<Timer>(); 
 	private boolean stop = false;
@@ -30,6 +35,9 @@ public class GameRunnable implements Runnable {
 	private boolean goal = false;
 	private ArrayList<String> verslag = new ArrayList<String>();
 	private long tStart;
+	private int timeLoop = 0;
+	private int excitedSound = 0;
+	private int goalSound = 0;
 	public GameRunnable(GamePanel gp, VeldPanel veldPanel){// VeldFrame veldPanel){
 		this.gp = gp;
 		this.veldPanel = veldPanel;
@@ -37,9 +45,9 @@ public class GameRunnable implements Runnable {
 		playerListAll.addAll(gp.getPlayerListTeam1());
 		playerListAll.addAll(gp.getPlayerListTeam2());
 		
-		control = new Controller(playerListAll, gp.getBall());
+		control = new Controller2D(playerListAll, gp.getBall());
 		control.topPlayers();
-		gp.setController(control);
+		gp.setController2D(control);
 		
 		position1 = new Position(gp.getPlayerListTeam1(), User.getWteam().getOpstelling(), 1);
 		position1.setPosition();
@@ -50,6 +58,7 @@ public class GameRunnable implements Runnable {
 	
 	
 	public void run() {
+		
 		tStart = System.currentTimeMillis();
 		//  control.controlBall(veldPanel);
 		  animatePlayer();
@@ -64,20 +73,45 @@ public class GameRunnable implements Runnable {
 		ActionListener reset = new ActionListener() {
 	         @Override
 	         public void actionPerformed(ActionEvent evt) {
-	        	 long tEnd = System.currentTimeMillis();
-	        	 long tDelta = tEnd - tStart;
-	        	 double elapsedMinutes = tDelta / 1000.0 / 60;
+//	        	 long tEnd = System.currentTimeMillis();
+//	        	 long tDelta = tEnd - tStart;
+//	        	 double elapsedSecondes = tDelta / 1000.0;
+//	        	 double elapsedMinutes = elapsedSecondes / 60;
+	        	
+	        	 if(timeLoop%80==0 && timeLoop!=0){
+	        		 gp.setTijd(gp.getTijd() - 1);
+	        	 }
 	        	 
-	        	 if(elapsedMinutes > 3 && gp.getBall().getFinalResult().equals(gp.getBall().getScore())){
+	        	 if(timeLoop > 3600){// && gp.getBall().getFinalResult().equals(gp.getBall().getScore())){
 	        		 endspiel();
 	        	 }
 	        	 else{
-	        		 if(gp.getBall().isBallInGoal()){
+	        		 if(excitedSound == 0 &&
+	        				 (((gp.getBall().getGoalRToKick().contains(gp.getBall().getX(), gp.getBall().getY())) || 
+	        				 ((gp.getBall().getGoalLToKick().contains(gp.getBall().getX(), gp.getBall().getY())))))){
+	        			 System.out.println("Game Runnable: Play Excited");
+	        			 playSound("wav/Excited.wav");
+	        			 excitedSound = 2400;
+	        		 }else if(excitedSound!=0 && excitedSound%20==0){
+	        			 System.out.println("Game Runnable: playing sound " + excitedSound);
+	        			 excitedSound -= 20;
+	        		 }
+	        		 if(gp.getBall().isBallInGoal() && goalSound==0){
 	        	 		System.out.println("GameRunnable: GOAL!!!");
+	        	 		gp.setGoal(true);
 	        	 		verslag(gp.getBall().getToVerslag());
 	        			resetAll();
+	        			veldPanel.getPauseResume().setText("Resume");
+	        			veldPanel.setPause(true);
+	        	 		playSound("wav/Goal.wav");
+	        	 		playSound("wav/Goal_ref.wav");
+	        	 		goalSound = 3400;
+	        		 }else if(goalSound!=0 && goalSound%20==0){
+	        			 goalSound -= 20;
 	        		 }
+	        		 
 	        	 }
+	        	 timeLoop++;
 	         }
 	      };
 	      Timer t =  new Timer(50, reset);
@@ -104,9 +138,11 @@ public class GameRunnable implements Runnable {
   			 
   		 }
   		 verslag(winner);
+  		 playSound("wav/End_ref.wav");
+  		 gp.setEnd(true);
   		 veldPanel.getPauseResume().setEnabled(false);
   		 resetAll();
-		       
+		 
 	}
 	
 	public void resetAll(){
@@ -148,7 +184,7 @@ public class GameRunnable implements Runnable {
 		         public void actionPerformed(ActionEvent evt) {
 		        	 for(Player p: playerListAll){
 		        		 
-			     			p.move(bounds,  (int)gp.getBall().getXforP(),  (int)gp.getBall().getYforP());//targetX,Y
+			     			p.move( (int)gp.getBall().getXforP(),  (int)gp.getBall().getYforP());//targetX,Y
 //			     		System.out.println("gameRunnable: " + p.getTargetX() + " = " + (int)gp.getBall().getXforP());	
 			     	 }
 		        	// Collision.collide(playerListAll);
@@ -169,25 +205,37 @@ public class GameRunnable implements Runnable {
 	}
 	
 	public void autoCam(Ball b){
+		double x,y;
 		
+		x =  b.getX();
+		y =  b.getY();
+		
+		if(gp.isManualPlay()){
+			for(Player p: gp.getPlayerListTeam1()){
+				if(p.isRunsByUser()){
+					x = p.getX();
+					y = p.getY();
+				}
+			}
+		}
 //		System.out.println(VeldFrame.getFrameWidth()/2  +" "+ b.getX() + gp.getViewX());
 		
-			if(ViewFrame.getFrameWidth()/2  > b.getX() + gp.getViewX() + 50){
+			if(ViewFrame.getFrameWidth()/2  > x + gp.getViewX() + 50){
 				if(gp.getViewX()<-5){
 					gp.setViewX(gp.getViewX()+3);
 				}
-			}else if(ViewFrame.getFrameWidth()/2 < b.getX() + gp.getViewX() - 50){
-				if(gp.getViewX()>-1190){
+			}else if(ViewFrame.getFrameWidth()/2 < x + gp.getViewX() - 50){
+				if(gp.getViewX()>(-2550 + ViewFrame.getFrameWidth())){
 					gp.setViewX(gp.getViewX()-3);
 				}
 			}
 			
-			if(ViewFrame.getFrameHeight()/2  > b.getY() + gp.getViewY() + 50){
+			if(ViewFrame.getFrameHeight()/2  > y + gp.getViewY() + 50){
 				if(gp.getViewY()<-5){
 					gp.setViewY(gp.getViewY()+3);
 				}
-			}else if(ViewFrame.getFrameHeight()/2 < b.getY() + gp.getViewY() - 50){
-				if(gp.getViewY()>-760){
+			}else if(ViewFrame.getFrameHeight()/2 < y + gp.getViewY() - 50){
+				if(gp.getViewY()>(-1450 + ViewFrame.getFrameHeight())){//-760
 					gp.setViewY(gp.getViewY()-3);
 				}
 			}
@@ -208,7 +256,7 @@ public class GameRunnable implements Runnable {
 	                    	}
 	                        break;
 	                    case KeyEvent.VK_RIGHT:
-	                    	if(gp.getViewX()>-1190){
+	                    	if(gp.getViewX()>(-2550 + ViewFrame.getFrameWidth())){//-1190){
 	                    		gp.setViewX(gp.getViewX()-5);
 	                    	}
 	                        break;
@@ -218,7 +266,7 @@ public class GameRunnable implements Runnable {
 	                    	}
 	                        break;
 	                    case KeyEvent.VK_DOWN:
-	                    	if(gp.getViewY()>-760){
+	                    	if(gp.getViewY()>(-1450 + ViewFrame.getFrameHeight())){
 	                    		gp.setViewY(gp.getViewY()-5);
 	                    	}
 	                        break;
@@ -243,6 +291,23 @@ public class GameRunnable implements Runnable {
 	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
 			veldPanel.getVerslagPanel().getVerslag().append( tijd.format(cal.getTime()) + " " + line + "\n");
 		}
+	}
+	
+	public void playSound(String file){
+		try {
+	          Clip clip = AudioSystem.getClip();
+	          AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+	                  new File(file));//"wav/Excited.wav"
+	          clip.open(inputStream);
+	          FloatControl gainControl = 
+	        		    (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+	        		gainControl.setValue(-15.0f); // Reduce volume by 10 decibels.
+	          System.out.println("Game runnable: volume "+clip.getLevel());
+		      clip.start();
+		   //   clip.loop(Clip.LOOP_CONTINUOUSLY);
+	        } catch (Exception e) {
+	          System.err.println(e.getMessage());
+	        }
 	}
 	
 	public void resetCam(){

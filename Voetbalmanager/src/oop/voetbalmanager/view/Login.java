@@ -23,7 +23,7 @@ public class Login extends JPanel{
 //	private JButton button = new JButton("Inloggen");
 	private JButton newGame = new JButton("New game");
 	private JButton loadGame = new JButton("Load game");
-	private JButton exit = new JButton("Exit");
+	private JButton exit = new JButton("Quit");
 	private ViewFrame viewFrame;
 	private int img = RNG.getalTot(9) + 1;
 	/**

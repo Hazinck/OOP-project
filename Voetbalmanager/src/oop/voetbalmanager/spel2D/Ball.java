@@ -17,6 +17,7 @@ public class Ball {
 	private Rectangle goalLToKick;
 	private Rectangle goalRToKick;
 	private Player kickedToGoal;
+	private Player lastBallOwner;
 	private Dimension score = new Dimension();
 	private Wedstrijdteam team1;
 	private Wedstrijdteam team2;
@@ -63,6 +64,9 @@ public class Ball {
 				score.setSize(score.width + 1, score.height);
 				if(kickedToGoal == null){
 					kickedToGoal = owner;
+					if(kickedToGoal==null){
+						kickedToGoal=lastBallOwner;
+					}
 				}
 				System.out.println("Ball: "+kickedToGoal.getSpeler().getNaam()+" heeft gescoord");
 				System.out.println("Ball: "+team1.getNaam()+": "+ score.width + "   "+team2.getNaam()+": "+ score.height);
@@ -96,9 +100,13 @@ public class Ball {
 //			}
 //		}else{
 	//	if(kick){	
+
+
+ 
+		
 			double g = 9.81;
 			//y-snelheid met max tijd = 10
-			double Vy0=(-targetY+startY+0.5*g*100)/10;//+-inverse omdat voordinaten systeem voor y omgekeerd is
+			double Vy0=(-targetY+startY+0.5*g*100)/10;//+-inverse omdat coordinaten systeem voor y omgekeerd is
 			//x-snelheid
 			double Vx0=(targetX-startX)/10;
 //			
@@ -124,6 +132,18 @@ public class Ball {
 				yforP = startY = y;
 				owner = null;
 				kick = false;
+				
+				if(x<100){
+					x=155;
+				}else if(x>2300){
+					x = 2250;
+				}
+				if(y<350){
+					y=370;
+				}else if(y>1400){
+					y = 1350;
+				}
+				Controller2D.setKicked(false);
 			}
 	//	}
 //		}
@@ -342,5 +362,26 @@ public class Ball {
 	 */
 	public Wedstrijdteam getTeam2() {
 		return team2;
+	}
+
+	/**
+	 * @return the owner
+	 */
+	public Player getOwner() {
+		return owner;
+	}
+
+	/**
+	 * @return the lastBallOwner
+	 */
+	public Player getLastBallOwner() {
+		return lastBallOwner;
+	}
+
+	/**
+	 * @param lastBallOwner the lastBallOwner to set
+	 */
+	public void setLastBallOwner(Player lastBallOwner) {
+		this.lastBallOwner = lastBallOwner;
 	}
 }
