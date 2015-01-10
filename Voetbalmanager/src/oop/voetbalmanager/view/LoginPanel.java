@@ -49,16 +49,16 @@ public class LoginPanel extends JPanel{
 		add(loginpanel);
 	}
 	
-	public static String setName(){
-		Username = userText.getText();
-		if(Username.length() == 0){
-			return Username = "Andy Zaidman";
-		}
-		else{
-				return Username;
-			}
-				
-		}
+//	public static String setName(){
+//		Username = userText.getText();
+//		if(Username.length() == 0){
+//			return Username = "Andy Zaidman";
+//		}
+//		else{
+//				return Username;
+//			}
+//				
+//	}
 
 
 	public String getUser(){

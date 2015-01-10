@@ -60,6 +60,7 @@ public class Controller {
 	private VeldPanel veldPanel;
 	private ArrayList<Positie> positiesToSave;
 	private String opstellingnaamToSave;
+	private Spel s;
 	
 	public Controller(ViewFrame viewFrame, Login l, Home home, TeamPanel teamPanel, Competition comp, PandS ps) {
 		this.viewFrame = viewFrame;
@@ -113,21 +114,23 @@ public class Controller {
 		Bot.teamToWTeam(teamPanel.getOpst().getOpstellingen());
 		
 		System.out.println("Inloggen");
-      	 User.setNaam(LoginPanel.setName());
-           vulSpelerlijst(User.getTeam());
-      	 tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
-          tabs.showThis(l);
-       //   controlPanel2();
-          addLogoutListener();
-          play();
-          ranking();
-          opstellingOpslaan();
-          for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
-          	removeItems(teamPanel.getOpst().getPlayersDDList()[i]);
-          }
-          addItemRemover();
-          wedstrijdteamOpslaan();
-          opstellingKiezen();
+		if(User.getNaam()==null){
+			User.setNaam("Noname");
+		}
+        vulSpelerlijst(User.getTeam());
+      	tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
+        tabs.showThis(l);
+   //   controlPanel2();
+        addLogoutListener();
+        play();
+        ranking();
+        opstellingOpslaan();
+        for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
+        	removeItems(teamPanel.getOpst().getPlayersDDList()[i]);
+        }
+        addItemRemover();
+        wedstrijdteamOpslaan();
+        opstellingKiezen();
        
 	}
 	
@@ -141,9 +144,12 @@ public class Controller {
             		ActionListener actionListener = new ActionListener() {
                         public void actionPerformed(ActionEvent actionEvent) { 
                         	Driver.path = System.getProperty("user.dir") + "/saved/"+lgp.getSaveFiles().get(idx)+".xml";
-                        	
+                        	String username = lgp.getSaveFiles().get(idx);
+                        	username = username.substring(0, username.length()-20);
+                        	User.setNaam(username);
                         	startGame();
                         	System.out.println("Load button: "+idx);
+                        	SaveDialog.getLoadGameDialog().getRootFrame().dispose();
                         }
 	                };                
 	                lgp.getLoadButtons().get(idx).addActionListener(actionListener); 
@@ -191,7 +197,7 @@ public class Controller {
 		playButton.addActionListener(new ActionListener() {
 	           public void actionPerformed(ActionEvent actionEvent) { 
 	        	int geluksfactor = RNG.getalTot(600);
-	       		Spel s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
+	       		s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
 	       		s.winner();
 	       		Dimension score = s.getScore();
 	       		System.out.println(User.getWteam().getNaam() + ": " + score.width + " " +
@@ -218,6 +224,9 @@ public class Controller {
     	    {
     	    	veldPanel.getGr().stop();
     	    	
+//    	    	System.out.println(veldPanel.getBall().getScore().toString());
+    	    	spelResults(veldPanel.getBall().getScore());
+    	    	
     	    	Document doc = home.getHm().getGoals().getDocument();
     	    	try {
     				doc.insertString(doc.getLength(), "\n============================\n" + veldPanel.getVerslagPanel().getVerslag().getText(), null);
@@ -231,6 +240,22 @@ public class Controller {
     	    	tabs.showThis(veldPanel);
     	    }
     	});
+	}
+	
+	public void spelResults(Dimension score){
+		Divisie.rankTeams();
+    	
+    	Divisie.rekenDoelpunten(score, 
+    								1, veldPanel.getBall().getTeam1());
+    	Divisie.rekenDoelpunten(score, 
+				2, veldPanel.getBall().getTeam2());
+    	
+    	s.getTeamsGespeeld().add(veldPanel.getBall().getTeam1());
+    	s.getTeamsGespeeld().add(veldPanel.getBall().getTeam2());
+    	
+    	Divisie.teamsToDiv(veldPanel.getBall().getTeam1(), veldPanel.getBall().getTeam2());
+    	
+    	Divisie.rankTeams();
 	}
 	
 	public void addPauseListener(){
@@ -290,6 +315,7 @@ public class Controller {
 		Bot.volgendeTeam();
 		Bot.teamToWTeam(teamPanel.getOpst().getOpstellingen());
 		int speeldag = tabs.getTable().getSpeeldag() + 1;
+		Divisie.setSpeeldag(speeldag);
 		tabs.getTable().setSpeeldag(speeldag);
    		home.getHm().getScores().setText(User.getTeam().getNaam() + " VS " + Bot.getBotTeam().getNaam());
    		tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
@@ -550,6 +576,7 @@ public class Controller {
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "spelers", spelers);
 	}
 	
+	
 	public void opstellingToXML(ArrayList<Positie> posities, String naam){	
 
     	System.out.println(posities.toString());
@@ -560,6 +587,11 @@ public class Controller {
 			writer.updaten("opstelling_posities" , naam , posities.get(i).getType() + i, coordinaten);
 			
 		}
+	}
+	
+	public void divisieUserToXML(){	
+		writer.updaten("divisie" , "Eredivisie", "speeldag", Divisie.getSpeeldag()+"");
+		
 	}
 	
 	public void createSaveFile(String destination){

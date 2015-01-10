@@ -93,7 +93,7 @@ public class GameRunnable implements Runnable {
 	        			 playSound("wav/Excited.wav");
 	        			 excitedSound = 2400;
 	        		 }else if(excitedSound!=0 && excitedSound%20==0){
-	        			 System.out.println("Game Runnable: playing sound " + excitedSound);
+	        			// System.out.println("Game Runnable: playing sound " + excitedSound);
 	        			 excitedSound -= 20;
 	        		 }
 	        		 if(gp.getBall().isBallInGoal() && goalSound==0){

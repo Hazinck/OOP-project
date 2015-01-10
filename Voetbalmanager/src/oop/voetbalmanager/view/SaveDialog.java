@@ -16,6 +16,7 @@ import oop.voetbalmanager.model.Driver;
 import oop.voetbalmanager.model.User;
 
 public class SaveDialog {
+	private static JOptionPane LoadGameDialog = new JOptionPane(); 
 	 
 	public static String saveOpstellingPopup() {
 		String naam = "";
@@ -67,7 +68,14 @@ public class SaveDialog {
 	public static void loadGamePopup(LoadGamePanel lgp) {
 		JScrollPane scrollPane = new JScrollPane(lgp);  
 		scrollPane.setPreferredSize( new Dimension( 500, 500 ) );
-		JOptionPane.showMessageDialog(null, scrollPane, "LoadGame",  
+		LoadGameDialog.showMessageDialog(null, scrollPane, "LoadGame",  
 		                                       JOptionPane.CLOSED_OPTION);
+	}
+
+	/**
+	 * @return the loadGameDialog
+	 */
+	public static JOptionPane getLoadGameDialog() {
+		return LoadGameDialog;
 	}
 }

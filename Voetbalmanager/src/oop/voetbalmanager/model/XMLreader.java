@@ -36,6 +36,7 @@ public class XMLreader {
 			teamList = readTeamList(divisieEl);
 			//parse speeldag
 			speeldag = Integer.parseInt(divisieEl.getChildText("speeldag"));
+			
 			stand = Integer.parseInt(divisieEl.getChildText("stand"));
 			
 		 } catch (IOException io) {

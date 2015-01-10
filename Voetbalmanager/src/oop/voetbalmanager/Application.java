@@ -31,7 +31,7 @@ public class Application {
 	      
 	    	@Override
 	      public void run() {
-	    	  User.setNaam("Andy Zaidman");
+	    	//  User.setNaam("Andy Zaidman");
 //	    	  User.setTeam(team);
 //	    	  User.setWteam(wteam);
 //	    	  
