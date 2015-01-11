@@ -157,7 +157,7 @@ public class Controller {
         addItemRemover();
         wedstrijdteamOpslaan();
         opstellingKiezen();
-       
+        tabs.getTable().getTable().setValueAt(Divisie.getSpeeldag(),1,1);
 	}
 	
 	
