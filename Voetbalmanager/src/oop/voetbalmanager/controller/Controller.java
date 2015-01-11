@@ -562,6 +562,30 @@ public class Controller {
 	}
 	
 	
+	/**
+	 * voert het kopen van een speler uit
+	 * @param speler	de speler om te kopen
+	 * @param eigenaar	het team waarvan de speler gekocht word
+	 * @param koper		het team dat de speler koopt
+	 */
+	public void spelerKopen(Speler speler, Team eigenaar, Team koper){
+		int prijs = speler.getPrijs();
+		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
+		ArrayList<Speler> koperSpelers = koper.getSpelerList();
+		
+		//voert de aankoop alleen uit als de speler in het aangegeven team zit
+		if (eigenaarSpelers.contains(speler)){
+			koper.setBudget(koper.getBudget() - prijs);
+			eigenaar.setBudget(eigenaar.getBudget() + prijs);
+			
+			eigenaarSpelers.remove(speler);
+			koperSpelers.add(speler);
+			
+			eigenaar.setSpelerList(eigenaarSpelers);
+			koper.setSpelerList(koperSpelers);
+		}
+	}
+	
 	public void addItemRemover(){
 		
 		for(int i=0; i<teamPanel.getOpst().getPlayersDDList().length;i++){
