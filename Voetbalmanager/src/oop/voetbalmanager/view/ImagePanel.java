@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class ImagePanel extends JPanel{
 	private BufferedImage image;
 	private JButton logout;
 	
-	JLabel naamLable = new JLabel();
+	static JLabel naamLable = new JLabel();
 	private String username;
     public ImagePanel(ViewFrame vframe) {
     	this.username = User.getNaam();
@@ -46,6 +47,15 @@ public class ImagePanel extends JPanel{
 		setBackground(Color.WHITE);
 		add(naamLable);//, BorderLayout.PAGE_START);
 		naamLable.setBounds(0, 0 ,(int)(ViewFrame.getFrameWidth()*0.20), (int)(ViewFrame.getFrameHeight()*0.15));//150
+    }
+    
+    public static void setNameLable(String naam){
+    	naamLable.setText("<html><body style='text-align: center; width: "+(int)(ViewFrame.getFrameWidth()*0.15)+"px'>"+naam);
+    }
+    
+    public void setImage(Image img){
+    	image=(BufferedImage) img;
+    	repaint();
     }
     
     public void addLogoutButton(){

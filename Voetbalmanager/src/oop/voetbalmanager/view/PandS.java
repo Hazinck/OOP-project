@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -23,13 +26,16 @@ import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import org.apache.commons.io.FileUtils;
+
+import oop.voetbalmanager.model.User;
 import layout.SpringUtilities;
 
 
 public class PandS extends JPanel{
 	
 	private JTextField userField, passField;
-	private imgpanel imgP;
+	private ImagePanel imgP;
 	public PandS(ViewFrame vframe){
    //     JLabel text = new JLabel("Profile and settings");
    //     Container panel2 = layoutComponents("Center", Component.CENTER_ALIGNMENT);
@@ -70,7 +76,8 @@ public class PandS extends JPanel{
 	        button.addActionListener(new ActionListener(){
 	        	public void actionPerformed(ActionEvent e){
 	        		if(!(userField.getText().length()==0)){
-	        			LoginPanel.setNaam(userField.getText());
+	        			User.setNaam(userField.getText());
+	        			ImagePanel.setNameLable(userField.getText());
 	        		}
 	        		else if(!(passField.getText().length()==0)){
 	        			LoginPanel.setWachtwoord(passField.getText());
@@ -133,8 +140,7 @@ public class PandS extends JPanel{
 		    avatar.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.33)));//500,200));
 		    avatar.setBackground(null);
 		    
-		    imgP = new imgpanel("images/user_default.png");
-		    
+		    imgP = new ImagePanel(vframe);
 		    avatar.add(Box.createRigidArea(new Dimension(60,0)));
 		    avatar.add(imgP, BorderLayout.WEST);
 		    imgP.setBackground(null);
@@ -157,6 +163,7 @@ public class PandS extends JPanel{
 		    	       	System.out.println("Failed loading image");
 		    	       }
 		    	       imgP.setImage(backgroundImage);
+		    	      Table.img.setImage(backgroundImage);
 		    	      repaint();
 		    	    }
 		    	}
@@ -171,6 +178,7 @@ public class PandS extends JPanel{
 		    	       	System.out.println("Failed loading image");
 		    	       }
 		    		imgP.setImage(backgroundImage);
+		    		Table.img.setImage(backgroundImage);
 		    		repaint();
 		    	}
 		    });
@@ -209,20 +217,62 @@ public class PandS extends JPanel{
 		    		importeer.setFileFilter(filter);
 		    		int returnVal = importeer.showOpenDialog(getParent());
 		    	    if(returnVal == JFileChooser.APPROVE_OPTION) {
-		    	    	
+		    	    	File src=new File(importeer.getSelectedFile().getAbsolutePath());
+		    	    	File dest=new File(System.getProperty("user.dir") + "/saved/"+importeer.getSelectedFile().getName());
+		    	    	System.out.println(importeer.getSelectedFile().getAbsolutePath());
+		    	    	try {
+		    	    	    FileUtils.copyFile(src, dest);
+		    	    	} catch (IOException io) {
+		    	    	    System.out.println("Failed copying the save file");
+		    	    	}
 		    	    }
 		    	}
 		    });
 		    
 		    exp.addActionListener(new ActionListener(){
 		    	public void actionPerformed(ActionEvent e){
-		    		
+		    		final LoadGamePanel export=new LoadGamePanel();
+		    		for(int i = 0; i < export.getLoadButtons().size(); i++){
+		    			final int idx = i;
+		    			ActionListener actionListener = new ActionListener(){
+		    				public void actionPerformed(ActionEvent e){
+		    					JFileChooser ex=new JFileChooser();
+		    					ex.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		    					ex.setAcceptAllFileFilterUsed(false);
+		    					if (ex.showOpenDialog(getParent()) == JFileChooser.APPROVE_OPTION) {
+		    						File src=new File(System.getProperty("user.dir") + "/saved/"+export.getSaveFiles().get(idx)+".xml");
+		    						File dest=new File(ex.getSelectedFile().getAbsolutePath()+"/"+export.getSaveFiles().get(idx)+".xml");
+		    						try {
+		    		    	    	    FileUtils.copyFile(src, dest);
+		    		    	    	} catch (IOException io) {
+		    		    	    	    System.out.println("Failed copying the save file");
+		    		    	    	}
+		    					}
+		    				}
+		    			};
+		    		export.getLoadButtons().get(idx).addActionListener(actionListener);
+		    		}SaveDialog.loadGamePopup(export);
 		    	}
 		    });
 		    
 		    del.addActionListener(new ActionListener(){
 		    	public void actionPerformed(ActionEvent e){
-		    		
+		    		final LoadGamePanel delete=new LoadGamePanel();
+		    		for(int i = 0; i < delete.getLoadButtons().size(); i++){
+		    			final int idx = i;
+		    			final Path save= Paths.get(System.getProperty("user.dir") + "/saved/"+delete.getSaveFiles().get(idx)+".xml");
+		    			ActionListener actionListener = new ActionListener(){
+		    				public void actionPerformed(ActionEvent e){
+		    					try{
+		    						Files.delete(save);
+		    						}catch(Exception d){
+		    							System.out.println("Failed deleting save file");
+		    						}
+		    					}
+		    			};
+		    			delete.getLoadButtons().get(idx).addActionListener(actionListener);
+		    		}
+		    		SaveDialog.loadGamePopup(delete);
 		    	}
 		    });
 		    

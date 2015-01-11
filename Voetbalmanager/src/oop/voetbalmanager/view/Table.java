@@ -26,7 +26,7 @@ public class Table extends JPanel{
 	
 	//	String col[] = {"Team: ","/*Teamnaam*/"};
 	private ViewFrame vframe;
-	private ImagePanel img;
+	protected static ImagePanel img;
 	private int speeldag;
 	private JTable table;
 	
