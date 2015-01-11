@@ -80,13 +80,13 @@ public class Wedstrijdteam extends Team{
 	/**
 	 * @return the def
 	 */
-	public int getdef() {
+	public int getDef() {
 		return def;
 	}
 	/**
 	 * @param def the def to set
 	 */
-	public void setdef(int def) {
+	public void setDef(int def) {
 		this.def = def;
 	}
 	/**

@@ -35,8 +35,8 @@ public class WedstrijdteamTest {
 	public void testTeamDefence(){
 		Wedstrijdteam test=new Wedstrijdteam(amsterdam);
 		test.teamDefence();
-		assertEquals(55,test.getdef());
-		assertNotEquals(42,test.getdef());
+		assertEquals(55,test.getDef());
+		assertNotEquals(42,test.getDef());
 	}
 	
 	@Test
@@ -56,7 +56,7 @@ public class WedstrijdteamTest {
 	@Test
 	public void testGetDef(){
 		Wedstrijdteam test=new Wedstrijdteam(amsterdam);
-		assertEquals(55,test.getdef());
+		assertEquals(55,test.getDef());
 	}
 	
 	@Test
@@ -76,9 +76,9 @@ public class WedstrijdteamTest {
 	@Test
 	public void testSetDef(){
 		Wedstrijdteam test=new Wedstrijdteam(amsterdam);
-		test.setdef(43);
-		assertEquals(43,test.getdef());
-		assertNotEquals(55,test.getdef());
+		test.setDef(43);
+		assertEquals(43,test.getDef());
+		assertNotEquals(55,test.getDef());
 	}
 	
 	@Test

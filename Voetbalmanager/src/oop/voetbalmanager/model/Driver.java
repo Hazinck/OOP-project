@@ -1,8 +1,5 @@
 ﻿package oop.voetbalmanager.model;
 import java.io.File;
-import java.util.List;
-
-import org.jdom2.Element;
 
 
 public class Driver {
@@ -55,14 +52,24 @@ public class Driver {
 	
 		
 	*/	//spel
+		
 		XMLreader reader = new XMLreader();
-		Divisie divisie = reader.readDivisie(Driver.path);
-		Team team1 = divisie.getTeamList().get(1);
-		Team team2 = divisie.getTeamList().get(8);
+		Divisie divisie = reader.readDivisie(path);
+		Wedstrijdteam team1 = new Wedstrijdteam(divisie.getTeamList().get(1));
+		Wedstrijdteam team2 = new Wedstrijdteam(divisie.getTeamList().get(8));
 		int geluksfactor = RNG.getalTot(800);
 		Spel s = new Spel(team1, team2, geluksfactor);
 		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
 		
+		System.out.println("Team1 budget old: "+team1.getBudget());
+		team1.setBudget(67);
+		System.out.println("Team1 budget new: "+team1.getBudget());
+		//writer.updaten("team" , team1.getNaam(), "budget", team1.getBudget()+"");
+		Divisie.getTeamList().get(1).setBudget(team1.getBudget());
+		System.out.println("Team1 in divisie budget new: "+divisie.getTeamList().get(1).getBudget());
+		
+//		Divisie.getTeamList().get(1).setWinst(Divisie.getTeamList().get(1).getWinst() + 3);;
+//		Divisie.rankTeams();
 		
 	}
 	

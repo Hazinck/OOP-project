@@ -19,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.User;
 
 public class Table extends JPanel{
@@ -78,7 +79,7 @@ public class Table extends JPanel{
 		 model.setDataVector(
 				 new Object[][] { 
 						 { "Balans: ", User.getTeam().getBudget() },
-						 { "Speeldag: ", speeldag }, 
+						 { "Speeldag: ", Divisie.getSpeeldag() }, 
 						 { "Punten: ",  User.getTeam().getScore()}, 
 						 { "Ranking: ", User.getTeam().getRank() }, 
 						 { "Volgende \ntegenstander: ", Bot.getBotTeam().getNaam()} 

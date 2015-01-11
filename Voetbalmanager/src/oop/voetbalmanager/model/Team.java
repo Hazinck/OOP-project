@@ -1,4 +1,5 @@
 package oop.voetbalmanager.model;
+import java.awt.Dimension;
 import java.util.ArrayList;
 
 
@@ -67,7 +68,9 @@ public class Team {
 				doelsaldo + "\nDoelpunten tegen:" + doeltegen + 
 				"\nDoelpunten voor:" + doelvoor + "\nBudget:" + budget+ "\nScore:"+score+"\n" ;
 	}
-
+	
+	
+	
 	/**
 	 * @return the naam
 	 */
@@ -170,7 +173,7 @@ public class Team {
 	}
 
 
-	public void setBudget(long budget) {
+	public void setBudget(double budget) {
 		this.budget = budget;
 	}
 	public int getScore() {

@@ -50,7 +50,7 @@ public class ImagePanel extends JPanel{
     
     public void addLogoutButton(){
 	//	add(Box.createRigidArea(new Dimension(0,(int)(ViewFrame.getFrameHeight()*0.66))));//image.getHeight()*2 + 30
-		logout = new JButton("Logout and Save");
+		logout = new JButton("Quit and Save");
     	add(logout);
 		logout.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.40) ,(int)(ViewFrame.getFrameWidth()*0.20), 30);//150
     }

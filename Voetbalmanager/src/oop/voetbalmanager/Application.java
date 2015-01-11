@@ -9,6 +9,7 @@ import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.Wedstrijdteam;
 import oop.voetbalmanager.model.XMLreader;
+import oop.voetbalmanager.spel2D.VeldPanel;
 import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
@@ -21,35 +22,35 @@ public class Application {
 	
 	
 	public static void main(String[] args) {
-		XMLreader reader = new XMLreader();
-		final Divisie divisie = reader.readDivisie(Driver.path);
-		final Team team = divisie.getTeamList().get(8);
-		final Wedstrijdteam wteam = reader.readWedstrijdteam(team, Driver.path);
+//		XMLreader reader = new XMLreader();
+//		final Divisie divisie = reader.readDivisie(Driver.path);
+//		final Team team = divisie.getTeamList().get(8);
+//		final Wedstrijdteam wteam = reader.readWedstrijdteam(team, Driver.path);
 		
 	    EventQueue.invokeLater(new Runnable() {
 	      
 	    	@Override
 	      public void run() {
-	    	  User.setNaam("Andy Zaidman");
-	    	  User.setTeam(team);
-	    	  User.setWteam(wteam);
-	    	  
-	    	  Bot.setDivisie(divisie);
-	    	  Bot.setUserTeam(team);
-	    	  Bot.volgendeTeam();
+	    	//  User.setNaam("Andy Zaidman");
+//	    	  User.setTeam(team);
+//	    	  User.setWteam(wteam);
+//	    	  
+//	    	  Bot.setDivisie(divisie);
+//	    	  Bot.setUserTeam(team);
+//	    	  Bot.volgendeTeam();
 	    	  
 	    	  ViewFrame viewFrame = new ViewFrame();
 	  	   	  Login l = new Login(viewFrame);
-	  	   	  Home h = new Home();
-	  	   	  TeamPanel t = new TeamPanel();
-	  	   	  Competition comp = new Competition(viewFrame);
-	  	   	  PandS ps = new PandS(viewFrame);
+//	  	   	  Home h = new Home();
+//	  	   	  TeamPanel t = new TeamPanel();
+//	  	   	  Competition comp = new Competition(viewFrame);
+//	  	   	  PandS ps = new PandS(viewFrame);
 	  	   	  
 
-	  	   	  Bot.teamToWTeam(t.getOpst().getOpstellingen());
+//	  	   	  Bot.teamToWTeam(t.getOpst().getOpstellingen());
 //	  	   	  p1.showThis(p2); 
-              Controller controller = new Controller(viewFrame, l, h, t, comp, ps);
-              controller.contol();
+              Controller controller = new Controller(viewFrame, l);//, h, t, comp, ps);
+              controller.control();
               
               
 //              viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
