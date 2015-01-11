@@ -12,6 +12,7 @@ public class Divisie {
 	private static ArrayList<Team> teamList = new ArrayList<Team>();
 	private static int speeldag;
 	private int stand;
+	private static ArrayList<Team> teamsGespeeld = new ArrayList<Team>();
 	
 	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand){
 		this.naam = naam;
@@ -59,8 +60,11 @@ public class Divisie {
 		    }
 		});
 		Collections.reverse(teamList);
+		int i = 1;
 		for(Team t: teamList){
+			t.setRank(i);
 			System.out.println(t.getNaam()+": "+t.getScore());
+			i++;
 		}
 	}
 	
@@ -139,6 +143,11 @@ public class Divisie {
 	}
 	
 	
-	
+	/**
+	 * @return the teamsGespeeld
+	 */
+	public static ArrayList<Team> getTeamsGespeeld() {
+		return teamsGespeeld;
+	}
 	
 }
