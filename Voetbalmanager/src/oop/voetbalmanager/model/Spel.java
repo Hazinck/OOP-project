@@ -9,7 +9,6 @@ public class Spel {
 	private Wedstrijdteam botTeam;
 	private int geluksfactor;
 	private Dimension score = new Dimension();
-	private ArrayList<Team> teamsGespeeld = new ArrayList<Team>();
 	
 	/**
 	 * @param userTeam
@@ -131,11 +130,6 @@ public class Spel {
 		return score;
 	}
 
-	/**
-	 * @return the teamsGespeeld
-	 */
-	public ArrayList<Team> getTeamsGespeeld() {
-		return teamsGespeeld;
-	}
+	
 	
 }
