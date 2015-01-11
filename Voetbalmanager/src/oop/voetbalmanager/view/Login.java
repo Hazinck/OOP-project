@@ -32,8 +32,7 @@ public class Login extends JPanel{
 	
 	
 	public Login(ViewFrame viewFrame) {
-		this.viewFrame = viewFrame;
-		
+		this.viewFrame = viewFrame;		
 	    setBackground(Color.black);
 		
 		//Absolute positionering binnen deze panel
@@ -144,6 +143,13 @@ public class Login extends JPanel{
 	 */
 	public JButton getExit() {
 		return exit;
+	}
+
+	/**
+	 * @return the img
+	 */
+	public int getImg() {
+		return img;
 	}
 
 	

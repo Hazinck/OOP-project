@@ -47,9 +47,7 @@ public class Tabs extends JPanel{
 
 		}  
 		
-		/**
-		 * @return the button
-		 */
+		
 		
 		public void showThis(JPanel loginPanel){
 			loginPanel.setVisible(false);

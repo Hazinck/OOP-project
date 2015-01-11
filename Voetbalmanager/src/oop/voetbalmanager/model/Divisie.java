@@ -111,6 +111,18 @@ public class Divisie {
 		}
 	}
 	
+	public static Team findTeamByName(String teamNaam){
+		Team team = null;
+		for(Team t: teamList){
+			if(t.getNaam().equals(teamNaam)){
+			System.out.println(t.getNaam()+"\n"+teamNaam);
+				team = t;
+				break;
+			}
+		}
+		return team;
+	}
+	
 	/**
 	 * @return the naam
 	 */

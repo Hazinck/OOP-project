@@ -213,7 +213,7 @@ public class XMLreader {
 	public Wedstrijdteam readWedstrijdteam(Team userteam, String infile){
 		SAXBuilder builder = new SAXBuilder();
 		File xmlFile = new File(infile);
-		Wedstrijdteam wteam = new Wedstrijdteam(userteam);;
+		Wedstrijdteam wteam = null;
 		try {
 			//open xml
 			Document document = (Document) builder.build(xmlFile);
@@ -224,11 +224,36 @@ public class XMLreader {
 			String opstelling = wteamElement.getChildText("opstelling");
 			int tactiek = Integer.parseInt(wteamElement.getChildText("tactiek"));
 			String spelers = wteamElement.getChildText("spelers");
+			if(userteam==null){
+				String teamNaam = wteamElement.getChildText("TeamNaam");
+				Team team = Divisie.findTeamByName(teamNaam);
+				User.setTeam(team);
+				wteam = new Wedstrijdteam(team);
+			}else{
+				wteam = new Wedstrijdteam(userteam);
+			}
 			ArrayList<Speler> spelerList = new ArrayList<Speler>();
 			for(Speler s: wteam.getSpelerList()){
 				if(spelers.contains(s.getNaam())){
 					spelerList.add(s);
 				}
+			}
+			if(spelerList.size()<1){
+				for(Speler s: wteam.getSpelerList()){
+					if(s.getType().contains("doelman")){
+						spelerList.add(s);
+						break;
+					}
+				}
+				for(Speler s: wteam.getSpelerList()){
+					if(!s.getType().contains("doelman")){
+						spelerList.add(s);
+					}
+					if(spelerList.size()==11){
+						break;
+					}
+				}
+			//	System.out.println("XMLReader: readWteam " + spelerList.size());
 			}
 			Collections.reverse(spelerList);
 			Speler[] spelersArray = new Speler[11];

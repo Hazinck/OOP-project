@@ -3321,7 +3321,7 @@
     <opstelling>442</opstelling>
     <tactiek>81</tactiek>
     <spelers>Erwin Mulder,Tonny Vilhena,Rodny Lopes Cabral,Rick Karsdorp,Luke Wilkshire,Lucas Woudenberg,Lex Immers,Joris Mathijsen,Jens ToornAra,Colin Kazim-Richards,﻿Anass Achahbar</spelers>
-  </Wedstrijdteam>
+    <TeamNaam>Feyenoord</TeamNaam></Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
     <opstelling_posities id="1">

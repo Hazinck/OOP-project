@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <divisie id="0">
   <naam>Eredivisie</naam>
-  <speeldag>5</speeldag>
+  <speeldag>0</speeldag>
   <stand>0</stand>
   <team id="01">
     <naam>ADO Den Haag</naam>
@@ -179,7 +179,7 @@
     <doeltegen>28</doeltegen>
     <doelsaldo>41</doelsaldo>
     <score>71</score>
-    <budget>65</budget>
+    <budget>65.0</budget>
     <speler id="021">
       <naam>﻿Anwar El Ghazi</naam>
       <type>aanvaller</type>
@@ -3315,12 +3315,13 @@
   </team>
   <Wedstrijdteam>
     <naam>Wedstrijdteam</naam>
-    <offence>51</offence>
-    <defence>52</defence>
-    <uithouding>62</uithouding>
+    <offence>45</offence>
+    <defence>53</defence>
+    <uithouding>63</uithouding>
     <opstelling>442</opstelling>
     <tactiek>81</tactiek>
-    <spelers>Erwin Mulder,Tonny Vilhena,Rodny Lopes Cabral,Rick Karsdorp,Luke Wilkshire,Lucas Woudenberg,Lex Immers,Joris Mathijsen,Jens ToornAra,Colin Kazim-Richards,﻿Anass Achahbar</spelers>
+    <spelers>Mitchell Schet,Mitchell de Vlugt,Mike van Duinen,Michiel Kramer,Mathias Gehrt,Kevin Jansen,Gianni Zuiverloon,Dion Malone,Danny Bakker,﻿Aaron Meijers,Robert Zwinkels</spelers>
+    <TeamNaam>ADO Den Haag</TeamNaam>
   </Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>

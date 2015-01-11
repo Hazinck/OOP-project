@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
@@ -37,6 +38,7 @@ import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.LoadGamePanel;
 import oop.voetbalmanager.view.Login;
+import oop.voetbalmanager.view.NewGamePanel;
 import oop.voetbalmanager.view.PandS;
 import oop.voetbalmanager.view.SaveDialog;
 import oop.voetbalmanager.view.Tabs;
@@ -54,6 +56,8 @@ public class Controller {
 	private PandS ps;
 	private ArrayList<String> ranglijst = new ArrayList<String>();
 	private XMLwriter writer;
+	private XMLreader reader = new XMLreader();
+	private Divisie divisie;
 	private VeldPanel veldPanel;
 	private ArrayList<Positie> positiesToSave;
 	private String opstellingnaamToSave;
@@ -73,6 +77,7 @@ public class Controller {
 	}
 
 	public void control() {
+		divisie = reader.readDivisie(Driver.path);
 		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
 		
 		newGame();
@@ -86,18 +91,42 @@ public class Controller {
 	public void newGame(){
 		ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) { 
-            	startGame(); 
+            	final NewGamePanel ngPanel = new NewGamePanel(viewFrame);
+            	ngPanel.showThis(l);
+            	for(int i = 0; i < ngPanel.getTeamButtons().size(); i++){
+            		final int idx = i;
+            		ActionListener actionListener = new ActionListener() {
+                        public void actionPerformed(ActionEvent actionEvent) { 
+                        	String username = ngPanel.getUserText().getText();
+                        	String teamNaam = ngPanel.getTeamNames().get(idx);
+                        	
+                        	if(username.equals("")){
+                	    		JOptionPane.showMessageDialog(null,
+                	    			    "Naamveld is leeg!",
+                	    			    "Voer je naam in!",
+                	    			    JOptionPane.ERROR_MESSAGE);
+                	    	}else{
+                	    		User.setNaam(username);
+                	    		Team team = Divisie.findTeamByName(teamNaam);
+                	    		User.setTeam(team);
+                	    	//	System.out.println("Controller:" + username + " " + User.getTeam().getNaam());
+                	    		startGame(team, ngPanel);
+                	    	}
+                        }
+	                };                
+	                ngPanel.getTeamButtons().get(idx).addActionListener(actionListener); 
+            	}
+            	//startGame(); 
             }
       };                
       l.getNewGame().addActionListener(actionListener); 
 	}
 	
-	public void startGame(){
-		XMLreader reader = new XMLreader();
-		Divisie divisie = reader.readDivisie(Driver.path);
-		Team team = divisie.getTeamList().get(8);
+	public void startGame(Team team, JPanel fromPanel){
 		Wedstrijdteam wteam = reader.readWedstrijdteam(team, Driver.path);
-		User.setTeam(team);
+	//	Team team = divisie.getTeamList().get(8);
+//		User.setNaam(username);
+//		User.setTeam(team);
 	  	User.setWteam(wteam);
 	  	  
 	  	Bot.setDivisie(divisie);
@@ -116,7 +145,7 @@ public class Controller {
 		}
         vulSpelerlijst(User.getTeam());
       	tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
-        tabs.showThis(l);
+        tabs.showThis(fromPanel);
    //   controlPanel2();
         addLogoutListener();
         play();
@@ -144,7 +173,9 @@ public class Controller {
                         	String username = lgp.getSaveFiles().get(idx);
                         	username = username.substring(0, username.length()-20);
                         	User.setNaam(username);
-                        	startGame();
+                        	
+            	    		//User.setTeam(team);
+                        	startGame(null, l);
                         	System.out.println("Load button: "+idx);
                         	SaveDialog.getLoadGameDialog().getRootFrame().dispose();
                         }
@@ -462,6 +493,7 @@ public class Controller {
 			}
 		}
 		for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
+			//System.out.println("Controller: vulSpelerLijst "+User.getWteam().getWSpelers()[0]);
 			teamPanel.getOpst().getPlayersDDList()[i].setSelectedItem(User.getWteam().getWSpelers()[i].getNaam());
     	//	System.out.println(User.getWteam().getWSpelers()[i].getNaam() + " " + teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem());
 		}
@@ -589,6 +621,7 @@ public class Controller {
 		}
 		for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
     		String naam = (String)teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem();
+    		
     		for(Speler s :  User.getWteam().getSpelerList()){
     	        if(s.getNaam() != null && s.getNaam().contains(naam)){
     	        	User.getWteam().getWSpelers()[i] = s;
@@ -616,6 +649,8 @@ public class Controller {
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "uithouding", Integer.toString(wteam.getUith()));
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "opstelling", wteam.getOpstelling().getNaam());
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "tactiek", Integer.toString(wteam.getTactiek()));
+		//TeamNaam
+		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "TeamNaam", wteam.getNaam());
 		String spelers = "";
 		for(int i = 0; i< wteam.getWSpelers().length; i++){
 			if(i == wteam.getWSpelers().length - 1){

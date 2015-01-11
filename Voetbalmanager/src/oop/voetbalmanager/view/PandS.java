@@ -26,10 +26,8 @@ import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import org.apache.commons.io.FileUtils;
-
-import oop.voetbalmanager.model.User;
 import layout.SpringUtilities;
+import oop.voetbalmanager.model.User;
 
 
 public class PandS extends JPanel{
