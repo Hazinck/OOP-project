@@ -181,7 +181,6 @@ public class Controller {
 	    	    		}
 	    	    		writer = new XMLwriter(saveFile);
 	    	    		wedstrijdteamToXML();
-	    	    		divisieTeamsToXML();
 	    	    		if(opstellingnaamToSave!=null){
 	    	    			System.out.println(opstellingnaamToSave);
 	    	    			opstellingToXML(positiesToSave, opstellingnaamToSave);
@@ -249,28 +248,14 @@ public class Controller {
     	Divisie.rekenDoelpunten(score, 
     								1, veldPanel.getBall().getTeam1());
     	Divisie.rekenDoelpunten(score, 
-									2, veldPanel.getBall().getTeam2());
+				2, veldPanel.getBall().getTeam2());
+    	
+    	s.getTeamsGespeeld().add(veldPanel.getBall().getTeam1());
+    	s.getTeamsGespeeld().add(veldPanel.getBall().getTeam2());
+    	
     	Divisie.teamsToDiv(veldPanel.getBall().getTeam1(), veldPanel.getBall().getTeam2());
+    	
     	Divisie.rankTeams();
-    	
-    	User.setTeam(veldPanel.getBall().getTeam1());
-    	
-    	voegGespeeldeTeam(veldPanel.getBall().getTeam1());
-    	voegGespeeldeTeam(veldPanel.getBall().getTeam2());
-    	
-    	updateStats(s);
-	}
-	
-	public void voegGespeeldeTeam(Wedstrijdteam team){
-		if(Divisie.getTeamsGespeeld().contains(team)){
-			for(int i = 0; i < Divisie.getTeamsGespeeld().size(); i++){
-				if(Divisie.getTeamsGespeeld().get(i).equals(team)){
-					Divisie.getTeamsGespeeld().set(i, team);
-				}
-			}
-		}else{
-			Divisie.getTeamsGespeeld().add(team);
-		}
 	}
 	
 	public void addPauseListener(){
@@ -338,7 +323,7 @@ public class Controller {
    		tabs.getTable().getTable().setValueAt(User.getTeam().getScore(),2,1);
    		tabs.getTable().getTable().setValueAt(User.getTeam().getRank(),3,1);
    		tabs.getTable().getTable().setValueAt(Bot.getBotTeam().getNaam(),4,1);
-   		rankingUpdate();
+   		ranking();
    	//	teamPanel.get;
 	}
 	
@@ -390,16 +375,6 @@ public class Controller {
 		
 		for(String s: ranglijst){
 			rankList += s + "\n";
-		}
-		
-		home.getHr().getRankings().setText(rankList);
-	}
-	
-	public void rankingUpdate(){
-		
-		String rankList="";
-		for(Team t: Divisie.getTeamList()){
-			rankList += t.getNaam() +" "+ t.getScore() + "\n";
 		}
 		
 		home.getHr().getRankings().setText(rankList);
@@ -614,25 +589,9 @@ public class Controller {
 		}
 	}
 	
-	public void divisieTeamsToXML(){	
+	public void divisieUserToXML(){	
 		writer.updaten("divisie" , "Eredivisie", "speeldag", Divisie.getSpeeldag()+"");
-		//System.out.println("divisie" + "Eredivisie" + "speeldag" + Divisie.getSpeeldag()+"");
-		for(Team t: Divisie.getTeamsGespeeld()){
-			writer.updaten("team" , t.getNaam() , "doelvoor" , t.getDoelvoor()+"");
-			writer.updaten("team" , t.getNaam() , "doeltegen" , t.getDoeltegen()+"");
-			writer.updaten("team" , t.getNaam() , "doelsaldo" , t.getDoelsaldo()+"");
-			
-			writer.updaten("team" , t.getNaam() , "winst" , t.getWinst()+"");
-			writer.updaten("team" , t.getNaam() , "gelijkspel" , t.getGelijkspel()+"");
-			writer.updaten("team" , t.getNaam() , "verlies" , t.getVerlies()+"");
-			
-			writer.updaten("team" , t.getNaam() , "score" , t.getScore()+"");
-			
-		//	writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
-		}
-		for(Team t: Divisie.getTeamList()){		
-			writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
-		}
+		
 	}
 	
 	public void createSaveFile(String destination){
