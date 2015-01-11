@@ -141,6 +141,8 @@ public class GameRunnable implements Runnable {
   		 playSound("wav/End_ref.wav");
   		 gp.setEnd(true);
   		 veldPanel.getPauseResume().setEnabled(false);
+  		 veldPanel.getSkipButton().setEnabled(false);
+  		 veldPanel.getTerugButton().setEnabled(true);
   		 resetAll();
 		 
 	}

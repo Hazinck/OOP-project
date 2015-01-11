@@ -102,6 +102,7 @@ public class GamePanel extends JPanel{
 //			g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 //			g.setColor(Color.black);
 //			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
+//			g.drawOval((int)p.getBoundsAnchor().x + viewX, (int)p.getBoundsAnchor().y + viewY, (int)p.getBoundsAnchor().width, (int)p.getBoundsAnchor().height);
 //			g.setColor(Color.magenta);
 //			g.drawOval((int)p.getCircleBallBounds().x + viewX, (int)p.getCircleBallBounds().y + viewY, (int)p.getCircleBallBounds().width, (int)p.getCircleBallBounds().height);
 			

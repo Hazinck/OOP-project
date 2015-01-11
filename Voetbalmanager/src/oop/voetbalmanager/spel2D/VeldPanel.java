@@ -21,6 +21,7 @@ public class VeldPanel extends JPanel {
 	private JButton terugButton = new JButton("Terug");
 	private JButton pauseResume = new JButton("Pause");
 	private JButton speelZelf = new JButton("Manual Play");
+	private JButton skipButton = new JButton("Skip");
 	private GameRunnable gr;
 	private  GamePanel gp;
 	private VerslagPanel verslagPanel;
@@ -69,10 +70,13 @@ public class VeldPanel extends JPanel {
 	    	  gr.playSound("wav/Start_ref.wav");
 	      }
 	    });
+	    terugButton.setEnabled(false);
+	    
 	    buttonPanel.add(startButton);
 		buttonPanel.add(pauseResume);
-	    buttonPanel.add(terugButton);
 	    buttonPanel.add(speelZelf);
+	    buttonPanel.add(terugButton);
+	    buttonPanel.add(skipButton);
 	    
 	    
 	    verslagPanel = new VerslagPanel(this);
@@ -188,6 +192,13 @@ public class VeldPanel extends JPanel {
 	 */
 	public void setSpeelZelf(JButton speelZelf) {
 		this.speelZelf = speelZelf;
+	}
+
+	/**
+	 * @return the skipButton
+	 */
+	public JButton getSkipButton() {
+		return skipButton;
 	}
 
 

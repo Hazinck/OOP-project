@@ -7,8 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,7 +37,6 @@ import oop.voetbalmanager.view.Competition;
 import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.LoadGamePanel;
 import oop.voetbalmanager.view.Login;
-import oop.voetbalmanager.view.LoginPanel;
 import oop.voetbalmanager.view.PandS;
 import oop.voetbalmanager.view.SaveDialog;
 import oop.voetbalmanager.view.Tabs;
@@ -209,6 +206,7 @@ public class Controller {
 	       		spel(s);
 	       		addPauseListener();
 	       		addGoBackListener();
+	       		addSkipListener();
 	       		addSpeelZelfListener();
 	       		updateStats(s);
 	       		}
@@ -218,6 +216,35 @@ public class Controller {
 		
 	}
 	
+	public void addSkipListener(){
+		JButton skip = veldPanel.getSkipButton();
+       skip.addActionListener(new ActionListener() {
+    	    public void actionPerformed(ActionEvent e)
+    	    {
+    	    	veldPanel.getGr().stop();
+    	    	
+    	    	Dimension newScore = new Dimension(
+    	    			(int)veldPanel.getBall().getScore().getWidth() + (int)s.getScore().getWidth(),
+    	    			(int)veldPanel.getBall().getScore().getHeight() + (int)s.getScore().getHeight());
+    	    	System.out.println(newScore.toString());
+    	    	
+    	    	spelResults(newScore);
+    	    	
+    	    	Document doc = home.getHm().getGoals().getDocument();
+    	    	try {
+    				doc.insertString(doc.getLength(), "\n============================\n" + Divisie.getSkipVerslag(), null);
+    			} catch (BadLocationException ble) {
+    				// TODO Auto-generated catch block
+    				ble.printStackTrace();
+    			}
+    	    	
+    	    	
+    	    	viewFrame.remove(veldPanel);
+    	    	tabs.showThis(veldPanel);
+    	    }
+    	});
+	}
+	
 	public void addGoBackListener(){
 		JButton goBack = veldPanel.getTerugButton();
        goBack.addActionListener(new ActionListener() {
@@ -225,7 +252,6 @@ public class Controller {
     	    {
     	    	veldPanel.getGr().stop();
     	    	
-//    	    	System.out.println(veldPanel.getBall().getScore().toString());
     	    	spelResults(veldPanel.getBall().getScore());
     	    	
     	    	Document doc = home.getHm().getGoals().getDocument();
@@ -399,7 +425,7 @@ public class Controller {
 		
 		String rankList="";
 		for(Team t: Divisie.getTeamList()){
-			rankList += t.getNaam() +" "+ t.getScore() + "\n";
+			rankList += t.getRank() + ". " + t.getNaam() +" "+ t.getScore() + "\n";
 		}
 		
 		home.getHr().getRankings().setText(rankList);

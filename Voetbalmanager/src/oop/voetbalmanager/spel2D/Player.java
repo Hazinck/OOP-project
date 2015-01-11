@@ -19,7 +19,7 @@ public class Player {
 	private Speler speler;
 	private Sprite spriteObj;
 	private int playerID;
-	double  x , y, speedX, speedY, oldX, oldY, targetX, targetY;
+	double  x , y, speedX, speedY, oldX, oldY, targetX, targetY, anchorX, anchorY;
 	int spriteHalfWidth = 15;
 	int spriteHalfHeight = 15;
 	int count;
@@ -30,7 +30,7 @@ public class Player {
 	private Ball ball;
 	private String richting="";
 	private int team12;
-	private Rectangle boundsAnchor;
+	private Ellipse2D.Double boundsAnchor;
 	//private Rectangle bounds = new Rectangle();
 	private Ellipse2D.Double circleBounds;
 	private Ellipse2D.Double circleBallBounds;
@@ -64,7 +64,7 @@ public class Player {
 		this.team12 = team12;
 		this.gp = gp;
 		this.wteam = wteam;
-		boundsAnchor = new Rectangle();
+		boundsAnchor = new Ellipse2D.Double();//Rectangle();
 		setSpeed();
 		
 		ArrayList<Player> myTeam;
@@ -246,8 +246,10 @@ public class Player {
 				}
 				y = 806;
 				randomRun = false;
-			}else if((ballAfstand() < anchorAfstand() && anchorAfstand() < boundsAnchor.width*2) || 
-				boundsAnchor.contains(ball.getXforP(), ball.getYforP())){//!bounds.contains(this.x, this.y)){//
+			}else if(//(ballAfstand() < anchorAfstand() && anchorAfstand() < boundsAnchor.width*2) ||
+					(ball.getOwner()==null && anchorAfstand() < 300) ||
+					(boundsAnchor.contains(this.x, this.y) &&
+				boundsAnchor.contains(ball.getXforP(), ball.getYforP()))){//!bounds.contains(this.x, this.y)){//
 				
 				x = targetX;
 				y = targetY;
@@ -261,8 +263,8 @@ public class Player {
 //				randomRun = true;
 //			}
 			else if(randomRun == false){//!boundsAnchor.contains(this.x, this.y)){//
-				x = boundsAnchor.x + boundsAnchor.width/2;
-				y = boundsAnchor.height/2 + boundsAnchor.y;
+				x = anchorX;//boundsAnchor.x + boundsAnchor.width/2;
+				y = anchorY;//boundsAnchor.height/2 + boundsAnchor.y;
 			}
 		}
 		if(x == 0 || y == 0){
@@ -341,6 +343,8 @@ public class Player {
 //	}
 	
 	public void setGrenzen(int anchorX, int anchorY){
+		this.anchorX = anchorX;
+		this.anchorY = anchorY;
 		
 		boundsAnchor.x =  anchorX - 100;
 		boundsAnchor.width = 300;
@@ -352,13 +356,21 @@ public class Player {
 			boundsAnchor.width = 600;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
+			this.anchorX = boundsAnchor.getCenterX();
 		}else if(speler.getType().equals("doelman") && team12 == 2){
 			boundsAnchor.x =  anchorX - 50;
 			boundsAnchor.width = 600;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
+			this.anchorX = boundsAnchor.getCenterX();
 		}
 		
+		if(boundsAnchor.y + boundsAnchor.height > yMaxGrens){
+			boundsAnchor.y = yMaxGrens - boundsAnchor.height;
+		//	System.out.println("Player " + yMaxGrens + " " + boundsAnchor.y);
+		}else if(boundsAnchor.y < yMinGrens){
+			boundsAnchor.y = yMinGrens;
+		}
 	//	System.out.println(boundsAnchor.x + " " + boundsAnchor.width + " " + speler.getNaam());
 		
 	}
@@ -374,8 +386,8 @@ public class Player {
 	public double anchorAfstand(){
 //		boundsCenterX = bounds.x + bounds.width/2;
 //		boundsCenterY = bounds.y + bounds.height/2;
-		double a = Math.pow((boundsAnchor.getCenterX() - x), 2);
-		double b = Math.pow((boundsAnchor.getCenterY() - y), 2);
+		double a = Math.pow((anchorX - x), 2);//boundsAnchor.getCenterX()
+		double b = Math.pow((anchorY - y), 2);//boundsAnchor.getCenterY()
 		double afst = Math.sqrt(a + b);
 //		System.out.println("to anchor: " + afst + " " + speler.getNaam());
 		return afst;
@@ -517,7 +529,7 @@ public class Player {
 	/**
 	 * @return the boundsAnchor
 	 */
-	public Rectangle getBoundsAnchor() {
+	public Ellipse2D.Double getBoundsAnchor() {
 		return boundsAnchor;
 	}
 

@@ -80,4 +80,11 @@ public class ImagePanel extends JPanel{
 	public JButton getLogoutButton(){
 		return logout;
 	}
+
+	/**
+	 * @param image the image to set
+	 */
+	public void setImage(BufferedImage image) {
+		this.image = image;
+	}
 }

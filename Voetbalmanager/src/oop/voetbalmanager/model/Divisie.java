@@ -13,6 +13,7 @@ public class Divisie {
 	private static int speeldag;
 	private int stand;
 	private static ArrayList<Team> teamsGespeeld = new ArrayList<Team>();
+	private static String skipVerslag="";
 	
 	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand){
 		this.naam = naam;
@@ -84,10 +85,12 @@ public class Divisie {
 			System.out.println("Divisie: " + team.getNaam() + " " + team.getWinst());
 			team.setWinst(team.getWinst() + 1);
 			System.out.println("Divisie: " + team.getNaam() + " " + team.getWinst());
+			skipVerslag = team.getNaam() + " heeft gewonnen met: " + (int)score.getWidth() + "-" + (int)score.getHeight();
 		}else if(voor < tegen){
 			team.setVerlies(team.getVerlies() + 1);
 		}else{
 			team.setGelijkspel(team.getGelijkspel() + 1);
+			skipVerslag = "Het is afgelopen: " + (int)score.getWidth() + "-" + (int)score.getHeight();
 		}
 		team.setDoelvoor(team.getDoelvoor() + voor);
 		team.setDoeltegen(team.getDoeltegen() + tegen);
@@ -148,6 +151,13 @@ public class Divisie {
 	 */
 	public static ArrayList<Team> getTeamsGespeeld() {
 		return teamsGespeeld;
+	}
+
+	/**
+	 * @return the skipVerslag
+	 */
+	public static String getSkipVerslag() {
+		return skipVerslag;
 	}
 	
 }
