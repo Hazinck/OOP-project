@@ -19,7 +19,10 @@ public class imgpanel extends JPanel {
     }
     }
   
-
+  public void setImage(Image nieuw){
+	  backgroundImage=nieuw;
+  }
+  
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
     g.drawImage(backgroundImage, 0, 0, this);

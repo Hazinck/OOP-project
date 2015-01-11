@@ -3,17 +3,25 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import layout.SpringUtilities;
 
@@ -21,7 +29,7 @@ import layout.SpringUtilities;
 public class PandS extends JPanel{
 	
 	private JTextField userField, passField;
-	
+	private imgpanel imgP;
 	public PandS(ViewFrame vframe){
    //     JLabel text = new JLabel("Profile and settings");
    //     Container panel2 = layoutComponents("Center", Component.CENTER_ALIGNMENT);
@@ -57,7 +65,18 @@ public class PandS extends JPanel{
 	        form.add(passLable);
 	        form.add(passField);
 	        
-	        JButton button = new JButton("Save chages");
+	        JButton button = new JButton("Save changes");
+	        
+	        button.addActionListener(new ActionListener(){
+	        	public void actionPerformed(ActionEvent e){
+	        		if(!(userField.getText().length()==0)){
+	        			LoginPanel.setNaam(userField.getText());
+	        		}
+	        		else if(!(passField.getText().length()==0)){
+	        			LoginPanel.setWachtwoord(passField.getText());
+	        		}
+	        	}
+	        });
 	        
 	        JPanel buttonPanel = new JPanel();
 	        buttonPanel.setLayout(new BorderLayout());
@@ -114,13 +133,47 @@ public class PandS extends JPanel{
 		    avatar.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.33)));//500,200));
 		    avatar.setBackground(null);
 		    
-		    ImagePanel imgP = new ImagePanel(vframe);
-		    imgP.setBackground(null);
+		    imgP = new imgpanel("images/user_default.png");
+		    
 		    avatar.add(Box.createRigidArea(new Dimension(60,0)));
 		    avatar.add(imgP, BorderLayout.WEST);
+		    imgP.setBackground(null);
 		    
 		    JButton up = new JButton("Upload");
 		    JButton del = new JButton("Delete");
+		    
+		    up.addActionListener(new ActionListener(){
+		    	public void actionPerformed(ActionEvent e){
+		    		JFileChooser upload=new JFileChooser();
+		    		FileNameExtensionFilter filter = new FileNameExtensionFilter(
+		    		        "JPG Images", "jpg");
+		    		upload.setFileFilter(filter);
+		    		int returnVal = upload.showOpenDialog(getParent());
+		    	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+		    	       Image backgroundImage=null;
+		    	       try{
+		    	       	backgroundImage = ImageIO.read(new File(upload.getSelectedFile().getAbsolutePath()));
+		    	       }catch(IOException io){
+		    	       	System.out.println("Failed loading image");
+		    	       }
+		    	       imgP.setImage(backgroundImage);
+		    	      repaint();
+		    	    }
+		    	}
+		    });
+		    
+		    del.addActionListener(new ActionListener(){
+		    	public void actionPerformed(ActionEvent e){
+		    		Image backgroundImage=null;
+		    	       try{
+		    	       	backgroundImage = ImageIO.read(new File("images/user_default.png"));
+		    	       }catch(IOException io){
+		    	       	System.out.println("Failed loading image");
+		    	       }
+		    		imgP.setImage(backgroundImage);
+		    		repaint();
+		    	}
+		    });
 		    
 		    Box buttonBox = Box.createVerticalBox();
 		    buttonBox.add(up);
@@ -147,6 +200,31 @@ public class PandS extends JPanel{
 		    JButton imp = new JButton("Import");
 		    JButton exp = new JButton("Export");
 		    JButton del = new JButton("Delete");
+		    
+		    imp.addActionListener(new ActionListener(){
+		    	public void actionPerformed(ActionEvent e){
+		    		JFileChooser importeer=new JFileChooser();
+		    		FileNameExtensionFilter filter = new FileNameExtensionFilter(
+		    		        "XML saves", "xml");
+		    		importeer.setFileFilter(filter);
+		    		int returnVal = importeer.showOpenDialog(getParent());
+		    	    if(returnVal == JFileChooser.APPROVE_OPTION) {
+		    	    	
+		    	    }
+		    	}
+		    });
+		    
+		    exp.addActionListener(new ActionListener(){
+		    	public void actionPerformed(ActionEvent e){
+		    		
+		    	}
+		    });
+		    
+		    del.addActionListener(new ActionListener(){
+		    	public void actionPerformed(ActionEvent e){
+		    		
+		    	}
+		    });
 		    
 		    Box buttonBox = Box.createHorizontalBox();
 		    save.add(Box.createRigidArea(new Dimension((int)(ViewFrame.getFrameWidth()*0.085),0)));//70

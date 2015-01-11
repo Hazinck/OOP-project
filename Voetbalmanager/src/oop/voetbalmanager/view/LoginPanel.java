@@ -15,7 +15,7 @@ import oop.voetbalmanager.model.User;
 public class LoginPanel extends JPanel{
 	
 	private static String Username;
-	private String Password;
+	private static String Password;
 	
 	private JLabel userLabel = new JLabel("Gebruikersnaam");
 	private JLabel passLabel = new JLabel("Wachtwoord       ");
@@ -47,6 +47,14 @@ public class LoginPanel extends JPanel{
 		loginpanel.add("South", pass);
 		
 		add(loginpanel);
+	}
+	
+	public static void setNaam(String nieuw){
+		Username=nieuw;
+	}
+	
+	public static void setWachtwoord(String nieuw){
+		Password=nieuw;
 	}
 	
 	public static String setName(){
