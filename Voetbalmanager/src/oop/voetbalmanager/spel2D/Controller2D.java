@@ -1,17 +1,10 @@
 package oop.voetbalmanager.spel2D;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 
-import javax.swing.Timer;
-
 import oop.voetbalmanager.model.RNG;
-import oop.voetbalmanager.model.User;
 
 
 public class Controller2D {

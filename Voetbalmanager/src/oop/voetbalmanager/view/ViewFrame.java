@@ -9,8 +9,6 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 
-import oop.voetbalmanager.model.User;
-
 
 //window(frame) van programma
 public class ViewFrame extends JFrame{

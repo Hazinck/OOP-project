@@ -1,7 +1,5 @@
 package oop.voetbalmanager.view;
-import javax.swing.*;
-
-import java.awt.*;
+import javax.swing.JPanel;
 
 /**
  * 

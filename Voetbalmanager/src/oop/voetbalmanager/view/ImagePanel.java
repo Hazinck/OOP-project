@@ -19,6 +19,7 @@ import oop.voetbalmanager.model.User;
 public class ImagePanel extends JPanel{
 	private BufferedImage image;
 	private JButton logout;
+	private boolean ps = false;
 	
 	static JLabel naamLable = new JLabel();
 	private String username;
@@ -70,8 +71,11 @@ public class ImagePanel extends JPanel{
         super.paintComponent(g);
 //        int w = image.getWidth(null);
 //        int h = image.getHeight(null);
-
-        g.drawImage(image, ((int)(ViewFrame.getFrameWidth()*0.20)-150)/2, naamLable.getHeight(), 150, 150, this);//null); 
+        int y = naamLable.getHeight();
+        if(ps){
+        	y = 0;
+        }
+        g.drawImage(image, ((int)(ViewFrame.getFrameWidth()*0.20)-150)/2, y, 150, 150, this);//null); 
     }
 	@Override
 	public Dimension getPreferredSize() {
@@ -96,5 +100,12 @@ public class ImagePanel extends JPanel{
 	 */
 	public void setImage(BufferedImage image) {
 		this.image = image;
+	}
+
+	/**
+	 * @param ps the ps to set
+	 */
+	public void setPs(boolean ps) {
+		this.ps = ps;
 	}
 }

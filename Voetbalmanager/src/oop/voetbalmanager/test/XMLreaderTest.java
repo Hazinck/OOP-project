@@ -1,11 +1,10 @@
 
 package oop.voetbalmanager.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.Team;

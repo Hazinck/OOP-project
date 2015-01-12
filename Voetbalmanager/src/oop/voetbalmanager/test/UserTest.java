@@ -1,6 +1,7 @@
 package oop.voetbalmanager.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;

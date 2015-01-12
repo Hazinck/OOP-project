@@ -30,7 +30,6 @@ import javax.swing.border.TitledBorder;
 import oop.voetbalmanager.controller.Controller;
 import oop.voetbalmanager.model.Driver;
 import oop.voetbalmanager.model.Opstelling;
-import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.model.XMLreader;
 

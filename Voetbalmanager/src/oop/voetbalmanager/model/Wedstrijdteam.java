@@ -3,9 +3,6 @@ package oop.voetbalmanager.model;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import oop.voetbalmanager.view.TeamPanel;
-import oop.voetbalmanager.view.TeamPanel.OpstellingPanel;
-
 
 public class Wedstrijdteam extends Team{
 	

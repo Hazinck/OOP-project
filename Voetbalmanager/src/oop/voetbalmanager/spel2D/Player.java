@@ -2,16 +2,12 @@ package oop.voetbalmanager.spel2D;
 import java.awt.Dimension;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
-import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.Wedstrijdteam;
-import oop.voetbalmanager.view.ViewFrame;
 
 
 public class Player {
@@ -53,7 +49,7 @@ public class Player {
 	 */
 	public Player(Speler speler,  int team12, int playerID, Ball ball, Wedstrijdteam wteam, GamePanel gp){
 		this.speler = speler;
-		if(wteam.getNaam().equals("Feyenoord") || wteam.getNaam().equals("ADO Den Haag")){
+		if(wteam.getNaam().equals("Feyenoord") || wteam.getNaam().equals("ADO Den Haag")  || wteam.getNaam().equals("Ajax")){
 			this.spriteObj = new Sprite("images/"+wteam.getNaam(), team12);
 		}else{
 			this.spriteObj = new Sprite("images/general", team12);
@@ -247,7 +243,7 @@ public class Player {
 				y = 806;
 				randomRun = false;
 			}else if(//(ballAfstand() < anchorAfstand() && anchorAfstand() < boundsAnchor.width*2) ||
-					(ball.getOwner()==null && anchorAfstand() < 300) ||
+					(ball.getOwner()==null && anchorToBallAfstand() < 300) ||
 					(boundsAnchor.contains(this.x, this.y) &&
 				boundsAnchor.contains(ball.getXforP(), ball.getYforP()))){//!bounds.contains(this.x, this.y)){//
 				
@@ -388,6 +384,16 @@ public class Player {
 //		boundsCenterY = bounds.y + bounds.height/2;
 		double a = Math.pow((anchorX - x), 2);//boundsAnchor.getCenterX()
 		double b = Math.pow((anchorY - y), 2);//boundsAnchor.getCenterY()
+		double afst = Math.sqrt(a + b);
+//		System.out.println("to anchor: " + afst + " " + speler.getNaam());
+		return afst;
+	}
+	
+	public double anchorToBallAfstand(){
+//		boundsCenterX = bounds.x + bounds.width/2;
+//		boundsCenterY = bounds.y + bounds.height/2;
+		double a = Math.pow((anchorX - ball.getXforP()), 2);//boundsAnchor.getCenterX()
+		double b = Math.pow((anchorY - ball.getYforP()), 2);//boundsAnchor.getCenterY()
 		double afst = Math.sqrt(a + b);
 //		System.out.println("to anchor: " + afst + " " + speler.getNaam());
 		return afst;

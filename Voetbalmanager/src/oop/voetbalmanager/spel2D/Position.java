@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 import oop.voetbalmanager.model.Opstelling;
 import oop.voetbalmanager.model.Positie;
-import oop.voetbalmanager.model.XMLreader;
 
 
 

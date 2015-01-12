@@ -1,5 +1,4 @@
 package oop.voetbalmanager.model;
-import java.awt.Dimension;
 import java.util.ArrayList;
 
 

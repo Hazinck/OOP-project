@@ -1,11 +1,8 @@
 package oop.voetbalmanager.spel2D;
 
 
-import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
-
-import oop.voetbalmanager.model.RNG;
 
 public class Collision{
 	

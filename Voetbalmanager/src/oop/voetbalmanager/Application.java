@@ -2,19 +2,7 @@ package oop.voetbalmanager;
 import java.awt.EventQueue;
 
 import oop.voetbalmanager.controller.Controller;
-import oop.voetbalmanager.model.Bot;
-import oop.voetbalmanager.model.Divisie;
-import oop.voetbalmanager.model.Driver;
-import oop.voetbalmanager.model.Team;
-import oop.voetbalmanager.model.User;
-import oop.voetbalmanager.model.Wedstrijdteam;
-import oop.voetbalmanager.model.XMLreader;
-import oop.voetbalmanager.spel2D.VeldPanel;
-import oop.voetbalmanager.view.Competition;
-import oop.voetbalmanager.view.Home;
 import oop.voetbalmanager.view.Login;
-import oop.voetbalmanager.view.PandS;
-import oop.voetbalmanager.view.TeamPanel;
 import oop.voetbalmanager.view.ViewFrame;
 
 

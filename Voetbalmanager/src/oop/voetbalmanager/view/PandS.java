@@ -1,4 +1,6 @@
 package oop.voetbalmanager.view;
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -28,6 +30,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import layout.SpringUtilities;
 import oop.voetbalmanager.model.User;
+
+import org.apache.commons.io.FileUtils;
 
 
 public class PandS extends JPanel{
@@ -78,7 +82,7 @@ public class PandS extends JPanel{
 	        			ImagePanel.setNameLable(userField.getText());
 	        		}
 	        		else if(!(passField.getText().length()==0)){
-	        			LoginPanel.setWachtwoord(passField.getText());
+	        		//	LoginPanel.setWachtwoord(passField.getText());
 	        		}
 	        	}
 	        });
@@ -139,6 +143,7 @@ public class PandS extends JPanel{
 		    avatar.setBackground(null);
 		    
 		    imgP = new ImagePanel(vframe);
+		    imgP.setPs(true);
 		    avatar.add(Box.createRigidArea(new Dimension(60,0)));
 		    avatar.add(imgP, BorderLayout.WEST);
 		    imgP.setBackground(null);

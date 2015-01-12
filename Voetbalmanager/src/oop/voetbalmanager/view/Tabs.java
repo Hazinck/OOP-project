@@ -2,13 +2,10 @@ package oop.voetbalmanager.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
 
 //tweede panel waar alle andere panels(tabs) in zitten
 public class Tabs extends JPanel{
