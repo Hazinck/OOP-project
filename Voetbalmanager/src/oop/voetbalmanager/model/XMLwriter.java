@@ -169,18 +169,5 @@ public class XMLwriter {
 		 
 	}
 	
-	public void createWedstrijdteam(Wedstrijdteam wteam){
-		try {
-			//open xml
-			Document document = (Document) builder.build(xmlFile);
-			//maak element van <divisie>
-			Element divisieEl = document.getRootElement();
-			
-			
-		}catch (IOException io) {
-			System.out.println(io.getMessage());
-		} catch (JDOMException jdomex) {
-			System.out.println(jdomex.getMessage());
-		}
-	}
+	
 }
