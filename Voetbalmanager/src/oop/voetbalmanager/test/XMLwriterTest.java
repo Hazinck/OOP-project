@@ -10,6 +10,8 @@ import java.util.List;
 
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.Speler;
+import oop.voetbalmanager.model.Team;
+import oop.voetbalmanager.model.Wedstrijdteam;
 import oop.voetbalmanager.model.XMLreader;
 import oop.voetbalmanager.model.XMLwriter;
 
@@ -92,6 +94,11 @@ public class XMLwriterTest {
 		assertEquals("9000",salaris);
 	}
 	
+	@Test
+	public void testAdd(){
+		XMLwriter test=new XMLwriter("AddTest.xml");
+		test.add("Populariteit","populariteit","test","test");
+	}
 
 
 }

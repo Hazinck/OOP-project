@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opstelling_posities id="1">
+      <naam>433</naam>
+      <doelman0>145,395</doelman0>
+      <aanvaller1>75,355</aanvaller1>
+      <aanvaller2>220,355</aanvaller2>
+      <aanvaller3>35,330</aanvaller3>
+      <aanvaller4>250,330</aanvaller4>
+      <aanvaller5>150,240</aanvaller5>
+      <middenvelder6>50,210</middenvelder6>
+      <middenvelder7>240,210</middenvelder7>
+      <middenvelder8>150,80</middenvelder8>
+      <verdediger9>35,130</verdediger9>
+      <middenvelder10>270,130</middenvelder10>
+    </opstelling_posities>

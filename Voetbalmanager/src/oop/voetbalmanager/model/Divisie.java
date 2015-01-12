@@ -17,7 +17,7 @@ public class Divisie {
 	
 	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand){
 		this.naam = naam;
-		this.teamList = teamList;
+		Divisie.teamList = teamList;
 		Divisie.speeldag = speeldag;
 		this.stand =stand;
 	}
