@@ -1,0 +1,2 @@
+Artour Babaev,A,80,90,70,
+Alexandru Iosup,V,80,80,80,

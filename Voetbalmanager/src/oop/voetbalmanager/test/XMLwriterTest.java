@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import oop.voetbalmanager.model.Divisie;
+import oop.voetbalmanager.model.Opstelling;
 import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.Wedstrijdteam;
@@ -41,7 +42,7 @@ public class XMLwriterTest {
 		 } catch (JDOMException jdomex) {
 			 System.out.println(jdomex.getMessage());
 		 }
-		assertEquals("[Naam:Aefano Denswil - Nummer:222\nType:aanvaller\nOffense:56\nDefence:70\nConditie:64\nBeschikbaarheid:beschikbaar\nPrijs:10000\n, Naam:Thulani Serero - Nummer:223\nType:middenvelder\nOffense:59\nDefence:48\nConditie:85\nBeschikbaarheid:niet beschikbaar\nPrijs:10000\n]",spelerList.toString());
+		assertEquals("[Naam:Aefano Denswil - Nummer:222\nType:aanvaller\nOffense:56\nDefence:70\nConditie:64\nBeschikbaarheid:beschikbaar\nPrijs:10000\n, Naam:Thulani Serero - Nummer:223\nType:aanvaller\nOffense:59\nDefence:48\nConditie:85\nBeschikbaarheid:niet beschikbaar\nPrijs:10000\n]",spelerList.toString());
 	}
 	
 	@Test
@@ -95,9 +96,44 @@ public class XMLwriterTest {
 	}
 	
 	@Test
-	public void testAdd(){
+	public void testAdd1(){
 		XMLwriter test=new XMLwriter("AddTest.xml");
-		test.add("Populariteit","populariteit","test","test");
+		test.add("team","Feyenoord","speler","Artour Babaev");
+		test.updaten("speler","Artour Babaev","type","aanvaller");
+		test.updaten("speler", "Artour Babaev", "uithouding", "80");
+		test.updaten("speler", "Artour Babaev", "offense", "90");
+		test.updaten("speler", "Artour Babaev", "defence", "70");
+		XMLreader testing=new XMLreader();
+		Divisie nieuw=testing.readDivisie("AddTest.xml");
+		assertEquals("Naam:Artour Babaev - Nummer:929\nType:aanvaller\nOffense:90\nDefence:70\nConditie:80\nBeschikbaarheid:null\nPrijs:10000\n",nieuw.getTeamList().get(8).getSpelerList().get(28).toString());
+	}
+	
+	@Test
+	public void testAdd2(){
+		XMLwriter test=new XMLwriter("AddTest.xml");
+		test.add("opstellingen","opstellingen","opstelling_posities","322");
+		XMLreader testing=new XMLreader();
+		Opstelling nieuw=testing.readOpstellingList("AddTest.xml").get(2);
+		assertEquals("Opstelling: 322:\n[]",nieuw.toString());
+	}
+	
+	@Test
+	public void testAdd3(){
+		XMLwriter test=new XMLwriter("AddTest.xml");
+		test.add("divisie","divisie","populariteit","5");
+		SAXBuilder builder = new SAXBuilder();
+		File xmlFile = new File("AddTest.xml");
+		String testing=null;
+		try {
+			Document document = (Document) builder.build(xmlFile);
+			Element divisieEl = document.getRootElement();
+			Element populariteit = divisieEl.getChild("populariteit");
+			testing=populariteit.getChildText("naam");
+		}catch(Exception e){
+			System.out.println("something failed");
+		}
+		assertEquals("5",testing);
+		
 	}
 
 

@@ -43,7 +43,14 @@ public class SpelTest {
 		assertEquals(test, nieuw.getScore());
 	}
 	
-
-
-
+	@Test
+	public void testVerslag(){
+		XMLreader help=new XMLreader();
+		Wedstrijdteam user=help.readWedstrijdteam(ajax, "database.xml");
+		Wedstrijdteam bot=help.readWedstrijdteam(denHaag, "database.xml");
+		User.setWteam(user);
+		Bot.setWteam(bot);
+		Spel test=new Spel(user, bot, 1);
+		assertEquals("[Welkom bij het liveverslag van Ajax thuis tegen ADO Den Haag., De opstellingen van beide teams zijn bekend en volgen nu., Opstelling Ajax: Lucas Andersen, Lerin Duarte, Lasse Schøne, Kolbeinn Sigþórsson, Kenny Tete, Joël Veltman, Jaïro Riedewald, Davy Klaassen, Arkadiusz Milik, ﻿Anwar El Ghazi, Jasper Cillessen, , Opstelling ADO Den Haag: Mitchell Schet, Mitchell de Vlugt, Mike van Duinen, Michiel Kramer, Mathias Gehrt, Kevin Jansen, Gianni Zuiverloon, Dion Malone, Danny Bakker, ﻿Aaron Meijers, Robert Zwinkels, ]",test.verslag().toString());
+	}
 }

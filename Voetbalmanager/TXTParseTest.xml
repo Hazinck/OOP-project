@@ -168,6 +168,13 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
+    <speler id="0123">
+      <naam>Singsing Yuen</naam>
+      <type>verdediger</type>
+      <uithouding>80</uithouding>
+      <offense>90</offense>
+      <defence>70</defence>
+    </speler>
   </team>
   <team id="02">
     <naam>Ajax</naam>
@@ -375,6 +382,13 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>64</defence>
+    </speler>
+    <speler id="0229">
+      <naam>Andy Zaidman</naam>
+      <type>middenvelder</type>
+      <uithouding>80</uithouding>
+      <offense>90</offense>
+      <defence>70</defence>
     </speler>
   </team>
   <team id="03">
@@ -3319,6 +3333,13 @@
       <offense>0</offense>
       <defence>58</defence>
     </speler>
+    <speler id="01825">
+      <naam>Alexandru Iosup</naam>
+      <type>doelman</type>
+      <uithouding>80</uithouding>
+      <offense>90</offense>
+      <defence>70</defence>
+    </speler>
   </team>
   <Wedstrijdteam>
     <naam>Wedstrijdteam</naam>
@@ -3360,137 +3381,5 @@
       <middenvelder9>31,202</middenvelder9>
       <aanvaller10>208,94</aanvaller10>
     </opstelling_posities>
-    <opstelling_posities id="3">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="4">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="5">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="6">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="7">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="8">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="9">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="10">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="11">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="12">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="13">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="14">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="15">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="16">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="17">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="18">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="19">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="20">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="21">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="22">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="23">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="24">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="25">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="26">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="27">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="28">
-      <naam>322</naam>
-    </opstelling_posities>
   </opstellingen>
-  <populariteit id="01">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="02">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="03">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="04">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="05">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="06">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="07">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="08">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="09">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="010">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="011">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="012">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="013">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="014">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="015">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="016">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="017">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="018">
-    <naam>5</naam>
-  </populariteit>
 </divisie>

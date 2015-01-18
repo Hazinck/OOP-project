@@ -15,6 +15,10 @@ public class TXTreader {
 	
 	private static XMLwriter writer = new XMLwriter(Driver.path);
 	
+	public static void setWriter(String infile){
+		writer=new XMLwriter(infile);
+	}
+	
 	public static void readTeam(String teamFile, String teamNaam){
 			String file = pathTxt + teamFile;
 		//	File input = new File(file);
