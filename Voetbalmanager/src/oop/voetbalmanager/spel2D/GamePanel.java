@@ -125,7 +125,8 @@ public class GamePanel extends JPanel{
 //			System.out.println(p.getTargetY()+"=="+ball.getTargetY());
 //			g.setColor(Color.black);
 //			if(p.getSpeler().getType().equals("doelman"))
-//			g.drawRect(p.getBoundsAnchor().x + viewX, p.getBoundsAnchor().y + viewY, p.getBoundsAnchor().width, p.getBoundsAnchor().height);
+			if(p.getSpeler().getType().equals("doelman"))
+			g.drawRect((int)p.getBoundsAnchor().x + viewX, (int)p.getBoundsAnchor().y + viewY, (int)p.getBoundsAnchor().width, (int)p.getBoundsAnchor().height);
 //			g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 //			g.setColor(Color.black);
 //			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);

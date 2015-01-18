@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import oop.voetbalmanager.model.Bot;
 import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.Opstelling;
+import oop.voetbalmanager.model.RNG;
 import oop.voetbalmanager.model.Speler;
 import oop.voetbalmanager.model.Team;
 import oop.voetbalmanager.model.Wedstrijdteam;
@@ -77,6 +78,28 @@ ArrayList<Opstelling> opstellingen=new ArrayList<Opstelling>();
 		assertEquals(feyenoord,Bot.getWteam());
 	}
 	
-	
+	@Test
+	public void testTeamToWteam(){
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie("database.xml");
+		Team ajax = divisie.getTeamList().get(1);
+		Bot.setBotTeam(ajax);
+		
+		ArrayList <Opstelling> opstellingen = reader.readOpstellingList("database.xml");
+		int opIdx = RNG.getalTot(opstellingen.size());
+		int tactiek = RNG.getalTot(101);
+		Bot.teamToWTeam(opstellingen, 0, 20);
+		//assertEquals(Bot.getWteam(), Bot.getWteam());
+		
+		Wedstrijdteam ajaxWT=new Wedstrijdteam(ajax);
+		ajaxWT.getWSpelers()[0] = ajax.getSpelerList().get(25);
+		for(int i=1; i<11; i++){
+			ajaxWT.getWSpelers()[0] = ajax.getSpelerList().get(i);
+		//	System.out.println(ajax.getSpelerList().get(i).getNaam());
+		}
+		ajaxWT.setOpstelling(opstellingen.get(0));
+		ajaxWT.setTactiek(20);
+		assertEquals(Bot.getWteam(), ajaxWT);
+	}
 
 }

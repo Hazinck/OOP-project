@@ -349,7 +349,7 @@ public class Player {
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
 			System.out.println(speler.getNaam() + " is " + speler.getType());
-			boundsAnchor.x =  anchorX -400;
+			boundsAnchor.x =  anchorX - 800;
 			boundsAnchor.width = 600;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;

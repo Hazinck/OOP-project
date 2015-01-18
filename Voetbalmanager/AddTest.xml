@@ -3453,6 +3453,21 @@
     <opstelling_posities id="33">
       <naam>322</naam>
     </opstelling_posities>
+    <opstelling_posities id="34">
+      <naam>322</naam>
+    </opstelling_posities>
+    <opstelling_posities id="35">
+      <naam>322</naam>
+    </opstelling_posities>
+    <opstelling_posities id="36">
+      <naam>322</naam>
+    </opstelling_posities>
+    <opstelling_posities id="37">
+      <naam>322</naam>
+    </opstelling_posities>
+    <opstelling_posities id="38">
+      <naam>322</naam>
+    </opstelling_posities>
   </opstellingen>
   <populariteit id="01">
     <naam>5</naam>
@@ -3521,6 +3536,21 @@
     <naam>5</naam>
   </populariteit>
   <populariteit id="023">
+    <naam>5</naam>
+  </populariteit>
+  <populariteit id="024">
+    <naam>5</naam>
+  </populariteit>
+  <populariteit id="025">
+    <naam>5</naam>
+  </populariteit>
+  <populariteit id="026">
+    <naam>5</naam>
+  </populariteit>
+  <populariteit id="027">
+    <naam>5</naam>
+  </populariteit>
+  <populariteit id="028">
     <naam>5</naam>
   </populariteit>
 </divisie>

@@ -10,13 +10,13 @@ public class Bot {
 	private static Wedstrijdteam wteam;
 	
 	
-	public static void teamToWTeam(ArrayList<Opstelling> opstellingen){
+	public static void teamToWTeam(ArrayList<Opstelling> opstellingen, int opIdx, int tactiek){
 		wteam = new Wedstrijdteam(botTeam);
 		
-		int opIdx = RNG.getalTot(opstellingen.size());
+		//int opIdx = RNG.getalTot(opstellingen.size());
 		Opstelling opstelling = opstellingen.get(opIdx);
 		
-		int tactiek = RNG.getalTot(101);
+		//int tactiek = RNG.getalTot(101);
 		
 		ArrayList<Speler> wSpelerList = new ArrayList<Speler>();
 		
@@ -32,7 +32,7 @@ public class Bot {
 		
 		wteam.setOpstelling(opstelling);
 		wteam.setTactiek(tactiek);
-	//	System.out.println("Bot wedstrijdteam: " + wteam.toString());
+		System.out.println("Bot wedstrijdteam: " + wteam.toString());
 	}
 	
 	/**

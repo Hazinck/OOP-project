@@ -137,7 +137,10 @@ public class Controller {
 		teamPanel = new TeamPanel();
 		comp = new Competition(viewFrame);
 		ps = new PandS(viewFrame);
-		Bot.teamToWTeam(teamPanel.getOpst().getOpstellingen());
+		ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
+		int opIdx = RNG.getalTot(opstellingen.size());
+		int tactiek = RNG.getalTot(101);
+		Bot.teamToWTeam(opstellingen, opIdx, tactiek);
 		
 		System.out.println("Inloggen");
 		if(User.getNaam()==null){
@@ -227,7 +230,9 @@ public class Controller {
 	           public void actionPerformed(ActionEvent actionEvent) { 
 	        	int geluksfactor = RNG.getalTot(600);
 	       		s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
-	       		s.winner();
+	       		int score1 = RNG.getalTot(4);
+	    		int score2 = RNG.getalTot(4);
+	       		s.winner(score1, score2);
 	       		Dimension score = s.getScore();
 	       		System.out.println(User.getWteam().getNaam() + ": " + score.width + " " +
 	       				Bot.getWteam().getNaam() + ": " + score.height + " - geluksfactor: "+geluksfactor);
@@ -385,7 +390,10 @@ public class Controller {
 	
 	public void updateStats(Spel s){
 		Bot.volgendeTeam();
-		Bot.teamToWTeam(teamPanel.getOpst().getOpstellingen());
+		ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
+		int opIdx = RNG.getalTot(opstellingen.size());
+		int tactiek = RNG.getalTot(101);
+		Bot.teamToWTeam(opstellingen, opIdx, tactiek);
 		int speeldag = tabs.getTable().getSpeeldag() + 1;
 		Divisie.setSpeeldag(speeldag);
 		tabs.getTable().setSpeeldag(speeldag);

@@ -52,7 +52,7 @@ public class Driver {
 	
 		
 	//spel
-		
+	
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie(path);
 		Wedstrijdteam team1 = new Wedstrijdteam(divisie.getTeamList().get(1));
@@ -60,7 +60,7 @@ public class Driver {
 		int geluksfactor = RNG.getalTot(800);
 		Spel s = new Spel(team1, team2, geluksfactor);
 		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
-		
+	*/	/*	
 		System.out.println("Team1 budget old: "+team1.getBudget());
 		team1.setBudget(67);
 		System.out.println("Team1 budget new: "+team1.getBudget());
@@ -74,8 +74,8 @@ public class Driver {
 		Divisie.rankTeams();
 		Divisie.getTeamList().get(1).setWinst(30);
 		Divisie.rankTeams();
-*/		System.out.println(TXTreader.listFilesForFolder(new File("teams-txt")));
-	
+		System.out.println(TXTreader.listFilesForFolder(new File("teams-txt")));
+*/	
 	}
 	
 

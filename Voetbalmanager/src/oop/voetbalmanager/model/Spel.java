@@ -7,7 +7,7 @@ public class Spel {
 	
 	private Wedstrijdteam userTeam;
 	private Wedstrijdteam botTeam;
-	private int geluksfactor;
+	private int geluksfactor, score1, score2, teamUserResult, teamBotResult;
 	private Dimension score = new Dimension();
 	
 	/**
@@ -21,11 +21,11 @@ public class Spel {
 		this.geluksfactor = geluksfactor;
 	}
 	
-	public Wedstrijdteam winner(){
+	public Wedstrijdteam winner(int score1, int score2){
 		Wedstrijdteam winner;
 		
-		int score1 = RNG.getalTot(4);
-		int score2 = RNG.getalTot(4);
+		this.score1 = score1;
+		this.score2 = score2;
 		int w, l;
 		if(score1>score2){
 			w = score1;
@@ -45,8 +45,8 @@ public class Spel {
 			spelerBResult += spelerAnalyse(s);
 		}
 		
-		int teamUserResult = teamAnalyse(userTeam, spelerUResult);
-		int teamBotResult = teamAnalyse(botTeam, spelerBResult);
+		teamUserResult = teamAnalyse(userTeam, spelerUResult);
+		teamBotResult = teamAnalyse(botTeam, spelerBResult);
 		
 		System.out.println(teamUserResult + "  " + teamBotResult);
 		
@@ -128,6 +128,13 @@ public class Spel {
 	 */
 	public Dimension getScore() {
 		return score;
+	}
+
+	/**
+	 * @return the geluksfactor
+	 */
+	public int getGeluksfactor() {
+		return geluksfactor;
 	}
 
 	
