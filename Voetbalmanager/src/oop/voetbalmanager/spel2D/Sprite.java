@@ -103,7 +103,15 @@ public class Sprite{
     //	System.out.println(subY + 48);
     }
 
-
+    public void clearImg(){
+    	sprite.flush();
+    	spriteFull.flush();
+    	idle_sprite.flush();
+    	sprite = null;
+    	spriteFull = null;
+    	idle_sprite = null;
+    	
+    }
 	/**
 	 * @return the sprite
 	 */

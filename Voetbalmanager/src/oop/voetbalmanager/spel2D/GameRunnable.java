@@ -137,6 +137,7 @@ public class GameRunnable implements Runnable {
   			 }
   			 
   		 }
+  		 
   		 verslag(winner);
   		 playSound("wav/End_ref.wav");
   		 gp.setEnd(true);
@@ -144,6 +145,10 @@ public class GameRunnable implements Runnable {
   		 veldPanel.getSkipButton().setEnabled(false);
   		 veldPanel.getTerugButton().setEnabled(true);
   		 resetAll();
+//  		 gp.clearImg();
+//  		 for(Player p: playerListAll){
+//  			 p.getSpriteObj().clearImg();
+//  		 }
 		 
 	}
 	
