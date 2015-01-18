@@ -67,14 +67,15 @@ public class Driver {
 		//writer.updaten("team" , team1.getNaam(), "budget", team1.getBudget()+"");
 		Divisie.getTeamList().get(1).setBudget(team1.getBudget());
 		System.out.println("Team1 in divisie budget new: "+divisie.getTeamList().get(1).getBudget());
-	*/		
+			
 //		Divisie.getTeamList().get(1).setWinst(Divisie.getTeamList().get(1).getWinst() + 3);;
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie(path);
 		Divisie.rankTeams();
 		Divisie.getTeamList().get(1).setWinst(30);
 		Divisie.rankTeams();
-		
+*/		System.out.println(TXTreader.listFilesForFolder(new File("teams-txt")));
+	
 	}
 	
 

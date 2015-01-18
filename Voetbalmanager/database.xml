@@ -1650,6 +1650,13 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
+    <speler id="0929">
+      <naam>Jens ToornAra</naam>
+      <type>middenvelder</type>
+      <uithouding>71</uithouding>
+      <offense>72</offense>
+      <defence>54</defence>
+    </speler>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
@@ -3320,8 +3327,9 @@
     <uithouding>62</uithouding>
     <opstelling>442</opstelling>
     <tactiek>81</tactiek>
-    <spelers></spelers>
-    <TeamNaam></TeamNaam></Wedstrijdteam>
+    <spelers />
+    <TeamNaam />
+  </Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
     <opstelling_posities id="1">

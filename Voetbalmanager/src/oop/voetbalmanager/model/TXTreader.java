@@ -136,11 +136,18 @@ public class TXTreader {
 	            writer.add("divisie", "Eredivisie", "team", teamNaam);
 	      //    System.out.println("========================\n"+"Team: "+teamNaam);
 	            readTeam(teamFile, teamNaam);
-	            allFiles += "teamFile\n";
+	            allFiles += teamFile+"\n";
 	        }
 	    }
 	    System.out.println(teams.toString());
 	    return allFiles;
+	}
+
+	/**
+	 * @return the writer
+	 */
+	public static XMLwriter getWriter() {
+		return writer;
 	}
 
 	

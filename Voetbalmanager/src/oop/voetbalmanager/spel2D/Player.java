@@ -348,7 +348,8 @@ public class Player {
 		boundsAnchor.height = 800;
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
-			boundsAnchor.x =  anchorX - 500;
+			System.out.println(speler.getNaam() + " is " + speler.getType());
+			boundsAnchor.x =  anchorX -400;
 			boundsAnchor.width = 600;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
