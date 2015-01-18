@@ -107,5 +107,11 @@ public class TXTreaderTest {
 		XMLreader test=new XMLreader();
 		assertEquals("[Teamnaam:Evil Geniuses\nRank:1\nSpelers:\n[]\nWinst:20\nVerlies:3\nGelijkspel:11\nDoelsaldo:41\nDoelpunten tegen:28\nDoelpunten voor:69\nBudget:65.0\nScore:71\n, Teamnaam:Team Secret\nRank:2\nSpelers:\n[]\nWinst:20\nVerlies:7\nGelijkspel:7\nDoelsaldo:36\nDoelpunten tegen:40\nDoelpunten voor:76\nBudget:35.0\nScore:67\n]",test.readDivisie("TXTAddInfo.xml").getTeamList().toString());
 	}
+	
+	@Test
+	public void testListFilesForFolder(){
+		TXTreader.setWriter("ListFilesForFolder.xml");
+		assertEquals("ADO Den Haag.txt\nAjax.txt\nAZ.txt\nExcelsior.txt\nFC Dordrecht.txt\nFC Groningen.txt\nFC Twente.txt\nFC Utrecht.txt\nFeyenoord.txt\nGo Ahead Eagles.txt\nHeracles Almelo.txt\nNAC Breda.txt\nPEC Zwolle.txt\nPSV.txt\nSC Cambuur.txt\nSC Heerenveen.txt\nTXTTest.txt\nVitesse.txt\nWillem II.txt\n",TXTreader.listFilesForFolder(new File("teams-txt")));
+	}
 
 }

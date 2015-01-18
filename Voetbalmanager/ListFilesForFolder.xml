@@ -168,6 +168,9 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
+    <speler id="0123">
+      <naam>ï»¿Aaron Meijers</naam>
+    </speler>
   </team>
   <team id="02">
     <naam>Ajax</naam>
@@ -202,14 +205,14 @@
       <defence>65</defence>
     </speler>
     <speler id="024">
-      <naam>Ja?ro Riedewald</naam>
+      <naam>Jaïro Riedewald</naam>
       <type>verdediger</type>
       <uithouding>65</uithouding>
       <offense>44</offense>
       <defence>62</defence>
     </speler>
     <speler id="025">
-      <naam>Jo?l Veltman</naam>
+      <naam>Joël Veltman</naam>
       <type>verdediger</type>
       <uithouding>69</uithouding>
       <offense>37</offense>
@@ -223,14 +226,14 @@
       <defence>62</defence>
     </speler>
     <speler id="027">
-      <naam>Kolbeinn Sig??rsson</naam>
+      <naam>Kolbeinn Sigþórsson</naam>
       <type>aanvaller</type>
       <uithouding>69</uithouding>
       <offense>72</offense>
       <defence>42</defence>
     </speler>
     <speler id="028">
-      <naam>Lasse Sch?ne</naam>
+      <naam>Lasse Schøne</naam>
       <type>aanvaller</type>
       <uithouding>67</uithouding>
       <offense>77</offense>
@@ -300,7 +303,7 @@
       <defence>70</defence>
     </speler>
     <speler id="0218">
-      <naam>Richairo ?ivkovic</naam>
+      <naam>Richairo Živkovic</naam>
       <type>aanvaller</type>
       <uithouding>79</uithouding>
       <offense>72</offense>
@@ -389,7 +392,7 @@
     <score>47</score>
     <budget>28</budget>
     <speler id="031">
-      <naam>?Aron J?hannsson</naam>
+      <naam>?Aron Jóhannsson</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>77</offense>
@@ -936,7 +939,7 @@
       <defence>76</defence>
     </speler>
     <speler id="065">
-      <naam>G?nero Zeefuik</naam>
+      <naam>Género Zeefuik</naam>
       <type>aanvaller</type>
       <uithouding>40</uithouding>
       <offense>67</offense>
@@ -1041,7 +1044,7 @@
       <defence>65</defence>
     </speler>
     <speler id="0620">
-      <naam>Yo?ll van Nieff</naam>
+      <naam>Yoëll van Nieff</naam>
       <type>middenvelder</type>
       <uithouding>66</uithouding>
       <offense>63</offense>
@@ -1102,7 +1105,7 @@
       <defence>66</defence>
     </speler>
     <speler id="076">
-      <naam>Felipe Guti?rrez</naam>
+      <naam>Felipe Gutiérrez</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>68</offense>
@@ -1116,7 +1119,7 @@
       <defence>42</defence>
     </speler>
     <speler id="078">
-      <naam>Jes?s Corona</naam>
+      <naam>Jesús Corona</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>62</offense>
@@ -1200,14 +1203,14 @@
       <defence>66</defence>
     </speler>
     <speler id="0720">
-      <naam>Tim H?lscher</naam>
+      <naam>Tim Hölscher</naam>
       <type>aanvaller</type>
       <uithouding>71</uithouding>
       <offense>60</offense>
       <defence>43</defence>
     </speler>
     <speler id="0721">
-      <naam>Torgeir B?rven</naam>
+      <naam>Torgeir Børven</naam>
       <type>aanvaller</type>
       <uithouding>76</uithouding>
       <offense>66</offense>
@@ -1296,7 +1299,7 @@
       <defence>43</defence>
     </speler>
     <speler id="087">
-      <naam>G?vero Markiet</naam>
+      <naam>Gévero Markiet</naam>
       <type>verdediger</type>
       <uithouding>63</uithouding>
       <offense>31</offense>
@@ -1462,7 +1465,7 @@
       <defence>29</defence>
     </speler>
     <speler id="092">
-      <naam>Bilal Basa?ikoglu</naam>
+      <naam>Bilal Basaçikoglu</naam>
       <type>aanvaller</type>
       <uithouding>89</uithouding>
       <offense>65</offense>
@@ -1483,7 +1486,7 @@
       <defence>28</defence>
     </speler>
     <speler id="095">
-      <naam>Jean-Paul Bo?tius</naam>
+      <naam>Jean-Paul Boëtius</naam>
       <type>aanvaller</type>
       <uithouding>88</uithouding>
       <offense>71</offense>
@@ -1650,13 +1653,6 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
-    <speler id="0929">
-      <naam>Artour Babaev</naam>
-      <type>aanvaller</type>
-      <uithouding>80</uithouding>
-      <offense>90</offense>
-      <defence>70</defence>
-    </speler>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
@@ -1684,7 +1680,7 @@
       <defence>61</defence>
     </speler>
     <speler id="0103">
-      <naam>Deniz T?r??</naam>
+      <naam>Deniz Türüç</naam>
       <type>middenvelder</type>
       <uithouding>74</uithouding>
       <offense>65</offense>
@@ -2163,7 +2159,7 @@
       <defence>40</defence>
     </speler>
     <speler id="01214">
-      <naam>R?my Amieux</naam>
+      <naam>Rémy Amieux</naam>
       <type>verdediger</type>
       <uithouding>76</uithouding>
       <offense>54</offense>
@@ -2184,7 +2180,7 @@
       <defence>29</defence>
     </speler>
     <speler id="01217">
-      <naam>Uro? Matic</naam>
+      <naam>Uroš Matic</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>62</offense>
@@ -2205,7 +2201,7 @@
       <defence>70</defence>
     </speler>
     <speler id="01220">
-      <naam>G?bor Babos</naam>
+      <naam>Gábor Babos</naam>
       <type>doelman</type>
       <uithouding>0</uithouding>
       <offense>0</offense>
@@ -2231,7 +2227,7 @@
     <score>40</score>
     <budget>10.9</budget>
     <speler id="0131">
-      <naam>?Tom? Necid</naam>
+      <naam>?Tomáš Necid</naam>
       <type>aanvaller</type>
       <uithouding>72</uithouding>
       <offense>76</offense>
@@ -2418,7 +2414,7 @@
       <defence>53</defence>
     </speler>
     <speler id="0143">
-      <naam>Andr?s Guardado</naam>
+      <naam>Andrés Guardado</naam>
       <type>verdediger</type>
       <uithouding>82</uithouding>
       <offense>67</offense>
@@ -2474,7 +2470,7 @@
       <defence>67</defence>
     </speler>
     <speler id="01411">
-      <naam>J?rgen Locadia</naam>
+      <naam>Jürgen Locadia</naam>
       <type>aanvaller</type>
       <uithouding>74</uithouding>
       <offense>74</offense>
@@ -2605,7 +2601,7 @@
     <score>39</score>
     <budget>6.5</budget>
     <speler id="0151">
-      <naam>?Albert Rusn?k</naam>
+      <naam>?Albert Rusnák</naam>
       <type>middenvelder</type>
       <uithouding>76</uithouding>
       <offense>53</offense>
@@ -2654,7 +2650,7 @@
       <defence>48</defence>
     </speler>
     <speler id="0158">
-      <naam>Eti?nne Reijnen</naam>
+      <naam>Etiënne Reijnen</naam>
       <type>verdediger</type>
       <uithouding>42</uithouding>
       <offense>32</offense>
@@ -2738,7 +2734,7 @@
       <defence>44</defence>
     </speler>
     <speler id="01520">
-      <naam>Vytautas Andriu?kevicius</naam>
+      <naam>Vytautas Andriuškevicius</naam>
       <type>verdediger</type>
       <uithouding>67</uithouding>
       <offense>40</offense>
@@ -2890,7 +2886,7 @@
       <defence>63</defence>
     </speler>
     <speler id="01615">
-      <naam>Michael Chac?n</naam>
+      <naam>Michael Chacón</naam>
       <type>middenvelder</type>
       <uithouding>74</uithouding>
       <offense>44</offense>
@@ -2911,7 +2907,7 @@
       <defence>27</defence>
     </speler>
     <speler id="01618">
-      <naam>Pel? van Anholt</naam>
+      <naam>Pelé van Anholt</naam>
       <type>verdediger</type>
       <uithouding>77</uithouding>
       <offense>53</offense>
@@ -3000,7 +2996,7 @@
       <defence>71</defence>
     </speler>
     <speler id="0172">
-      <naam>Bertrand Traor?</naam>
+      <naam>Bertrand Traoré</naam>
       <type>aanvaller</type>
       <uithouding>87</uithouding>
       <offense>66</offense>
@@ -3014,7 +3010,7 @@
       <defence>66</defence>
     </speler>
     <speler id="0174">
-      <naam>Davy Pr?pper</naam>
+      <naam>Davy Pröpper</naam>
       <type>middenvelder</type>
       <uithouding>70</uithouding>
       <offense>70</offense>
@@ -3091,7 +3087,7 @@
       <defence>65</defence>
     </speler>
     <speler id="01715">
-      <naam>Uro? ?urdevic</naam>
+      <naam>Uroš Ðurdevic</naam>
       <type>aanvaller</type>
       <uithouding>69</uithouding>
       <offense>67</offense>
@@ -3360,167 +3356,5 @@
       <middenvelder9>31,202</middenvelder9>
       <aanvaller10>208,94</aanvaller10>
     </opstelling_posities>
-    <opstelling_posities id="3">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="4">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="5">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="6">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="7">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="8">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="9">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="10">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="11">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="12">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="13">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="14">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="15">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="16">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="17">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="18">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="19">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="20">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="21">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="22">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="23">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="24">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="25">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="26">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="27">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="28">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="29">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="30">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="31">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="32">
-      <naam>322</naam>
-    </opstelling_posities>
-    <opstelling_posities id="33">
-      <naam>322</naam>
-    </opstelling_posities>
   </opstellingen>
-  <populariteit id="01">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="02">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="03">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="04">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="05">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="06">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="07">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="08">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="09">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="010">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="011">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="012">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="013">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="014">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="015">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="016">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="017">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="018">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="019">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="020">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="021">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="022">
-    <naam>5</naam>
-  </populariteit>
-  <populariteit id="023">
-    <naam>5</naam>
-  </populariteit>
 </divisie>
