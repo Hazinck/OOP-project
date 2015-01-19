@@ -32,7 +32,7 @@ public class Bot {
 		
 		wteam.setOpstelling(opstelling);
 		wteam.setTactiek(tactiek);
-		System.out.println("Bot wedstrijdteam: " + wteam.toString());
+	//	System.out.println("Bot wedstrijdteam: " + wteam.toString());
 	}
 	
 	/**

@@ -47,7 +47,7 @@ import oop.voetbalmanager.view.ViewFrame;
 
 
 public class Controller {
-	private ViewFrame viewFrame;
+	private ViewFrame viewFrame; 
 	private Login l;
 	public Tabs tabs;
 	private Home home;
@@ -136,6 +136,9 @@ public class Controller {
 		home =  new Home();
 		teamPanel = new TeamPanel();
 		comp = new Competition(viewFrame);
+		teamsToCompRank();
+		spelersToCompTransfer();
+		 
 		ps = new PandS(viewFrame);
 		ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
 		int opIdx = RNG.getalTot(opstellingen.size());
@@ -640,6 +643,71 @@ public class Controller {
     	   	}
     	 }
     }
+	
+	public void teamsToCompRank(){
+		Divisie.rankTeams();
+		Object[][] data = new Object[ Divisie.getTeamList().size()][2];
+		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
+			Team t = Divisie.getTeamList().get(i);
+//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
+//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
+			data[i][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
+			data[i][1] = t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+
+					"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies()+
+					"\nDoelvoor: "+t.getDoelvoor()+"\nDoeltegen: "+t.getDoeltegen()+
+					"\nDoelsaldo: "+t.getDoelsaldo()+"\nBudget: "+t.getBudget();
+		}
+		
+		
+		String[] columnNames = {"Ranking", "Uitgebreide ranking met doelpunten saldo etc"};
+		
+		comp.addPane(data, columnNames);
+	}
+	
+	public void spelersToCompTransfer(){
+		int aantalSp =0;
+		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
+			Team t = Divisie.getTeamList().get(i);
+			for(int k =0; k < t.getSpelerList().size(); k++){
+				aantalSp++;
+			}
+		}
+		
+		Divisie.rankTeams();
+		Object[][] data = new Object[aantalSp][3];
+		comp.getPane().setKoopButtons(new Object[aantalSp][2]);
+		int spIdx = 0;
+		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
+			Team t = Divisie.getTeamList().get(i);
+//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
+//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
+			for(int k =0; k < t.getSpelerList().size(); k++){
+				final Speler s = t.getSpelerList().get(k);
+				data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
+				data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
+								"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
+								"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+								"\nPrijs: "+s.getPrijs();
+				
+//				JButton koopButton = new JButton(s.getNaam()+"\nKopen");
+//				koopButton.addActionListener(new ActionListener() {
+//				      public void actionPerformed(ActionEvent event) {
+//				    	  	JOptionPane.showMessageDialog(null, s.getNaam());
+//					      }
+//					    });
+				data[spIdx][2] = s.getNaam();//koopButton;
+//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
+//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
+				spIdx++;
+			}
+			System.out.println("Controller: spelersToCompTransfer: " + t.getNaam());
+		}
+		
+		
+		String[] columnNames = {"Transferlijst","Spelers die te koop zijn:", "Kopen"};
+		
+		comp.addPane(data, columnNames);
+	}
 	
 	public void createWedstrijdteam(){
 		ArrayList<Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
