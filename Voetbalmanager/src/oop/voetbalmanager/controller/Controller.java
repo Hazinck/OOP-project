@@ -707,26 +707,28 @@ public class Controller {
 		int spIdx = 0;
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
 			Team t = Divisie.getTeamList().get(i);
-//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
-//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
-			for(int k =0; k < t.getSpelerList().size(); k++){
-				final Speler s = t.getSpelerList().get(k);
-				data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
-				data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
-								"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
-								"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
-								"\nPrijs: "+s.getPrijs();
-				
-//				JButton koopButton = new JButton(s.getNaam()+"\nKopen");
-//				koopButton.addActionListener(new ActionListener() {
-//				      public void actionPerformed(ActionEvent event) {
-//				    	  	JOptionPane.showMessageDialog(null, s.getNaam());
-//					      }
-//					    });
-				data[spIdx][2] = s.getNaam();//koopButton;
-//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
-//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
-				spIdx++;
+			if(!t.equals(User.getTeam())){
+	//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
+	//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
+				for(int k =0; k < t.getSpelerList().size(); k++){
+					final Speler s = t.getSpelerList().get(k);
+					data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
+					data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
+									"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
+									"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+									"\nPrijs: "+s.getPrijs();
+					
+	//				JButton koopButton = new JButton(s.getNaam()+"\nKopen");
+	//				koopButton.addActionListener(new ActionListener() {
+	//				      public void actionPerformed(ActionEvent event) {
+	//				    	  	JOptionPane.showMessageDialog(null, s.getNaam());
+	//					      }
+	//					    });
+					data[spIdx][2] = s.getNaam();//koopButton;
+	//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
+	//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
+					spIdx++;
+				}
 			}
 		//	System.out.println("Controller: spelersToCompTransfer: " + t.getNaam());
 		}
