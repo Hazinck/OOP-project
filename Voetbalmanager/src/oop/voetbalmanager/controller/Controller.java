@@ -700,7 +700,7 @@ public class Controller {
 //				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
 				spIdx++;
 			}
-			System.out.println("Controller: spelersToCompTransfer: " + t.getNaam());
+		//	System.out.println("Controller: spelersToCompTransfer: " + t.getNaam());
 		}
 		
 		
