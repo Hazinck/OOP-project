@@ -107,7 +107,6 @@ public class Player {
 				target = runByUser();
 //				speedX = 2;
 //				speedY = 2;
-			
 		}else{
 			runsByUser = false;
 			target = runTo(targetX, targetY);
@@ -116,7 +115,6 @@ public class Player {
 		
 		targetX = target.width;
 		targetY = target.height;
-//		System.out.println("player after: "+ targetX);
 
 		count++;
 		checkTired();
@@ -162,6 +160,10 @@ public class Player {
 		    findRichting();
 		    xA[pointIdx] = x;
 		    yA[pointIdx] = y;
+
+//			if(speler.getType().equals("doelman") && team12==1){
+//				System.out.println("Player move(): "+ targetX + " " +x);
+//			} 
 		    
 	  }
 	
@@ -258,7 +260,7 @@ public class Player {
 //				this.targetY = y;
 //				randomRun = true;
 //			}
-			else if(randomRun == false){//!boundsAnchor.contains(this.x, this.y)){//
+			else{// if(randomRun == false){//!boundsAnchor.contains(this.x, this.y)){//
 				x = anchorX;//boundsAnchor.x + boundsAnchor.width/2;
 				y = anchorY;//boundsAnchor.height/2 + boundsAnchor.y;
 			}
@@ -267,6 +269,9 @@ public class Player {
 			x= this.targetX;
 			y = this.targetY;
 		}
+//				if(speler.getType().equals("doelman") && team12==1){
+//					System.out.println("Player: runTo: "+ speler.getNaam() + " is " + speler.getType()+ " " + anchorX + " = " + this.x + " = " + x);
+//				}
 		return new Dimension((int)x, (int)y);
 	}
 	
@@ -348,12 +353,14 @@ public class Player {
 		boundsAnchor.height = 800;
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
-			boundsAnchor.x =  anchorX - 500;
-			boundsAnchor.width = 600;
+			boundsAnchor.x =  anchorX-300;//1126.0  + 700
+			boundsAnchor.width = 1000;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
 			this.anchorX = boundsAnchor.getCenterX();
+		//	System.out.println("Player: setGrenzen: "+ speler.getNaam() + " is " + speler.getType()+ " " + anchorX);
 		}else if(speler.getType().equals("doelman") && team12 == 2){
+//			System.out.println(speler.getNaam() + " is " + speler.getType()+ " " + team12);
 			boundsAnchor.x =  anchorX - 50;
 			boundsAnchor.width = 600;
 			boundsAnchor.y = anchorY - 400;

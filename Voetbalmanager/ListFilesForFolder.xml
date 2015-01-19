@@ -15,7 +15,7 @@
     <score>43</score>
     <budget>13.6</budget>
     <speler id="011">
-      <naam>ÔªøAaron Meijers</naam>
+      <naam>?Aaron Meijers</naam>
       <type>verdediger</type>
       <uithouding>76</uithouding>
       <offense>52</offense>
@@ -168,6 +168,9 @@
       <offense>0</offense>
       <defence>61</defence>
     </speler>
+    <speler id="0123">
+      <naam>ÔªøAaron Meijers</naam>
+    </speler>
   </team>
   <team id="02">
     <naam>Ajax</naam>
@@ -181,7 +184,7 @@
     <score>71</score>
     <budget>65.0</budget>
     <speler id="021">
-      <naam>ÔªøAnwar El Ghazi</naam>
+      <naam>?Anwar El Ghazi</naam>
       <type>aanvaller</type>
       <uithouding>77</uithouding>
       <offense>66</offense>
@@ -202,14 +205,14 @@
       <defence>65</defence>
     </speler>
     <speler id="024">
-      <naam>Ja√Øro Riedewald</naam>
+      <naam>JaÔro Riedewald</naam>
       <type>verdediger</type>
       <uithouding>65</uithouding>
       <offense>44</offense>
       <defence>62</defence>
     </speler>
     <speler id="025">
-      <naam>Jo√´l Veltman</naam>
+      <naam>JoÎl Veltman</naam>
       <type>verdediger</type>
       <uithouding>69</uithouding>
       <offense>37</offense>
@@ -223,14 +226,14 @@
       <defence>62</defence>
     </speler>
     <speler id="027">
-      <naam>Kolbeinn Sig√æ√≥rsson</naam>
+      <naam>Kolbeinn Sig˛Ûrsson</naam>
       <type>aanvaller</type>
       <uithouding>69</uithouding>
       <offense>72</offense>
       <defence>42</defence>
     </speler>
     <speler id="028">
-      <naam>Lasse Sch√∏ne</naam>
+      <naam>Lasse Sch¯ne</naam>
       <type>aanvaller</type>
       <uithouding>67</uithouding>
       <offense>77</offense>
@@ -300,7 +303,7 @@
       <defence>70</defence>
     </speler>
     <speler id="0218">
-      <naam>Richairo ≈Ωivkovic</naam>
+      <naam>Richairo éivkovic</naam>
       <type>aanvaller</type>
       <uithouding>79</uithouding>
       <offense>72</offense>
@@ -389,7 +392,7 @@
     <score>47</score>
     <budget>28</budget>
     <speler id="031">
-      <naam>ÔªøAron J√≥hannsson</naam>
+      <naam>?Aron JÛhannsson</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>77</offense>
@@ -908,7 +911,7 @@
     <score>51</score>
     <budget>18</budget>
     <speler id="061">
-      <naam>ÔªøBurak Saban</naam>
+      <naam>?Burak Saban</naam>
       <type>middenvelder</type>
       <uithouding>67</uithouding>
       <offense>50</offense>
@@ -936,7 +939,7 @@
       <defence>76</defence>
     </speler>
     <speler id="065">
-      <naam>G√©nero Zeefuik</naam>
+      <naam>GÈnero Zeefuik</naam>
       <type>aanvaller</type>
       <uithouding>40</uithouding>
       <offense>67</offense>
@@ -1041,7 +1044,7 @@
       <defence>65</defence>
     </speler>
     <speler id="0620">
-      <naam>Yo√´ll van Nieff</naam>
+      <naam>YoÎll van Nieff</naam>
       <type>middenvelder</type>
       <uithouding>66</uithouding>
       <offense>63</offense>
@@ -1067,7 +1070,7 @@
     <score>63</score>
     <budget>46</budget>
     <speler id="071">
-      <naam>ÔªøAndreas Bjelland</naam>
+      <naam>?Andreas Bjelland</naam>
       <type>verdediger</type>
       <uithouding>54</uithouding>
       <offense>44</offense>
@@ -1102,7 +1105,7 @@
       <defence>66</defence>
     </speler>
     <speler id="076">
-      <naam>Felipe Guti√©rrez</naam>
+      <naam>Felipe GutiÈrrez</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>68</offense>
@@ -1116,7 +1119,7 @@
       <defence>42</defence>
     </speler>
     <speler id="078">
-      <naam>Jes√∫s Corona</naam>
+      <naam>Jes˙s Corona</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>62</offense>
@@ -1200,14 +1203,14 @@
       <defence>66</defence>
     </speler>
     <speler id="0720">
-      <naam>Tim H√∂lscher</naam>
+      <naam>Tim Hˆlscher</naam>
       <type>aanvaller</type>
       <uithouding>71</uithouding>
       <offense>60</offense>
       <defence>43</defence>
     </speler>
     <speler id="0721">
-      <naam>Torgeir B√∏rven</naam>
+      <naam>Torgeir B¯rven</naam>
       <type>aanvaller</type>
       <uithouding>76</uithouding>
       <offense>66</offense>
@@ -1254,7 +1257,7 @@
     <score>41</score>
     <budget>17</budget>
     <speler id="081">
-      <naam>ÔªøAdam Sarota</naam>
+      <naam>?Adam Sarota</naam>
       <type>middenvelder</type>
       <uithouding>69</uithouding>
       <offense>58</offense>
@@ -1296,7 +1299,7 @@
       <defence>43</defence>
     </speler>
     <speler id="087">
-      <naam>G√©vero Markiet</naam>
+      <naam>GÈvero Markiet</naam>
       <type>verdediger</type>
       <uithouding>63</uithouding>
       <offense>31</offense>
@@ -1455,14 +1458,14 @@
     <score>67</score>
     <budget>35</budget>
     <speler id="091">
-      <naam>ÔªøAnass Achahbar</naam>
+      <naam>?Anass Achahbar</naam>
       <type>aanvaller</type>
       <uithouding>71</uithouding>
       <offense>63</offense>
       <defence>29</defence>
     </speler>
     <speler id="092">
-      <naam>Bilal Basa√ßikoglu</naam>
+      <naam>Bilal BasaÁikoglu</naam>
       <type>aanvaller</type>
       <uithouding>89</uithouding>
       <offense>65</offense>
@@ -1483,7 +1486,7 @@
       <defence>28</defence>
     </speler>
     <speler id="095">
-      <naam>Jean-Paul Bo√´tius</naam>
+      <naam>Jean-Paul BoÎtius</naam>
       <type>aanvaller</type>
       <uithouding>88</uithouding>
       <offense>71</offense>
@@ -1650,13 +1653,6 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
-    <speler id="0929">
-      <naam>Jens ToornAra</naam>
-      <type>middenvelder</type>
-      <uithouding>71</uithouding>
-      <offense>72</offense>
-      <defence>54</defence>
-    </speler>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
@@ -1670,7 +1666,7 @@
     <score>38</score>
     <budget>5.2</budget>
     <speler id="0101">
-      <naam>ÔªøAlex Schalk</naam>
+      <naam>?Alex Schalk</naam>
       <type>aanvaller</type>
       <uithouding>73</uithouding>
       <offense>65</offense>
@@ -1684,7 +1680,7 @@
       <defence>61</defence>
     </speler>
     <speler id="0103">
-      <naam>Deniz T√ºr√º√ß</naam>
+      <naam>Deniz T¸r¸Á</naam>
       <type>middenvelder</type>
       <uithouding>74</uithouding>
       <offense>65</offense>
@@ -2072,7 +2068,7 @@
     <score>35</score>
     <budget>14</budget>
     <speler id="0121">
-      <naam>ÔªøAdnane Tighadouini</naam>
+      <naam>?Adnane Tighadouini</naam>
       <type>aanvaller</type>
       <uithouding>77</uithouding>
       <offense>64</offense>
@@ -2163,7 +2159,7 @@
       <defence>40</defence>
     </speler>
     <speler id="01214">
-      <naam>R√©my Amieux</naam>
+      <naam>RÈmy Amieux</naam>
       <type>verdediger</type>
       <uithouding>76</uithouding>
       <offense>54</offense>
@@ -2184,7 +2180,7 @@
       <defence>29</defence>
     </speler>
     <speler id="01217">
-      <naam>Uro≈° Matic</naam>
+      <naam>Uroö Matic</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>62</offense>
@@ -2205,7 +2201,7 @@
       <defence>70</defence>
     </speler>
     <speler id="01220">
-      <naam>G√°bor Babos</naam>
+      <naam>G·bor Babos</naam>
       <type>doelman</type>
       <uithouding>0</uithouding>
       <offense>0</offense>
@@ -2231,7 +2227,7 @@
     <score>40</score>
     <budget>10.9</budget>
     <speler id="0131">
-      <naam>ÔªøTom√°≈° Necid</naam>
+      <naam>?Tom·ö Necid</naam>
       <type>aanvaller</type>
       <uithouding>72</uithouding>
       <offense>76</offense>
@@ -2404,7 +2400,7 @@
     <score>59</score>
     <budget>62</budget>
     <speler id="0141">
-      <naam>ÔªøAbel Tamata</naam>
+      <naam>?Abel Tamata</naam>
       <type>verdediger</type>
       <uithouding>71</uithouding>
       <offense>48</offense>
@@ -2418,7 +2414,7 @@
       <defence>53</defence>
     </speler>
     <speler id="0143">
-      <naam>Andr√©s Guardado</naam>
+      <naam>AndrÈs Guardado</naam>
       <type>verdediger</type>
       <uithouding>82</uithouding>
       <offense>67</offense>
@@ -2474,7 +2470,7 @@
       <defence>67</defence>
     </speler>
     <speler id="01411">
-      <naam>J√ºrgen Locadia</naam>
+      <naam>J¸rgen Locadia</naam>
       <type>aanvaller</type>
       <uithouding>74</uithouding>
       <offense>74</offense>
@@ -2605,7 +2601,7 @@
     <score>39</score>
     <budget>6.5</budget>
     <speler id="0151">
-      <naam>ÔªøAlbert Rusn√°k</naam>
+      <naam>?Albert Rusn·k</naam>
       <type>middenvelder</type>
       <uithouding>76</uithouding>
       <offense>53</offense>
@@ -2654,7 +2650,7 @@
       <defence>48</defence>
     </speler>
     <speler id="0158">
-      <naam>Eti√´nne Reijnen</naam>
+      <naam>EtiÎnne Reijnen</naam>
       <type>verdediger</type>
       <uithouding>42</uithouding>
       <offense>32</offense>
@@ -2738,7 +2734,7 @@
       <defence>44</defence>
     </speler>
     <speler id="01520">
-      <naam>Vytautas Andriu≈°kevicius</naam>
+      <naam>Vytautas Andriuökevicius</naam>
       <type>verdediger</type>
       <uithouding>67</uithouding>
       <offense>40</offense>
@@ -2792,7 +2788,7 @@
     <score>57</score>
     <budget>22</budget>
     <speler id="0161">
-      <naam>ÔªøDaley Sinkgraven</naam>
+      <naam>?Daley Sinkgraven</naam>
       <type>middenvelder</type>
       <uithouding>73</uithouding>
       <offense>48</offense>
@@ -2890,7 +2886,7 @@
       <defence>63</defence>
     </speler>
     <speler id="01615">
-      <naam>Michael Chac√≥n</naam>
+      <naam>Michael ChacÛn</naam>
       <type>middenvelder</type>
       <uithouding>74</uithouding>
       <offense>44</offense>
@@ -2911,7 +2907,7 @@
       <defence>27</defence>
     </speler>
     <speler id="01618">
-      <naam>Pel√© van Anholt</naam>
+      <naam>PelÈ van Anholt</naam>
       <type>verdediger</type>
       <uithouding>77</uithouding>
       <offense>53</offense>
@@ -2993,14 +2989,14 @@
     <score>55</score>
     <budget>30</budget>
     <speler id="0171">
-      <naam>ÔªøArnold Kruiswijk</naam>
+      <naam>?Arnold Kruiswijk</naam>
       <type>verdediger</type>
       <uithouding>52</uithouding>
       <offense>44</offense>
       <defence>71</defence>
     </speler>
     <speler id="0172">
-      <naam>Bertrand Traor√©</naam>
+      <naam>Bertrand TraorÈ</naam>
       <type>aanvaller</type>
       <uithouding>87</uithouding>
       <offense>66</offense>
@@ -3014,7 +3010,7 @@
       <defence>66</defence>
     </speler>
     <speler id="0174">
-      <naam>Davy Pr√∂pper</naam>
+      <naam>Davy Prˆpper</naam>
       <type>middenvelder</type>
       <uithouding>70</uithouding>
       <offense>70</offense>
@@ -3091,7 +3087,7 @@
       <defence>65</defence>
     </speler>
     <speler id="01715">
-      <naam>Uro≈° √êurdevic</naam>
+      <naam>Uroö –urdevic</naam>
       <type>aanvaller</type>
       <uithouding>69</uithouding>
       <offense>67</offense>

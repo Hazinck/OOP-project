@@ -17,7 +17,7 @@ public class ViewFrame extends JFrame{
 	private String imgPath = System.getProperty("user.dir") + "/images/";
 	private String imgName = "user_default.png";
 	
-	
+	 
 	//neem scherm breedte en hoogte
 	private static int frameWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();//1000;//
 	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-50;//600;//

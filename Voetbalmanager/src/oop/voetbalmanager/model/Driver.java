@@ -51,8 +51,8 @@ public class Driver {
 		TXTreader.addTeamInfo("teamInfo.txt");
 	
 		
-	*/	//spel
-		
+	//spel
+	
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie(path);
 		Wedstrijdteam team1 = new Wedstrijdteam(divisie.getTeamList().get(1));
@@ -60,17 +60,22 @@ public class Driver {
 		int geluksfactor = RNG.getalTot(800);
 		Spel s = new Spel(team1, team2, geluksfactor);
 		System.out.println(s.winner().getNaam() + " geluksfactor: "+geluksfactor);
-		
+	*/	/*	
 		System.out.println("Team1 budget old: "+team1.getBudget());
 		team1.setBudget(67);
 		System.out.println("Team1 budget new: "+team1.getBudget());
 		//writer.updaten("team" , team1.getNaam(), "budget", team1.getBudget()+"");
 		Divisie.getTeamList().get(1).setBudget(team1.getBudget());
 		System.out.println("Team1 in divisie budget new: "+divisie.getTeamList().get(1).getBudget());
-		
+			
 //		Divisie.getTeamList().get(1).setWinst(Divisie.getTeamList().get(1).getWinst() + 3);;
-//		Divisie.rankTeams();
-		
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie(path);
+		Divisie.rankTeams();
+		Divisie.getTeamList().get(1).setWinst(30);
+		Divisie.rankTeams();
+		System.out.println(TXTreader.listFilesForFolder(new File("teams-txt")));
+*/	
 	}
 	
 

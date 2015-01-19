@@ -15,6 +15,10 @@ public class TXTreader {
 	
 	private static XMLwriter writer = new XMLwriter(Driver.path);
 	
+	public static void setWriter(String infile){
+		writer=new XMLwriter(infile);
+	}
+	
 	public static void readTeam(String teamFile, String teamNaam){
 			String file = pathTxt + teamFile;
 		//	File input = new File(file);
@@ -117,7 +121,8 @@ public class TXTreader {
 		writer.updaten("speler" , naam, "defence", verd);
 	}
 	
-	public static void listFilesForFolder(final File folder) {
+	public static String listFilesForFolder(final File folder) {
+		String allFiles="";
 	    for (final File fileEntry : folder.listFiles()) {
 	        if (fileEntry.isDirectory()) {
 	            listFilesForFolder(fileEntry);
@@ -131,9 +136,18 @@ public class TXTreader {
 	            writer.add("divisie", "Eredivisie", "team", teamNaam);
 	      //    System.out.println("========================\n"+"Team: "+teamNaam);
 	            readTeam(teamFile, teamNaam);
+	            allFiles += teamFile+"\n";
 	        }
 	    }
 	    System.out.println(teams.toString());
+	    return allFiles;
+	}
+
+	/**
+	 * @return the writer
+	 */
+	public static XMLwriter getWriter() {
+		return writer;
 	}
 
 	

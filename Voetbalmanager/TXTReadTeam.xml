@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<divisie>
+  <naam>Eredivisie</naam>
+  <speeldag>10</speeldag>
+  <stand>4</stand>
+  <team id="01">
+    <naam>ADO Den Haag</naam>
+    <rank>9</rank>
+    <winst>12</winst>
+    <gelijkspel>7</gelijkspel>
+    <verlies>15</verlies>
+    <doelvoor>45</doelvoor>
+    <doeltegen>64</doeltegen>
+    <doelsaldo>-19</doelsaldo>
+    <score>43</score>
+    <budget>13.6</budget>
+    <speler id="011">
+      <naam>Artour Babaev</naam>
+      <type>aanvaller</type>
+      <uithouding>80</uithouding>
+      <offense>90</offense>
+      <defence>70</defence>
+    </speler>
+    <speler id="012">
+      <naam>Alexandru Iosup</naam>
+      <type>verdediger</type>
+      <uithouding>80</uithouding>
+      <offense>80</offense>
+      <defence>80</defence>
+    </speler>
+  </team>
+</divisie>

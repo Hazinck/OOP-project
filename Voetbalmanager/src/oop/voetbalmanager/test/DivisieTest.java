@@ -173,4 +173,21 @@ public class DivisieTest {
 		assertEquals(67,feyenoord.getScore());
 	}
 
+	@Test
+	public void testFindTeamByName(){
+		XMLreader test=new XMLreader();
+		Divisie divisie = test.readDivisie("database.xml");
+		Team feyenoord = divisie.getTeamList().get(8);
+		assertEquals(feyenoord,divisie.findTeamByName("Feyenoord"));
+	}
+	
+	@Test
+	public void testRankTeams(){
+		XMLreader test=new XMLreader();
+		Divisie divisie=test.readDivisie("database.xml");
+		Divisie.rankTeams();
+		Divisie.getTeamList().get(1).setWinst(30);
+		Divisie.rankTeams();
+		assertEquals(71,Divisie.getTeamList().get(1).getScore());
+	}
 }

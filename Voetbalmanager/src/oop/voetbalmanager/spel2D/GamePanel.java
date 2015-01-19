@@ -28,6 +28,7 @@ public class GamePanel extends JPanel{
 	private int tijd = 45;
 	private boolean manualPlay = false;
 	Polygon pol;
+	private Image gameEndImg, t1, t2, gameStartImg, goalImg, scoreBalk, ballSprite, veld;
 	
 	public GamePanel(Ball ball){
 		viewX = -1275 + ViewFrame.getFrameWidth()/2;
@@ -40,7 +41,14 @@ public class GamePanel extends JPanel{
 	    
 	    pol = new Polygon(xpoints, ypoints, npoints);
 		
-		
+	    gameEndImg = Toolkit.getDefaultToolkit().getImage("images/game_end.png");
+	    gameStartImg = Toolkit.getDefaultToolkit().getImage("images/game_start.png");
+	    goalImg = Toolkit.getDefaultToolkit().getImage("images/goal.png");
+	    scoreBalk = Toolkit.getDefaultToolkit().getImage("images/logo-score.png");
+	    ballSprite = Toolkit.getDefaultToolkit().getImage("images/ball_small.png");
+	    veld = Toolkit.getDefaultToolkit().getImage("images/veld_big_end.png");
+	    t1 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam1().getNaam()+".png");//"field_satur=45.png");
+		t2 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam2().getNaam()+".png");//"field_satur=45.png");
 	}
 	
 	
@@ -70,10 +78,29 @@ public class GamePanel extends JPanel{
  		}
 	}
 	
+	public void clearImg(){
+		gameEndImg.flush();
+	    gameStartImg.flush();
+	    goalImg.flush();
+	    scoreBalk.flush();
+	    ballSprite.flush();
+	    veld.flush();
+	    t1.flush();
+		t2.flush();
+		gameEndImg = null;
+	    gameStartImg = null;
+	    goalImg = null;
+	    scoreBalk = null;
+	    ballSprite = null;
+	    veld = null;
+	    t1 = null;
+		t2 = null;
+	}
+	
 	@Override
     public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		Image veld = Toolkit.getDefaultToolkit().getImage("images/veld_big_end.png");//"field_satur=45.png");
+//		Image veld = Toolkit.getDefaultToolkit().getImage("images/veld_big_end.png");//"field_satur=45.png");
 		g.drawImage(veld, viewX ,  viewY ,  this);//g.drawImage(veld, -500 + viewX, -500 + viewY,  this);//this.getWidth(), this.getHeight(),
 		
 //		int xpoints[] = {388+viewX, 2165+viewX, 2444+viewX, 123+viewX, 388+viewX};
@@ -98,7 +125,9 @@ public class GamePanel extends JPanel{
 //			System.out.println(p.getTargetY()+"=="+ball.getTargetY());
 //			g.setColor(Color.black);
 //			if(p.getSpeler().getType().equals("doelman"))
-//			g.drawRect(p.getBoundsAnchor().x + viewX, p.getBoundsAnchor().y + viewY, p.getBoundsAnchor().width, p.getBoundsAnchor().height);
+//			if(p.getSpeler().getType().equals("doelman")){
+//				g.drawRect((int)p.getBoundsAnchor().x + viewX, (int)p.getBoundsAnchor().y + viewY, (int)p.getBoundsAnchor().width, (int)p.getBoundsAnchor().height);
+//			}
 //			g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 //			g.setColor(Color.black);
 //			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
@@ -127,11 +156,11 @@ public class GamePanel extends JPanel{
 			}
 		
 		}
-		Image ballSprite = Toolkit.getDefaultToolkit().getImage("images/ball_small.png");//"field_satur=45.png");
+		//Image ballSprite = Toolkit.getDefaultToolkit().getImage("images/ball_small.png");//"field_satur=45.png");
 		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
 		
 		
-		Image scoreBalk = Toolkit.getDefaultToolkit().getImage("images/logo-score.png");//"field_satur=45.png");
+		//Image scoreBalk = Toolkit.getDefaultToolkit().getImage("images/logo-score.png");//"field_satur=45.png");
 		g.drawImage(scoreBalk, 120, 50, this);//
 		g.setColor(Color.black);
 		
@@ -150,37 +179,36 @@ public class GamePanel extends JPanel{
 		g.drawString(tijd+":00", 375, 75);
 		
 		if(goal){
-			Image goal = Toolkit.getDefaultToolkit().getImage("images/goal.png");//"field_satur=45.png");
-			g.drawImage(goal, VeldPanel.getFrameWidth()/2-500, VeldPanel.getFrameHeight()/2-150, this);//
+		//	Image goal = Toolkit.getDefaultToolkit().getImage("images/goal.png");//"field_satur=45.png");
+			g.drawImage(goalImg, VeldPanel.getFrameWidth()/2-500, VeldPanel.getFrameHeight()/2-150, this);//
 		}
 		
 		if(start){
-			Image goal = Toolkit.getDefaultToolkit().getImage("images/game_start.png");//"field_satur=45.png");
-			g.drawImage(goal, VeldPanel.getFrameWidth()/2-273, VeldPanel.getFrameHeight()/2-120, this);//
+		//	Image goal = Toolkit.getDefaultToolkit().getImage("images/game_start.png");//"field_satur=45.png");
+			g.drawImage(gameStartImg, VeldPanel.getFrameWidth()/2-273, VeldPanel.getFrameHeight()/2-120, this);//
 			g.setFont (new Font ("Arial", Font.BOLD , 20));
 			
 			g.setColor(Color.decode("#464e5a"));
 			g.drawString( ball.getTeam1().getNaam(), VeldPanel.getFrameWidth()/2-200, VeldPanel.getFrameHeight()/2-30);//75*75
 			g.drawString( ball.getTeam2().getNaam(), VeldPanel.getFrameWidth()/2+94, VeldPanel.getFrameHeight()/2-30);//75*75
 			
-			Image t1 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam1().getNaam()+".png");//"field_satur=45.png");
-			Image t2 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam2().getNaam()+".png");//"field_satur=45.png");
+//			Image t1 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam1().getNaam()+".png");//"field_satur=45.png");
+//			Image t2 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam2().getNaam()+".png");//"field_satur=45.png");
 			g.drawImage(t1, VeldPanel.getFrameWidth()/2-190, VeldPanel.getFrameHeight()/2-10, this);//h=120
 			g.drawImage(t2, VeldPanel.getFrameWidth()/2+80, VeldPanel.getFrameHeight()/2-10, this);//
 			
 		}
 		
 		if(end){
-			Image goal = Toolkit.getDefaultToolkit().getImage("images/game_end.png");//"field_satur=45.png");
-			g.drawImage(goal, VeldPanel.getFrameWidth()/2-273, VeldPanel.getFrameHeight()/2-120, this);//
+			//"field_satur=45.png");
+			g.drawImage(gameEndImg, VeldPanel.getFrameWidth()/2-273, VeldPanel.getFrameHeight()/2-120, this);//
 			g.setFont (new Font ("Arial", Font.BOLD , 20));
 			
 			g.setColor(Color.decode("#464e5a"));
 			g.drawString( ball.getTeam1().getNaam(), VeldPanel.getFrameWidth()/2-200, VeldPanel.getFrameHeight()/2+5);//75*75
 			g.drawString( ball.getTeam2().getNaam(), VeldPanel.getFrameWidth()/2+94, VeldPanel.getFrameHeight()/2+5);//75*75
 			
-			Image t1 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam1().getNaam()+".png");//"field_satur=45.png");
-			Image t2 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam2().getNaam()+".png");//"field_satur=45.png");
+			
 			g.drawImage(t1, VeldPanel.getFrameWidth()/2-190, VeldPanel.getFrameHeight()/2+25, this);//h=120
 			g.drawImage(t2, VeldPanel.getFrameWidth()/2+80, VeldPanel.getFrameHeight()/2+25, this);//
 			

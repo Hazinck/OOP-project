@@ -43,7 +43,39 @@ public class SpelTest {
 		assertEquals(test, nieuw.getScore());
 	}
 	
-
-
-
+	@Test
+	public void testVerslag(){
+		XMLreader help=new XMLreader();
+		Wedstrijdteam user=help.readWedstrijdteam(ajax, "database.xml");
+		Wedstrijdteam bot=help.readWedstrijdteam(denHaag, "database.xml");
+		User.setWteam(user);
+		Bot.setWteam(bot);
+		Spel test=new Spel(user, bot, 1);
+		assertEquals("[Welkom bij het liveverslag van Ajax thuis tegen ADO Den Haag., De opstellingen van beide teams zijn bekend en volgen nu., Opstelling Ajax: Lucas Andersen, Lerin Duarte, Lasse Schøne, Kolbeinn Sigþórsson, Kenny Tete, Joël Veltman, Jaïro Riedewald, Davy Klaassen, Arkadiusz Milik, ﻿Anwar El Ghazi, Jasper Cillessen, , Opstelling ADO Den Haag: Mitchell Schet, Mitchell de Vlugt, Mike van Duinen, Michiel Kramer, Mathias Gehrt, Kevin Jansen, Gianni Zuiverloon, Dion Malone, Danny Bakker, ﻿Aaron Meijers, Robert Zwinkels, ]",test.verslag().toString());
+	}
+	
+	@Test
+	public void testWinner(){
+		XMLreader help=new XMLreader();
+		Wedstrijdteam user=help.readWedstrijdteam(ajax, "database.xml");
+		Wedstrijdteam bot=help.readWedstrijdteam(denHaag, "database.xml");
+		User.setWteam(user);
+		Bot.setWteam(bot);
+		Spel test=new Spel(user, bot, 1);
+		String winner = test.winner(1,1).getNaam();		
+		assertEquals(ajax.getNaam(), winner);
+		
+		Spel test2=new Spel(user, bot, 500);
+		winner = test2.winner(1,1).getNaam();		
+		assertEquals(denHaag.getNaam(), winner);
+		
+		Spel test3=new Spel(bot, user, 1);
+		winner = test3.winner(1,1).getNaam();		
+		assertEquals(ajax.getNaam(), winner);
+		
+		Spel test4=new Spel(user, user, 1);		
+		assertEquals(null, test4.winner(1,1));
+		
+	}
+	
 }
