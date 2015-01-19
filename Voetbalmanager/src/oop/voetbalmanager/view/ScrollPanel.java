@@ -16,6 +16,9 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
+import oop.voetbalmanager.controller.Controller;
+import oop.voetbalmanager.model.User;
+
 public class ScrollPanel extends JScrollPane{
 	
 	private JTable table;
@@ -191,9 +194,8 @@ public class ScrollPanel extends JScrollPane{
 	  public Object getCellEditorValue() {
 	    if (isPushed) {
 	      // 
-	      // koop Speler Functie hierin zetten
-	      JOptionPane.showMessageDialog(button, label + " kopen");
-	      // System.out.println(label + ": Ouch!");
+	      // koop Speler Functie hierin zetten	    	
+	    	Controller.spelerKopen(label, User.getTeam());
 	    }
 	    isPushed = false;
 	    return new String(label);

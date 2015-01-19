@@ -555,12 +555,24 @@ public class Controller {
 	
 	public static Speler getSpelerByName(String name){
 		Speler speler = null;
-		for(Speler s: User.getTeam().getSpelerList()){
-			if((name).equals(s.getNaam())){
-				speler = s;
+		for(Team t: Divisie.getTeamList()){
+			for(Speler s: t.getSpelerList()){
+				if((name).equals(s.getNaam())){
+					speler = s;
+				}
 			}
 		}
 		return speler;
+	}
+	
+	public static Team getTeamBySpeler(Speler speler){
+		Team team = null;
+		for(Team t: Divisie.getTeamList()){
+			if(t.getSpelerList().contains(speler)){
+				team = t;
+			}
+		}
+		return team;
 	}
 	
 	public void wedstrijdteamOpslaan(){
@@ -575,11 +587,12 @@ public class Controller {
 	
 	/**
 	 * voert het kopen van een speler uit
-	 * @param speler	de speler om te kopen
-	 * @param eigenaar	het team waarvan de speler gekocht word
+	 * @param speler	de naam van de speler om te kopen
 	 * @param koper		het team dat de speler koopt
 	 */
-	public void spelerKopen(Speler speler, Team eigenaar, Team koper){
+	public static void spelerKopen(String spelerNaam, Team koper){
+		Speler speler = getSpelerByName(spelerNaam);
+		Team eigenaar = getTeamBySpeler(speler);
 		int prijs = speler.getPrijs();
 		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
 		ArrayList<Speler> koperSpelers = koper.getSpelerList();
