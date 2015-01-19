@@ -593,13 +593,13 @@ public class Controller {
 	public static void spelerKopen(String spelerNaam, Team koper){
 		Speler speler = getSpelerByName(spelerNaam);
 		Team eigenaar = getTeamBySpeler(speler);
-		System.out.println(speler.getNaam());
 		int prijs = speler.getPrijs();
 		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
 		ArrayList<Speler> koperSpelers = koper.getSpelerList();
 		ArrayList<Team> teamList = Divisie.getTeamList();
 		int eigenaarIndex = teamList.indexOf(eigenaar);
 		int koperIndex = teamList.indexOf(koper);
+		Team userTeam = User.getTeam();
 		
 		//voert de aankoop alleen uit als de speler in het aangegeven team zit
 		if (eigenaarSpelers.contains(speler)){
@@ -615,6 +615,13 @@ public class Controller {
 			teamList.set(eigenaarIndex, eigenaar);
 			teamList.set(koperIndex, koper);
 			Divisie.setTeamList(teamList);
+			
+			if(userTeam.equals(koper)){
+				User.setTeam(koper);
+			}
+			if(userTeam.equals(eigenaar)){
+				User.setTeam(eigenaar);
+			}
 		}
 	}
 	
