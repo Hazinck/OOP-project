@@ -153,7 +153,7 @@ public class Divisie {
 	public void setStand(int stand) {
 		this.stand = stand;
 	}
-	public void setTeamList(ArrayList<Team> nieuw){
+	public static void setTeamList(ArrayList<Team> nieuw){
 		teamList=nieuw;
 	}
 	
