@@ -593,7 +593,7 @@ public class Controller {
 	public static void spelerKopen(String spelerNaam, Team koper){
 		Speler speler = getSpelerByName(spelerNaam);
 		Team eigenaar = getTeamBySpeler(speler);
-		int prijs = speler.getPrijs();
+		double prijs = (double)speler.getPrijs() / (1000000.0);
 		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
 		ArrayList<Speler> koperSpelers = koper.getSpelerList();
 		ArrayList<Team> teamList = Divisie.getTeamList();
@@ -605,6 +605,7 @@ public class Controller {
 		if (eigenaarSpelers.contains(speler)){
 			koper.setBudget(koper.getBudget() - prijs);
 			eigenaar.setBudget(eigenaar.getBudget() + prijs);
+			
 			
 			eigenaarSpelers.remove(speler);
 			koperSpelers.add(speler);
