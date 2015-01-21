@@ -26,7 +26,7 @@ public class Tabs extends JPanel{
 		    setBackground(Color.green);
 		    //setLayout(new GridLayout());
 		    setLayout(new BorderLayout());
-		    
+		    setOpaque(false);
 		    //tabs panel toevoegen aan ViewFrame
 		    viewFrame.getControlPanel().add(this);  
 		    
@@ -38,7 +38,7 @@ public class Tabs extends JPanel{
 		    
 		    //jtabbedpane aanmaken
 		    JTabbedPane tabbedPane = new JTabbedPane();
-		    
+		    tabbedPane.setOpaque(false);
 		    //4 andere panels hieraan toevoegen als tabs: ("Title", panel)
 		    tabbedPane.add("Home",home);
 		    tabbedPane.add("Team",teamPanel);

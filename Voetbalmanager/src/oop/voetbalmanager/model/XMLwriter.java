@@ -15,6 +15,8 @@ import org.jdom2.output.XMLOutputter;
 public class XMLwriter {
 	private	SAXBuilder builder = new SAXBuilder();
 	private File xmlFile;
+	private Element divisieElement;
+	private Document document;
 	
 	public XMLwriter(String infile){
 		xmlFile=new File(infile);
@@ -31,8 +33,10 @@ public class XMLwriter {
 		try {
 			//open xml
 			Document document = (Document) builder.build(xmlFile);
+			this.document = document;
 			//maak element van <divisie>
 			Element divisieEl = document.getRootElement();
+			divisieElement = divisieEl;
 			
 			if(tag.equals("divisie")){
 				//als element bestaat dan updaten
@@ -101,9 +105,11 @@ public class XMLwriter {
 		try {
 			//open xml
 			Document document = (Document) builder.build(xmlFile);
+			this.document = document;
 			//maak element van <divisie>
 			Element divisieEl = document.getRootElement();
-
+			divisieElement = divisieEl;
+			
 			boolean bestaat = false;
 			Element parent = null;
 			boolean spelerBestaat = false;//element.getChild("speler")!=null && element.getChild("speler").getChildText("naam").equals(childNaam);
@@ -167,6 +173,18 @@ public class XMLwriter {
 			
 		
 		 
+	}
+	/**
+	 * @return the divisieElement
+	 */
+	public Element getDivisieElement() {
+		return divisieElement;
+	}
+	/**
+	 * @return the document
+	 */
+	public Document getDocument() {
+		return document;
 	}
 	
 	

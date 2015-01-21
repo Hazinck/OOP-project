@@ -2,7 +2,12 @@ package oop.voetbalmanager.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -25,7 +30,7 @@ public class Table extends JPanel{
 	//	setLayout(new BorderLayout());
 		setLayout(null);
 		setBackground(Color.WHITE);
-		
+		setOpaque(false);
 	//	Box main = Box.createVerticalBox();
 		
 		
@@ -36,9 +41,10 @@ public class Table extends JPanel{
 		img.setBounds(0, 0 ,(int)(ViewFrame.getFrameWidth()*0.25), (int)(ViewFrame.getFrameHeight()*0.50));
 		
 		JTable tableLeft = newTable(vframe);
+		tableLeft.setOpaque(false);
 		JScrollPane	pane = new JScrollPane(tableLeft);
-		pane.getViewport().setBackground(Color.WHITE);
-
+		pane.getViewport().setOpaque(false);;
+		pane.setOpaque(false);
 		add(pane);//main.add(pane);
 		
 		int w = (int)(ViewFrame.getFrameWidth()*0.20);//d.width * 20 / 100;
@@ -59,7 +65,7 @@ public class Table extends JPanel{
 	}
 	public JTable newTable(ViewFrame vframe){
 		DefaultTableModel model;
-		
+		setOpaque(false);
 		model = new DefaultTableModel()//;col,6
 		 {
 			 public Class getColumnClass(int columnIndex) {
@@ -100,6 +106,14 @@ public class Table extends JPanel{
 		table.getColumnModel().getColumn(1).setPreferredWidth((int)(ViewFrame.getFrameWidth()*0.20 * 0.39));//100
 		
 		return table;
+	}
+	
+	@Override
+    protected void paintComponent(Graphics g) {
+    	super.paintComponent(g);
+		g.setColor( new Color(0, 0, 0, 150) );
+        g.fillRect(0, 0, getWidth(), getHeight());
+         
 	}
 	
 	public ImagePanel getImagePanel(){

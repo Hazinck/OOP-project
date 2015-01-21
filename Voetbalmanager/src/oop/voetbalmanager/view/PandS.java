@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,8 +44,8 @@ public class PandS extends JPanel{
    //     Container panel2 = layoutComponents("Center", Component.CENTER_ALIGNMENT);
        
         //Change Username and Password
-        add(userPass());
-        
+//        add(userPass());
+		setOpaque(false);
         //Change avatar
         add(avatar(vframe));
         
@@ -133,10 +134,19 @@ public class PandS extends JPanel{
 	 } 
 	 
 	 public JPanel avatar(ViewFrame vframe){
-		 JPanel avatar = new JPanel();
+		 JPanel avatar = new JPanel(){
+			 @Override
+			    protected void paintComponent(Graphics g) {
+					g.setColor( new Color(0, 0, 0, 150) );
+			        g.fillRect(0, 0, getWidth(), getHeight());
+			         
+			    	super.paintComponent(g);
+				}
+		 };
+		 avatar.setOpaque(false);
 	        avatar.setBorder(BorderFactory.createTitledBorder(null, "Change avatar", 
 	        		TitledBorder.CENTER, TitledBorder.TOP, new Font("Arial",Font.PLAIN,20), 
-	        		Color.decode("333333")));//("Change avatar") title);
+	        		Color.WHITE));//("Change avatar") title);
 	        BoxLayout layoutAv = new BoxLayout(avatar, BoxLayout.X_AXIS);
 		    avatar.setLayout(layoutAv);
 		    avatar.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.33)));//500,200));
@@ -198,10 +208,19 @@ public class PandS extends JPanel{
 	 }
 	 
 	 public JPanel save(){
-		 JPanel save = new JPanel();
+		 JPanel save = new JPanel(){
+			 @Override
+			    protected void paintComponent(Graphics g) {
+					g.setColor( new Color(0, 0, 0, 150) );
+			        g.fillRect(0, 0, getWidth(), getHeight());
+			         
+			    	super.paintComponent(g);
+				}
+		 };
+		 save.setOpaque(false);
 	        save.setBorder(BorderFactory.createTitledBorder(null, "Save file", 
 	        		TitledBorder.CENTER, TitledBorder.TOP, new Font("Arial",Font.PLAIN,20), 
-	        		Color.decode("333333")));//("Change avatar") title);
+	        		Color.WHITE));//("Change avatar") title);
 	        BoxLayout layoutAv = new BoxLayout(save, BoxLayout.X_AXIS);
 		    save.setLayout(layoutAv);
 		    save.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.50), (int)(ViewFrame.getFrameHeight()*0.167)));//500,100));

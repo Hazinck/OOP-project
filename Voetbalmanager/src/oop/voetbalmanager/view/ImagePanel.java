@@ -25,6 +25,7 @@ public class ImagePanel extends JPanel{
 	private String username;
     public ImagePanel(ViewFrame vframe) {
     	this.username = User.getNaam();
+    	setOpaque(false);
     	String imgName = vframe.getImgName();
     	setLayout(null);
        try {                
@@ -44,7 +45,7 @@ public class ImagePanel extends JPanel{
     public void addNameLable(){
     	naamLable.setFont(new Font("Arial", Font.BOLD, 20)); 
 		naamLable.setText("<html><body style='text-align: center; width: "+(int)(ViewFrame.getFrameWidth()*0.15)+"px'>"+username);//150px
-		naamLable.setForeground(Color.decode("333333"));
+		naamLable.setForeground(Color.WHITE);
 		setBackground(Color.WHITE);
 		add(naamLable);//, BorderLayout.PAGE_START);
 		naamLable.setBounds(0, 0 ,(int)(ViewFrame.getFrameWidth()*0.20), (int)(ViewFrame.getFrameHeight()*0.15));//150

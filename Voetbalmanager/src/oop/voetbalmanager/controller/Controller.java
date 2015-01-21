@@ -6,11 +6,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -45,6 +47,14 @@ import oop.voetbalmanager.view.Tabs;
 import oop.voetbalmanager.view.TeamPanel;
 import oop.voetbalmanager.view.ViewFrame;
 
+import org.jdom2.Element;
+import org.jdom2.filter.ElementFilter;
+import org.jdom2.filter.Filters;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+import org.jdom2.xpath.XPathExpression;
+import org.jdom2.xpath.XPathFactory;
+
 
 public class Controller {
 	private ViewFrame viewFrame; 
@@ -55,6 +65,7 @@ public class Controller {
 	private Competition comp;
 	private PandS ps;
 	private ArrayList<String> ranglijst = new ArrayList<String>();
+	private List<List<Object>> koopLijst = new ArrayList<List<Object>>(3);//0=verkoper 1=koper 2=speler
 	private XMLwriter writer;
 	private XMLreader reader = new XMLreader();
 	private Divisie divisie;
@@ -77,6 +88,9 @@ public class Controller {
 	}
 
 	public void control() {
+		koopLijst.add(new ArrayList());
+		koopLijst.add(new ArrayList());
+		koopLijst.add(new ArrayList());
 //		divisie = reader.readDivisie(Driver.path);
 		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
 //		System.out.println("controller: path="+ Driver.path);
@@ -647,8 +661,18 @@ public class Controller {
 			if(userTeam.equals(eigenaar)){
 				User.setTeam(eigenaar);
 			}
+			System.out.println("controller spelerKopen: "+eigenaar.getNaam());
+			koopLijst.get(0).add(eigenaar.getNaam());
+			koopLijst.get(1).add(koper.getNaam());
+			koopLijst.get(2).add(speler.getNaam());
 		}
-		
+
+
+		teamPanel.getAanvallers().clear();
+		teamPanel.getVerdedigers().clear();
+		teamPanel.getMiddenvelders().clear();
+		teamPanel.getKeepers().clear();
+		vulSpelerlijst(User.getTeam());
 	}
 	
 	public void addItemRemover(){
@@ -724,7 +748,10 @@ public class Controller {
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
 			Team t = Divisie.getTeamList().get(i);
 			for(int k =0; k < t.getSpelerList().size(); k++){
-				aantalSp++;
+				Speler s = t.getSpelerList().get(k);
+				if(s!=null && !s.getNaam().equals("")){
+					aantalSp++;
+				}
 			}
 		}
 		
@@ -739,30 +766,32 @@ public class Controller {
 	//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
 				for(int k =0; k < t.getSpelerList().size(); k++){
 					final Speler s = t.getSpelerList().get(k);
-					data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
-					data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
-									"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
-									"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
-									"\nPrijs: "+s.getPrijs();
-					
-					final JButton koopButton = new JButton("<html><body>"+s.getNaam());
-					koopButton.addActionListener(new ActionListener() {
-					      public void actionPerformed(ActionEvent event) {
-					    	  	//JOptionPane.showMessageDialog(null, s.getNaam()+" is gekocht");
-
-					    	  	
-					    	  	spelerKopen(s.getNaam(), User.getTeam());
-//					    	  	updateTables();
-					    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
-					    	  	koopButton.setEnabled(false);
-					    	  	koopButton.setText("Verkocht");
-					    	  	tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
-						      }
-						    });
-					data[spIdx][2] = koopButton;//s.getNaam();//
-	//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
-	//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
-					spIdx++;
+					if(s!=null && !s.getNaam().equals("")){
+						data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
+						data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
+										"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
+										"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+										"\nPrijs: "+s.getPrijs();
+						
+						final JButton koopButton = new JButton("<html><body>"+s.getNaam());
+						koopButton.addActionListener(new ActionListener() {
+						      public void actionPerformed(ActionEvent event) {
+						    	  	//JOptionPane.showMessageDialog(null, s.getNaam()+" is gekocht");
+	
+						    	  	
+						    	  	spelerKopen(s.getNaam(), User.getTeam());
+	//					    	  	updateTables();
+						    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
+						    	  	koopButton.setEnabled(false);
+						    	  	koopButton.setText("Verkocht");
+						    	  	tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+							      }
+							    });
+						data[spIdx][2] = koopButton;//s.getNaam();//
+		//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
+		//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
+						spIdx++;
+					}
 				}
 				
 			}
@@ -861,6 +890,36 @@ public class Controller {
 		}
 		for(Team t: Divisie.getTeamList()){		
 			writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
+		}
+		if(koopLijst.get(0).size()>0){
+			ElementFilter filterTm=new org.jdom2.filter.ElementFilter("team");
+			ElementFilter filterSp=new org.jdom2.filter.ElementFilter("speler");
+			Element tempSpeler = null;
+			Element tempTeam = null;
+			for(int i = 0; i< koopLijst.get(0).size(); i++){
+				XPathExpression<Element> spelerXPath =
+					    XPathFactory.instance().compile("/divisie/team[naam='"+koopLijst.get(0).get(i)+"']/speler[naam='"+koopLijst.get(2).get(i)+"']", Filters.element());
+				XPathExpression<Element> koperXPath =
+					    XPathFactory.instance().compile("/divisie/team[naam='"+koopLijst.get(1).get(i)+"']", Filters.element());	
+				
+				Element speler = spelerXPath.evaluateFirst(writer.getDocument());
+				Element koper = koperXPath.evaluateFirst(writer.getDocument());
+				
+				if (speler != null) {
+					speler.getParent().removeContent(speler);
+					koper.addContent(speler);
+				    XMLOutputter xmlOutput = new XMLOutputter();
+					xmlOutput.setFormat(Format.getPrettyFormat());
+					try {
+						xmlOutput.output(writer.getDocument(), new FileWriter(new File(Driver.path)));
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				    System.out.println(speler.getChildText("naam") + " is verwijderd van " + speler.getParentElement().getChildText("naam"));
+				    System.out.println(speler.getChildText("naam") + " is toegevoegd in " + koper.getChildText("naam"));
+				}
+			}
 		}
 	}
 	

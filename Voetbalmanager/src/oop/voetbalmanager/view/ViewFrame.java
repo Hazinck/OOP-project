@@ -1,9 +1,13 @@
 package oop.voetbalmanager.view;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -32,18 +36,35 @@ public class ViewFrame extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Voetbalmanager Eredivisie 2015");  
 
-	    controlPanel = new JPanel();
+	    controlPanel = new JPanel(){
+	    	@Override
+	        protected void paintComponent(Graphics g) {
+	        	super.paintComponent(g);
+	        	Image image;
+	        	
+	    		try {
+	    			image = ImageIO.read(new File("images/background.png"));
+//	    			image = ImageIO.read(new File(viewFrame.getImgPath() + "football.jpg"));
+	    			g.drawImage(image, 0, -70, null);
+	    		} catch (IOException e) {
+	    			// TODO Auto-generated catch block
+	    			e.printStackTrace();
+	    		}
+	             
+	    	}
+	    };
 	    controlPanel.setLayout(new BorderLayout());
 	    controlPanel.setSize(this.getSize());
-	    controlPanel.setBackground(Color.green);
+	  //  controlPanel.setBackground(Color.red);
 	      
 	    
-	    UIManager.put("TabbedPane.borderHightlightColor", java.awt.Color.LIGHT_GRAY); 
+	    UIManager.put("TabbedPane.borderHightlightColor", java.awt.Color.LIGHT_GRAY); //java.awt.Color.LIGHT_GRAY
 	    UIManager.put("TabbedPane.darkShadow", java.awt.Color.LIGHT_GRAY); 
 	    UIManager.put("TabbedPane.light", java.awt.Color.LIGHT_GRAY);
 	    UIManager.put("TabbedPane.selectHighlight", java.awt.Color.LIGHT_GRAY);
 	    UIManager.put("TabbedPane.darkShadow", java.awt.Color.LIGHT_GRAY);
 	    UIManager.put("TabbedPane.focus", java.awt.Color.LIGHT_GRAY);
+	    UIManager.put("TabbedPane.contentOpaque", false);
 	    
 	    UIManager.put("TabbedPane.contentAreaColor ",ColorUIResource.WHITE);
 	    UIManager.put("TabbedPane.selected",ColorUIResource.decode("333333"));
@@ -54,6 +75,8 @@ public class ViewFrame extends JFrame{
 	    
 	}
 
+	
+	
 	/**
 	 * @return the frameWidth
 	 */

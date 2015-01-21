@@ -19,7 +19,7 @@ public class Competition extends JPanel{
 	public Competition(ViewFrame vframe){
 		this.vframe = vframe;
         setBackground(Color.WHITE);
-        
+        setOpaque(false);
         
         
         

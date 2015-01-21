@@ -133,8 +133,9 @@ public class TXTreader {
 	            String teamFile = fileEntry.getName();
 	            String teamNaam = teamFile.replaceAll(".txt", "");
 	            //toevoegen aan XML
+//	            System.out.println(folder + "========================\n"+"Team: "+teamNaam);
 	            writer.add("divisie", "Eredivisie", "team", teamNaam);
-	      //    System.out.println("========================\n"+"Team: "+teamNaam);
+//	          System.out.println("========================\n"+"Team: "+teamNaam);
 	            readTeam(teamFile, teamNaam);
 	            allFiles += teamFile+"\n";
 	        }

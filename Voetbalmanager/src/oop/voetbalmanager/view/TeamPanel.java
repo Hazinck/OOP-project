@@ -50,26 +50,44 @@ public class TeamPanel extends JPanel{
         add(spelerlijst());
         add(tactiek());
         setBackground(Color.decode("#FFFFFF"));
+        setOpaque(false);
 	}
 	
 	public JPanel spelerlijst() {
-		JPanel spelerlijst = new JPanel();
+		JPanel spelerlijst = new JPanel(){
+			@Override
+		    protected void paintComponent(Graphics g) {
+		    	super.paintComponent(g);
+				g.setColor( new Color(0, 0, 0, 150) );
+		        g.fillRect(0, 0, getWidth(), getHeight());
+		         
+			}
+		};
 		spelerlijst.setBorder(BorderFactory.createTitledBorder(null, "Spelerlijst", 
-				TitledBorder.CENTER, TitledBorder.TOP));
+				TitledBorder.CENTER, TitledBorder.TOP, new Font("Arial",Font.BOLD,12), Color.white));
 		spelerlijst.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.30), (int)(ViewFrame.getFrameHeight()*0.90)));//300, 500));
 		spelerlijst.setBackground(null);
-		
+		spelerlijst.setOpaque(false);
+		spelerlijst.setForeground(Color.WHITE);
 
-		spelerlijst.add(new JLabel("Aanvallers"));
+		JLabel aan = new JLabel("Aanvallers");
+		aan.setForeground(Color.WHITE);
+		spelerlijst.add(aan);
 		spelerlijst.add(maakLijst(aanvallers, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
 		
-		spelerlijst.add(new JLabel("Middenvelders"));
+		JLabel mid = new JLabel("Middenvelders");
+		mid.setForeground(Color.WHITE);
+		spelerlijst.add(mid);
 		spelerlijst.add(maakLijst(middenvelders, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
 		
-		spelerlijst.add(new JLabel("Verdedigers"));
+		JLabel ver = new JLabel("Verdedigers");
+		ver.setForeground(Color.WHITE);
+		spelerlijst.add(ver);
 		spelerlijst.add(maakLijst(verdedigers, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 95)));
 		
-		spelerlijst.add(new JLabel("Keepers"));
+		JLabel keep = new JLabel("Keepers");
+		keep.setForeground(Color.WHITE);
+		spelerlijst.add(keep);
 		spelerlijst.add(maakLijst(keepers, new Dimension((int)(ViewFrame.getFrameWidth()*0.28), (int)(ViewFrame.getFrameHeight()*0.158))));//250, 65)));
 		
 		return spelerlijst;
@@ -77,11 +95,12 @@ public class TeamPanel extends JPanel{
 	
 	public JPanel opstelling() {
 		JPanel opstelling = new JPanel();
-		
+		opstelling.setForeground(Color.WHITE);
 		opstelling.setBorder(BorderFactory.createTitledBorder(null, "Opstelling", 
-				TitledBorder.CENTER, TitledBorder.TOP));
+				TitledBorder.CENTER, TitledBorder.TOP, new Font("Arial",Font.BOLD,12), Color.white));
 		opstelling.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.375), (int)(ViewFrame.getFrameHeight()*0.75)));//375, 370));
 		opstelling.setBackground(null);
+		opstelling.setOpaque(false);
 		
 		opstellingKeuze = new JComboBox();
 		for(Opstelling op: opst.getOpstellingen()){
@@ -105,20 +124,35 @@ public class TeamPanel extends JPanel{
 	}
 	
 	public JPanel tactiek() {
-		JPanel tactiek = new JPanel();
+		JPanel tactiek = new JPanel(){
+			@Override
+		    protected void paintComponent(Graphics g) {
+		    	super.paintComponent(g);
+				g.setColor( new Color(0, 0, 0, 150) );
+		        g.fillRect(0, 0, getWidth(), getHeight());
+		         
+			}
+		};
+		tactiek.setForeground(Color.WHITE);
 		tactiek.setBorder(BorderFactory.createTitledBorder(null, "Tactiek", 
-				TitledBorder.CENTER, TitledBorder.TOP));
+				TitledBorder.CENTER, TitledBorder.TOP, new Font("Arial",Font.BOLD,12), Color.white));
 		tactiek.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.45), (int)(ViewFrame.getFrameHeight()*0.90)));//400, 500));
 		tactiek.setBackground(null);
+		tactiek.setOpaque(false);
 		
 		tactiek.add(opstelling());
 		
 		
 		slider.setBackground(null);
+		slider.setOpaque(false);
 		slider.setPreferredSize(new Dimension((int)(ViewFrame.getFrameWidth()*0.30), (int)(ViewFrame.getFrameHeight()*0.133)));//300,80));
 		Hashtable<Integer, JLabel> labels = new Hashtable<Integer, JLabel>();
-		labels.put(new Integer(0), new JLabel("Verdedigend"));
-		labels.put(new Integer(100), new JLabel("Aanvallend"));
+		JLabel verd = new JLabel("Verdedigend");
+		verd.setForeground(Color.WHITE);
+		JLabel aanv = new JLabel("Aanvallend");
+		aanv.setForeground(Color.WHITE);
+		labels.put(new Integer(0), verd);
+		labels.put(new Integer(100), aanv);
 		slider.setLabelTable(labels);
 		slider.setPaintLabels(true);
 		slider.setMajorTickSpacing(25);
@@ -146,9 +180,9 @@ public class TeamPanel extends JPanel{
 		this.aanvallers.addElement(aanvaller);
 	}
 	
-	public String[] getAanvaller() {
-		return (String[])this.aanvallers.toArray();
-	}
+//	public String[] getAanvaller() {
+//		return (String[])this.aanvallers.toArray();
+//	}
 	
 	public void removeAanvaller(String aanvaller){
 		this.aanvallers.removeElement(aanvaller);
@@ -158,9 +192,9 @@ public class TeamPanel extends JPanel{
 		this.middenvelders.addElement(middenvelder);
 	}
 	
-	public String[] getMiddenvelders() {
-		return (String[])this.middenvelders.toArray();
-	}
+//	public String[] getMiddenvelders() {
+//		return (String[])this.middenvelders.toArray();
+//	}
 	
 	public void removeMiddenvelder(String middenvelder){
 		this.middenvelders.removeElement(middenvelder);
@@ -170,9 +204,9 @@ public class TeamPanel extends JPanel{
 		this.verdedigers.addElement(verdediger);
 	}
 	
-	public String[] getVerdedigers() {
-		return (String[]) this.verdedigers.toArray();
-	}
+//	public String[] getVerdedigers() {
+//		return (String[]) this.verdedigers.toArray();
+//	}
 	
 	public void removeVerdediger(String verdediger){
 		this.verdedigers.removeElement(verdediger);
@@ -182,14 +216,42 @@ public class TeamPanel extends JPanel{
 		this.keepers.addElement(keeper);
 	}
 	
-	public String[] getKeepers() {
-		return (String[]) this.keepers.toArray();
-	}
+//	public String[] getKeepers() {
+//		return (String[]) this.keepers.toArray();
+//	}
 	
 	public void removeKeepers(String keeper){
 		this.keepers.removeElement(keeper);
 	}
+	
+	/**
+	 * @return the aanvallers
+	 */
+	public DefaultListModel<String> getAanvallers() {
+		return aanvallers;
+	}
 
+	/**
+	 * @return the middenvelders
+	 */
+	public DefaultListModel<String> getMiddenvelders() {
+		return middenvelders;
+	}
+
+	/**
+	 * @return the verdedigers
+	 */
+	public DefaultListModel<String> getVerdedigers() {
+		return verdedigers;
+	}
+
+	/**
+	 * @return the keepers
+	 */
+	public DefaultListModel<String> getKeepers() {
+		return keepers;
+	}
+	
 	/**
 	 * @return the opst
 	 */
@@ -497,4 +559,6 @@ public class TeamPanel extends JPanel{
 	public JComboBox getOpstellingKeuze() {
 		return opstellingKeuze;
 	}
+
+	
 }

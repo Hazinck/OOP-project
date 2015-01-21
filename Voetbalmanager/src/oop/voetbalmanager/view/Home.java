@@ -1,4 +1,6 @@
 package oop.voetbalmanager.view;
+import java.awt.Color;
+
 import javax.swing.JPanel;
 
 /**
@@ -14,7 +16,7 @@ public class Home extends JPanel{
 	public Home(){
 	//	playButton = hm.getPlayButton();
 		setLayout(null);
-		
+		setOpaque(false);
 		add(hm);
 		hm.setBounds(0, 0, (int)(ViewFrame.getFrameWidth()*0.63), (int)(ViewFrame.getFrameHeight()));
 		
