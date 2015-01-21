@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <divisie id="0">
   <naam>Eredivisie</naam>
-  <speeldag>16</speeldag>
+  <speeldag>8</speeldag>
   <stand>0</stand>
   <team id="01">
     <naam>ADO Den Haag</naam>
-    <rank>9</rank>
+    <rank>8</rank>
     <winst>13</winst>
-    <gelijkspel>9</gelijkspel>
+    <gelijkspel>10</gelijkspel>
     <verlies>15</verlies>
     <doelvoor>47</doelvoor>
     <doeltegen>65</doeltegen>
     <doelsaldo>-18</doelsaldo>
-    <score>48</score>
+    <score>49</score>
     <budget>13.6</budget>
     <speler id="011">
       <naam>﻿Aaron Meijers</naam>
@@ -175,9 +175,9 @@
     <winst>21</winst>
     <gelijkspel>11</gelijkspel>
     <verlies>3</verlies>
-    <doelvoor>72</doelvoor>
+    <doelvoor>71</doelvoor>
     <doeltegen>29</doeltegen>
-    <doelsaldo>43</doelsaldo>
+    <doelsaldo>42</doelsaldo>
     <score>74</score>
     <budget>65.0</budget>
     <speler id="021">
@@ -379,7 +379,7 @@
   </team>
   <team id="03">
     <naam>AZ</naam>
-    <rank>8</rank>
+    <rank>9</rank>
     <winst>13</winst>
     <gelijkspel>9</gelijkspel>
     <verlies>13</verlies>
@@ -1244,7 +1244,7 @@
   </team>
   <team id="08">
     <naam>FC Utrecht</naam>
-    <rank>12</rank>
+    <rank>11</rank>
     <winst>11</winst>
     <gelijkspel>8</gelijkspel>
     <verlies>15</verlies>
@@ -1653,14 +1653,14 @@
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
-    <rank>10</rank>
+    <rank>12</rank>
     <winst>10</winst>
-    <gelijkspel>12</gelijkspel>
-    <verlies>20</verlies>
-    <doelvoor>50</doelvoor>
-    <doeltegen>80</doeltegen>
-    <doelsaldo>-30</doelsaldo>
-    <score>42</score>
+    <gelijkspel>11</gelijkspel>
+    <verlies>17</verlies>
+    <doelvoor>46</doelvoor>
+    <doeltegen>71</doeltegen>
+    <doelsaldo>-25</doelsaldo>
+    <score>41</score>
     <budget>5.2</budget>
     <speler id="0101">
       <naam>﻿Alex Schalk</naam>
@@ -2214,7 +2214,7 @@
   </team>
   <team id="013">
     <naam>PEC Zwolle</naam>
-    <rank>11</rank>
+    <rank>10</rank>
     <winst>9</winst>
     <gelijkspel>14</gelijkspel>
     <verlies>12</verlies>
@@ -2389,12 +2389,12 @@
     <naam>PSV</naam>
     <rank>5</rank>
     <winst>18</winst>
-    <gelijkspel>5</gelijkspel>
+    <gelijkspel>6</gelijkspel>
     <verlies>11</verlies>
     <doelvoor>60</doelvoor>
     <doeltegen>45</doeltegen>
     <doelsaldo>15</doelsaldo>
-    <score>59</score>
+    <score>60</score>
     <budget>62</budget>
     <speler id="0141">
       <naam>﻿Abel Tamata</naam>
@@ -2590,12 +2590,12 @@
     <naam>SC Cambuur</naam>
     <rank>13</rank>
     <winst>10</winst>
-    <gelijkspel>9</gelijkspel>
+    <gelijkspel>10</gelijkspel>
     <verlies>15</verlies>
     <doelvoor>40</doelvoor>
     <doeltegen>50</doeltegen>
     <doelsaldo>-10</doelsaldo>
-    <score>39</score>
+    <score>40</score>
     <budget>6.5</budget>
     <speler id="0151">
       <naam>﻿Albert Rusnák</naam>
@@ -3320,7 +3320,7 @@
     <uithouding>57</uithouding>
     <opstelling>winwinwin</opstelling>
     <tactiek>100</tactiek>
-    <spelers>Erik Cummins,Lesly de Sa,Lars Lambooij,Jules Reimerink,Jop van der Linden,Jeffrey Rijsdijk,Giliano Wijnaldum,Fernando Lewis,Deniz Türüç,Bart Vriends,Teije ten Den</spelers>
+    <spelers>Erik Cummins,Teije ten Den,Lesly de Sa,Lars Lambooij,Jules Reimerink,Jop van der Linden,Jeffrey Rijsdijk,Giliano Wijnaldum,Fernando Lewis,Deniz Türüç,Bart Vriends</spelers>
     <TeamNaam>Go Ahead Eagles</TeamNaam>
   </Wedstrijdteam>
   <opstellingen id="99">

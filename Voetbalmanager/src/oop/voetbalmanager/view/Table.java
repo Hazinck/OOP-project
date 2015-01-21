@@ -82,6 +82,11 @@ public class Table extends JPanel{
 			
 		};   
 		
+		
+		table.setRowSelectionAllowed(false);
+		table.getTableHeader().setReorderingAllowed(false);
+		table.getTableHeader().setResizingAllowed(false);
+		
 	//	table.setValueAt("Balans: ",0,0);
 	//	table.setValueAt("Speeldag: ",1,0);
 	//	table.setValueAt("Punten: ",2,0);

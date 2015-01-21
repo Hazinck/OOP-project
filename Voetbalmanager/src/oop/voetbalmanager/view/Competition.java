@@ -1,21 +1,20 @@
 package oop.voetbalmanager.view;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
 import javax.swing.Box;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-
-import oop.voetbalmanager.model.Divisie;
-import oop.voetbalmanager.model.Team;
+import javax.swing.JScrollPane;
 
 
 public class Competition extends JPanel{
 
 	private ViewFrame vframe;
 	private Box main = Box.createHorizontalBox();
-	private ScrollPanel pane;// = new ScrollPanel("Ranking", "Uitgebreide ranking met doelpunten saldo etc", 18);
-	//private ScrollPanel transferPane = new ScrollPanel("Transferlijst","(spelers die te koop worden gezet <br>of alle spelers van andere <br>teams worden hier geshowt en je kan bieden)");
+	//private ArrayList<JScrollPane> pane = new ArrayList<JScrollPane>();// = new ScrollPanel("Ranking", "Uitgebreide ranking met doelpunten saldo etc", 18);
+	private ScrollPanel rankPane;// = new ScrollPanel("Transferlijst","(spelers die te koop worden gezet <br>of alle spelers van andere <br>teams worden hier geshowt en je kan bieden)");
+	private ScrollPanel transferPane;
 	
 	public Competition(ViewFrame vframe){
 		this.vframe = vframe;
@@ -34,7 +33,7 @@ public class Competition extends JPanel{
       //  addRank();
 	}
 	
-	public void addPane(Object[][] data, String[] columnNames){
+	public void addPane(Object[][] data, String[] columnNames, int i){
 //		ArrayList<ImageIcon> imgList = new ArrayList<ImageIcon>();
 //		ArrayList<String> teamDescrList = new ArrayList<String>();
 		
@@ -43,18 +42,32 @@ public class Competition extends JPanel{
 		
 //        Object[][] data =	{ {ajaxIcon, "Ajax"},
 //					        };
-        
-        pane = new ScrollPanel(18, data, columnNames);
-        main.add(pane);
+		if(i==0){
+			rankPane = new ScrollPanel(18, data, columnNames);
+	        main.add(rankPane);
+		}else if(i==1){
+			transferPane = new ScrollPanel(18, data, columnNames);
+	        main.add(transferPane);
+		}
+		
         main.add(Box.createRigidArea(new Dimension(40,0)));
 	}
 
 	/**
-	 * @return the pane
+	 * @return the rankPane
 	 */
-	public ScrollPanel getPane() {
-		return pane;
+	public ScrollPanel getRankPane() {
+		return rankPane;
 	}
+
+	/**
+	 * @return the transferPane
+	 */
+	public ScrollPanel getTransferPane() {
+		return transferPane;
+	}
+
+	
 	
 	
 }

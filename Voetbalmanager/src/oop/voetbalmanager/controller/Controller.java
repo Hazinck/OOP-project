@@ -77,9 +77,9 @@ public class Controller {
 	}
 
 	public void control() {
-		divisie = reader.readDivisie(Driver.path);
+//		divisie = reader.readDivisie(Driver.path);
 		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
-		
+//		System.out.println("controller: path="+ Driver.path);
 		newGame();
 		loadGame();
 		exitGame();
@@ -91,6 +91,7 @@ public class Controller {
 	public void newGame(){
 		ActionListener actionListener = new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) { 
+            	
             	final NewGamePanel ngPanel = new NewGamePanel(viewFrame);
             	ngPanel.showThis(l);
             	for(int i = 0; i < ngPanel.getTeamButtons().size(); i++){
@@ -106,6 +107,7 @@ public class Controller {
                 	    			    "Voer je naam in!",
                 	    			    JOptionPane.ERROR_MESSAGE);
                 	    	}else{
+                	    		divisie = reader.readDivisie(Driver.path);
                 	    		User.setNaam(username);
                 	    		Team team = Divisie.findTeamByName(teamNaam);
                 	    		User.setTeam(team);
@@ -133,13 +135,20 @@ public class Controller {
 	  	Bot.setUserTeam(team);
 	  	Bot.volgendeTeam();
 		
+	  	
 		home =  new Home();
 		teamPanel = new TeamPanel();
 		comp = new Competition(viewFrame);
-		teamsToCompRank();
-		spelersToCompTransfer();
+		
+		String[] columnNamesRank = {"Ranking", "Uitgebreide ranking met doelpunten saldo etc"};
+		comp.addPane(teamsToCompRank(), columnNamesRank, 0);
+		
+		String[] columnNamesTrans = {"Transferlijst","Spelers die te koop zijn:", "Kopen"};
+		comp.addPane(spelersToCompTransfer(), columnNamesTrans, 1);
+		
 		 
 		ps = new PandS(viewFrame);
+	  	
 		ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
 		int opIdx = RNG.getalTot(opstellingen.size());
 		int tactiek = RNG.getalTot(101);
@@ -154,8 +163,8 @@ public class Controller {
         tabs.showThis(fromPanel);
    //   controlPanel2();
         addLogoutListener();
-        play();
         ranking();
+        play();
         opstellingOpslaan();
         for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
         	removeItems(teamPanel.getOpst().getPlayersDDList()[i]);
@@ -176,6 +185,7 @@ public class Controller {
             		ActionListener actionListener = new ActionListener() {
                         public void actionPerformed(ActionEvent actionEvent) { 
                         	Driver.path = System.getProperty("user.dir") + "/saved/"+lgp.getSaveFiles().get(idx)+".xml";
+                    		divisie = reader.readDivisie(Driver.path);
                         	String username = lgp.getSaveFiles().get(idx);
                         	username = username.substring(0, username.length()-20);
                         	User.setNaam(username);
@@ -247,7 +257,7 @@ public class Controller {
 	       		addGoBackListener();
 	       		addSkipListener();
 	       		addSpeelZelfListener();
-	       		updateStats(s);
+	       		updateStats();
 	       		}
 		});
 		                
@@ -323,7 +333,7 @@ public class Controller {
     	voegGespeeldeTeam(veldPanel.getBall().getTeam1());
     	voegGespeeldeTeam(veldPanel.getBall().getTeam2());
     	
-    	updateStats(s);
+    	updateStats();
 	}
 	
 	public void voegGespeeldeTeam(Wedstrijdteam team){
@@ -391,7 +401,7 @@ public class Controller {
     	});
 	}
 	
-	public void updateStats(Spel s){
+	public void updateStats(){
 		Bot.volgendeTeam();
 		ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
 		int opIdx = RNG.getalTot(opstellingen.size());
@@ -407,6 +417,19 @@ public class Controller {
    		tabs.getTable().getTable().setValueAt(User.getTeam().getRank(),3,1);
    		tabs.getTable().getTable().setValueAt(Bot.getBotTeam().getNaam(),4,1);
    		rankingUpdate();
+   		updateTable();
+   	//	teamPanel.get;
+	}
+	
+	public void updateTable(){
+   		Object[][] data = teamsToCompRank();
+   		for(int i = 0; i<data.length; i++){
+	   			comp.getRankPane().getTable().setValueAt(data[i][0], i, 0);
+	   			comp.getRankPane().getTable().setValueAt(data[i][1], i, 1);
+   		}
+
+	  	comp.getRankPane().getModel().fireTableDataChanged();
+	  	
    	//	teamPanel.get;
 	}
 	
@@ -590,9 +613,10 @@ public class Controller {
 	 * @param speler	de naam van de speler om te kopen
 	 * @param koper		het team dat de speler koopt
 	 */
-	public static void spelerKopen(String spelerNaam, Team koper){
+	public void spelerKopen(String spelerNaam, Team koper){
 		Speler speler = getSpelerByName(spelerNaam);
 		Team eigenaar = getTeamBySpeler(speler);
+//		int prijs = speler.getPrijs();
 		double prijs = (double)speler.getPrijs() / (1000000.0);
 		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
 		ArrayList<Speler> koperSpelers = koper.getSpelerList();
@@ -606,7 +630,6 @@ public class Controller {
 			koper.setBudget(koper.getBudget() - prijs);
 			eigenaar.setBudget(eigenaar.getBudget() + prijs);
 			
-			
 			eigenaarSpelers.remove(speler);
 			koperSpelers.add(speler);
 			
@@ -617,6 +640,7 @@ public class Controller {
 			teamList.set(koperIndex, koper);
 			Divisie.setTeamList(teamList);
 			
+			System.out.println(Divisie.getTeamList().get(koperIndex));
 			if(userTeam.equals(koper)){
 				User.setTeam(koper);
 			}
@@ -624,6 +648,7 @@ public class Controller {
 				User.setTeam(eigenaar);
 			}
 		}
+		
 	}
 	
 	public void addItemRemover(){
@@ -673,7 +698,7 @@ public class Controller {
     	 }
     }
 	
-	public void teamsToCompRank(){
+	public Object[][] teamsToCompRank(){
 		Divisie.rankTeams();
 		Object[][] data = new Object[ Divisie.getTeamList().size()][2];
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
@@ -688,12 +713,13 @@ public class Controller {
 		}
 		
 		
-		String[] columnNames = {"Ranking", "Uitgebreide ranking met doelpunten saldo etc"};
-		
-		comp.addPane(data, columnNames);
+//		String[] columnNames = {"Ranking", "Uitgebreide ranking met doelpunten saldo etc"};
+//		
+//		comp.addPane(data, columnNames, 0);
+		return data;
 	}
 	
-	public void spelersToCompTransfer(){
+	public Object[][] spelersToCompTransfer(){
 		int aantalSp =0;
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
 			Team t = Divisie.getTeamList().get(i);
@@ -704,7 +730,7 @@ public class Controller {
 		
 		Divisie.rankTeams();
 		Object[][] data = new Object[aantalSp][3];
-		comp.getPane().setKoopButtons(new Object[aantalSp][2]);
+
 		int spIdx = 0;
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
 			Team t = Divisie.getTeamList().get(i);
@@ -719,25 +745,36 @@ public class Controller {
 									"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
 									"\nPrijs: "+s.getPrijs();
 					
-	//				JButton koopButton = new JButton(s.getNaam()+"\nKopen");
-	//				koopButton.addActionListener(new ActionListener() {
-	//				      public void actionPerformed(ActionEvent event) {
-	//				    	  	JOptionPane.showMessageDialog(null, s.getNaam());
-	//					      }
-	//					    });
-					data[spIdx][2] = s.getNaam();//koopButton;
+					final JButton koopButton = new JButton("<html><body>"+s.getNaam());
+					koopButton.addActionListener(new ActionListener() {
+					      public void actionPerformed(ActionEvent event) {
+					    	  	//JOptionPane.showMessageDialog(null, s.getNaam()+" is gekocht");
+
+					    	  	
+					    	  	spelerKopen(s.getNaam(), User.getTeam());
+//					    	  	updateTables();
+					    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
+					    	  	koopButton.setEnabled(false);
+					    	  	koopButton.setText("Verkocht");
+					    	  	tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+						      }
+						    });
+					data[spIdx][2] = koopButton;//s.getNaam();//
 	//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
 	//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
 					spIdx++;
 				}
+				
 			}
+			
 		//	System.out.println("Controller: spelersToCompTransfer: " + t.getNaam());
 		}
 		
 		
-		String[] columnNames = {"Transferlijst","Spelers die te koop zijn:", "Kopen"};
-		
-		comp.addPane(data, columnNames);
+//		String[] columnNames = {"Transferlijst","Spelers die te koop zijn:", "Kopen"};
+		return data;
+//		comp.addPane(data, columnNames, 1);
+//		comp.getPane().get(1).setKoopButtons(new Object[aantalSp][2]);
 	}
 	
 	public void createWedstrijdteam(){

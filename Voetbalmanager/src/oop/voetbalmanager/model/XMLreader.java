@@ -47,6 +47,7 @@ public class XMLreader {
 		//maak divisie
 		 Divisie divisie = new Divisie(divisieNaam, teamList, speeldag, stand);
 		 
+		 
 		 return divisie;
 	}
 	

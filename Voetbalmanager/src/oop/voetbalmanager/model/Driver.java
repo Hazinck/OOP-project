@@ -75,7 +75,37 @@ public class Driver {
 		Divisie.getTeamList().get(1).setWinst(30);
 		Divisie.rankTeams();
 		System.out.println(TXTreader.listFilesForFolder(new File("teams-txt")));
-*/	
+	
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie(path);
+		//Speler s = Divisie.getTeamList().get(0).getSpelerList().get(0);
+		double maxPrijs = 35322;
+		double minPrijs = 473633;
+		double maxDoelPrijs = 0;
+		double minDoelPrijs = 473633;
+		for(Team t: Divisie.getTeamList()){
+			for(Speler s: t.getSpelerList()){
+				if(!s.getType().equals("doelman")){
+					double temp = s.getDefence()*s.getOffense()*s.getUithouding();
+					if(maxPrijs < temp){
+						maxPrijs = temp;
+					}
+					if(minPrijs > temp){
+						minPrijs = temp;
+					}
+					
+				}else{
+					if(maxDoelPrijs < s.getDefence()){
+						maxDoelPrijs = s.getDefence();
+					}
+					if(minDoelPrijs > s.getDefence()){
+						minDoelPrijs = s.getDefence();
+					}
+				}
+			}
+		}
+		System.out.println(minPrijs/10000 +" tot " + maxPrijs/10000+"\ndoelman: "+minDoelPrijs+" tot "+maxDoelPrijs);
+	*/
 	}
 	
 

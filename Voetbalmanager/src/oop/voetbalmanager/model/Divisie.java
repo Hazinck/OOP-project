@@ -20,6 +20,7 @@ public class Divisie {
 		Divisie.teamList = teamList;
 		Divisie.speeldag = speeldag;
 		this.stand =stand;
+		
 	}
 	
 	public String toString(){
@@ -45,7 +46,7 @@ public class Divisie {
 			rekenPunten(t);
 		//	System.out.println(t.getNaam()+": "+t.getScore());
 		}
-		System.out.println("\n=========================");
+		//System.out.println("\n=========================");
 		Collections.sort(teamList, new Comparator<Team>() {
 		    public int compare(Team t1, Team t2) {
 		    	Integer t1score = t1.getScore();
@@ -64,7 +65,7 @@ public class Divisie {
 		int i = 1;
 		for(Team t: teamList){
 			t.setRank(i);
-			System.out.println(t.getNaam()+": "+t.getScore());
+			//System.out.println(t.getNaam()+": "+t.getScore());
 			i++;
 		}
 	}
