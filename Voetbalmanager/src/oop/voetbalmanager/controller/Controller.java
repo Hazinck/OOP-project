@@ -310,7 +310,9 @@ public class Controller {
        skip.addActionListener(new ActionListener() {
     	    public void actionPerformed(ActionEvent e)
     	    {
-    	    	veldPanel.getGr().stop();
+    	    	//veldPanel.getGr().stop();
+    	    	
+    	    	veldPanel.getGr().endspiel();
     	    	
     	    	Dimension newScore = new Dimension(
     	    			(int)veldPanel.getBall().getScore().getWidth() + (int)s.getScore().getWidth(),
@@ -318,6 +320,7 @@ public class Controller {
     	    	System.out.println(newScore.toString());
     	    	
     	    	spelResults(newScore);
+    	    	
     	    	
     	    	Document doc = home.getHm().getGoals().getDocument();
     	    	try {
@@ -328,8 +331,8 @@ public class Controller {
     			}
     	    	
     	    	
-    	    	viewFrame.remove(veldPanel);
-    	    	tabs.showThis(veldPanel);
+//    	    	viewFrame.remove(veldPanel);
+//    	    	tabs.showThis(veldPanel);
     	    }
     	});
 	}
@@ -339,21 +342,34 @@ public class Controller {
        goBack.addActionListener(new ActionListener() {
     	    public void actionPerformed(ActionEvent e)
     	    {
-    	    	veldPanel.getGr().stop();
-    	    	
-    	    	spelResults(veldPanel.getBall().getScore());
-    	    	
-    	    	Document doc = home.getHm().getGoals().getDocument();
-    	    	try {
-    				doc.insertString(doc.getLength(), "\n============================\n" + veldPanel.getVerslagPanel().getVerslag().getText(), null);
-    			} catch (BadLocationException ble) {
-    				// TODO Auto-generated catch block
-    				ble.printStackTrace();
-    			}
-    	    	
-    	    	
-    	    	viewFrame.remove(veldPanel);
-    	    	tabs.showThis(veldPanel);
+    	    	if(Bot.isGameOver()){
+    		  		SaveDialog.gameOverPopup(comp);
+    		  		if(SaveDialog.getGameOverClosed()==JOptionPane.OK_OPTION){
+    		  			quitFunction();
+    		  			if(SaveDialog.getSave() != JOptionPane.YES_OPTION && SaveDialog.getSave() != JOptionPane.NO_OPTION){
+    		  				viewFrame.dispose();
+    		  			}
+    		  		}else{
+    		  			viewFrame.dispose();
+    		  		}
+    		  		Bot.setGameOver(false);
+    		  	}else{
+	    	    	veldPanel.getGr().stop();
+	    	    	
+	    	    	spelResults(veldPanel.getBall().getScore());
+	    	    	
+	    	    	Document doc = home.getHm().getGoals().getDocument();
+	    	    	try {
+	    				doc.insertString(doc.getLength(), "\n============================\n" + veldPanel.getVerslagPanel().getVerslag().getText(), null);
+	    			} catch (BadLocationException ble) {
+	    				// TODO Auto-generated catch block
+	    				ble.printStackTrace();
+	    			}
+	    	    	
+	    	    	
+	    	    	viewFrame.remove(veldPanel);
+	    	    	tabs.showThis(veldPanel);
+    		  	}
     	    }
     	});
 	}
@@ -443,18 +459,18 @@ public class Controller {
 	
 	public void updateStats(){
 		Bot.volgendeTeam();
-		if(Bot.isGameOver()){
-	  		SaveDialog.gameOverPopup(comp);
-	  		if(SaveDialog.getGameOverClosed()==JOptionPane.OK_OPTION){
-	  			quitFunction();
-	  			if(SaveDialog.getSave() != JOptionPane.YES_OPTION && SaveDialog.getSave() != JOptionPane.NO_OPTION){
-	  				viewFrame.dispose();
-	  			}
-	  		}else{
-	  			viewFrame.dispose();
-	  		}
-	  		Bot.setGameOver(false);
-	  	}else{
+//		if(Bot.isGameOver()){
+//	  		SaveDialog.gameOverPopup(comp);
+//	  		if(SaveDialog.getGameOverClosed()==JOptionPane.OK_OPTION){
+//	  			quitFunction();
+//	  			if(SaveDialog.getSave() != JOptionPane.YES_OPTION && SaveDialog.getSave() != JOptionPane.NO_OPTION){
+//	  				viewFrame.dispose();
+//	  			}
+//	  		}else{
+//	  			viewFrame.dispose();
+//	  		}
+//	  		Bot.setGameOver(false);
+//	  	}else{
 			ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
 			int opIdx = RNG.getalTot(opstellingen.size());
 			int tactiek = RNG.getalTot(101);
@@ -471,7 +487,7 @@ public class Controller {
 	   		rankingUpdate();
 	   		updateTable();
 	   	//	teamPanel.get;
-	  	}
+//	  	}
 	}
 	
 	public void updateTable(){
@@ -678,6 +694,7 @@ public class Controller {
 		int koperIndex = teamList.indexOf(koper);
 		Team userTeam = User.getTeam();
 		
+		
 		//voert de aankoop alleen uit als de speler in het aangegeven team zit
 		if (eigenaarSpelers.contains(speler)){
 			koper.setBudget(koper.getBudget() - prijs);
@@ -814,21 +831,38 @@ public class Controller {
 										"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
 										"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
 										"\nPrijs: "+s.getPrijs();
-						
+						final int row = spIdx;
 						final JButton koopButton = new JButton("<html><body>"+s.getNaam());
+						
 						koopButton.addActionListener(new ActionListener() {
 						      public void actionPerformed(ActionEvent event) {
+						    	  int r = row;
 						    	  	//JOptionPane.showMessageDialog(null, s.getNaam()+" is gekocht");
-	
-						    	  	
-						    	  	spelerKopen(s.getNaam(), User.getTeam());
-	//					    	  	updateTables();
-						    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
-						    	  	koopButton.setEnabled(false);
-						    	  	koopButton.setText("Verkocht");
-						    	  	tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
-							      }
-							    });
+						    	  	if(User.getTeam().getBudget()*1000000<s.getPrijs()){
+						    	  		JOptionPane.showMessageDialog(null, "U heeft niet genoeg geld om speler te kopen!","",
+						    	  			    JOptionPane.ERROR_MESSAGE);
+						    	  	}else if(RNG.kans(50)){
+							    	  	spelerKopen(s.getNaam(), User.getTeam());
+		//					    	  	updateTables();
+							    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
+							    	  	koopButton.setEnabled(false);
+							    	  	koopButton.setText("Verkocht");
+							    	  	tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+						    	  	}else{
+						    	  		double oldPrice = s.getPrijs();
+						    	  		s.setPrijs(s.getPrijs() + s.getPrijs()/10);
+						    	  		String aValue = s.getNaam()+"\nType:"+s.getType()+
+												"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
+												"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+												"\nPrijs: "+s.getPrijs();
+						    	  		JOptionPane.showMessageDialog(null, s.getNaam()+" accepteert bod niet\nOude prijs: "+oldPrice+"\nNieuwe prijs: "+s.getPrijs());
+						    	  		comp.getTransferPane().getTable().setValueAt(aValue, r, 1);
+						    	  		comp.getTransferPane().getModel().fireTableCellUpdated(r, 1);
+//						    	  		comp.getTransferPane().revalidate();comp.getTransferPane().repaint();
+//						    	  		System.out.println("contorller: spelersToCompTransfer: "+s.getNaam() + "="+s.getPrijs() +" "+r + " value = "+comp.getTransferPane().getTable().getValueAt(r, 1));
+						    	  	}
+						      }
+						});
 						data[spIdx][2] = koopButton;//s.getNaam();//
 		//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
 		//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
