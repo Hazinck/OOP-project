@@ -67,7 +67,7 @@ public class Bot {
 				break;
 			}
 		}
-		if(botTeam == null || (oldBotTeam != null && oldBotTeam.equals(botTeam))){
+		if(botTeam == null || User.getWteam().getGespeeldMet().contains(botTeam.getNaam()+"2")){//(oldBotTeam != null && oldBotTeam.equals(botTeam))){
 			gameOver = true;
 		}
 	}

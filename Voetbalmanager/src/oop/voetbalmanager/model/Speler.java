@@ -114,4 +114,13 @@ public class Speler {
 		this.prijs = prijs;
 	}
 	
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Speler){
+			Speler that = (Speler)obj;
+			return this.naam.equals(that.naam);
+		} else {
+			return false;
+		}
+	}
 }

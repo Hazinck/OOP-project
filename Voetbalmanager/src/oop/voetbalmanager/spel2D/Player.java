@@ -344,16 +344,11 @@ public class Player {
 //	}
 	
 	public void setGrenzen(int anchorX, int anchorY){
-		this.anchorX = anchorX;
 		this.anchorY = anchorY;
 		
-		boundsAnchor.x =  anchorX - 100;
-		boundsAnchor.width = 300;
-		boundsAnchor.y = anchorY - 400;
-		boundsAnchor.height = 800;
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
-			boundsAnchor.x =  boundsAnchor.x-650;//1126.0  + 700
+			boundsAnchor.x =  anchorX - 700;//boundsAnchor.x-650;//1126.0  + 700
 			boundsAnchor.width = 1000;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
@@ -366,6 +361,13 @@ public class Player {
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
 			this.anchorX = boundsAnchor.getCenterX();
+		}else{
+			this.anchorX = anchorX;
+			boundsAnchor.x =  anchorX - 100;
+			boundsAnchor.width = 300;
+			boundsAnchor.y = anchorY - 400;
+			boundsAnchor.height = 800;
+			
 		}
 		
 		if(boundsAnchor.y + boundsAnchor.height > yMaxGrens){

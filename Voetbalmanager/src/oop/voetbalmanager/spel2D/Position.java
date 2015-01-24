@@ -47,7 +47,7 @@ public class Position {
 
 			playerList.get(i).setGrenzen(p2.getX(), p2.getY());
 			if(playerList.get(i).getSpeler().getType().equals("doelman")){
-				System.out.println("spel2d position:  "+startX+ " team"+team12);
+//				System.out.println("spel2d position:  "+startX+ " team"+team12);
 			}
 		//	System.out.println(p2.getType() + " op: " + p2.getX() + "," + p2.getY());
 		}

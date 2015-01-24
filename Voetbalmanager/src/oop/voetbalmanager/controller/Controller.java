@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -369,6 +371,9 @@ public class Controller {
 	    	    	
 	    	    	viewFrame.remove(veldPanel);
 	    	    	tabs.showThis(veldPanel);
+	    	    	if(RNG.kans(50)){
+	    	    		bodAanUser();
+	    	    	}
     		  	}
     	    }
     	});
@@ -567,15 +572,16 @@ public class Controller {
 	
 	public void vulSpelerlijst(Team team){
 		ArrayList<Speler> spelers = team.getSpelerList();
+		ArrayList<String> keepers = new ArrayList<String>();
+		ArrayList<String> rest = new ArrayList<String>();
 		for (int i = 0; i < spelers.size(); i++){
 			Speler speler = spelers.get(i);
 			if (speler.getType().equals("doelman")){
 				teamPanel.addKeeper(speler.getNaam());
-				teamPanel.getOpst().getPlayersDDList()[0].addItem(speler.getNaam());
+				keepers.add(speler.getNaam());
+				//teamPanel.getOpst().getPlayersDDList()[0].addItem(speler.getNaam());
 			}else {
-				for(int k = 1; k< teamPanel.getOpst().getPlayersDDList().length; k++){
-					teamPanel.getOpst().getPlayersDDList()[k].addItem(speler.getNaam());					
-				}
+				rest.add(speler.getNaam());
 				if (speler.getType().equals("aanvaller")){
 					teamPanel.addAanvaller(speler.getNaam());
 	//				teamPanel.getOpst().getPlayersDDList()[8].addItem(speler.getNaam());
@@ -595,12 +601,18 @@ public class Controller {
 				}
 			}
 		}
+		
+		teamPanel.getOpst().getPlayersDDList()[0].setModel(new DefaultComboBoxModel(keepers.toArray(new String[keepers.size()])));;
+		for(int k = 1; k< teamPanel.getOpst().getPlayersDDList().length; k++){
+			teamPanel.getOpst().getPlayersDDList()[k].setModel(new DefaultComboBoxModel(rest.toArray(new String[rest.size()])));;					
+		}
 		for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
-			//System.out.println("Controller: vulSpelerLijst "+User.getWteam().getWSpelers()[0]);
+//			System.out.println("Controller: vulSpelerLijst "+User.getWteam().getWSpelers()[i].getNaam());
 			teamPanel.getOpst().getPlayersDDList()[i].setSelectedItem(User.getWteam().getWSpelers()[i].getNaam());
     	//	System.out.println(User.getWteam().getWSpelers()[i].getNaam() + " " + teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem());
 		}
 	}
+	
 	
 	public void opstellingOpslaan(){
 		JButton opslaan = teamPanel.getOpslaanButton();
@@ -677,6 +689,47 @@ public class Controller {
 	}
 	
 	
+	public void bodAanUser(){
+		Team koper = null;
+		Speler speler = null;
+		List<Speler> wTeam = Arrays.asList(User.getWteam().getWSpelers());
+		while(true){//for(Team t: Divisie.getTeamList()){
+			koper = Divisie.getTeamList().get(RNG.getalTot(18));
+//			if(koper==null){
+//				koper = t;
+//			}
+//			if(koper.getBudget()<1 && t.getBudget()>1){
+//				koper = t;
+//				break;
+//			}else 
+			if(koper.getBudget()>1 && !koper.equals(User.getTeam())){
+				break;
+				
+			}
+		}
+		while(true){//for(Speler s: User.getTeam().getSpelerList()){
+			Speler s = User.getTeam().getSpelerList().get(RNG.getalTot(User.getTeam().getSpelerList().size()-1));
+			if(koper.getBudget()*1000000>s.getPrijs() && !wTeam.contains(s)){
+				speler = s;
+				break;
+			}
+		}
+		
+		System.out.println("controller: bodAanUser: " + speler.getNaam() + " door " + koper.getNaam());
+		if(koper!=null && speler!=null){
+			int result = JOptionPane.showConfirmDialog(null, koper.getNaam()+" wilt van u "+speler.getNaam()+" kopen voor: "+speler.getPrijs()+"\nAccepteert u het bod?", "Nieuwe opstelling",
+		    		JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
+		    if (result == JOptionPane.YES_OPTION) {
+		    	spelerKopen(speler.getNaam(), koper);
+		    	
+		    } else {
+		    	JOptionPane.showMessageDialog(null,
+		    			    "U heeft het bod afgewezen!");
+		        System.out.println("controller: bodAanUser: bod op "+speler.getNaam()+" is afgewezen");
+		    }
+		}
+	}
+	
 	/**
 	 * voert het kopen van een speler uit
 	 * @param speler	de naam van de speler om te kopen
@@ -710,14 +763,14 @@ public class Controller {
 			teamList.set(koperIndex, koper);
 			Divisie.setTeamList(teamList);
 			
-			System.out.println(Divisie.getTeamList().get(koperIndex));
+			System.out.println("controller: spelerKopen: koper: "+Divisie.getTeamList().get(koperIndex).getNaam());
 			if(userTeam.equals(koper)){
 				User.setTeam(koper);
 			}
 			if(userTeam.equals(eigenaar)){
 				User.setTeam(eigenaar);
 			}
-			System.out.println("controller spelerKopen: "+eigenaar.getNaam());
+			System.out.println("controller spelerKopen: eigenaar: "+eigenaar.getNaam());
 			koopLijst.get(0).add(eigenaar.getNaam());
 			koopLijst.get(1).add(koper.getNaam());
 			koopLijst.get(2).add(speler.getNaam());
@@ -729,6 +782,7 @@ public class Controller {
 		teamPanel.getMiddenvelders().clear();
 		teamPanel.getKeepers().clear();
 		vulSpelerlijst(User.getTeam());
+		tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
 	}
 	
 	public void addItemRemover(){
@@ -802,6 +856,37 @@ public class Controller {
 		return data;
 	}
 	
+	public boolean enoughPlayers(Team t){
+		int keepers = 0;
+		for(Speler s: t.getSpelerList()){
+			if(s.getType().equals("doelman")){
+				keepers+=1;
+			}
+		}
+//		System.out.println("controller: enoughPlayers: "+t.getNaam()+" enough="+(keepers>1 && t.getSpelerList().size()>11));
+		return keepers>1 && t.getSpelerList().size()>11;
+	}
+	
+	public void banTeamToSell(){
+		for(Team t: Divisie.getTeamList()){
+			if(!enoughPlayers(t)){
+				for(int i=0; i<comp.getTransferPane().getTable().getRowCount(); i++){
+					String value = (String)comp.getTransferPane().getTable().getValueAt(i, 1);
+					if(value!=null){
+						String speler = value.split("\n")[0];
+						if(getTeamBySpeler(getSpelerByName(speler)).equals(t)){
+							//comp.getTransferPane().getTable().setValueAt("Niet te koop", i, 2);
+							JButton btn = (JButton) comp.getTransferPane().getTable().getValueAt(i, 2);
+							btn.setText("Niet te koop");
+							btn.setEnabled(false);
+							comp.getTransferPane().getTable().repaint();
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	public Object[][] spelersToCompTransfer(){
 		int aantalSp =0;
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
@@ -820,7 +905,8 @@ public class Controller {
 		int spIdx = 0;
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
 			Team t = Divisie.getTeamList().get(i);
-			if(!t.equals(User.getTeam())){
+			
+			if(!t.equals(User.getTeam()) && enoughPlayers(t)){
 	//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
 	//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
 				for(int k =0; k < t.getSpelerList().size(); k++){
@@ -861,6 +947,7 @@ public class Controller {
 //						    	  		comp.getTransferPane().revalidate();comp.getTransferPane().repaint();
 //						    	  		System.out.println("contorller: spelersToCompTransfer: "+s.getNaam() + "="+s.getPrijs() +" "+r + " value = "+comp.getTransferPane().getTable().getValueAt(r, 1));
 						    	  	}
+							    	  banTeamToSell();
 						      }
 						});
 						data[spIdx][2] = koopButton;//s.getNaam();//
@@ -963,11 +1050,11 @@ public class Controller {
 			writer.updaten("team" , t.getNaam() , "verlies" , t.getVerlies()+"");
 			
 			writer.updaten("team" , t.getNaam() , "score" , t.getScore()+"");
-			
 		//	writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
 		}
 		for(Team t: Divisie.getTeamList()){		
 			writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
+			writer.updaten("team" , t.getNaam() , "budget" , t.getBudget()+"");
 		}
 		if(koopLijst.get(0).size()>0){
 			ElementFilter filterTm=new org.jdom2.filter.ElementFilter("team");

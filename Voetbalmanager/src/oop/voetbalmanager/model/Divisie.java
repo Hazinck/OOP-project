@@ -105,10 +105,10 @@ public class Divisie {
 		//	System.out.println("Divisie: team toDiv old " + t.getNaam() + " " + t.getWinst());
 			if(teamList.get(i).getNaam().equals(team1.getNaam())){
 				teamList.set(i, team1) ;
-				System.out.println("\nDivisie: team toDiv new " + teamList.get(i).getNaam() + " " + teamList.get(i).getWinst());
+//				System.out.println("\nDivisie: team toDiv new " + teamList.get(i).getNaam() + " " + teamList.get(i).getWinst());
 			}else if(teamList.get(i).getNaam().equals(team2.getNaam())){
 				teamList.set(i, team2);
-				System.out.println("\nDivisie: team toDiv new " + teamList.get(i).getNaam() + " " + teamList.get(i).getWinst());
+//				System.out.println("\nDivisie: team toDiv new " + teamList.get(i).getNaam() + " " + teamList.get(i).getWinst());
 			}
 		}
 	}
