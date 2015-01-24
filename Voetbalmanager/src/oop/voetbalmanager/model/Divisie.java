@@ -12,15 +12,16 @@ public class Divisie {
 	private static ArrayList<Team> teamList = new ArrayList<Team>();
 	private static int speeldag;
 	private int stand;
+	private static String avatarPath;
 	private static ArrayList<Team> teamsGespeeld = new ArrayList<Team>();
 	private static String skipVerslag="";
 	
-	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand){
+	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand, String avatarPath){
 		this.naam = naam;
 		Divisie.teamList = teamList;
 		Divisie.speeldag = speeldag;
 		this.stand =stand;
-		
+		this.avatarPath = avatarPath;
 	}
 	
 	public String toString(){
@@ -171,6 +172,20 @@ public class Divisie {
 	 */
 	public static String getSkipVerslag() {
 		return skipVerslag;
+	}
+
+	/**
+	 * @return the avatarPath
+	 */
+	public static String getAvatarPath() {
+		return avatarPath;
+	}
+
+	/**
+	 * @param avatarPath the avatarPath to set
+	 */
+	public static void setAvatarPath(String avatarPath) {
+		Divisie.avatarPath = avatarPath;
 	}
 	
 }

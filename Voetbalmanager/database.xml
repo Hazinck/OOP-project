@@ -3,7 +3,7 @@
   <naam>Eredivisie</naam>
   <speeldag>1</speeldag>
   <stand>0</stand>
-  <team id="01">
+  <avatarPath>images/user_default.png</avatarPath><team id="01">
     <naam>ADO Den Haag</naam>
     <rank>9</rank>
     <winst>12</winst>
@@ -3361,4 +3361,4 @@
       <aanvaller10>208,94</aanvaller10>
     </opstelling_posities>
   </opstellingen>
-</divisie>
+  </divisie>

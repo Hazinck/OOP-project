@@ -26,6 +26,7 @@ public class XMLreader {
 		 String divisieNaam = "";
 		 int speeldag = -1;
 		 int stand = -1;
+		 String avatarPath = "";
 		 try {
 			//open xml
 			Document document = (Document) builder.build(xmlFile);
@@ -39,13 +40,15 @@ public class XMLreader {
 			
 			stand = Integer.parseInt(divisieEl.getChildText("stand"));
 			
+			avatarPath = divisieEl.getChildText("avatarPath");
+			
 		 } catch (IOException io) {
 			 System.out.println(io.getMessage());
 		 } catch (JDOMException jdomex) {
 			 System.out.println(jdomex.getMessage());
 		 }
 		//maak divisie
-		 Divisie divisie = new Divisie(divisieNaam, teamList, speeldag, stand);
+		 Divisie divisie = new Divisie(divisieNaam, teamList, speeldag, stand, avatarPath);
 		 
 		 
 		 return divisie;

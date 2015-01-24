@@ -183,6 +183,9 @@ public class Controller {
 			}
 	        vulSpelerlijst(User.getTeam());
 	      	tabs = new Tabs(viewFrame, home, teamPanel, comp, ps);
+	      	tabs.getTable().getImagePanel().setImageFromPath(Divisie.getAvatarPath());
+			ps.getImgP().setImageFromPath(Divisie.getAvatarPath());
+		  	System.out.println("controller: " + ps.getImgP().getAvatarPath());
 	        tabs.showThis(fromPanel);
 	   //   controlPanel2();
 	        addLogoutListener();
@@ -196,6 +199,8 @@ public class Controller {
 	        wedstrijdteamOpslaan();
 	        opstellingKiezen();
 	        tabs.getTable().getTable().setValueAt(Divisie.getSpeeldag(),1,1);
+
+		  	
 	  	}
 	}
 	
@@ -912,6 +917,7 @@ public class Controller {
 	
 	public void divisieTeamsToXML(){	
 		writer.updaten("divisie" , "Eredivisie", "speeldag", Divisie.getSpeeldag()+"");
+		writer.updaten("divisie" , "Eredivisie", "avatarPath", Divisie.getAvatarPath()+"");
 		//System.out.println("divisie" + "Eredivisie" + "speeldag" + Divisie.getSpeeldag()+"");
 		for(Team t: Divisie.getTeamsGespeeld()){
 			writer.updaten("team" , t.getNaam() , "doelvoor" , t.getDoelvoor()+"");

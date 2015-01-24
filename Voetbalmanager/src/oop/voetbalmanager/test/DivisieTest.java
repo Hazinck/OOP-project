@@ -19,7 +19,7 @@ public class DivisieTest {
 	@Test
 	public void testGetNaam() {
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals("Eredivisie",test.getNaam());
 		assertNotEquals("Champions League",test.getNaam());
 	}
@@ -27,7 +27,7 @@ public class DivisieTest {
 	@Test
 	public void testGetTeamList(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals(testing,Divisie.getTeamList());
 		ArrayList<Team> fout=new ArrayList<Team>();
 		ArrayList<Speler> spelerlist=new ArrayList<Speler>();
@@ -39,7 +39,7 @@ public class DivisieTest {
 	@Test
 	public void testGetSpeeldag(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals(25,Divisie.getSpeeldag());
 		assertNotEquals(10,Divisie.getSpeeldag());
 	}
@@ -47,7 +47,7 @@ public class DivisieTest {
 	@Test
 	public void testGetStand(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals(5,test.getStand());
 		assertNotEquals(10,test.getStand());
 	}
@@ -55,7 +55,7 @@ public class DivisieTest {
 	@Test
 	public void testSetNaam(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		test.setNaam("Champions League");
 		assertEquals("Champions League",test.getNaam());
 		assertNotEquals("Eredivisie",test.getNaam());
@@ -67,7 +67,7 @@ public class DivisieTest {
 		ArrayList<Speler> spelerlist=new ArrayList<Speler>();
 		Team Feyenoord=new Team("Feyenoord", 5, spelerlist, 3, 2, 1, 2, 4, 6, 7, 254563);
 		testing.add(Feyenoord);
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		ArrayList<Team> change=new ArrayList<Team>();
 		
 		Team Ajax=new Team("Ajax",4,spelerlist,5,4,3,5,6,4,6, 564541);
@@ -80,7 +80,7 @@ public class DivisieTest {
 	@Test
 	public void testSetSpeeldag(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		Divisie.setSpeeldag(10);
 		assertEquals(10,Divisie.getSpeeldag());
 		assertNotEquals(25,Divisie.getSpeeldag());
@@ -90,7 +90,7 @@ public class DivisieTest {
 	@Test
 	public void testSetStand(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		test.setStand(20);
 		assertEquals(20,test.getStand());
 		assertNotEquals(5,test.getStand());
@@ -99,21 +99,21 @@ public class DivisieTest {
 	@Test
 	public void testToString(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals("Divisie\nNaam:Eredivisie\nTeams:\n[]\nSpeeldag:25\nStand:5",test.toString());
 	}
 	
 	@Test
 	public void testGetTeamgespeeld(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals("[]",Divisie.getTeamsGespeeld().toString());
 	}
 	
 	@Test
 	public void testGetSkipVerslag(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie test=new Divisie("Eredivisie",testing,25,5);
+		Divisie test=new Divisie("Eredivisie",testing,25,5,"images/user_default.png");
 		assertEquals("Feyenoord heeft gewonnen met: 2-3",Divisie.getSkipVerslag());
 	}
 	

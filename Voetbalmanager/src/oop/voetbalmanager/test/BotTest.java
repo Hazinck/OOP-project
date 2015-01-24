@@ -21,7 +21,7 @@ ArrayList<Opstelling> opstellingen=new ArrayList<Opstelling>();
 	@Test
 	public void testGetDivisie() {
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie eredivisie=new Divisie("Eredivisie",testing,25,5);
+		Divisie eredivisie=new Divisie("Eredivisie",testing,25,5, "images/user_default.png");
 		Bot.setDivisie(eredivisie);
 		assertEquals(eredivisie,Bot.getDivisie());
 	}
@@ -29,7 +29,7 @@ ArrayList<Opstelling> opstellingen=new ArrayList<Opstelling>();
 	@Test
 	public void testSetDivisie(){
 		ArrayList<Team> testing=new ArrayList<Team>();
-		Divisie eredivisie=new Divisie("Champions league",testing,25,5);
+		Divisie eredivisie=new Divisie("Champions league",testing,25,5, "images/user_default.png");
 		Bot.setDivisie(eredivisie);
 		assertEquals(eredivisie,Bot.getDivisie());
 	}

@@ -20,6 +20,7 @@ public class ImagePanel extends JPanel{
 	private BufferedImage image;
 	private JButton logout;
 	private boolean ps = false;
+	private String avatarPath = "images/user_default.png";
 	
 	static JLabel naamLable = new JLabel();
 	private String username;
@@ -30,7 +31,7 @@ public class ImagePanel extends JPanel{
     	setLayout(null);
        try {                
     	   if(imgName == null || imgName.equals("")){
-    		   image = ImageIO.read(new File(vframe.getImgPath() + "user_default.png"));
+    		   image = ImageIO.read(new File(avatarPath));
     	   }
     	   else{
     		   image = ImageIO.read(new File(vframe.getImgPath() + imgName));
@@ -57,6 +58,18 @@ public class ImagePanel extends JPanel{
     
     public void setImage(Image img){
     	image=(BufferedImage) img;
+    	repaint();
+    }
+    
+    public void setImageFromPath(String path){
+    	 try {                
+      	   if(path != null && !path.equals("")){
+      		   image = ImageIO.read(new File(path));
+      		   avatarPath = path;
+      	   }
+         } catch (IOException ex) {
+              // handle exception...
+         }
     	repaint();
     }
     
@@ -108,5 +121,19 @@ public class ImagePanel extends JPanel{
 	 */
 	public void setPs(boolean ps) {
 		this.ps = ps;
+	}
+
+	/**
+	 * @return the avatarPath
+	 */
+	public String getAvatarPath() {
+		return avatarPath;
+	}
+
+	/**
+	 * @param avatarPath the avatarPath to set
+	 */
+	public void setAvatarPath(String avatarPath) {
+		this.avatarPath = avatarPath;
 	}
 }

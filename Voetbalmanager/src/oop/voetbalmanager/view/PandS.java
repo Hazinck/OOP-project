@@ -30,6 +30,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import layout.SpringUtilities;
+import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.User;
 
 import org.apache.commons.io.FileUtils;
@@ -40,6 +41,9 @@ public class PandS extends JPanel{
 	private JTextField userField, passField;
 	private ImagePanel imgP;
 	private LoadGamePanel delete;
+	private Image backgroundImage;
+	private String avatarPath = "";
+	
 	public PandS(ViewFrame vframe){
    //     JLabel text = new JLabel("Profile and settings");
    //     Container panel2 = layoutComponents("Center", Component.CENTER_ALIGNMENT);
@@ -164,15 +168,18 @@ public class PandS extends JPanel{
 		    
 		    up.addActionListener(new ActionListener(){
 		    	public void actionPerformed(ActionEvent e){
-		    		JFileChooser upload=new JFileChooser();
+		    		JFileChooser upload=new JFileChooser("images");
 		    		FileNameExtensionFilter filter = new FileNameExtensionFilter(
-		    		        "JPG Images", "jpg");
+		    		        "PNG Images", "png");
 		    		upload.setFileFilter(filter);
 		    		int returnVal = upload.showOpenDialog(getParent());
 		    	    if(returnVal == JFileChooser.APPROVE_OPTION) {
-		    	       Image backgroundImage=null;
+		    	       backgroundImage=null;
 		    	       try{
-		    	       	backgroundImage = ImageIO.read(new File(upload.getSelectedFile().getAbsolutePath()));
+		    	    	   avatarPath = upload.getSelectedFile().getAbsolutePath();
+		    	    	   Divisie.setAvatarPath(avatarPath);
+		    	    	   backgroundImage = ImageIO.read(new File(avatarPath));
+		    	       	
 		    	       }catch(IOException io){
 		    	       	System.out.println("Failed loading image");
 		    	       }
@@ -185,9 +192,11 @@ public class PandS extends JPanel{
 		    
 		    del.addActionListener(new ActionListener(){
 		    	public void actionPerformed(ActionEvent e){
-		    		Image backgroundImage=null;
+		    		backgroundImage=null;
 		    	       try{
-		    	       	backgroundImage = ImageIO.read(new File("images/user_default.png"));
+		    	    	   avatarPath = "images/user_default.png";
+		    	    	   Divisie.setAvatarPath(avatarPath);
+		    	    	   backgroundImage = ImageIO.read(new File(avatarPath));
 		    	       }catch(IOException io){
 		    	       	System.out.println("Failed loading image");
 		    	       }
@@ -315,4 +324,32 @@ public class PandS extends JPanel{
 		    
 		    return save;
 	 }
+
+	/**
+	 * @return the backgroundImage
+	 */
+	public Image getBackgroundImage() {
+		return backgroundImage;
+	}
+
+	/**
+	 * @return the avatarPath
+	 */
+	public String getAvatarPath() {
+		return avatarPath;
+	}
+
+	/**
+	 * @param avatarPath the avatarPath to set
+	 */
+	public void setAvatarPath(String avatarPath) {
+		this.avatarPath = avatarPath;
+	}
+
+	/**
+	 * @return the imgP
+	 */
+	public ImagePanel getImgP() {
+		return imgP;
+	}
 }
