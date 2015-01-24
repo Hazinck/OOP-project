@@ -13,7 +13,7 @@ public class Wedstrijdteam extends Team{
 	private int tactiek = 0;//tactiek
 	private Speler[] wSpelers = new Speler[11];
 	private ArrayList<Opstelling> opstellingen;
-	
+	private String gespeeldMet = "";
 	/**
 	 * @param team
 	 */
@@ -152,6 +152,20 @@ public class Wedstrijdteam extends Team{
 	 */
 	public void setWSpelers(Speler[] wSpelers) {
 		this.wSpelers = wSpelers;
+	}
+
+	/**
+	 * @return the gespeeldMet
+	 */
+	public String getGespeeldMet() {
+		return gespeeldMet;
+	}
+
+	/**
+	 * @param gespeeldMet the gespeeldMet to set
+	 */
+	public void setGespeeldMet(String gespeeldMet) {
+		this.gespeeldMet = gespeeldMet;
 	}
 
 //	/**

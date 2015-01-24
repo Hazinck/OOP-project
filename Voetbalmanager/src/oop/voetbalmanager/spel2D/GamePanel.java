@@ -127,6 +127,7 @@ public class GamePanel extends JPanel{
 //			if(p.getSpeler().getType().equals("doelman"))
 //			if(p.getSpeler().getType().equals("doelman")){
 //				g.drawRect((int)p.getBoundsAnchor().x + viewX, (int)p.getBoundsAnchor().y + viewY, (int)p.getBoundsAnchor().width, (int)p.getBoundsAnchor().height);
+//				g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 //			}
 //			g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
 //			g.setColor(Color.black);

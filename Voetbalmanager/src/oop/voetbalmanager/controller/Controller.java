@@ -255,23 +255,30 @@ public class Controller {
 		JButton playButton = home.getHm().getPlayButton();
 		playButton.addActionListener(new ActionListener() {
 	           public void actionPerformed(ActionEvent actionEvent) { 
-	        	int geluksfactor = RNG.getalTot(600);
-	       		s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
-	       		int score1 = RNG.getalTot(4);
-	    		int score2 = RNG.getalTot(4);
-	       		s.winner(score1, score2);
-	       		Dimension score = s.getScore();
-	       		System.out.println(User.getWteam().getNaam() + ": " + score.width + " " +
-	       				Bot.getWteam().getNaam() + ": " + score.height + " - geluksfactor: "+geluksfactor);
-	       		veldPanel = new VeldPanel(viewFrame);
-	       		veldPanel.getBall().setFinalResult(score);
-	       		veldPanel.showThis(tabs);
-	       		spel(s);
-	       		addPauseListener();
-	       		addGoBackListener();
-	       		addSkipListener();
-	       		addSpeelZelfListener();
-	       		updateStats();
+	        	   if(!User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam())){
+	        		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"1");
+	        	   }else if(User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam()+"1")){
+	        		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"2");
+	        	   }
+		       		System.out.println(User.getWteam().getGespeeldMet());
+		       		
+		        	int geluksfactor = RNG.getalTot(600);
+		       		s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
+		       		int score1 = RNG.getalTot(4);
+		    		int score2 = RNG.getalTot(4);
+		       		s.winner(score1, score2);
+		       		Dimension score = s.getScore();
+		       		System.out.println(User.getWteam().getNaam() + ": " + score.width + " " +
+		       				Bot.getWteam().getNaam() + ": " + score.height + " - geluksfactor: "+geluksfactor);
+		       		veldPanel = new VeldPanel(viewFrame);
+		       		veldPanel.getBall().setFinalResult(score);
+		       		veldPanel.showThis(tabs);
+		       		spel(s);
+		       		addPauseListener();
+		       		addGoBackListener();
+		       		addSkipListener();
+		       		addSpeelZelfListener();
+	       		//updateStats();
 	       		}
 		});
 		                
@@ -421,7 +428,7 @@ public class Controller {
 		int opIdx = RNG.getalTot(opstellingen.size());
 		int tactiek = RNG.getalTot(101);
 		Bot.teamToWTeam(opstellingen, opIdx, tactiek);
-		int speeldag = tabs.getTable().getSpeeldag() + 1;
+		int speeldag = Divisie.getSpeeldag() + 1;//tabs.getTable().getSpeeldag() + 1;
 		Divisie.setSpeeldag(speeldag);
 		tabs.getTable().setSpeeldag(speeldag);
    		home.getHm().getScores().setText(User.getTeam().getNaam() + " VS " + Bot.getBotTeam().getNaam());
@@ -602,7 +609,7 @@ public class Controller {
 		return speler;
 	}
 	
-	public static Team getTeamBySpeler(Speler speler){
+	public Team getTeamBySpeler(Speler speler){
 		Team team = null;
 		for(Team t: Divisie.getTeamList()){
 			if(t.getSpelerList().contains(speler)){
@@ -815,7 +822,7 @@ public class Controller {
 			if(op.getNaam().equals(selectedOpst)){
 				opstelling = op;
 			}
-		}
+		} 
 		for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
     		String naam = (String)teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem();
     		
@@ -848,6 +855,7 @@ public class Controller {
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "tactiek", Integer.toString(wteam.getTactiek()));
 		//TeamNaam
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "TeamNaam", wteam.getNaam());
+		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "gespeeldMet", wteam.getGespeeldMet());
 		String spelers = "";
 		for(int i = 0; i< wteam.getWSpelers().length; i++){
 			if(i == wteam.getWSpelers().length - 1){

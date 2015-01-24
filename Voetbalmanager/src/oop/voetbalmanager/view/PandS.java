@@ -39,6 +39,7 @@ public class PandS extends JPanel{
 	
 	private JTextField userField, passField;
 	private ImagePanel imgP;
+	private LoadGamePanel delete;
 	public PandS(ViewFrame vframe){
    //     JLabel text = new JLabel("Profile and settings");
    //     Container panel2 = layoutComponents("Center", Component.CENTER_ALIGNMENT);
@@ -229,7 +230,7 @@ public class PandS extends JPanel{
 		   
 		    JButton imp = new JButton("Import");
 		    JButton exp = new JButton("Export");
-		    JButton del = new JButton("Delete");
+		    final JButton del = new JButton("Delete");
 		    
 		    imp.addActionListener(new ActionListener(){
 		    	public void actionPerformed(ActionEvent e){
@@ -279,7 +280,7 @@ public class PandS extends JPanel{
 		    
 		    del.addActionListener(new ActionListener(){
 		    	public void actionPerformed(ActionEvent e){
-		    		final LoadGamePanel delete=new LoadGamePanel();
+		    		delete=new LoadGamePanel();
 		    		for(int i = 0; i < delete.getLoadButtons().size(); i++){
 		    			final int idx = i;
 		    			final Path save= Paths.get(System.getProperty("user.dir") + "/saved/"+delete.getSaveFiles().get(idx)+".xml");
@@ -287,10 +288,12 @@ public class PandS extends JPanel{
 		    				public void actionPerformed(ActionEvent e){
 		    					try{
 		    						Files.delete(save);
-		    						}catch(Exception d){
-		    							System.out.println("Failed deleting save file");
-		    						}
+		    						delete.getLoadButtons().get(idx).setEnabled(false);
+		    						delete.getLoadButtons().get(idx).setText(delete.getLoadButtons().get(idx).getText() + " is deleted!");
+		    					}catch(Exception d){
+		    						System.out.println("Failed deleting save file");
 		    					}
+		    				}
 		    			};
 		    			delete.getLoadButtons().get(idx).addActionListener(actionListener);
 		    		}

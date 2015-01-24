@@ -18,7 +18,7 @@ public class Player {
 	double  x , y, speedX, speedY, oldX, oldY, targetX, targetY, anchorX, anchorY;
 	int spriteHalfWidth = 15;
 	int spriteHalfHeight = 15;
-	int count;
+	int count; 
 	int pointIdx = -1;
 	private Double[] xA = new Double[4];
 	private Double[] yA = new Double[4];
@@ -353,7 +353,7 @@ public class Player {
 		boundsAnchor.height = 800;
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
-			boundsAnchor.x =  anchorX-300;//1126.0  + 700
+			boundsAnchor.x =  boundsAnchor.x-650;//1126.0  + 700
 			boundsAnchor.width = 1000;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;

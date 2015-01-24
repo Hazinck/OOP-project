@@ -3322,7 +3322,7 @@
     <tactiek>100</tactiek>
     <spelers>Erik Cummins,Teije ten Den,Lesly de Sa,Lars Lambooij,Jules Reimerink,Jop van der Linden,Jeffrey Rijsdijk,Giliano Wijnaldum,Fernando Lewis,Deniz Türüç,Bart Vriends</spelers>
     <TeamNaam>Go Ahead Eagles</TeamNaam>
-  </Wedstrijdteam>
+    <gespeeldMet></gespeeldMet></Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
     <opstelling_posities id="1">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <divisie id="0">
   <naam>Eredivisie</naam>
-  <speeldag>0</speeldag>
+  <speeldag>1</speeldag>
   <stand>0</stand>
   <team id="01">
     <naam>ADO Den Haag</naam>
@@ -3329,7 +3329,7 @@
     <tactiek>81</tactiek>
     <spelers />
     <TeamNaam />
-  </Wedstrijdteam>
+    <gespeeldMet></gespeeldMet></Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
     <opstelling_posities id="1">

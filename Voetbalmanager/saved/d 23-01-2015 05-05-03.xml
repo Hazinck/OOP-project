@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <divisie id="0">
   <naam>Eredivisie</naam>
-  <speeldag>0</speeldag>
+  <speeldag>33</speeldag>
   <stand>0</stand>
   <team id="01">
     <naam>ADO Den Haag</naam>
     <rank>9</rank>
-    <winst>12</winst>
-    <gelijkspel>7</gelijkspel>
+    <winst>13</winst>
+    <gelijkspel>11</gelijkspel>
     <verlies>15</verlies>
-    <doelvoor>45</doelvoor>
-    <doeltegen>64</doeltegen>
-    <doelsaldo>-19</doelsaldo>
-    <score>43</score>
+    <doelvoor>48</doelvoor>
+    <doeltegen>66</doeltegen>
+    <doelsaldo>-18</doelsaldo>
+    <score>50</score>
     <budget>13.6</budget>
     <speler id="011">
       <naam>﻿Aaron Meijers</naam>
@@ -172,13 +172,13 @@
   <team id="02">
     <naam>Ajax</naam>
     <rank>1</rank>
-    <winst>20</winst>
-    <gelijkspel>11</gelijkspel>
-    <verlies>3</verlies>
-    <doelvoor>69</doelvoor>
-    <doeltegen>28</doeltegen>
-    <doelsaldo>41</doelsaldo>
-    <score>71</score>
+    <winst>21</winst>
+    <gelijkspel>37</gelijkspel>
+    <verlies>20</verlies>
+    <doelvoor>98</doelvoor>
+    <doeltegen>83</doeltegen>
+    <doelsaldo>15</doelsaldo>
+    <score>100</score>
     <budget>65.0</budget>
     <speler id="021">
       <naam>﻿Anwar El Ghazi</naam>
@@ -379,14 +379,14 @@
   </team>
   <team id="03">
     <naam>AZ</naam>
-    <rank>8</rank>
-    <winst>13</winst>
+    <rank>7</rank>
+    <winst>15</winst>
     <gelijkspel>8</gelijkspel>
     <verlies>13</verlies>
-    <doelvoor>54</doelvoor>
-    <doeltegen>50</doeltegen>
-    <doelsaldo>4</doelsaldo>
-    <score>47</score>
+    <doelvoor>58</doelvoor>
+    <doeltegen>52</doeltegen>
+    <doelsaldo>6</doelsaldo>
+    <score>53</score>
     <budget>28</budget>
     <speler id="031">
       <naam>﻿Aron Jóhannsson</naam>
@@ -553,13 +553,13 @@
   <team id="04">
     <naam>Excelsior</naam>
     <rank>17</rank>
-    <winst>5</winst>
-    <gelijkspel>15</gelijkspel>
+    <winst>7</winst>
+    <gelijkspel>17</gelijkspel>
     <verlies>14</verlies>
-    <doelvoor>54</doelvoor>
-    <doeltegen>82</doeltegen>
-    <doelsaldo>-28</doelsaldo>
-    <score>30</score>
+    <doelvoor>60</doelvoor>
+    <doeltegen>84</doeltegen>
+    <doelsaldo>-24</doelsaldo>
+    <score>38</score>
     <budget>2.7</budget>
     <speler id="041">
       <naam>Adil Auassar</naam>
@@ -726,13 +726,13 @@
   <team id="05">
     <naam>FC Dordrecht</naam>
     <rank>18</rank>
-    <winst>7</winst>
-    <gelijkspel>8</gelijkspel>
+    <winst>9</winst>
+    <gelijkspel>9</gelijkspel>
     <verlies>19</verlies>
-    <doelvoor>44</doelvoor>
-    <doeltegen>69</doeltegen>
-    <doelsaldo>-25</doelsaldo>
-    <score>29</score>
+    <doelvoor>49</doelvoor>
+    <doeltegen>70</doeltegen>
+    <doelsaldo>-21</doelsaldo>
+    <score>36</score>
     <budget>2.1</budget>
     <speler id="051">
       <naam>Adnan Alisic</naam>
@@ -898,14 +898,14 @@
   </team>
   <team id="06">
     <naam>FC Groningen</naam>
-    <rank>7</rank>
+    <rank>8</rank>
     <winst>14</winst>
-    <gelijkspel>9</gelijkspel>
+    <gelijkspel>11</gelijkspel>
     <verlies>11</verlies>
-    <doelvoor>57</doelvoor>
-    <doeltegen>53</doeltegen>
+    <doelvoor>60</doelvoor>
+    <doeltegen>56</doeltegen>
     <doelsaldo>4</doelsaldo>
-    <score>51</score>
+    <score>53</score>
     <budget>18</budget>
     <speler id="061">
       <naam>﻿Burak Saban</naam>
@@ -1058,13 +1058,13 @@
   <team id="07">
     <naam>FC Twente</naam>
     <rank>3</rank>
-    <winst>17</winst>
-    <gelijkspel>12</gelijkspel>
+    <winst>18</winst>
+    <gelijkspel>13</gelijkspel>
     <verlies>5</verlies>
-    <doelvoor>72</doelvoor>
-    <doeltegen>37</doeltegen>
-    <doelsaldo>35</doelsaldo>
-    <score>63</score>
+    <doelvoor>75</doelvoor>
+    <doeltegen>38</doeltegen>
+    <doelsaldo>37</doelsaldo>
+    <score>67</score>
     <budget>46</budget>
     <speler id="071">
       <naam>﻿Andreas Bjelland</naam>
@@ -1244,14 +1244,14 @@
   </team>
   <team id="08">
     <naam>FC Utrecht</naam>
-    <rank>10</rank>
+    <rank>12</rank>
     <winst>11</winst>
-    <gelijkspel>8</gelijkspel>
+    <gelijkspel>9</gelijkspel>
     <verlies>15</verlies>
     <doelvoor>46</doelvoor>
     <doeltegen>65</doeltegen>
     <doelsaldo>-19</doelsaldo>
-    <score>41</score>
+    <score>42</score>
     <budget>17</budget>
     <speler id="081">
       <naam>﻿Adam Sarota</naam>
@@ -1446,13 +1446,13 @@
   <team id="09">
     <naam>Feyenoord</naam>
     <rank>2</rank>
-    <winst>20</winst>
-    <gelijkspel>7</gelijkspel>
-    <verlies>7</verlies>
-    <doelvoor>76</doelvoor>
-    <doeltegen>40</doeltegen>
-    <doelsaldo>36</doelsaldo>
-    <score>67</score>
+    <winst>22</winst>
+    <gelijkspel>11</gelijkspel>
+    <verlies>8</verlies>
+    <doelvoor>89</doelvoor>
+    <doeltegen>51</doeltegen>
+    <doelsaldo>38</doelsaldo>
+    <score>77</score>
     <budget>35</budget>
     <speler id="091">
       <naam>﻿Anass Achahbar</naam>
@@ -1490,7 +1490,7 @@
       <defence>26</defence>
     </speler>
     <speler id="096">
-      <naam>Jens ToornAra</naam>
+      <naam>Jens Toornstra</naam>
       <type>middenvelder</type>
       <uithouding>71</uithouding>
       <offense>72</offense>
@@ -1650,17 +1650,24 @@
       <offense>0</offense>
       <defence>62</defence>
     </speler>
+    <speler id="0929">
+      <naam>Jens ToornAra</naam>
+      <type>middenvelder</type>
+      <uithouding>71</uithouding>
+      <offense>72</offense>
+      <defence>54</defence>
+    </speler>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
-    <rank>13</rank>
+    <rank>14</rank>
     <winst>10</winst>
-    <gelijkspel>8</gelijkspel>
+    <gelijkspel>9</gelijkspel>
     <verlies>16</verlies>
     <doelvoor>45</doelvoor>
     <doeltegen>69</doeltegen>
     <doelsaldo>-24</doelsaldo>
-    <score>38</score>
+    <score>39</score>
     <budget>5.2</budget>
     <speler id="0101">
       <naam>﻿Alex Schalk</naam>
@@ -1833,14 +1840,14 @@
   </team>
   <team id="011">
     <naam>Heracles Almelo</naam>
-    <rank>14</rank>
+    <rank>16</rank>
     <winst>10</winst>
-    <gelijkspel>7</gelijkspel>
+    <gelijkspel>8</gelijkspel>
     <verlies>17</verlies>
     <doelvoor>45</doelvoor>
     <doeltegen>59</doeltegen>
     <doelsaldo>-14</doelsaldo>
-    <score>37</score>
+    <score>38</score>
     <budget>9</budget>
     <speler id="0111">
       <naam>Aleksei Kangaskolkka</naam>
@@ -2056,13 +2063,13 @@
   <team id="012">
     <naam>NAC Breda</naam>
     <rank>15</rank>
-    <winst>8</winst>
+    <winst>9</winst>
     <gelijkspel>11</gelijkspel>
     <verlies>15</verlies>
-    <doelvoor>43</doelvoor>
-    <doeltegen>54</doeltegen>
-    <doelsaldo>-11</doelsaldo>
-    <score>35</score>
+    <doelvoor>46</doelvoor>
+    <doeltegen>56</doeltegen>
+    <doelsaldo>-10</doelsaldo>
+    <score>38</score>
     <budget>14</budget>
     <speler id="0121">
       <naam>﻿Adnane Tighadouini</naam>
@@ -2214,14 +2221,14 @@
   </team>
   <team id="013">
     <naam>PEC Zwolle</naam>
-    <rank>11</rank>
+    <rank>13</rank>
     <winst>9</winst>
-    <gelijkspel>13</gelijkspel>
+    <gelijkspel>14</gelijkspel>
     <verlies>12</verlies>
     <doelvoor>47</doelvoor>
     <doeltegen>49</doeltegen>
     <doelsaldo>-2</doelsaldo>
-    <score>40</score>
+    <score>41</score>
     <budget>10.9</budget>
     <speler id="0131">
       <naam>﻿Tomáš Necid</naam>
@@ -2387,14 +2394,14 @@
   </team>
   <team id="014">
     <naam>PSV</naam>
-    <rank>4</rank>
+    <rank>5</rank>
     <winst>18</winst>
-    <gelijkspel>5</gelijkspel>
+    <gelijkspel>7</gelijkspel>
     <verlies>11</verlies>
-    <doelvoor>60</doelvoor>
-    <doeltegen>45</doeltegen>
+    <doelvoor>61</doelvoor>
+    <doeltegen>46</doeltegen>
     <doelsaldo>15</doelsaldo>
-    <score>59</score>
+    <score>61</score>
     <budget>62</budget>
     <speler id="0141">
       <naam>﻿Abel Tamata</naam>
@@ -2588,14 +2595,14 @@
   </team>
   <team id="015">
     <naam>SC Cambuur</naam>
-    <rank>12</rank>
-    <winst>10</winst>
+    <rank>11</rank>
+    <winst>11</winst>
     <gelijkspel>9</gelijkspel>
     <verlies>15</verlies>
-    <doelvoor>40</doelvoor>
+    <doelvoor>42</doelvoor>
     <doeltegen>50</doeltegen>
-    <doelsaldo>-10</doelsaldo>
-    <score>39</score>
+    <doelsaldo>-8</doelsaldo>
+    <score>42</score>
     <budget>6.5</budget>
     <speler id="0151">
       <naam>﻿Albert Rusnák</naam>
@@ -2775,14 +2782,14 @@
   </team>
   <team id="016">
     <naam>SC Heerenveen</naam>
-    <rank>5</rank>
-    <winst>16</winst>
+    <rank>4</rank>
+    <winst>18</winst>
     <gelijkspel>9</gelijkspel>
     <verlies>9</verlies>
-    <doelvoor>72</doelvoor>
+    <doelvoor>76</doelvoor>
     <doeltegen>51</doeltegen>
-    <doelsaldo>21</doelsaldo>
-    <score>57</score>
+    <doelsaldo>25</doelsaldo>
+    <score>63</score>
     <budget>22</budget>
     <speler id="0161">
       <naam>﻿Daley Sinkgraven</naam>
@@ -2978,12 +2985,12 @@
     <naam>Vitesse</naam>
     <rank>6</rank>
     <winst>15</winst>
-    <gelijkspel>10</gelijkspel>
+    <gelijkspel>11</gelijkspel>
     <verlies>9</verlies>
     <doelvoor>65</doelvoor>
     <doeltegen>49</doeltegen>
     <doelsaldo>16</doelsaldo>
-    <score>55</score>
+    <score>56</score>
     <budget>30</budget>
     <speler id="0171">
       <naam>﻿Arnold Kruiswijk</naam>
@@ -3135,14 +3142,14 @@
   </team>
   <team id="018">
     <naam>Willem II</naam>
-    <rank>16</rank>
-    <winst>7</winst>
-    <gelijkspel>11</gelijkspel>
+    <rank>10</rank>
+    <winst>10</winst>
+    <gelijkspel>15</gelijkspel>
     <verlies>16</verlies>
-    <doelvoor>44</doelvoor>
-    <doeltegen>64</doeltegen>
-    <doelsaldo>-20</doelsaldo>
-    <score>32</score>
+    <doelvoor>51</doelvoor>
+    <doeltegen>67</doeltegen>
+    <doelsaldo>-16</doelsaldo>
+    <score>45</score>
     <budget>5.6</budget>
     <speler id="0181">
       <naam>Ali Messaoud</naam>
@@ -3322,6 +3329,7 @@
     <tactiek>81</tactiek>
     <spelers>Jasper Cillessen,Lucas Andersen,Lerin Duarte,Lasse Schøne,Kolbeinn Sigþórsson,Kenny Tete,Joël Veltman,Jaïro Riedewald,Davy Klaassen,Arkadiusz Milik,﻿Anwar El Ghazi</spelers>
     <TeamNaam>Ajax</TeamNaam>
+    <gespeeldMet>,ADO Den Haag1,Feyenoord1,FC Twente1,SC Heerenveen1,PSV1,Vitesse1,FC Groningen1,AZ1,Willem II1,FC Utrecht1,PEC Zwolle1,SC Cambuur1,Go Ahead Eagles1,Heracles Almelo1,NAC Breda1,Excelsior1,FC Dordrecht1,FC Dordrecht2,ADO Den Haag2,Feyenoord2</gespeeldMet>
   </Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>

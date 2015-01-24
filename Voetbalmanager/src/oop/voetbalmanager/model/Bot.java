@@ -38,25 +38,35 @@ public class Bot {
 	/**
 	 * Geeft een willekeurige tegenstander
 	 */
-	public static void volgendeTeam() {//Team 
-		int aantalTeams = 18;
-		Team tegenstander = userTeam;
-		boolean gevonden = false;
-		
-		//zolang een tegenstander niet is gevonden, zoek voor een tegenstander
-		while (!gevonden) {
-			//neem een willekeurig team
-			int i = RNG.getalTot(aantalTeams);// + 1;
-			tegenstander = divisie.getTeamList().get(i);
-			
-			//als dit niet het team van de user is, hebben we een tegenstander gevonden
-			gevonden = !(tegenstander.equals(userTeam));
+//	public static void volgendeTeam() {//Team 
+//		int aantalTeams = 18;
+//		Team tegenstander = userTeam;
+//		boolean gevonden = false;
+//		
+//		//zolang een tegenstander niet is gevonden, zoek voor een tegenstander
+//		while (!gevonden) {
+//			//neem een willekeurig team
+//			int i = RNG.getalTot(aantalTeams);// + 1; 
+//			tegenstander = divisie.getTeamList().get(i);
+//			
+//			//als dit niet het team van de user is, hebben we een tegenstander gevonden
+//			gevonden = !(tegenstander.equals(userTeam));
+//		}
+//		
+//		botTeam = tegenstander;
+//		//return tegenstander;
+//	}
+	public static void volgendeTeam() {
+		int speeldag = Divisie.getSpeeldag();
+		for(Team t: Divisie.getTeamList()){
+//			Team temp = Divisie.getTeamList().get(speeldag);
+			if(!User.getWteam().getGespeeldMet().contains(t.getNaam()+"2") && !t.equals(User.getTeam())){//speeldag<Divisie.getTeamList().size()
+				botTeam = t;
+				System.out.println("bot: " + t.getNaam());
+				break;
+			}
 		}
-		
-		botTeam = tegenstander;
-		//return tegenstander;
 	}
-
 
 	/**
 	 * @return the divisie

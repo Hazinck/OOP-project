@@ -24,13 +24,13 @@ public class ViewFrame extends JFrame{
 	 
 	//neem scherm breedte en hoogte
 	private static int frameWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();//1000;//
-	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-50;//600;//
+	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-30;//600;//
 	
 	public ViewFrame(){
 		setUndecorated(true);
 	    setSize(frameWidth,frameHeight);    
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2-20);
+		this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2-15);
 	    setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

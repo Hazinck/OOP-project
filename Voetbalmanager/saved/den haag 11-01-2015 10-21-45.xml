@@ -3322,7 +3322,7 @@
     <tactiek>81</tactiek>
     <spelers>Robert Zwinkels,Mitchell Schet,Mitchell de Vlugt,Mike van Duinen,Michiel Kramer,Mathias Gehrt,Kevin Jansen,Gianni Zuiverloon,Dion Malone,Danny Bakker,﻿Aaron Meijers</spelers>
     <TeamNaam>ADO Den Haag</TeamNaam>
-  </Wedstrijdteam>
+    <gespeeldMet></gespeeldMet></Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
     <opstelling_posities id="1">

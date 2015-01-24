@@ -3510,6 +3510,9 @@
     <opstelling_posities id="52">
       <naam>322</naam>
     </opstelling_posities>
+    <opstelling_posities id="53">
+      <naam>322</naam>
+    </opstelling_posities>
   </opstellingen>
   <populariteit id="01">
     <naam>5</naam>
@@ -3635,6 +3638,9 @@
     <naam>5</naam>
   </populariteit>
   <populariteit id="042">
+    <naam>5</naam>
+  </populariteit>
+  <populariteit id="043">
     <naam>5</naam>
   </populariteit>
 </divisie>

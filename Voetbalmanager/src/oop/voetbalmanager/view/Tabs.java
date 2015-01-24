@@ -2,9 +2,12 @@ package oop.voetbalmanager.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,10 +16,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import oop.voetbalmanager.model.User;
+
 //tweede panel waar alle andere panels(tabs) in zitten
 public class Tabs extends JPanel{
 		private JButton button = new JButton("Terug");;
 		private Table table;
+		private ArrayList<JCheckBox> sponsors = new ArrayList<JCheckBox>();
+		private ArrayList<String> sponsorsChecked = new ArrayList<String>();
 		
 		private ViewFrame viewFrame;
 		
@@ -43,8 +50,8 @@ public class Tabs extends JPanel{
 		    tabbedPane.add("Home",home);
 		    tabbedPane.add("Team",teamPanel);
 		    tabbedPane.add("Competition",comp);
-		    tabbedPane.add("Profile and settings",ps);
 		    tabbedPane.add("Sponsors", sponsors());
+		    tabbedPane.add("Profile and settings",ps);
 		  //jtabbedpane toevoegen aan deze panel(Tabs)
 		    add(tabbedPane,BorderLayout.CENTER);
 
@@ -65,31 +72,69 @@ public class Tabs extends JPanel{
 		}
 	
 		
-		public JPanel sponsors(){
+		public JPanel sponsors(){			
 			JPanel sponsorPane = new JPanel();
-			sponsorPane.setLayout(new GridLayout(3, 2, 20, 20));
+			sponsorPane.setLayout(new GridLayout(7, 2, 20, 20));
+			sponsorPane.setOpaque(false);
 			
-			JCheckBox tuDelft = new JCheckBox("Sponsor1");
-			tuDelft.addItemListener(new CheckBoxListener(tuDelft)); 
+			File folder = new File( System.getProperty("user.dir") +"/images/sponsors");
+		    for (final File fileEntry : folder.listFiles()) {
+		        if (fileEntry.isDirectory()) {
+		        	sponsors();
+		        } else{
+		            String sponsorImgFile = fileEntry.getName();
+		            String sponsorNaam = sponsorImgFile.replaceAll(".jpg", "");
+		            
+		            if(!sponsorNaam.equals("eredivisie")){
+			            JCheckBox spCB = new JCheckBox(sponsorNaam){
+							@Override
+						    protected void paintComponent(Graphics g) {
+								g.setColor( new Color(0, 0, 0, 150) );
+						        g.fillRect(0, 0, getWidth(), getHeight());
+						    	super.paintComponent(g);
+						         
+							}};
+			            spCB.addItemListener(new CheckBoxListener(spCB)); 
+						spCB.setOpaque(false);
+			            spCB.setForeground(Color.WHITE);
+						
+						JLabel iconSponsor =  new JLabel();
+						iconSponsor.setIcon(new ImageIcon("images/sponsors/"+sponsorImgFile));
+						sponsorPane.add(spCB);
+						sponsorPane.add(iconSponsor);
+			            
+			            sponsors.add(spCB);
+		            }
+		        }
+		    }
 			
-			JLabel iconDelft =  new JLabel();
-			iconDelft.setIcon(new ImageIcon("images/sponsors/TUDelft.jpg"));
-			sponsorPane.add(tuDelft);
-			sponsorPane.add(iconDelft);
-			
-			JCheckBox mac = new JCheckBox("Sponsor2");
-			mac.addItemListener(new CheckBoxListener(mac)); 
-			JLabel iconMac =  new JLabel();
-			iconMac.setIcon(new ImageIcon("images/sponsors/McDonald's.jpg"));
-			sponsorPane.add(mac);
-			sponsorPane.add(iconMac);
-			
-			JCheckBox ing = new JCheckBox("Sponsor3");
-			ing.addItemListener(new CheckBoxListener(ing)); 
-			JLabel iconIng =  new JLabel();
-			iconIng.setIcon(new ImageIcon("images/sponsors/ING.jpg"));
-			sponsorPane.add(ing);
-			sponsorPane.add(iconIng);
+		    for(int i =0; i<sponsors.size(); i++){
+		    	 if(User.getTeam().getScore()<(i+1)*10){
+		    		 sponsors.get(i).setEnabled(false);
+		    		 sponsors.get(i).setText("<html><body>"+sponsors.get(i).getText() + "<br><i>Team score is te laag, je hebt ten minste "+(int)(i+1)*10+" punten nodig.</i>");;
+		    	 }
+		    }
+//			JCheckBox tuDelft = new JCheckBox("Sponsor1");
+//			tuDelft.addItemListener(new CheckBoxListener(tuDelft)); 
+//			
+//			JLabel iconDelft =  new JLabel();
+//			iconDelft.setIcon(new ImageIcon("images/sponsors/TUDelft.jpg"));
+//			sponsorPane.add(tuDelft);
+//			sponsorPane.add(iconDelft);
+//			
+//			JCheckBox mac = new JCheckBox("Sponsor2");
+//			mac.addItemListener(new CheckBoxListener(mac)); 
+//			JLabel iconMac =  new JLabel();
+//			iconMac.setIcon(new ImageIcon("images/sponsors/McDonald's.jpg"));
+//			sponsorPane.add(mac);
+//			sponsorPane.add(iconMac);
+//			
+//			JCheckBox ing = new JCheckBox("Sponsor3");
+//			ing.addItemListener(new CheckBoxListener(ing)); 
+//			JLabel iconIng =  new JLabel();
+//			iconIng.setIcon(new ImageIcon("images/sponsors/ING.jpg"));
+//			sponsorPane.add(ing);
+//			sponsorPane.add(iconIng);
 			return sponsorPane;
 		}
 		
@@ -103,7 +148,12 @@ public class Tabs extends JPanel{
 		            if(e.getSource()==one){
 		                if(one.isSelected()) {
 		                    System.out.println(one.getText() + " has been selected");
-		                } else {System.out.println("nothing");}
+		                    sponsorsChecked.add(one.getText());
+		                } else {
+		                	System.out.println(one.getText() + " has been DEselected");
+		                	sponsorsChecked.remove(one.getText());
+		                }
+		                System.out.println(sponsorsChecked);
 		            }
 		        }
 		    }

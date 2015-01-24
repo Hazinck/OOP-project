@@ -225,6 +225,7 @@ public class XMLreader {
 			String opstelling = wteamElement.getChildText("opstelling");
 			int tactiek = Integer.parseInt(wteamElement.getChildText("tactiek"));
 			String spelers = wteamElement.getChildText("spelers");
+			String gespeeldMet = wteamElement.getChildText("gespeeldMet");
 			if(userteam==null){
 				String teamNaam = wteamElement.getChildText("TeamNaam");
 				Team team = Divisie.findTeamByName(teamNaam);
@@ -268,7 +269,8 @@ public class XMLreader {
 			}
 			wteam.setTactiek(tactiek);
 			wteam.setWSpelers(spelersArray);
-			
+			wteam.setGespeeldMet(gespeeldMet);
+			System.out.println("xmlreader: "+gespeeldMet);
 			
 		} catch (IOException io) {
 			System.out.println(io.getMessage());
