@@ -8,7 +8,7 @@ public class Bot {
 	private static Team userTeam;
 	private static Team botTeam;
 	private static Wedstrijdteam wteam;
-	
+	private static boolean gameOver = false;
 	
 	public static void teamToWTeam(ArrayList<Opstelling> opstellingen, int opIdx, int tactiek){
 		wteam = new Wedstrijdteam(botTeam);
@@ -58,6 +58,7 @@ public class Bot {
 //	}
 	public static void volgendeTeam() {
 		int speeldag = Divisie.getSpeeldag();
+		Team oldBotTeam = botTeam;
 		for(Team t: Divisie.getTeamList()){
 //			Team temp = Divisie.getTeamList().get(speeldag);
 			if(!User.getWteam().getGespeeldMet().contains(t.getNaam()+"2") && !t.equals(User.getTeam())){//speeldag<Divisie.getTeamList().size()
@@ -65,6 +66,9 @@ public class Bot {
 				System.out.println("bot: " + t.getNaam());
 				break;
 			}
+		}
+		if(botTeam == null || (oldBotTeam != null && oldBotTeam.equals(botTeam))){
+			gameOver = true;
 		}
 	}
 
@@ -120,5 +124,19 @@ public class Bot {
 	
 	public static void setWteam(Wedstrijdteam wteam){
 		Bot.wteam=wteam;
+	}
+
+	/**
+	 * @return the gameOver
+	 */
+	public static boolean isGameOver() {
+		return gameOver;
+	}
+
+	/**
+	 * @param gameOver the gameOver to set
+	 */
+	public static void setGameOver(boolean gameOver) {
+		Bot.gameOver = gameOver;
 	}
 }

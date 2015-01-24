@@ -1,10 +1,29 @@
 package oop.voetbalmanager.view;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.table.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.AbstractAction;
+import javax.swing.AbstractCellEditor;
+import javax.swing.Action;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.UIManager;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+
+import oop.voetbalmanager.model.User;
 
 public class ScrollPanel extends JScrollPane{
 	
@@ -30,6 +49,7 @@ public class ScrollPanel extends JScrollPane{
 //		 model.setDataVector(
 //				 new Object[length][1] , new Object[] { "<html><center>"+title+"<br>"+description });
 		table=new JTable(model){
+			private int userTeamRow = -1;
 			@Override
 			public boolean isCellEditable(int row, int col) {
 				if(col==2){
@@ -40,6 +60,30 @@ public class ScrollPanel extends JScrollPane{
 			public Class getColumnClass(int column){
                 return getValueAt(0, column).getClass();
             }
+			
+			public void getCellByValue(){
+				for(int i = 0; i < table.getRowCount(); i++){
+					String value = (String) table.getModel().getValueAt(i, 1);
+					if(User.getTeam()!=null && 
+							value!=null &&  
+							value.contains(User.getTeam().getNaam())){
+//						System.out.println("scrollpanel jtable: userTeam = "+User.getTeam().getNaam());
+						userTeamRow = i;
+					}
+				}
+			}
+			
+			@Override
+			public Component prepareRenderer(TableCellRenderer renderer,
+			                    int row,
+			                    int column) {    
+			Component c = super.prepareRenderer(renderer, row, column);
+			getCellByValue();
+			if (column == 1 && row == userTeamRow) {
+				c.setBackground(Color.GREEN); 
+			}
+			return c;
+			}
 		};   
 		
 		table.setRowSelectionAllowed(false);
@@ -90,6 +134,10 @@ public class ScrollPanel extends JScrollPane{
 //			 table.getColumnModel().getColumn(2).setCellEditor(
 //			        new ButtonEditor(new JCheckBox()));
 		}
+		
+		
+		
+		
 		getViewport().setBackground(Color.WHITE);//pane.
 		getViewport().add(table);//pane.
 		
@@ -137,20 +185,6 @@ public class ScrollPanel extends JScrollPane{
 	
 	
 
-
-	/**
-	 *  The ButtonColumn class provides a renderer and an editor that looks like a
-	 *  JButton. The renderer and editor will then be used for a specified column
-	 *  in the table. The TableModel will contain the String to be displayed on
-	 *  the button.
-	 *
-	 *  The button can be invoked by a mouse click or by pressing the space bar
-	 *  when the cell has focus. Optionally a mnemonic can be set to invoke the
-	 *  button. When the button is invoked the provided Action is invoked. The
-	 *  source of the Action will be the table. The action command will contain
-	 *  the model row number of the button that was clicked.
-	 *
-	 */
 	class ButtonColumn extends AbstractCellEditor
 		implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener{
 		private JTable table;
@@ -460,4 +494,6 @@ public class ScrollPanel extends JScrollPane{
 	public DefaultTableModel getModel() {
 		return model;
 	}
+
+
 }

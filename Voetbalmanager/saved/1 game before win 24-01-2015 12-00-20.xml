@@ -504,7 +504,7 @@
   <team id="04">
     <naam>Excelsior</naam>
     <rank>8</rank>
-    <winst>5</winst>
+    <winst>29</winst>
     <gelijkspel>37</gelijkspel>
     <verlies>28</verlies>
     <doelvoor>65</doelvoor>
@@ -3322,7 +3322,7 @@
     <tactiek>81</tactiek>
     <spelers>Joël Veltman,Jaïro Riedewald,Arkadiusz Milik,﻿Anwar El Ghazi,Jordy Deckers,Jordan Botaka,Jeff Aans,Elso Brito,Daryl van Mieghem,Daan Smith,Daan Bovenberg</spelers>
     <TeamNaam>Excelsior</TeamNaam>
-    <gespeeldMet>,ADO Den Haag1,Ajax1,Ajax2,Feyenoord1,Feyenoord2,FC Twente1,FC Twente2,PSV1,PSV2,ADO Den Haag2,SC Heerenveen1,SC Heerenveen2,Vitesse1,Vitesse2,FC Groningen1,FC Groningen2,AZ1,AZ2,FC Utrecht1,FC Utrecht2,PEC Zwolle1,PEC Zwolle2,SC Cambuur1,SC Cambuur2,Go Ahead Eagles1,FC Dordrecht1,Go Ahead Eagles2,Heracles Almelo1,Heracles Almelo2,NAC Breda1,NAC Breda2,Willem II1,Willem II2,FC Dordrecht2,FC Dordrecht2,FC Dordrecht2</gespeeldMet>
+    <gespeeldMet>,ADO Den Haag1,Ajax1,Ajax2,Feyenoord1,Feyenoord2,FC Twente1,FC Twente2,PSV1,PSV2,ADO Den Haag2,SC Heerenveen1,SC Heerenveen2,Vitesse1,Vitesse2,FC Groningen1,FC Groningen2,AZ1,AZ2,FC Utrecht1,FC Utrecht2,PEC Zwolle1,PEC Zwolle2,SC Cambuur1,SC Cambuur2,Go Ahead Eagles1,FC Dordrecht1,Go Ahead Eagles2,Heracles Almelo1,Heracles Almelo2,NAC Breda1,NAC Breda2,Willem II1,Willem II2</gespeeldMet>
   </Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
