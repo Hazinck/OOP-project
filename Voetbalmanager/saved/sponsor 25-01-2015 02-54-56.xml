@@ -213,15 +213,6 @@
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.525</prijs>
     </speler>
-    <speler id="0817">
-      <naam>Ramon Leeuwin</naam>
-      <type>verdediger</type>
-      <uithouding>71</uithouding>
-      <offense>45</offense>
-      <defence>69</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>2.7556875</prijs>
-    </speler>
   </team>
   <team id="02">
     <naam>Ajax</naam>
@@ -485,15 +476,6 @@
       <defence>64</defence>
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.6</prijs>
-    </speler>
-    <speler id="0823">
-      <naam>Willem Janssen</naam>
-      <type>middenvelder</type>
-      <uithouding>65</uithouding>
-      <offense>70</offense>
-      <defence>60</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>3.4125</prijs>
     </speler>
   </team>
   <team id="03">
@@ -1152,33 +1134,6 @@
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.45</prijs>
     </speler>
-    <speler id="0813">
-      <naam>Mark Diemers</naam>
-      <type>middenvelder</type>
-      <uithouding>64</uithouding>
-      <offense>59</offense>
-      <defence>56</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>2.6432</prijs>
-    </speler>
-    <speler id="0814">
-      <naam>Mark van der Maarel</naam>
-      <type>verdediger</type>
-      <uithouding>73</uithouding>
-      <offense>41</offense>
-      <defence>67</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>2.5066375</prijs>
-    </speler>
-    <speler id="0819">
-      <naam>Rubio Rubin</naam>
-      <type>aanvaller</type>
-      <uithouding>69</uithouding>
-      <offense>56</offense>
-      <defence>27</defence>
-      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
-      <prijs>1.3041</prijs>
-    </speler>
   </team>
   <team id="06">
     <naam>FC Groningen</naam>
@@ -1379,15 +1334,6 @@
       <defence>68</defence>
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.7</prijs>
-    </speler>
-    <speler id="0821">
-      <naam>Sean Klaiber</naam>
-      <type>verdediger</type>
-      <uithouding>72</uithouding>
-      <offense>52</offense>
-      <defence>58</defence>
-      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
-      <prijs>2.7144</prijs>
     </speler>
   </team>
   <team id="07">
@@ -1635,26 +1581,17 @@
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.344875</prijs>
     </speler>
-    <speler id="0818">
-      <naam>Rodney Antwi</naam>
-      <type>aanvaller</type>
-      <uithouding>89</uithouding>
-      <offense>48</offense>
-      <defence>28</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>1.4952</prijs>
-    </speler>
   </team>
   <team id="08">
     <naam>FC Utrecht</naam>
     <rank>18</rank>
     <winst>0</winst>
-    <gelijkspel>11</gelijkspel>
+    <gelijkspel>9</gelijkspel>
     <verlies>5</verlies>
     <doelvoor>7</doelvoor>
     <doeltegen>13</doeltegen>
     <doelsaldo>-6</doelsaldo>
-    <score>11</score>
+    <score>9</score>
     <budget>41.133</budget>
     <speler id="081">
       <naam>﻿Adam Sarota</naam>
@@ -1755,6 +1692,33 @@
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.9305</prijs>
     </speler>
+    <speler id="0812">
+      <naam>Leon de Kogel</naam>
+      <type>aanvaller</type>
+      <uithouding>53</uithouding>
+      <offense>68</offense>
+      <defence>51</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.29755</prijs>
+    </speler>
+    <speler id="0813">
+      <naam>Mark Diemers</naam>
+      <type>middenvelder</type>
+      <uithouding>64</uithouding>
+      <offense>59</offense>
+      <defence>56</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.6432</prijs>
+    </speler>
+    <speler id="0814">
+      <naam>Mark van der Maarel</naam>
+      <type>verdediger</type>
+      <uithouding>73</uithouding>
+      <offense>41</offense>
+      <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5066375</prijs>
+    </speler>
     <speler id="0815">
       <naam>Michael Zullo</naam>
       <type>verdediger</type>
@@ -1773,6 +1737,42 @@
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.782</prijs>
     </speler>
+    <speler id="0817">
+      <naam>Ramon Leeuwin</naam>
+      <type>verdediger</type>
+      <uithouding>71</uithouding>
+      <offense>45</offense>
+      <defence>69</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7556875</prijs>
+    </speler>
+    <speler id="0818">
+      <naam>Rodney Antwi</naam>
+      <type>aanvaller</type>
+      <uithouding>89</uithouding>
+      <offense>48</offense>
+      <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4952</prijs>
+    </speler>
+    <speler id="0819">
+      <naam>Rubio Rubin</naam>
+      <type>aanvaller</type>
+      <uithouding>69</uithouding>
+      <offense>56</offense>
+      <defence>27</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.3041</prijs>
+    </speler>
+    <speler id="0821">
+      <naam>Sean Klaiber</naam>
+      <type>verdediger</type>
+      <uithouding>72</uithouding>
+      <offense>52</offense>
+      <defence>58</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>2.7144</prijs>
+    </speler>
     <speler id="0822">
       <naam>Thomas Oar</naam>
       <type>aanvaller</type>
@@ -1781,6 +1781,33 @@
       <defence>32</defence>
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.92</prijs>
+    </speler>
+    <speler id="0823">
+      <naam>Willem Janssen</naam>
+      <type>middenvelder</type>
+      <uithouding>65</uithouding>
+      <offense>70</offense>
+      <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4125</prijs>
+    </speler>
+    <speler id="0824">
+      <naam>Yannick Cortie</naam>
+      <type>verdediger</type>
+      <uithouding>67</uithouding>
+      <offense>33</offense>
+      <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.713525</prijs>
+    </speler>
+    <speler id="0825">
+      <naam>Yassin Ayoub</naam>
+      <type>middenvelder</type>
+      <uithouding>71</uithouding>
+      <offense>56</offense>
+      <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.2802</prijs>
     </speler>
     <speler id="0826">
       <naam>Robbin Ruiter</naam>
@@ -2300,15 +2327,6 @@
       <defence>57</defence>
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.425</prijs>
-    </speler>
-    <speler id="0824">
-      <naam>Yannick Cortie</naam>
-      <type>verdediger</type>
-      <uithouding>67</uithouding>
-      <offense>33</offense>
-      <defence>62</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>1.713525</prijs>
     </speler>
   </team>
   <team id="011">
@@ -3267,15 +3285,6 @@
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.55</prijs>
     </speler>
-    <speler id="0825">
-      <naam>Yassin Ayoub</naam>
-      <type>middenvelder</type>
-      <uithouding>71</uithouding>
-      <offense>56</offense>
-      <defence>66</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>3.2802</prijs>
-    </speler>
   </team>
   <team id="015">
     <naam>SC Cambuur</naam>
@@ -3512,15 +3521,6 @@
       <defence>61</defence>
       <beschikbaarheid>wel</beschikbaarheid>
       <prijs>1.525</prijs>
-    </speler>
-    <speler id="0812">
-      <naam>Leon de Kogel</naam>
-      <type>aanvaller</type>
-      <uithouding>53</uithouding>
-      <offense>68</offense>
-      <defence>51</defence>
-      <beschikbaarheid>wel</beschikbaarheid>
-      <prijs>2.29755</prijs>
     </speler>
   </team>
   <team id="016">

@@ -74,7 +74,7 @@ public class Table extends JPanel{
 		 };
 		 model.setDataVector(
 				 new Object[][] { 
-						 { "Balans: ", User.getTeam().getBudget() },
+						 { "Balans (mln.€): ", User.getTeam().getBudget() },
 						 { "Speeldag: ", Divisie.getSpeeldag() }, 
 						 { "Punten: ",  User.getTeam().getScore()}, 
 						 { "Ranking: ", User.getTeam().getRank() }, 

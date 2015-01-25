@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,6 +78,8 @@ public class Controller {
 	private Spel s;
 	private boolean skipClicked = false;
 	private ArrayList<Speler> listBeschik = new ArrayList<Speler>();
+	private String sponsorVerslag = "";
+	private DecimalFormat df = new DecimalFormat("#.######");
 	
 	public Controller(ViewFrame viewFrame, Login l, Home home, TeamPanel teamPanel, Competition comp, PandS ps) {
 		this.viewFrame = viewFrame;
@@ -300,6 +303,7 @@ public class Controller {
 		       			}
 		       		}
 		       		
+		       		
 		        	int geluksfactor = RNG.getalTot(600);
 		       		s = new Spel(User.getWteam(), Bot.getWteam(), geluksfactor);
 		       		int score1 = RNG.getalTot(4);
@@ -346,6 +350,8 @@ public class Controller {
 	   		Divisie.rekenDoelpunten(score, 1, team1);
 	   		Divisie.rekenDoelpunten(score, 2, team2);
 	   		
+	   		sponsorPayment(team1);
+	   		sponsorPayment(team2);
 	   		spelerBeschik(team1, team2);
 //	   		Divisie.rankTeams();
 	   		Divisie.teamsToDiv(team1, team2);
@@ -421,7 +427,7 @@ public class Controller {
 	    	    	
 	    	    	Document doc = home.getHm().getGoals().getDocument();
 	    	    	try {
-	    				doc.insertString(doc.getLength(), "\n============================\n" + Divisie.getSkipVerslag()+"\n----------------------------\n" + veldPanel.getVerslagPanel().getVerslag().getText(), null);
+	    				doc.insertString(doc.getLength(), "\n============================\n" + Divisie.getSkipVerslag()+"\n----------------------------\n" + veldPanel.getVerslagPanel().getVerslag().getText() + sponsorVerslag, null);
 	    			} catch (BadLocationException ble) {
 	    				// TODO Auto-generated catch block
 	    				ble.printStackTrace();
@@ -497,6 +503,9 @@ public class Controller {
 									2, veldPanel.getBall().getTeam2());
     	
     	spelerBeschik(veldPanel.getBall().getTeam1(), veldPanel.getBall().getTeam2());
+    	sponsorPayment(veldPanel.getBall().getTeam1());
+    	sponsorPayment(veldPanel.getBall().getTeam2());
+    	
     	Divisie.teamsToDiv(veldPanel.getBall().getTeam1(), veldPanel.getBall().getTeam2());
     	Divisie.rankTeams();
     	
@@ -504,6 +513,7 @@ public class Controller {
     	User.setTeam(veldPanel.getBall().getTeam1());
     	System.out.println("Controller: spelResults: "+veldPanel.getBall().getTeam1().getNaam() + " "+veldPanel.getBall().getTeam1().getScore()
     						+"====="+User.getWteam().getNaam() + " " + User.getWteam().getScore());
+    	
     	
     	voegGespeeldeTeam(veldPanel.getBall().getTeam1());
     	voegGespeeldeTeam(veldPanel.getBall().getTeam2());
@@ -599,11 +609,27 @@ public class Controller {
 			Divisie.setSpeeldag(speeldag);
 			tabs.getTable().setSpeeldag(speeldag);
 	   		home.getHm().getScores().setText(User.getTeam().getNaam() + " VS " + Bot.getBotTeam().getNaam());
-	   		tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+	   		tabs.getTable().getTable().setValueAt(df.format(User.getTeam().getBudget()),0,1);
 	   		tabs.getTable().getTable().setValueAt(speeldag,1,1);
 	   		tabs.getTable().getTable().setValueAt(User.getWteam().getScore(),2,1);
 	   		tabs.getTable().getTable().setValueAt(User.getWteam().getRank(),3,1);
 	   		tabs.getTable().getTable().setValueAt(Bot.getBotTeam().getNaam(),4,1);
+	   		
+		   	for(int i =0; i<tabs.getSponsors().size(); i++){
+		    	 if(User.getTeam().getScore()>=(i+1)*10){
+		    		 tabs.getSponsors().get(i).setEnabled(true);
+		    		 if(tabs.getSponsors().get(i).getText().contains("<br>")){
+		    			 tabs.getSponsors().get(i).setText(tabs.getSponsors().get(i).getText().split("<br>")[0] );//tabs.getSponsors().get(i).getText().split("<br>")[0] );
+		    		 }
+		    	 }else{
+		    		 tabs.getSponsors().get(i).setEnabled(false);
+		    		 if(!tabs.getSponsors().get(i).getText().contains("<br>")){
+		    			 tabs.getSponsors().get(i).setText("<html><body>"+ tabs.getSponsors().get(i).getText() + "<br><i>Team score is te laag, je hebt ten minste "+(int)(i+1)*10+" punten nodig.</i>");;
+		    		 }
+		    	 }
+		    }
+	   		tabs.getSponsorPane().revalidate();
+	   		tabs.getSponsorPane().repaint();
 	   		rankingUpdate();
 	   		updateTable();
 	   		updateSpelerLijst();
@@ -840,6 +866,50 @@ public class Controller {
     	});
 	}
 	
+	public void sponsorPayment(Team team){
+		if(team.equals(User.getTeam())){
+			double in = 0.001;
+			sponsorVerslag = "\n---------\nInkomsten:\nStandaard: + €1000,-\n";
+			if(tabs.getSponsorsChecked().contains("asics")){
+				in += 0.01;
+				sponsorVerslag += "asics: + €10000,-\n";
+			}
+			if(tabs.getSponsorsChecked().contains("ING")){
+				in += 0.1;
+				sponsorVerslag += "ING: + €100000,-\n";
+			}
+			if(tabs.getSponsorsChecked().contains("McDonald's")){
+				in += 0.2;
+				sponsorVerslag += "McDonald's: + €200000,-\n";
+			}
+			if(tabs.getSponsorsChecked().contains("sega")){
+				in += 0.4;
+				sponsorVerslag += "sega: + €400000,-\n";
+			}
+			if(tabs.getSponsorsChecked().contains("swatch")){
+				in += 0.8;
+				sponsorVerslag += "swatch: + €800000,-\n";
+			}
+			if(tabs.getSponsorsChecked().contains("TOYOTA")){
+				in += 1.6;
+				sponsorVerslag += "TOYOTA: + €1600000,-\n";
+			}
+			if(tabs.getSponsorsChecked().contains("TUDelft")){
+				in += 3.2;
+				sponsorVerslag += "TUDelft: + €3200000,-\n";
+			}
+			User.getTeam().setBudget(User.getTeam().getBudget()+in);
+			team.setBudget(team.getBudget()+in);
+			System.out.println("Controller: sponsorPayment: "+User.getTeam().getNaam() + "  " + User.getTeam().getBudget() + " " + in + " " +tabs.getSponsorsChecked());
+		}else{
+			team.setBudget(team.getBudget()+(team.getScore()/10));//rank * 100 000 euro
+		}
+		for(int i = 0; i < Divisie.getTeamList().size(); i++){
+			if(Divisie.getTeamList().get(i).equals(team)){
+				Divisie.getTeamList().get(i).setBudget(team.getBudget());
+			}
+		}
+	}
 	
 	public void bodAanUser(){
 		Team koper = null;
@@ -861,7 +931,7 @@ public class Controller {
 		}
 		while(true){//for(Speler s: User.getTeam().getSpelerList()){
 			Speler s = User.getTeam().getSpelerList().get(RNG.getalTot(User.getTeam().getSpelerList().size()-1));
-			if(koper.getBudget()*1000000>s.getPrijs() && !wTeam.contains(s)){
+			if(koper.getBudget()>s.getPrijs() && !wTeam.contains(s)){
 				speler = s;
 				break;
 			}
@@ -869,7 +939,7 @@ public class Controller {
 		
 		System.out.println("controller: bodAanUser: " + speler.getNaam() + " door " + koper.getNaam());
 		if(koper!=null && speler!=null){
-			int result = JOptionPane.showConfirmDialog(null, koper.getNaam()+" wil "+speler.getNaam()+" kopen voor: "+speler.getPrijs()+"\nAccepteert u het bod?", "Nieuwe opstelling",
+			int result = JOptionPane.showConfirmDialog(null, koper.getNaam()+" wil "+speler.getNaam()+" kopen voor: "+df.format(speler.getPrijs())+"\nAccepteert u het bod?", "Nieuwe opstelling",
 		    		JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
 		    if (result == JOptionPane.YES_OPTION) {
 		    	spelerKopen(speler.getNaam(), koper);
@@ -931,7 +1001,7 @@ public class Controller {
 
 
 		updateSpelerLijst();
-		tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+		tabs.getTable().getTable().setValueAt(df.format(User.getTeam().getBudget()),0,1);
 	}
 	
 	public void addItemRemover(){
@@ -992,7 +1062,7 @@ public class Controller {
 			data[i][1] = t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+
 					"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies()+
 					"\nDoelvoor: "+t.getDoelvoor()+"\nDoeltegen: "+t.getDoeltegen()+
-					"\nDoelsaldo: "+t.getDoelsaldo()+"\nBudget: "+t.getBudget();
+					"\nDoelsaldo: "+t.getDoelsaldo()+"\nBudget (mln.€): "+df.format(t.getBudget());
 			
 	        
 		
@@ -1065,7 +1135,7 @@ public class Controller {
 						data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
 										"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
 										"\nUithouding: "+s.getUithouding()+//"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
-										"\nPrijs: "+s.getPrijs();
+										"\nPrijs (mln.€): "+df.format(s.getPrijs());
 						final int row = spIdx;
 						final JButton koopButton = new JButton("<html><body>"+s.getNaam());
 						
@@ -1082,7 +1152,7 @@ public class Controller {
 							    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
 							    	  	koopButton.setEnabled(false);
 							    	  	koopButton.setText("Verkocht");
-							    	  	tabs.getTable().getTable().setValueAt(User.getTeam().getBudget(),0,1);
+							    	  	tabs.getTable().getTable().setValueAt(df.format(User.getTeam().getBudget()),0,1);
 							    	  	updateTable();
 						    	  	}else{
 						    	  		double oldPrice = s.getPrijs();
@@ -1090,8 +1160,8 @@ public class Controller {
 						    	  		String aValue = s.getNaam()+"\nType:"+s.getType()+
 												"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
 												"\nUithouding: "+s.getUithouding()+//"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
-												"\nPrijs: "+s.getPrijs();
-						    	  		JOptionPane.showMessageDialog(null, getTeamBySpeler(s).getNaam()+" accepteert bod niet\nOude prijs: "+oldPrice+"\nNieuwe prijs: "+s.getPrijs());
+												"\nPrijs (mln.€): "+df.format(s.getPrijs());
+						    	  		JOptionPane.showMessageDialog(null, getTeamBySpeler(s).getNaam()+" accepteert bod niet\nOude prijs: "+df.format(oldPrice)+"\nNieuwe prijs: "+df.format(s.getPrijs()));
 						    	  		comp.getTransferPane().getTable().setValueAt(aValue, r, 1);
 						    	  		comp.getTransferPane().getModel().fireTableCellUpdated(r, 1);
 //						    	  		comp.getTransferPane().revalidate();comp.getTransferPane().repaint();

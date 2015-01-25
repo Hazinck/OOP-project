@@ -24,6 +24,7 @@ public class Tabs extends JPanel{
 		private Table table;
 		private ArrayList<JCheckBox> sponsors = new ArrayList<JCheckBox>();
 		private ArrayList<String> sponsorsChecked = new ArrayList<String>();
+		private JPanel sponsorPane;
 		
 		private ViewFrame viewFrame;
 		
@@ -46,11 +47,13 @@ public class Tabs extends JPanel{
 		    //jtabbedpane aanmaken
 		    JTabbedPane tabbedPane = new JTabbedPane();
 		    tabbedPane.setOpaque(false);
-		    //4 andere panels hieraan toevoegen als tabs: ("Title", panel)
+		    
+		    sponsorPane = sponsors();
+		    //5 andere panels hieraan toevoegen als tabs: ("Title", panel)
 		    tabbedPane.add("Home",home);
 		    tabbedPane.add("Team",teamPanel);
 		    tabbedPane.add("Competition",comp);
-		    tabbedPane.add("Sponsors", sponsors());
+		    tabbedPane.add("Sponsors", sponsorPane);
 		    tabbedPane.add("Profile and settings",ps);
 		  //jtabbedpane toevoegen aan deze panel(Tabs)
 		    add(tabbedPane,BorderLayout.CENTER);
@@ -146,15 +149,53 @@ public class Tabs extends JPanel{
 			 	}
 		        public void itemStateChanged(ItemEvent e) {
 		            if(e.getSource()==one){
+		            	String text = one.getText().replaceAll("<html><body>", "");
+		            	if(text.contains("<br>")){
+		            		text = text.split("<br>")[0];
+		            	}
 		                if(one.isSelected()) {
-		                    System.out.println(one.getText() + " has been selected");
-		                    sponsorsChecked.add(one.getText());
+		                    System.out.println(text + " has been selected");//one.getText()
+		                    sponsorsChecked.add(text);//one.getText()
 		                } else {
-		                	System.out.println(one.getText() + " has been DEselected");
-		                	sponsorsChecked.remove(one.getText());
+		                	System.out.println(text + " has been DEselected");
+		                	sponsorsChecked.remove(text);
 		                }
 		                System.out.println(sponsorsChecked);
 		            }
 		        }
 		    }
+
+		/**
+		 * @return the sponsorsChecked
+		 */
+		public ArrayList<String> getSponsorsChecked() {
+			return sponsorsChecked;
+		}
+
+
+
+		/**
+		 * @return the sponsorPane
+		 */
+		public JPanel getSponsorPane() {
+			return sponsorPane;
+		}
+
+
+
+		/**
+		 * @return the sponsors
+		 */
+		public ArrayList<JCheckBox> getSponsors() {
+			return sponsors;
+		}
+
+
+
+		/**
+		 * @param sponsors the sponsors to set
+		 */
+		public void setSponsors(ArrayList<JCheckBox> sponsors) {
+			this.sponsors = sponsors;
+		}
 }
