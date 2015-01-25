@@ -316,7 +316,9 @@ public class GameRunnable implements Runnable {
 	                    		}
 	                    	}
 	                    	//playerListAll.get(c).setRunsByUser(true);
-	                    	gp.getBall().setLastBallOwner(playerListAll.get(c));
+	                    	if(c!=-1){
+	                    		gp.getBall().setLastBallOwner(playerListAll.get(c));
+	                    	}
 	                        break;
 	                    }
 	                }

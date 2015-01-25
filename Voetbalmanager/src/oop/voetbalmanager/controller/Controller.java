@@ -1330,6 +1330,7 @@ public class Controller {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		Driver.path = destination;
 	}
 	
 }
