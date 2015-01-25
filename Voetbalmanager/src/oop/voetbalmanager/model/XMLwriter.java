@@ -54,29 +54,20 @@ public class XMLwriter {
 			
 			//zoeken naar <tag> elementen
 			 for(Element element: divisieEl.getDescendants(filter)){
-			//	 System.out.println(element);
 				 //als naam van <tag> element overeenkomt dan:
-			//	 System.out.println(element.toString() + " " + tag);
-// System.out.println(element.getChildText("naam"));//element.getParentElement().getChildren(tag).size());
-				// System.out.println(element.getParentElement().getChildren().toString() + " == " + naam + " filter: " + filter.toString() );
 				 if(element.getChildText("naam").equals(naam)){
-					/* 	//als er geen waarde is ingevoer maak nieuwe element
-					 	if(waarde.equals("")){
-					 		
-					 	}
+
 						//als element bestaat dan updaten
-					 	else*/if(element.getChild(type) != null){
+					 	if(element.getChild(type) != null){
 							element.getChild(type).setText(waarde);
 						}
 						//anders maak nieuwe element
 						else{
 							 Element elNieuw = new Element(type).setText(waarde);
-				//			 System.out.println(elNieuw);
 							 element.addContent(elNieuw);
 							 break;
 						}
 				 }				
-			//	 System.out.println(element.getTextNormalize());
 			  }
 			}
 			//wegschrivern naar xml file
@@ -112,18 +103,16 @@ public class XMLwriter {
 			
 			boolean bestaat = false;
 			Element parent = null;
-			boolean spelerBestaat = false;//element.getChild("speler")!=null && element.getChild("speler").getChildText("naam").equals(childNaam);
+			boolean spelerBestaat = false;
 			ElementFilter filterSp=new org.jdom2.filter.ElementFilter("speler");
 			for(Element element: document.getDescendants(filterSp)){
 				if(element.getChildText("naam").equals(childNaam)){
 					 spelerBestaat = true;
-				//	 System.out.println(element.getChildText("naam") + " == "+childNaam+": "+bestaat);
 					 break;
 				 }
 			}
 			ElementFilter filter=new org.jdom2.filter.ElementFilter("team");
 			for(Element element: document.getDescendants(filter)){
-			//	 System.out.println(element.getChildText("naam") + " " + childNaam + " " + childTag);
 				 if(parentTag.equals("divisie")){
 				 		plaats = "0";
 				 		parent = divisieEl;
@@ -132,11 +121,9 @@ public class XMLwriter {
 				 		parent = element;
 				 		plaats = parent.getAttributeValue("id");
 				 }
-			//	 System.out.println(element.getChild("speler")+ " " + element.getChild("speler").getChildText("naam")+ " == " + childNaam);
 				 
 				 if(element.getChildText("naam").equals(childNaam) || spelerBestaat){
 					 bestaat = true;
-				//	 System.out.println(element.getChildText("naam") + " == "+childNaam+": "+bestaat);
 					 break;
 				 }
 			 }

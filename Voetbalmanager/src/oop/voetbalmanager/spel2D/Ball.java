@@ -38,9 +38,6 @@ public class Ball {
 		
 		goalRToKick = new Rectangle(1585, 460, 600, 840);
 		goalLToKick = new Rectangle(234, 460, 600, 840);
-	//	move();
-//		x = startX;
-//		y = startY;
 	}
 	
 	public void move(){
@@ -52,12 +49,10 @@ public class Ball {
 				if (owner!=null){
 				xforP = startX = x = owner.getX();
 				yforP = startY = y = owner.getY();
-			//		System.out.println("Ball class move: Owner "+ x+","+y);
 			}
 				else{
 				startX = xforP = x;
 				startY = yforP = y;
-			//	System.out.println("Ball start: " + x+","+y);
 			}
 			
 			if(goalR.contains(x, y)){
@@ -87,41 +82,20 @@ public class Ball {
 	}
 	
 	public void kick(){
-//		if((x>targetX-1 && x<targetX+1) && (y>targetY-1 && y<targetY+1)){
-//			x = targetX;
-//			y = targetY;
-//			startX = x;
-//			startY = y;
-//			t=0;
-//			kick = false;
-//			if (owner!=null){
-//				owner.setBallOwner(true);
-//     			
-//			}
-//		}else{
-	//	if(kick){	
-
-
- 
-		
 			double g = 9.81;
 			//y-snelheid met max tijd = 10
 			double Vy0=(-targetY+startY+0.5*g*100)/10;//+-inverse omdat coordinaten systeem voor y omgekeerd is
 			//x-snelheid
 			double Vx0=(targetX-startX)/10;
-//			
+
 			x= startX + Vx0*t;
 			y= startY-Vy0*t+0.5*g*t*t;//zelfde als bij Vy0
-			//System.out.println(x+ " " +y + " " +t);
 			
 			xforP = x;
 			yforP = startY + Vy0*t;
-			
-		//	owner.runTo((int)targetX, (int)targetY);
-		//	System.out.println(targetX + ";"+ targetY);
 
 			t+=0.1;
-		//	System.out.println("Ball class: "+ targetX + "," + targetY + "  " + (int)x+","+(int)y + "  t=" + t);
+		
 			if(targetX+20 > (int)x && targetX-20 < (int)x && targetY+20 > (int)y && targetY-20 < (int)y){
 				
 				t = 0;
@@ -145,8 +119,6 @@ public class Ball {
 				}
 				Controller2D.setKicked(false);
 			}
-	//	}
-//		}
 	}
 	
 	public int winner(){

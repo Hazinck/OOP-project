@@ -30,11 +30,9 @@ public class Wedstrijdteam extends Team{
 		for(Speler s: spelerList){
 			off += s.getOffense();
 		}
-	//	System.out.println(off);
 		off /= spelerList.size();
 		
 		this.off = off;
-	//	System.out.println("Offence: "+off);
 	}
 	
 	public void teamDefence(){
@@ -46,7 +44,6 @@ public class Wedstrijdteam extends Team{
 		def /= spelerList.size();
 		
 		this.def = def;
-	//	System.out.println("Defence: "+def);
 	}
 	
 	public void teamUithouding(){
@@ -58,7 +55,6 @@ public class Wedstrijdteam extends Team{
 		uith /= spelerList.size();
 		
 		this.uith = uith;
-	//	System.out.println("Uithouding: "+uith);
 	}
 		
 	
@@ -135,9 +131,6 @@ public class Wedstrijdteam extends Team{
 		return wSpelers;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Wedstrijdteam: "+getNaam()+"\nOffensieve kracht: " + off + "\nDefensieve kracht: " + def + "\nUithoudingsvermogen: " + uith
@@ -167,11 +160,4 @@ public class Wedstrijdteam extends Team{
 	public void setGespeeldMet(String gespeeldMet) {
 		this.gespeeldMet = gespeeldMet;
 	}
-
-//	/**
-//	 * @return the opstellingen
-//	 */
-//	public ArrayList<Opstelling> getOpstellingen() {
-//		return opstellingen;
-//	}
 }

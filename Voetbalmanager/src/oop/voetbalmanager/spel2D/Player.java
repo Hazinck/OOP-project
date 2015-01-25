@@ -27,7 +27,6 @@ public class Player {
 	private String richting="";
 	private int team12;
 	private Ellipse2D.Double boundsAnchor;
-	//private Rectangle bounds = new Rectangle();
 	private Ellipse2D.Double circleBounds;
 	private Ellipse2D.Double circleBallBounds;
 	private boolean collision = false;
@@ -55,12 +54,11 @@ public class Player {
 			this.spriteObj = new Sprite("images/general", team12);
 		}
 		this.playerID = playerID;
-	//	position = new Position(this, speler.getType(), playerID);
 		this.ball = ball;
 		this.team12 = team12;
 		this.gp = gp;
 		this.wteam = wteam;
-		boundsAnchor = new Ellipse2D.Double();//Rectangle();
+		boundsAnchor = new Ellipse2D.Double();
 		setSpeed();
 		
 		ArrayList<Player> myTeam;
@@ -83,21 +81,15 @@ public class Player {
 	private double yMaxGrens;
 	
 	public void move(int targetX, int targetY ) {
-//		this.bounds.setRect((int)x-15, (int)y-30, 40, 48);
 		circleBounds.setFrame(x, y-30, 18, 48);
 		circleBallBounds.setFrame(x-10, y-10, 38, 28);
 		
 		controlBall.controlBallPerPlayer(this);
-//		System.out.println("player before: "+ targetX);
 		Dimension target;
 		if(gp.isManualPlay() && team12==1 && ballOwner){
-			// ball.getOwner().getSpeler().getNaam().equals(speler.getNaam())){
 			ball.getLastBallOwner().setRunsByUser(false);
 			runsByUser = true;
 			target = runByUser();
-//			speedX = 2;
-//			speedY = 2;
-			//	System.out.println("Player: "+ballOwner);
 		}else if(gp.isManualPlay() && team12==1 && 
 				ball.getLastBallOwner()!=null && 
 				ball.getLastBallOwner().getSpeler().getNaam().equals(speler.getNaam()) &&
@@ -105,8 +97,6 @@ public class Player {
 			
 				runsByUser = true;
 				target = runByUser();
-//				speedX = 2;
-//				speedY = 2;
 		}else{
 			runsByUser = false;
 			target = runTo(targetX, targetY);
@@ -119,10 +109,7 @@ public class Player {
 		count++;
 		checkTired();
 		 	String type = speler.getType();
-		 //	System.out.println("Speed: " + speedX + ", " + speedY +" " + speler.getNaam()+" Pos: "+x + ", "+y);
-			
-		//	System.out.println("xMaxGrens" + xMaxGrens);
-			oldX = x;
+		 	oldX = x;
 			oldY = y;
 			pointIdx++;
 			if(pointIdx==4){
@@ -130,8 +117,6 @@ public class Player {
 			}
 			
 			
-		//	grenzen(type, playerID);
-			//moving			
 			if(x > targetX){
 				x -= speedX;
 				
@@ -148,22 +133,19 @@ public class Player {
 			
 			//bounds
 			if (x - spriteHalfWidth<= xMinGrens) {
-			      x=oldX + 2;//x += (speedX+1);
+			      x=oldX + 2;
 			}else  if (x + spriteHalfWidth >= xMaxGrens) {
-		    	x=oldX - 2;//x -= (speedX+1);
+		    	x=oldX - 2;
 		    }
 		    if (y - spriteHalfHeight <= yMinGrens) {
-		    	y=oldY + 2;//y += (speedY+1);
+		    	y=oldY + 2;
 		    }else  if (y + spriteHalfHeight > yMaxGrens) {
-		    	y=oldY - 2;// y -= (speedY+1);
+		    	y=oldY - 2;
 		    }
 		    findRichting();
 		    xA[pointIdx] = x;
 		    yA[pointIdx] = y;
 
-//			if(speler.getType().equals("doelman") && team12==1){
-//				System.out.println("Player move(): "+ targetX + " " +x);
-//			} 
 		    
 	  }
 	
@@ -172,10 +154,7 @@ public class Player {
 		double dx = x - oldX;
 		double dy = y - oldY;
 		if(xA[2]!=null && Math.abs(xA[2]-xA[0])<=1 && Math.abs(yA[2]-yA[0])<=1){
-			
-		//	System.out.println((Math.abs(dy)+Math.abs(dx))/2);
 			spriteObj.setIdle(true);
-		//	System.out.println(richting);
 		}else{
 			spriteObj.setIdle(false);
 		}
@@ -192,11 +171,10 @@ public class Player {
 				richting+="W";
 			}
 			spriteObj.setRichting(richting);
-	//	}
 	}
 	
 	public void setSpeed(){
-		speedX = (speler.getOffense() + speler.getDefence())/ 33;//60;
+		speedX = (speler.getOffense() + speler.getDefence())/ 33;
 		
 		if(speedX<0.5){
 			speedX = 0.5;
@@ -204,17 +182,10 @@ public class Player {
 			speedX = 2;
 		}
 		speedY =  speedX;
-//		if(speedY<0.5){
-//			speedY = 0.5;
-//		}else if(speedY>3){
-//			speedY = 3;
-//		}
 	}
 	
 	public void checkTired(){
-	//	System.out.println(count);
 		if(count>speler.getUithouding()*20){
-		//	System.out.println(speler.getNaam() + " is moe");
 			speedX -= 1;
 			speedY -= 1;
 			if(speedX < 1){
@@ -235,8 +206,7 @@ public class Player {
 			y = this.targetY;
 			randomRun = false;
 		}else{
-			if(ballOwner){// && bounds.contains(ball.getXforP(), ball.getYforP())){//this.x == ball.getX() && this.y ==  ball.getY()){
-			//	System.out.println(speler.getNaam() + " got another target");
+			if(ballOwner){
 				if(team12==1){
 					x = 2256;
 				}else{
@@ -244,34 +214,24 @@ public class Player {
 				}
 				y = 806;
 				randomRun = false;
-			}else if(//(ballAfstand() < anchorAfstand() && anchorAfstand() < boundsAnchor.width*2) ||
+			}else if(
 					(ball.getOwner()==null && anchorToBallAfstand() < 300) ||
 					(boundsAnchor.contains(this.x, this.y) &&
-				boundsAnchor.contains(ball.getXforP(), ball.getYforP()))){//!bounds.contains(this.x, this.y)){//
-				
+				boundsAnchor.contains(ball.getXforP(), ball.getYforP()))){
 				x = targetX;
 				y = targetY;
 				randomRun = false;
 			}
-//			else if(count%30==0){
-//				x = boundsAnchor.x + boundsAnchor.width/2 + RNG.getalTot(150) - RNG.getalTot(150);
-//				y = boundsAnchor.height/2 + boundsAnchor.y + RNG.getalTot(150)  - RNG.getalTot(150);
-//				this.targetX = x;
-//				this.targetY = y;
-//				randomRun = true;
-//			}
-			else{// if(randomRun == false){//!boundsAnchor.contains(this.x, this.y)){//
-				x = anchorX;//boundsAnchor.x + boundsAnchor.width/2;
-				y = anchorY;//boundsAnchor.height/2 + boundsAnchor.y;
+
+			else{
+				x = anchorX;
+				y = anchorY;
 			}
 		}
 		if(x == 0 || y == 0){
 			x= this.targetX;
 			y = this.targetY;
 		}
-//				if(speler.getType().equals("doelman") && team12==1){
-//					System.out.println("Player: runTo: "+ speler.getNaam() + " is " + speler.getType()+ " " + anchorX + " = " + this.x + " = " + x);
-//				}
 		return new Dimension((int)x, (int)y);
 	}
 	
@@ -339,23 +299,19 @@ public class Player {
 		
 	}
 	
-//	public void randomRun(){
-//		
-//	}
-	
 	public void setGrenzen(int anchorX, int anchorY){
 		this.anchorY = anchorY;
 		
 		
 		if(speler.getType().equals("doelman") && team12 == 1){
-			boundsAnchor.x =  anchorX - 700;//boundsAnchor.x-650;//1126.0  + 700
+			boundsAnchor.x =  anchorX - 700;
 			boundsAnchor.width = 1000;
 			boundsAnchor.y = anchorY - 400;
 			boundsAnchor.height = 800;
 			this.anchorX = boundsAnchor.getCenterX();
-		//	System.out.println("Player: setGrenzen: "+ speler.getNaam() + " is " + speler.getType()+ " " + anchorX);
+		
 		}else if(speler.getType().equals("doelman") && team12 == 2){
-//			System.out.println(speler.getNaam() + " is " + speler.getType()+ " " + team12);
+
 			boundsAnchor.x =  anchorX - 50;
 			boundsAnchor.width = 600;
 			boundsAnchor.y = anchorY - 400;
@@ -372,11 +328,9 @@ public class Player {
 		
 		if(boundsAnchor.y + boundsAnchor.height > yMaxGrens){
 			boundsAnchor.y = yMaxGrens - boundsAnchor.height;
-		//	System.out.println("Player " + yMaxGrens + " " + boundsAnchor.y);
 		}else if(boundsAnchor.y < yMinGrens){
 			boundsAnchor.y = yMinGrens;
 		}
-	//	System.out.println(boundsAnchor.x + " " + boundsAnchor.width + " " + speler.getNaam());
 		
 	}
 	
@@ -384,27 +338,20 @@ public class Player {
 		double a = Math.pow((ball.getXforP() - x), 2);
 		double b = Math.pow((ball.getYforP() - y), 2);
 		double afst = Math.sqrt(a + b);
-//		System.out.println("to ball: " + afst + " " + speler.getNaam());
 		return afst;
 	}
 	
 	public double anchorAfstand(){
-//		boundsCenterX = bounds.x + bounds.width/2;
-//		boundsCenterY = bounds.y + bounds.height/2;
-		double a = Math.pow((anchorX - x), 2);//boundsAnchor.getCenterX()
-		double b = Math.pow((anchorY - y), 2);//boundsAnchor.getCenterY()
+		double a = Math.pow((anchorX - x), 2);
+		double b = Math.pow((anchorY - y), 2);
 		double afst = Math.sqrt(a + b);
-//		System.out.println("to anchor: " + afst + " " + speler.getNaam());
 		return afst;
 	}
 	
 	public double anchorToBallAfstand(){
-//		boundsCenterX = bounds.x + bounds.width/2;
-//		boundsCenterY = bounds.y + bounds.height/2;
-		double a = Math.pow((anchorX - ball.getXforP()), 2);//boundsAnchor.getCenterX()
-		double b = Math.pow((anchorY - ball.getYforP()), 2);//boundsAnchor.getCenterY()
+		double a = Math.pow((anchorX - ball.getXforP()), 2);
+		double b = Math.pow((anchorY - ball.getYforP()), 2);
 		double afst = Math.sqrt(a + b);
-//		System.out.println("to anchor: " + afst + " " + speler.getNaam());
 		return afst;
 	}
 	/**
@@ -500,8 +447,6 @@ public class Player {
 					xMinGrens = 370;
 					xMaxGrens = 740;
 				}
-//				yMinGrens = 82;
-//				yMaxGrens = 177;
 			}
 	  }
 
@@ -519,9 +464,6 @@ public class Player {
 		return speedY;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Player [speler=" + speler + "]";

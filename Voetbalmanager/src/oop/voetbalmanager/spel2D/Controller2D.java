@@ -24,7 +24,6 @@ public class Controller2D {
 		kicked = false;
 	}
 	
-	//voorlopig 1 team
 	public void topPlayers(){
 		for(Player p: team1){
 				sortTeam1.add(p);
@@ -38,7 +37,6 @@ public class Controller2D {
 		});
 		Collections.reverse(sortTeam1);
 		
-	//	System.out.println(sortTeam1.toString());
 	}
 	
 	public void controlBallPerPlayer(final Player p){
@@ -47,8 +45,7 @@ public class Controller2D {
 			Controller2D.kickBal(p);
 		}
   		else if(!kicked && p.getCircleBallBounds().contains((int)ball.getXforP(), (int)ball.getYforP()) ){//zonder Ball
-		//	System.out.println("Controller: " + p.getSpeler().getNaam());
-			ball.setOwner(p);
+  			ball.setOwner(p);
 	  		p.setBallOwner(true);
 
   		}else{
@@ -99,8 +96,6 @@ public class Controller2D {
 			}
 			p.getBall().setTargetX(alle.get(pIdx).getX());
 			p.getBall().setTargetY(alle.get(pIdx).getY());
-		//	sortTeam1.get(pIdx).setBallOwner(true);
-		//	p.getBall().setOwner(alle.get(pIdx));
 			if(p.getGp().isManualPlay() && p.getTeam12()==1){
 				double toX = alle.get(pIdx).getX(), toY = alle.get(pIdx).getY();
 				Dimension d = targetByRichting(p,toX, toY);
@@ -132,8 +127,6 @@ public class Controller2D {
 		
 		p.getBall().setTargetX(targetGoalX);
 		p.getBall().setTargetY(targetGoalY);
-	//	sortTeam1.get(pIdx).setBallOwner(true);
-	//	p.getBall().setOwner(alle.get(pIdx));
 		p.getBall().setKick(true);
 		p.getBall().setKickedToGoal(p);
 	}
@@ -142,7 +135,7 @@ public class Controller2D {
 		p.findRichting();
 		String r = p.getRichting();
 		switch(r){
-    	case "N"://niet
+    	case "N":
     		toX=p.getX();
     		toY=p.getY()-250;
     		break;
@@ -162,15 +155,15 @@ public class Controller2D {
     		toX=p.getX()-250;
     		toY=p.getY();
     		break;
-    	case "SE"://niet
+    	case "SE":
     		toX=p.getX()+250;
     		toY=p.getY()+250;
     		break;
-    	case "SW"://niet
+    	case "SW":
     		toX=p.getX()-250;
     		toY=p.getY()+250;
     		break;
-    	case "S"://niet
+    	case "S":
     		toX=p.getX();
     		toY=p.getY()+250;
     		break;

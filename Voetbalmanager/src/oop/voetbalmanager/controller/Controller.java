@@ -98,7 +98,7 @@ public class Controller {
 		koopLijst.add(new ArrayList());
 		koopLijst.add(new ArrayList());
 		koopLijst.add(new ArrayList());
-//		divisie = reader.readDivisie(Driver.path);
+
 		ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");ranglijst.add("");
 //		System.out.println("controller: path="+ Driver.path);
 		newGame();
@@ -139,7 +139,7 @@ public class Controller {
 	                };                
 	                ngPanel.getTeamButtons().get(idx).addActionListener(actionListener); 
             	}
-            	//startGame(); 
+             
             }
       };                
       l.getNewGame().addActionListener(actionListener); 
@@ -157,15 +157,14 @@ public class Controller {
 		}
 		
 		Wedstrijdteam wteam = reader.readWedstrijdteam(team, Driver.path);
-	//	Team team = divisie.getTeamList().get(8);
-//		User.setNaam(username);
-//		User.setTeam(team);
+	
 	  	User.setWteam(wteam);
 	  	  
 	  	Bot.setDivisie(divisie);
 	  	Bot.setUserTeam(team);
 	  	Bot.volgendeTeam();
-	  	
+	  	System.out.println("controller: startGame" + User.getWteam().getGespeeldMet().toString());
+	  		Divisie.rankTeams();
 			comp = new Competition(viewFrame);
 			
 			String[] columnNamesRank = {"Ranking", "Uitgebreide ranking met doelpunten saldo etc"};
@@ -176,8 +175,8 @@ public class Controller {
 		
 	  	if(Bot.isGameOver()){
 	  		SaveDialog.gameOverPopup(comp);
+	  		Driver.path = "database.xml";
 	  		Bot.setGameOver(false);
-	  		
 	  	}else{
 			home =  new Home();
 			teamPanel = new TeamPanel();
@@ -200,7 +199,7 @@ public class Controller {
 			ps.getImgP().setImageFromPath(Divisie.getAvatarPath());
 		  	System.out.println("controller: " + ps.getImgP().getAvatarPath());
 	        tabs.showThis(fromPanel);
-	   //   controlPanel2();
+	   
 	        addLogoutListener();
 	        ranking();
 	        play();
@@ -232,7 +231,7 @@ public class Controller {
                         	username = username.substring(0, username.length()-20);
                         	User.setNaam(username);
                         	
-            	    		//User.setTeam(team);
+            	
                         	startGame(null, l);
                         	System.out.println("Load button: "+idx);
                         	SaveDialog.getLoadGameDialog().getRootFrame().dispose();
@@ -288,11 +287,11 @@ public class Controller {
 		playButton.addActionListener(new ActionListener() {
 	           public void actionPerformed(ActionEvent actionEvent) {
 	        	   
-	        	   if(!User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam())){
-	        		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"1");
-	        	   }else if(User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam()+"1")){
-	        		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"2");
-	        	   }
+//	        	   if(!User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam())){
+//	        		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"1");
+//	        	   }else if(User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam()+"1")){
+//	        		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"2");
+//	        	   }
 		       		System.out.println(User.getWteam().getGespeeldMet());
 		       		
 		       		botsGame();
@@ -321,11 +320,11 @@ public class Controller {
 		       		addGoBackListener();
 		       		addSkipListener();
 		       		addSpeelZelfListener();
-	       		//updateStats();
+	       		
 	       		}
 		});
 		                
-	 //    p2.getButton().addActionListener(actionListener2);   
+	   
 		
 	}
 	
@@ -353,9 +352,9 @@ public class Controller {
 	   		sponsorPayment(team1);
 	   		sponsorPayment(team2);
 	   		spelerBeschik(team1, team2);
-//	   		Divisie.rankTeams();
+
 	   		Divisie.teamsToDiv(team1, team2);
-//	    	Divisie.rankTeams();
+
 	    	voegGespeeldeTeam(team1);
 	    	voegGespeeldeTeam(team2);
 		}
@@ -366,29 +365,10 @@ public class Controller {
        skip.addActionListener(new ActionListener() {
     	    public void actionPerformed(ActionEvent e)
     	    {
-    	    	//veldPanel.getGr().stop();
+    	    
     	    	skipClicked = true;
     	    	veldPanel.getGr().endspiel();
-    	    	
-//    	    	Dimension newScore = new Dimension(
-//    	    			(int)veldPanel.getBall().getScore().getWidth() + (int)s.getScore().getWidth(),
-//    	    			(int)veldPanel.getBall().getScore().getHeight() + (int)s.getScore().getHeight());
-//    	    	System.out.println(newScore.toString());
-//    	    	
-//    	    	spelResults(newScore);
-    	    	
-    	    	
-//    	    	Document doc = home.getHm().getGoals().getDocument();
-//    	    	try {
-//    				doc.insertString(doc.getLength(), "\n============================\n" + Divisie.getSkipVerslag(), null);
-//    			} catch (BadLocationException ble) {
-//    				// TODO Auto-generated catch block
-//    				ble.printStackTrace();
-//    			}
-    	    	
-    	    	
-//    	    	viewFrame.remove(veldPanel);
-//    	    	tabs.showThis(veldPanel);
+
     	    }
     	});
 	}
@@ -399,7 +379,14 @@ public class Controller {
        goBack.addActionListener(new ActionListener() {
     	    public void actionPerformed(ActionEvent e)
     	    {
+    	    	if(!User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam())){
+    				User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"1");
+    			}else if(User.getWteam().getGespeeldMet().contains(Bot.getWteam().getNaam()+"1")){
+    	 		   User.getWteam().setGespeeldMet(User.getWteam().getGespeeldMet() + "," +Bot.getWteam().getNaam()+"2");
+    			}
+    		Bot.volgendeTeam();
     	    	if(Bot.isGameOver()){
+    	    		Divisie.rankTeams();
     		  		SaveDialog.gameOverPopup(comp);
     		  		if(SaveDialog.getGameOverClosed()==JOptionPane.OK_OPTION){
     		  			quitFunction();
@@ -429,7 +416,7 @@ public class Controller {
 	    	    	try {
 	    				doc.insertString(doc.getLength(), "\n============================\n" + Divisie.getSkipVerslag()+"\n----------------------------\n" + veldPanel.getVerslagPanel().getVerslag().getText() + sponsorVerslag, null);
 	    			} catch (BadLocationException ble) {
-	    				// TODO Auto-generated catch block
+	    				
 	    				ble.printStackTrace();
 	    			}
 	    	    	
@@ -470,7 +457,6 @@ public class Controller {
 			for(Speler s: team2.getSpelerList()){
 				s.setBeschikbaarheid("wel");
 				if(listBeschik.contains(s)){
-//					listBeschik.remove((listBeschik.indexOf(s)));
 					listBeschik.set(listBeschik.indexOf(s), s);
 				}
 			}
@@ -493,12 +479,10 @@ public class Controller {
 	}
 	
 	public void spelResults(Dimension score){
-//		Divisie.rankTeams();
+
     	
     	Divisie.rekenDoelpunten(score, 
     								1, veldPanel.getBall().getTeam1());
-//    	Divisie.rekenDoelpunten(score, 
-//									1, User.getWteam());
     	Divisie.rekenDoelpunten(score, 
 									2, veldPanel.getBall().getTeam2());
     	
@@ -519,7 +503,6 @@ public class Controller {
     	voegGespeeldeTeam(veldPanel.getBall().getTeam2());
     	
     	updateStats();
-//    	System.out.println("Controller: spelResults: " + User.getTeam().getSpelerList());
 	}
 	
 	public void voegGespeeldeTeam(Wedstrijdteam team){
@@ -548,11 +531,11 @@ public class Controller {
 		if(veldPanel.isPause()){
     		veldPanel.getGp().setGoal(false);
     		veldPanel.getGr().start();
-    	    veldPanel.setPause(false);// = false;
+    	    veldPanel.setPause(false);
     	    veldPanel.getPauseResume().setText("Pause");
     	}else{
     		veldPanel.getGr().stop();
-    	    veldPanel.setPause(true);// pause = true;
+    	    veldPanel.setPause(true);
     	    veldPanel.getPauseResume().setText("Resume");
     	}
 	}
@@ -588,19 +571,7 @@ public class Controller {
 	}
 	
 	public void updateStats(){
-		Bot.volgendeTeam();
-//		if(Bot.isGameOver()){
-//	  		SaveDialog.gameOverPopup(comp);
-//	  		if(SaveDialog.getGameOverClosed()==JOptionPane.OK_OPTION){
-//	  			quitFunction();
-//	  			if(SaveDialog.getSave() != JOptionPane.YES_OPTION && SaveDialog.getSave() != JOptionPane.NO_OPTION){
-//	  				viewFrame.dispose();
-//	  			}
-//	  		}else{
-//	  			viewFrame.dispose();
-//	  		}
-//	  		Bot.setGameOver(false);
-//	  	}else{
+			
 			ArrayList <Opstelling> opstellingen = teamPanel.getOpst().getOpstellingen();
 			int opIdx = RNG.getalTot(opstellingen.size());
 			int tactiek = RNG.getalTot(101);
@@ -633,8 +604,6 @@ public class Controller {
 	   		rankingUpdate();
 	   		updateTable();
 	   		updateSpelerLijst();
-	   	//	teamPanel.get;
-//	  	}
 	}
 	
 	public void updateTable(){
@@ -646,39 +615,17 @@ public class Controller {
 
 	  	comp.getRankPane().getModel().fireTableDataChanged();
 	  	
-   	//	teamPanel.get;
 	}
 	
 	public void spel(Spel s){
-//		Document doc = home.getHm().getGoals().getDocument();
     	for(String v: s.verslag()){
 			Calendar cal = Calendar.getInstance();
 	    	cal.getTime();
 	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
 	    	System.out.println( tijd.format(cal.getTime()) );
-//	    	String old =veldPanel.getVerslagPanel().getVerslag().getText();
-//	    	veldPanel.getVerslagPanel().getVerslag().setText();
+
 	    	veldPanel.getVerslagPanel().getVerslag().append( tijd.format(cal.getTime()) + " " + v + "\n");
-//	    	veldPanel.getVerslagPanel().getVerslag().setCaretPosition(veldPanel.getVerslagPanel().getVerslag().getDocument().getLength());
-//    		try {
-//				doc.insertString(doc.getLength(), tijd.format(cal.getTime()) + " " + v + "\n", null);
-//			} catch (BadLocationException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-	    	//home.getHm().getGoals().setText(tijd.format(cal.getTime()) + " " + v + "\n");
-    	}
-    	//home.getHm().getGoals().setText((s.winner().getNaam()+" heeft gewonnen!"));
-//    	try {
-//    		Calendar cal = Calendar.getInstance();
-//	    	cal.getTime();
-//	    	SimpleDateFormat tijd = new SimpleDateFormat("HH:mm");
-//			doc.insertString(doc.getLength(),tijd.format(cal.getTime()) + " " + s.winner().getNaam()+" heeft gewonnen!"
-//					+ "\n\n===================================\n\n", null);
-//		} catch (BadLocationException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+	    }
 	}
 	
 	
@@ -741,7 +688,6 @@ public class Controller {
 			if (speler.getType().equals("doelman")){
 				teamPanel.addKeeper(speler.getNaam());
 				keepers.add(speler.getNaam());
-				//teamPanel.getOpst().getPlayersDDList()[0].addItem(speler.getNaam());
 			}else {
 				String spelerNaam = "";
 				if(speler.getBeschikbaarheid()!=null && speler.getBeschikbaarheid().equals("wel")){
@@ -753,20 +699,10 @@ public class Controller {
 				}
 				if (speler.getType().equals("aanvaller")){
 					teamPanel.addAanvaller(spelerNaam);
-	//				teamPanel.getOpst().getPlayersDDList()[8].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[9].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[10].addItem(speler.getNaam());
 				}else if(speler.getType().equals("middenvelder")){
 					teamPanel.addMiddenvelder(spelerNaam);
-	//				teamPanel.getOpst().getPlayersDDList()[1].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[2].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[3].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[4].addItem(speler.getNaam());
 				}else if(speler.getType().equals("verdediger")){
 					teamPanel.addVerdediger(spelerNaam);
-	//				teamPanel.getOpst().getPlayersDDList()[5].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[6].addItem(speler.getNaam());
-	//				teamPanel.getOpst().getPlayersDDList()[7].addItem(speler.getNaam());
 				}
 			}
 		}
@@ -776,9 +712,7 @@ public class Controller {
 			teamPanel.getOpst().getPlayersDDList()[k].setModel(new DefaultComboBoxModel(rest.toArray(new String[rest.size()])));;					
 		}
 		for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
-//			System.out.println("Controller: vulSpelerLijst "+User.getWteam().getWSpelers()[i].getNaam());
 			teamPanel.getOpst().getPlayersDDList()[i].setSelectedItem(User.getWteam().getWSpelers()[i].getNaam());
-    	//	System.out.println(User.getWteam().getWSpelers()[i].getNaam() + " " + teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem());
 		}
 	}
 	
@@ -804,22 +738,11 @@ public class Controller {
 	    	    	for(int i = 0; i < teamPanel.getOpst().getPlayersDDList().length; i++){
 	    	    		String name = (String)teamPanel.getOpst().getPlayersDDList()[i].getSelectedItem();
 	    	    		String type = getSpelerByName(name).getType();
-//	    	    		if(i==0){
-//				    		type = "Keeper";
-//				    	}else if(i<5){
-//				    		type = "Middenvelder";
-//				    	}
-//				    	else if(i<8){
-//				    		type = "Vergediger";
-//				    	}else if(i<11){
-//				    		type = "Aanvaller";
-//				    	}
 	    	    		Dimension pos = teamPanel.getOpst().getPlayerPos()[i];
 	    	    		Positie positie = new Positie(pos.width, pos.height, type);
 	    	    		posities.add(positie);
 	    	    	//	System.out.println(positie.toString());//type + " op: " + pos.width + "," + pos.height);
 	    	    	}
-	    	    //	opstellingToXML(posities, opstellingNaam);
 	    	    	positiesToSave = posities;
 	    	    	opstellingnaamToSave = opstellingNaam;
 	    	    	nieweOpstellingGebruiken(posities, opstellingNaam);
@@ -915,21 +838,14 @@ public class Controller {
 		Team koper = null;
 		Speler speler = null;
 		List<Speler> wTeam = Arrays.asList(User.getWteam().getWSpelers());
-		while(true){//for(Team t: Divisie.getTeamList()){
+		while(true){
 			koper = Divisie.getTeamList().get(RNG.getalTot(18));
-//			if(koper==null){
-//				koper = t;
-//			}
-//			if(koper.getBudget()<1 && t.getBudget()>1){
-//				koper = t;
-//				break;
-//			}else 
 			if(koper.getBudget()>1 && !koper.equals(User.getTeam())){
 				break;
 				
 			}
 		}
-		while(true){//for(Speler s: User.getTeam().getSpelerList()){
+		while(true){
 			Speler s = User.getTeam().getSpelerList().get(RNG.getalTot(User.getTeam().getSpelerList().size()-1));
 			if(koper.getBudget()>s.getPrijs() && !wTeam.contains(s)){
 				speler = s;
@@ -961,8 +877,7 @@ public class Controller {
 	public void spelerKopen(String spelerNaam, Team koper){
 		Speler speler = getSpelerByName(spelerNaam);
 		Team eigenaar = getTeamBySpeler(speler);
-//		int prijs = speler.getPrijs();
-		double prijs = speler.getPrijs();// / (double)(1000000.0);
+		double prijs = speler.getPrijs();
 		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
 		ArrayList<Speler> koperSpelers = koper.getSpelerList();
 		ArrayList<Team> teamList = Divisie.getTeamList();
@@ -1052,26 +967,17 @@ public class Controller {
     }
 	
 	public Object[][] teamsToCompRank(){
-//		Divisie.rankTeams();
 		Object[][] data = new Object[ Divisie.getTeamList().size()][2];
 		for(int i=0; i < Divisie.getTeamList().size(); i++ ){
 			Team t = Divisie.getTeamList().get(i);
-//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
-//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
 			data[i][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
 			data[i][1] = t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+
 					"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies()+
 					"\nDoelvoor: "+t.getDoelvoor()+"\nDoeltegen: "+t.getDoeltegen()+
 					"\nDoelsaldo: "+t.getDoelsaldo()+"\nBudget (mln.€): "+df.format(t.getBudget());
-			
-	        
-		
 		}
 		
 		
-//		String[] columnNames = {"Ranking", "Uitgebreide ranking met doelpunten saldo etc"};
-//		
-//		comp.addPane(data, columnNames, 0);
 		return data;
 	}
 	
@@ -1094,7 +1000,7 @@ public class Controller {
 					if(value!=null){
 						String speler = value.split("\n")[0];
 						if(getTeamBySpeler(getSpelerByName(speler)).equals(t)){
-							//comp.getTransferPane().getTable().setValueAt("Niet te koop", i, 2);
+							
 							JButton btn = (JButton) comp.getTransferPane().getTable().getValueAt(i, 2);
 							btn.setText("Niet te koop");
 							btn.setEnabled(false);
@@ -1118,7 +1024,6 @@ public class Controller {
 			}
 		}
 		
-//		Divisie.rankTeams();
 		Object[][] data = new Object[aantalSp][3];
 
 		int spIdx = 0;
@@ -1126,15 +1031,13 @@ public class Controller {
 			Team t = Divisie.getTeamList().get(i);
 			
 			if(!t.equals(User.getTeam()) && enoughPlayers(t)){
-	//			imgList.add(new ImageIcon("images/logos/"+t.getNaam()+".png"));
-	//			teamDescrList.add(t.getScore() + ". "+t.getNaam()+"\nWinst:"+t.getWinst()+"\nGelijkspel: "+t.getGelijkspel()+"\nVerlies: "+t.getVerlies());
 				for(int k =0; k < t.getSpelerList().size(); k++){
 					final Speler s = t.getSpelerList().get(k);
 					if(s!=null && !s.getNaam().equals("")){
 						data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
 						data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
 										"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
-										"\nUithouding: "+s.getUithouding()+//"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+										"\nUithouding: "+s.getUithouding()+
 										"\nPrijs (mln.€): "+df.format(s.getPrijs());
 						final int row = spIdx;
 						final JButton koopButton = new JButton("<html><body>"+s.getNaam());
@@ -1142,13 +1045,11 @@ public class Controller {
 						koopButton.addActionListener(new ActionListener() {
 						      public void actionPerformed(ActionEvent event) {
 						    	  int r = row;
-						    	  	//JOptionPane.showMessageDialog(null, s.getNaam()+" is gekocht");
 						    	  	if(User.getTeam().getBudget()<s.getPrijs()){
 						    	  		JOptionPane.showMessageDialog(null, "U heeft niet genoeg geld om dit speler te kopen!","",
 						    	  			    JOptionPane.ERROR_MESSAGE);
 						    	  	}else if(RNG.kans(50)){
 							    	  	spelerKopen(s.getNaam(), User.getTeam());
-		//					    	  	updateTables();
 							    	  	System.out.println(koopButton.getText()+"++++++++"+User.getWteam().getBudget());
 							    	  	koopButton.setEnabled(false);
 							    	  	koopButton.setText("Verkocht");
@@ -1159,20 +1060,16 @@ public class Controller {
 						    	  		s.setPrijs(s.getPrijs() + s.getPrijs()/10);
 						    	  		String aValue = s.getNaam()+"\nType:"+s.getType()+
 												"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
-												"\nUithouding: "+s.getUithouding()+//"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+												"\nUithouding: "+s.getUithouding()+
 												"\nPrijs (mln.€): "+df.format(s.getPrijs());
 						    	  		JOptionPane.showMessageDialog(null, getTeamBySpeler(s).getNaam()+" accepteert bod niet\nOude prijs: "+df.format(oldPrice)+"\nNieuwe prijs: "+df.format(s.getPrijs()));
 						    	  		comp.getTransferPane().getTable().setValueAt(aValue, r, 1);
 						    	  		comp.getTransferPane().getModel().fireTableCellUpdated(r, 1);
-//						    	  		comp.getTransferPane().revalidate();comp.getTransferPane().repaint();
-//						    	  		System.out.println("contorller: spelersToCompTransfer: "+s.getNaam() + "="+s.getPrijs() +" "+r + " value = "+comp.getTransferPane().getTable().getValueAt(r, 1));
 						    	  	}
 							    	  banTeamToSell();
 						      }
 						});
-						data[spIdx][2] = koopButton;//s.getNaam();//
-		//				comp.getPane().getKoopButtons()[spIdx][0] = s.getNaam();
-		//				comp.getPane().getKoopButtons()[spIdx][1] = koopButton;
+						data[spIdx][2] = koopButton;
 						spIdx++;
 					}
 				}
@@ -1182,11 +1079,7 @@ public class Controller {
 		//	System.out.println("Controller: spelersToCompTransfer: " + t.getNaam());
 		}
 		
-		
-//		String[] columnNames = {"Transferlijst","Spelers die te koop zijn:", "Kopen"};
 		return data;
-//		comp.addPane(data, columnNames, 1);
-//		comp.getPane().get(1).setKoopButtons(new Object[aantalSp][2]);
 	}
 	
 	public void createWedstrijdteam(){
@@ -1216,9 +1109,7 @@ public class Controller {
     	
     	User.getWteam().setOpstelling(opstelling);
     	
-    //	wedstrijdteamToXML();
     	System.out.println(User.getWteam().toString());
-    	//System.out.println(wSpelers[0].getNaam() + "\n" +wSpelers[10].getNaam() + "\nTactiek = "+ tactiek);
 	}
 	
 	public void wedstrijdteamToXML(){
@@ -1229,7 +1120,7 @@ public class Controller {
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "uithouding", Integer.toString(wteam.getUith()));
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "opstelling", wteam.getOpstelling().getNaam());
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "tactiek", Integer.toString(wteam.getTactiek()));
-		//TeamNaam
+
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "TeamNaam", wteam.getNaam());
 		writer.updaten("Wedstrijdteam" , "Wedstrijdteam", "gespeeldMet", wteam.getGespeeldMet());
 		String spelers = "";
@@ -1259,7 +1150,6 @@ public class Controller {
 	public void divisieTeamsToXML(){	
 		writer.updaten("divisie" , "Eredivisie", "speeldag", Divisie.getSpeeldag()+"");
 		writer.updaten("divisie" , "Eredivisie", "avatarPath", Divisie.getAvatarPath()+"");
-		//System.out.println("divisie" + "Eredivisie" + "speeldag" + Divisie.getSpeeldag()+"");
 		for(Team t: Divisie.getTeamsGespeeld()){
 			writer.updaten("team" , t.getNaam() , "doelvoor" , t.getDoelvoor()+"");
 			writer.updaten("team" , t.getNaam() , "doeltegen" , t.getDoeltegen()+"");
@@ -1270,7 +1160,6 @@ public class Controller {
 			writer.updaten("team" , t.getNaam() , "verlies" , t.getVerlies()+"");
 			
 			writer.updaten("team" , t.getNaam() , "score" , t.getScore()+"");
-		//	writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
 		}
 		for(Team t: Divisie.getTeamList()){		
 			writer.updaten("team" , t.getNaam() , "rank" , t.getRank()+"");
@@ -1303,7 +1192,6 @@ public class Controller {
 					try {
 						xmlOutput.output(writer.getDocument(), new FileWriter(new File(Driver.path)));
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				    System.out.println(speler.getChildText("naam") + " is verwijderd van " + speler.getParentElement().getChildText("naam"));
@@ -1324,10 +1212,8 @@ public class Controller {
 			outputChannel = new FileOutputStream(dest).getChannel();
 			outputChannel.transferFrom(inputChannel, 0, inputChannel.size());
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Driver.path = destination;

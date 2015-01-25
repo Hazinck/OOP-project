@@ -51,10 +51,6 @@ public class GamePanel extends JPanel{
 		t2 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam2().getNaam()+".png");//"field_satur=45.png");
 	}
 	
-	
-//	public void addSprite(Sprite s){
-//		spriteList.add(s);
-//	}
 	public void addPlayer(Player p, int team12){
 		if(team12==1){
 			playerListTeam1.add(p);
@@ -100,43 +96,14 @@ public class GamePanel extends JPanel{
 	@Override
     public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-//		Image veld = Toolkit.getDefaultToolkit().getImage("images/veld_big_end.png");//"field_satur=45.png");
 		g.drawImage(veld, viewX ,  viewY ,  this);//g.drawImage(veld, -500 + viewX, -500 + viewY,  this);//this.getWidth(), this.getHeight(),
-		
-//		int xpoints[] = {388+viewX, 2165+viewX, 2444+viewX, 123+viewX, 388+viewX};
-//	    int ypoints[] = {353+viewY, 353+viewY, 1412+viewY, 1412+viewY, 353+viewY};
-//		g.drawPolygon(pol);
-//		ball.getGoal2().setLocation(ball.getGoal2().x+viewX, ball.getGoal2().y + viewY);
-//		g.drawRect(ball.getGoal2().x, ball.getGoal2().y, ball.getGoal2().width, ball.getGoal2().height);
-//		
-//		ball.getGoal1().setLocation(ball.getGoal1().x+viewX, ball.getGoal1().y + viewY);
-//		g.drawRect(ball.getGoal1().x, ball.getGoal1().y, ball.getGoal1().width, ball.getGoal1().height);
-		
-		
-		
-//		System.out.println("GamePanel:  "+(int)ball.getX() +" "+ (int)ball.getY());
-		
 		ArrayList<Player> playerList = new ArrayList<Player>();
 		playerList.addAll(playerListTeam1);
 		playerList.addAll(playerListTeam2);
 		
 		for(Player p: playerList){
 			g.drawImage(p.getSpriteObj().getSprite(), (int)p.getX()-30+viewX, (int)p.getY()-30+viewY,  this);//was -30 -30 sprite, x, y, this);
-//			System.out.println(p.getTargetY()+"=="+ball.getTargetY());
-//			g.setColor(Color.black);
-//			if(p.getSpeler().getType().equals("doelman"))
-//			if(p.getSpeler().getType().equals("doelman")){
-//				g.drawRect((int)p.getBoundsAnchor().x + viewX, (int)p.getBoundsAnchor().y + viewY, (int)p.getBoundsAnchor().width, (int)p.getBoundsAnchor().height);
-//				g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
-//			}
-//			g.drawString(p.getSpeler().getNaam(), (int)p.getX() - 30 + viewX, (int)p.getY() - 25 + viewY);
-//			g.setColor(Color.black);
-//			g.drawOval((int)p.getCircleBounds().x + viewX, (int)p.getCircleBounds().y + viewY, (int)p.getCircleBounds().width, (int)p.getCircleBounds().height);
-//			g.drawOval((int)p.getBoundsAnchor().x + viewX, (int)p.getBoundsAnchor().y + viewY, (int)p.getBoundsAnchor().width, (int)p.getBoundsAnchor().height);
-//			g.setColor(Color.magenta);
-//			g.drawOval((int)p.getCircleBallBounds().x + viewX, (int)p.getCircleBallBounds().y + viewY, (int)p.getCircleBallBounds().width, (int)p.getCircleBallBounds().height);
-			
-			if(p.isBallOwner() && p.getX()==ball.getX() && p.getY()==ball.getY()){
+		if(p.isBallOwner() && p.getX()==ball.getX() && p.getY()==ball.getY()){
 				if(p.getTeam12()==1 && !manualPlay){
 					g.setColor(Color.blue);
 					g.drawString(p.getSpeler().getType(), (int)p.getX() - 30 + viewX, (int)p.getY() + 25 + viewY);
@@ -157,11 +124,9 @@ public class GamePanel extends JPanel{
 			}
 		
 		}
-		//Image ballSprite = Toolkit.getDefaultToolkit().getImage("images/ball_small.png");//"field_satur=45.png");
 		g.drawImage(ballSprite, (int)ball.getX() + viewX, (int)ball.getY() + viewY, this);//
 		
 		
-		//Image scoreBalk = Toolkit.getDefaultToolkit().getImage("images/logo-score.png");//"field_satur=45.png");
 		g.drawImage(scoreBalk, 120, 50, this);//
 		g.setColor(Color.black);
 		
@@ -180,12 +145,12 @@ public class GamePanel extends JPanel{
 		g.drawString(tijd+":00", 375, 75);
 		
 		if(goal){
-		//	Image goal = Toolkit.getDefaultToolkit().getImage("images/goal.png");//"field_satur=45.png");
+		
 			g.drawImage(goalImg, VeldPanel.getFrameWidth()/2-500, VeldPanel.getFrameHeight()/2-150, this);//
 		}
 		
 		if(start){
-		//	Image goal = Toolkit.getDefaultToolkit().getImage("images/game_start.png");//"field_satur=45.png");
+		
 			g.drawImage(gameStartImg, VeldPanel.getFrameWidth()/2-273, VeldPanel.getFrameHeight()/2-120, this);//
 			g.setFont (new Font ("Arial", Font.BOLD , 20));
 			
@@ -193,22 +158,18 @@ public class GamePanel extends JPanel{
 			g.drawString( ball.getTeam1().getNaam(), VeldPanel.getFrameWidth()/2-200, VeldPanel.getFrameHeight()/2-30);//75*75
 			g.drawString( ball.getTeam2().getNaam(), VeldPanel.getFrameWidth()/2+94, VeldPanel.getFrameHeight()/2-30);//75*75
 			
-//			Image t1 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam1().getNaam()+".png");//"field_satur=45.png");
-//			Image t2 = Toolkit.getDefaultToolkit().getImage("images/logos/"+ ball.getTeam2().getNaam()+".png");//"field_satur=45.png");
 			g.drawImage(t1, VeldPanel.getFrameWidth()/2-190, VeldPanel.getFrameHeight()/2-10, this);//h=120
 			g.drawImage(t2, VeldPanel.getFrameWidth()/2+80, VeldPanel.getFrameHeight()/2-10, this);//
 			
 		}
 		
 		if(end){
-			//"field_satur=45.png");
 			g.drawImage(gameEndImg, VeldPanel.getFrameWidth()/2-273, VeldPanel.getFrameHeight()/2-120, this);//
 			g.setFont (new Font ("Arial", Font.BOLD , 20));
 			
 			g.setColor(Color.decode("#464e5a"));
 			g.drawString( ball.getTeam1().getNaam(), VeldPanel.getFrameWidth()/2-200, VeldPanel.getFrameHeight()/2+5);//75*75
 			g.drawString( ball.getTeam2().getNaam(), VeldPanel.getFrameWidth()/2+94, VeldPanel.getFrameHeight()/2+5);//75*75
-			
 			
 			g.drawImage(t1, VeldPanel.getFrameWidth()/2-190, VeldPanel.getFrameHeight()/2+25, this);//h=120
 			g.drawImage(t2, VeldPanel.getFrameWidth()/2+80, VeldPanel.getFrameHeight()/2+25, this);//

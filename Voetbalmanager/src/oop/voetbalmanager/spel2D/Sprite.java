@@ -15,26 +15,22 @@ public class Sprite{
 	private BufferedImage sprite;
 	private BufferedImage spriteFull;
 	private BufferedImage idle_sprite;
-//	private int x, y ;
 	private int subX, subY ;
 	private int xSubSprite = 0;
 	private int UPDATE_TIME = 200;
 	private  String richting;
 	private boolean idle = false;
 	
-    public Sprite(String imgFile, int team12){//String richting){//, int x, int y){//W, NW, N, NE, E, SE, S, SW,
-    	//	this.richting =  richting;
+    public Sprite(String imgFile, int team12){
     	if(team12==1){
     		richting="E";
     	}else if(team12==2){
     		richting="W";
     	}
-//    	this.x = x;
-//    	this.y = y;
     	try {
     		ImageIO.setUseCache(false);
     		spriteFull = ImageIO.read(new File(imgFile+"/run.png"));
-    		idle_sprite = ImageIO.read(new File(imgFile+"/idle.png"));//idle_E
+    		idle_sprite = ImageIO.read(new File(imgFile+"/idle.png"));
     		update();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -49,13 +45,10 @@ public class Sprite{
     		}else{
     			sprite = idle_sprite.getSubimage(0, 48, 85, 48);
     		}
-    	//	sprite = idle_sprite;
     	}else{
 	    	kiesRichting();
-	    //	System.out.println(xSubSprite+"update()");
-		//	sprite = spriteFull.getSubimage(xSubSprite*48, subY, 48, 65);//x=48;y=
-			sprite = spriteFull.getSubimage(xSubSprite*85, subY, 85, 48);//x=48;y=
-			if(xSubSprite>=14){//%4==0){
+			sprite = spriteFull.getSubimage(xSubSprite*85, subY, 85, 48);
+			if(xSubSprite>=14){
 				xSubSprite = 0;
 			}
    
@@ -68,7 +61,7 @@ public class Sprite{
     public void kiesRichting(){
 
     	switch(richting){
-    	case "N"://niet
+    	case "N":
     		subX=0;
     		subY=0;
     		break;
@@ -88,20 +81,19 @@ public class Sprite{
     		subX=0;
     		subY=192;
     		break;
-    	case "SE"://niet
+    	case "SE":
     		subX=0;
     		subY=240;
     		break;
-    	case "SW"://niet
+    	case "SW":
     		subX=0;
     		subY=288;
     		break;
-    	case "S"://niet
+    	case "S":
     		subX=0;
     		subY=336;
     		break;
     	}
-    //	System.out.println(subY + 48);
     }
 
     public void clearImg(){
@@ -147,14 +139,5 @@ public class Sprite{
 	public boolean isIdle() {
 		return idle;
 	}
-
-
-	
-    
-//        @Override
-//        public void paintComponent(Graphics g) {
-//           g.drawImage(sprite, x, y, this);
-//        }
-     
    
 }

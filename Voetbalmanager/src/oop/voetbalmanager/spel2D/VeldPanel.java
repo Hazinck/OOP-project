@@ -37,7 +37,7 @@ public class VeldPanel extends JPanel {
 		
 		gp = new GamePanel(ball);
 		
-		for(int i = 0; i < team1.getWSpelers().length; i++){//team1.getSpelerList()
+		for(int i = 0; i < team1.getWSpelers().length; i++){
 			Speler s1 = team1.getWSpelers()[i];
 			Player p1 = new Player(s1, 1, i, ball, team1, gp);
 			p1.getSpriteObj().setxSubSprite(RNG.getalTot(15));
@@ -48,21 +48,12 @@ public class VeldPanel extends JPanel {
 			p2.getSpriteObj().setxSubSprite(RNG.getalTot(15));
 			gp.addPlayer(p2, 2);
 		}
-		
-//		Position position1 = new Position(gp.getPlayerListTeam1(), team1.getOpstelling(), 1);
-//		position1.setPosition();
-//		
-//		Position position2 = new Position(gp.getPlayerListTeam2(), team2.getOpstelling(), 2);
-//		position2.setPosition();
-		
 		gr = new GameRunnable(gp, this);
-	//	thread = new Thread(gr);
 		gr.moveCam();
 		JPanel buttonPanel = new JPanel();
 		final JButton startButton = new JButton("Start");
 	    startButton.addActionListener(new ActionListener() {
 	      public void actionPerformed(ActionEvent event) {
-	    	//  thread.start();
 	    	  gp.setStart(false);
 	    	  gr.run();
 	    	  startButton.setEnabled(false);
@@ -79,10 +70,6 @@ public class VeldPanel extends JPanel {
 	    
 	    
 	    verslagPanel = new VerslagPanel(this);
-		
-//		add(verslagPanel);
-//		verslagPanel.setBounds(0, (int)(frameHeight*0.70), (int)(frameWidth*0.30), (int)(frameHeight*0.25));
-		  
 		add(gp);
 		gp.setBounds(0, 0, frameWidth, (int)(frameHeight*0.95));
 		

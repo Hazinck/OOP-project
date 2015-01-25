@@ -21,12 +21,10 @@ public class TXTreader {
 	
 	public static void readTeam(String teamFile, String teamNaam){
 			String file = pathTxt + teamFile;
-		//	File input = new File(file);
 			Scanner sc;
 			try {
 				
 				sc = new Scanner(new BufferedReader(new FileReader(file)));
-			//	System.out.println(file+" "+ sc.hasNext());
 				while(sc.hasNextLine()){
 					
 					parse(sc, teamNaam);
@@ -38,12 +36,10 @@ public class TXTreader {
 	
 	public static void addTeamInfo(String infoFile){
 		String file = infoFile;
-	//	File input = new File(file);
 		Scanner sc;
 		try {
 			
 			sc = new Scanner(new BufferedReader(new FileReader(file)));
-		//	System.out.println(file+" "+ sc.hasNext());
 			while(sc.hasNextLine()){
 				
 				parseInfo(sc);
@@ -66,7 +62,7 @@ public class TXTreader {
 		String doeltegen = pA[6];
 		String doelsaldo = pA[7];
 		String punten = pA[8];
-		String budget = pA[9];//in mln
+		String budget = pA[9];
 		
 		System.out.println("Team: "+naam+", rank: "+rank+", winst: "+winst+", gelijkspel: "+gelijkspel+
 					", verlies: "+verlies+", doelvoor: "+doelvoor+", doeltegen: "+doeltegen+
@@ -95,9 +91,7 @@ public class TXTreader {
 		String verd = pA[4];
 		
 	//	toevoegen aan XML
-	//	System.out.println("\tNaam: "+naam);
-		writer.add("team", teamNaam, "speler", naam);
-	//	System.out.println("\t\tPositie: "+pos);		
+		writer.add("team", teamNaam, "speler", naam);	
 		switch(pos){
 			case "A":
 				writer.updaten("speler" , naam, "type", "aanvaller");
@@ -113,11 +107,8 @@ public class TXTreader {
 				break;
 		}
        
-	//	System.out.println("\t\tUithouding: "+uith);
 		writer.updaten("speler" , naam, "uithouding", uith);
-	//	System.out.println("\t\tAanval: "+aanv);
 		writer.updaten("speler" , naam, "offense", aanv);
-	//	System.out.println("\t\tVerdediging: "+verd);
 		writer.updaten("speler" , naam, "defence", verd);
 	}
 	
@@ -126,16 +117,11 @@ public class TXTreader {
 	    for (final File fileEntry : folder.listFiles()) {
 	        if (fileEntry.isDirectory()) {
 	            listFilesForFolder(fileEntry);
-	        } else {
-	        	
-	        //	teams.add(fileEntry.getName());
-	            
+	        } else {	            
 	            String teamFile = fileEntry.getName();
 	            String teamNaam = teamFile.replaceAll(".txt", "");
 	            //toevoegen aan XML
-//	            System.out.println(folder + "========================\n"+"Team: "+teamNaam);
 	            writer.add("divisie", "Eredivisie", "team", teamNaam);
-//	          System.out.println("========================\n"+"Team: "+teamNaam);
 	            readTeam(teamFile, teamNaam);
 	            allFiles += teamFile+"\n";
 	        }

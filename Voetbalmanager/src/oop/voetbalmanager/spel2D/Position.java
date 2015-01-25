@@ -26,12 +26,6 @@ public class Position {
 	
 	
 	public void setPosition(){
-//		Opstelling opstelling = null;
-//		for(int i = 0; i < opstellingen.size(); i++){
-//			if(opstellingen.get(i).getNaam().equals(opstellingNaam)){
-//				opstelling = opstellingen.get(i); 
-//			}
-//		}
 		
 		for(int i = 0; i < opstelling.getPosities().size(); i++){
 			Positie p1 = opstelling.getPosities().get(i);
@@ -47,9 +41,9 @@ public class Position {
 
 			playerList.get(i).setGrenzen(p2.getX(), p2.getY());
 			if(playerList.get(i).getSpeler().getType().equals("doelman")){
-//				System.out.println("spel2d position:  "+startX+ " team"+team12);
+
 			}
-		//	System.out.println(p2.getType() + " op: " + p2.getX() + "," + p2.getY());
+
 		}
 		
 	}
@@ -107,8 +101,7 @@ public class Position {
 	}
 	
 	
-	public int playerXPlaats(String type, int i){//, int aXi, int mXi, int vXi, int dXi){
-	//	System.out.println(type + " " + i);
+	public int playerXPlaats(String type, int i){
 		  int x = -30;
 		  int dXi = i;
 		  int vXi = dXi - 1;
@@ -137,9 +130,6 @@ public class Position {
 			  }else if((mXi==11 || mXi==12)){
 				  x = 560;
 			  }
-//			  else if(type.equals("middenvelder") && mXi>2){
-//				  type = "verdediger";
-//			  }
 		  }
 		  if(type.equals("verdediger")){
 			  if(vXi<=3){
@@ -147,9 +137,6 @@ public class Position {
 			  }else if(x >= 11 || x<= 14){
 				  x = 625;
 			  }
-//			  else if(type.equals("verdediger") && vXi>3){
-//				  type = "doelman";
-//			  }
 		  }
 		  if(type.equals("doelman")){
 			  if(dXi==0){
@@ -162,13 +149,13 @@ public class Position {
 		  return x;
 	  }
 	  
-	  public int playerYPlaats(String type, int i){//, int aYi, int mYi, int vYi, int dYi){
+	  public int playerYPlaats(String type, int i){
 		  int y = -30;
 		  int dYi = i;
 		  int vYi = dYi - 1;
 		  int mYi = vYi - 4;
 		  int aYi = mYi - 3;
-		//  System.out.println("AANTAL SPELERS "+i);
+
 		  if(type.equals("aanvaller") && (aYi==0 || aYi==13)){
 			  y = 145;
 		  }else if(type.equals("aanvaller") && (aYi==1 || aYi==11)){
@@ -176,10 +163,7 @@ public class Position {
 		  }else if(type.equals("aanvaller") && (aYi==2 || aYi==12)){
 			  y = 380;
 		  }
-//		  else if(type.equals("aanvaller") && aYi>2){
-//			  type = "middenvelder";
-//		  }
-		  
+
 		  if(type.equals("middenvelder") && (mYi==0 || mYi==13)){
 			  y = 265;
 		  }else if(type.equals("middenvelder") && (mYi==1 || mYi==11)){
@@ -187,9 +171,6 @@ public class Position {
 		  }else if(type.equals("middenvelder") && (mYi==2 || mYi==12)){
 			  y = 444;
 		  }
-//		  else if(type.equals("middenvelder") && mYi>2){
-//			  type = "verdediger";
-//		  }
 		  
 		  if(type.equals("verdediger") && (vYi==0 || vYi==13)){
 			  y = 340;
@@ -200,9 +181,6 @@ public class Position {
 		  }else if(type.equals("verdediger") && (vYi==3 || vYi==14)){
 			  y = 190;
 		  }
-//		  else if(type.equals("verdediger") && vYi>3){
-//			  type = "doelman";
-//		  }
 		  
 		  if(type.equals("doelman") && (dYi==0 || dYi==11)){
 			  y = 265;

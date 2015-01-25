@@ -9,8 +9,7 @@ import javax.swing.text.DefaultCaret;
 
 
 public class VerslagPanel extends JPanel{
-//	private JLabel verslag;
-	private JTextArea verslag;// = new JTextArea();
+	private JTextArea verslag;
 	public VerslagPanel(VeldPanel veldPanel){
 		setOpaque(false);
 		setBackground( new Color(0, 0, 0, 50) );
@@ -31,7 +30,6 @@ public class VerslagPanel extends JPanel{
 		pane.getViewport().setOpaque(false);
 		pane.setBorder(null);
 		pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-		//add(pane, BorderLayout.WEST);
 	}
 	
 	@Override

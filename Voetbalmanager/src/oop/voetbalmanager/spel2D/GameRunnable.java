@@ -40,7 +40,7 @@ public class GameRunnable implements Runnable {
 	private int timeLoop = 0;
 	private int excitedSound = 0;
 	private int goalSound = 0;
-	public GameRunnable(GamePanel gp, VeldPanel veldPanel){// VeldFrame veldPanel){
+	public GameRunnable(GamePanel gp, VeldPanel veldPanel){
 		this.gp = gp;
 		this.veldPanel = veldPanel;
 		
@@ -62,9 +62,7 @@ public class GameRunnable implements Runnable {
 	public void run() {
 		
 		tStart = System.currentTimeMillis();
-		//  control.controlBall(veldPanel);
 		  animatePlayer();
-		//  moveCam();
 		  moveAll();
 		  goalAgain();
 		  
@@ -75,16 +73,12 @@ public class GameRunnable implements Runnable {
 		ActionListener reset = new ActionListener() {
 	         @Override
 	         public void actionPerformed(ActionEvent evt) {
-//	        	 long tEnd = System.currentTimeMillis();
-//	        	 long tDelta = tEnd - tStart;
-//	        	 double elapsedSecondes = tDelta / 1000.0;
-//	        	 double elapsedMinutes = elapsedSecondes / 60;
 	        	
 	        	 if(timeLoop%80==0 && timeLoop!=0){
 	        		 gp.setTijd(gp.getTijd() - 1);
 	        	 }
 	        	 
-	        	 if(timeLoop > 3600){// && gp.getBall().getFinalResult().equals(gp.getBall().getScore())){
+	        	 if(timeLoop > 3600){
 	        		 endspiel();
 	        	 }
 	        	 else{
@@ -95,7 +89,6 @@ public class GameRunnable implements Runnable {
 	        			 playSound("wav/Excited.wav");
 	        			 excitedSound = 2400;
 	        		 }else if(excitedSound!=0 && excitedSound%20==0){
-	        			// System.out.println("Game Runnable: playing sound " + excitedSound);
 	        			 excitedSound -= 20;
 	        		 }
 	        		 if(gp.getBall().isBallInGoal() && goalSound==0){
@@ -125,15 +118,15 @@ public class GameRunnable implements Runnable {
 	public void endspiel(){
 		 Dimension score = Divisie.getScoreVerslag();
 		 String winner = "Afgelopen! ";
-  		 if(score.getWidth() == score.getHeight()){//gp.getBall().winner()==0){
+  		 if(score.getWidth() == score.getHeight()){
   			 winner += gp.getBall().getTeam1().getNaam()+" en "+
   					 	gp.getBall().getTeam2().getNaam()+
   					 	" delen de punten: "+(int)score.getWidth()+"-"+(int)score.getHeight()+".";
   		 }else{
-  			 if(score.getWidth() > score.getHeight()){//gp.getBall().winner()==1){gp.getBall().getScore().height
+  			 if(score.getWidth() > score.getHeight()){
   				winner +=  gp.getBall().getTeam1().getNaam()+" wint met "+(int)score.getWidth()+"-"+(int)score.getHeight()+
   							" van "+gp.getBall().getTeam2().getNaam()+".";
-  			 }else if(score.getWidth() < score.getHeight()){//gp.getBall().winner()==2){
+  			 }else if(score.getWidth() < score.getHeight()){
   				 winner +=  gp.getBall().getTeam2().getNaam()+" wint met "+(int)score.getWidth()+"-"+(int)score.getHeight()+
   							" van "+gp.getBall().getTeam1().getNaam()+".";
   			 }
@@ -147,11 +140,6 @@ public class GameRunnable implements Runnable {
   		 veldPanel.getSkipButton().setEnabled(false);
   		 veldPanel.getTerugButton().setEnabled(true);
   		 resetAll();
-//  		 gp.clearImg();
-//  		 for(Player p: playerListAll){
-//  			 p.getSpriteObj().clearImg();
-//  		 }
-		 
 	}
 	
 	public void resetAll(){
@@ -179,7 +167,7 @@ public class GameRunnable implements Runnable {
 	     			p.getSpriteObj().update();
 	     			
 	     		}
-	            veldPanel.repaint();  // Refresh the JFrame, callback paintComponent()
+	            veldPanel.repaint();
 	         }
 	      };
 	      Timer t =  new Timer(50, updateAnim);
@@ -194,10 +182,8 @@ public class GameRunnable implements Runnable {
 		         public void actionPerformed(ActionEvent evt) {
 		        	 for(Player p: playerListAll){
 		        		 
-			     			p.move( (int)gp.getBall().getXforP(),  (int)gp.getBall().getYforP());//targetX,Y
-//			     		System.out.println("gameRunnable: " + p.getTargetX() + " = " + (int)gp.getBall().getXforP());	
+			     			p.move( (int)gp.getBall().getXforP(),  (int)gp.getBall().getYforP());//targetX,Y	
 			     	 }
-		        	// Collision.collide(playerListAll);
 		        	 Collision.collision(playerListAll);
 		        	 gp.getBall().move();
 		        	 autoCam(gp.getBall());
@@ -228,7 +214,6 @@ public class GameRunnable implements Runnable {
 				}
 			}
 		}
-//		System.out.println(VeldFrame.getFrameWidth()/2  +" "+ b.getX() + gp.getViewX());
 		
 			if(ViewFrame.getFrameWidth()/2  > x + gp.getViewX() + 50){
 				if(gp.getViewX()<-5){
@@ -258,7 +243,6 @@ public class GameRunnable implements Runnable {
             @Override
             public boolean dispatchKeyEvent(KeyEvent ke) {
             	if(ke.getID() == KeyEvent.KEY_PRESSED){
-            //		System.out.println("GameRunnable: "+gp.getViewY());
 	                    switch (ke.getKeyCode()) {
 	                    case KeyEvent.VK_LEFT:
 	                    	if(gp.getViewX()<-5){
@@ -266,7 +250,7 @@ public class GameRunnable implements Runnable {
 	                    	}
 	                        break;
 	                    case KeyEvent.VK_RIGHT:
-	                    	if(gp.getViewX()>(-2550 + ViewFrame.getFrameWidth())){//-1190){
+	                    	if(gp.getViewX()>(-2550 + ViewFrame.getFrameWidth())){
 	                    		gp.setViewX(gp.getViewX()-5);
 	                    	}
 	                        break;
@@ -299,7 +283,6 @@ public class GameRunnable implements Runnable {
             @Override
             public boolean dispatchKeyEvent(KeyEvent ke) {
             	if(ke.getID() == KeyEvent.KEY_PRESSED){
-            //		System.out.println("GameRunnable: "+gp.getViewY());
 	                    switch (ke.getKeyCode()) {
 	                    case KeyEvent.VK_C:
 	                    	Player p = null;
@@ -315,7 +298,6 @@ public class GameRunnable implements Runnable {
 	                    			}
 	                    		}
 	                    	}
-	                    	//playerListAll.get(c).setRunsByUser(true);
 	                    	if(c!=-1){
 	                    		gp.getBall().setLastBallOwner(playerListAll.get(c));
 	                    	}
@@ -330,7 +312,6 @@ public class GameRunnable implements Runnable {
 	}
 	
 	public void verslag(String line){
-	//	System.out.println(verslag.size()==0);
 		if(verslag.size()<2 || !line.equals(verslag.get(verslag.size()-1))){
 			verslag.add(line);
 			Calendar cal = Calendar.getInstance();
@@ -344,14 +325,13 @@ public class GameRunnable implements Runnable {
 		try {
 	          Clip clip = AudioSystem.getClip();
 	          AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-	                  new File(file));//"wav/Excited.wav"
+	                  new File(file));
 	          clip.open(inputStream);
 	          FloatControl gainControl = 
 	        		    (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-	        		gainControl.setValue(-15.0f); // Reduce volume by 10 decibels.
+	        		gainControl.setValue(-15.0f); // Reduce volume by 15 decibels.
 	          System.out.println("Game runnable: volume "+clip.getLevel());
 		      clip.start();
-		   //   clip.loop(Clip.LOOP_CONTINUOUSLY);
 	        } catch (Exception e) {
 	          System.err.println(e.getMessage());
 	        }

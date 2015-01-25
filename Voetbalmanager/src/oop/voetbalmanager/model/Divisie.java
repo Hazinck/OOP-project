@@ -38,7 +38,6 @@ public class Divisie {
 	 * @return Score voor ranking
 	 */
 	public static void rekenPunten(Team team){
-	//	System.out.println(team.getNaam()+": "+team.getWinst());
 		int score = team.getWinst()*3 + team.getGelijkspel();
 		team.setScore(score);
 	}
@@ -46,9 +45,7 @@ public class Divisie {
 	public static void rankTeams(){
 		for(Team t: teamList){
 			rekenPunten(t);
-		//	System.out.println(t.getNaam()+": "+t.getScore());
 		}
-		//System.out.println("\n=========================");
 		Collections.sort(teamList, new Comparator<Team>() {
 		    public int compare(Team t1, Team t2) {
 		    	Integer t1score = t1.getScore();
@@ -67,7 +64,6 @@ public class Divisie {
 		int i = 1;
 		for(Team t: teamList){
 			t.setRank(i);
-			//System.out.println(t.getNaam()+": "+t.getScore());
 			i++;
 		}
 	}
@@ -104,13 +100,10 @@ public class Divisie {
 	
 	public static void teamsToDiv(Team team1, Team team2){
 		for(int i = 0; i < teamList.size(); i++){
-		//	System.out.println("Divisie: team toDiv old " + t.getNaam() + " " + t.getWinst());
 			if(teamList.get(i).getNaam().equals(team1.getNaam())){
 				teamList.set(i, team1) ;
-//				System.out.println("\nDivisie: team toDiv new " + teamList.get(i).getNaam() + " " + teamList.get(i).getWinst());
 			}else if(teamList.get(i).getNaam().equals(team2.getNaam())){
 				teamList.set(i, team2);
-//				System.out.println("\nDivisie: team toDiv new " + teamList.get(i).getNaam() + " " + teamList.get(i).getWinst());
 			}
 		}
 	}

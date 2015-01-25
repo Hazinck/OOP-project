@@ -6,8 +6,8 @@ public class User {
 	private static Wedstrijdteam wteam;
 	
 	public User(String naam, Team team){
-		setNaam(naam);//this.naam = naam;
-		setTeam(team);//this.team = team;
+		setNaam(naam);
+		setTeam(team);
 	}
 	
 	public String toString(){
@@ -23,7 +23,6 @@ public class User {
 	}
 
 	public static Team getTeam() {
-	//	wteam = new Wedstrijdteam(team);
 		return team;
 	}
 

@@ -111,21 +111,18 @@ public class XMLreader {
 	
 	public Speler readSpeler(Element spelerEl){
 			String spelerNaam = spelerEl.getChildText("naam");
-		//	System.out.println(spelerEl.getAttribute("id") + " "+ spelerNaam+" "+team.getChildText("naam"));
 			int nummer=-1;
 			try {
 				nummer = spelerEl.getAttribute("id").getIntValue();
 			} catch (DataConversionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}//Integer.parseInt(spelerEl.getChildText("nummer"));
+			}
 			String type = spelerEl.getChildText("type");
 			int offense = Integer.parseInt(spelerEl.getChildText("offense"));			
 			int defence = Integer.parseInt(spelerEl.getChildText("defence"));
 			int uithouding = Integer.parseInt(spelerEl.getChildText("uithouding"));
 			String beschikbaarheid = spelerEl.getChildText("beschikbaarheid");
 			double prijs = Double.parseDouble(spelerEl.getChildText("prijs"));
-//			int prijs = 10000;
 			
 			Speler speler = new Speler(spelerNaam, nummer, type, offense, defence, uithouding, beschikbaarheid, prijs);
 
@@ -167,33 +164,8 @@ public class XMLreader {
 	
 	public Opstelling readOpstelling(Element opstEl){
 		
-//		Element keeper = opstEl.getChild("doelman0");
-//		//maak lijst van alle opstellingen
-//		List<Element> midList = opstEl.getChildren("middenvelder");
-//		List<Element> verdList = opstEl.getChildren("verdediger");
-//		List<Element> aanvList = opstEl.getChildren("aanvaller");
-		
 		List<Element> positiesList = opstEl.getChildren();
-		
-//		System.out.println(positiesList.get(1).getName());
 		ArrayList<Positie> posities = new ArrayList<Positie>();
-//		int xk = Integer.parseInt(keeper.getText().split(",")[0]);
-//		int yk = Integer.parseInt(keeper.getText().split(",")[1]);
-//		Positie doelman = new Positie(xk, yk, "doelman");
-//		posities.add(doelman);
-		//<opstelling> als element in arrraylist toevoegen
-//		for (int i = 0; i < midList.size(); i++) {
-//			int x = Integer.parseInt(midList.get(i).getText().split(",")[0]);
-//			int y = Integer.parseInt(midList.get(i).getText().split(",")[1]);
-//			Positie middenvelder = new Positie(x, y, "middenvelder");
-//			posities.add(middenvelder);
-//		}
-//		for (int i = 0; i < verdList.size(); i++) {
-//			int x = Integer.parseInt(verdList.get(i).getText().split(",")[0]);
-//			int y = Integer.parseInt(verdList.get(i).getText().split(",")[1]);
-//			Positie verdediger = new Positie(x, y, "verdediger");
-//			posities.add(verdediger);
-//		}
 		for (int i = 1; i < positiesList.size(); i++) {
 			int x = Integer.parseInt(positiesList.get(i).getText().split(",")[0]);
 			int y = Integer.parseInt(positiesList.get(i).getText().split(",")[1]);
@@ -258,7 +230,6 @@ public class XMLreader {
 						break;
 					}
 				}
-			//	System.out.println("XMLReader: readWteam " + spelerList.size());
 			}
 			Collections.reverse(spelerList);
 			Speler[] spelersArray = new Speler[11];

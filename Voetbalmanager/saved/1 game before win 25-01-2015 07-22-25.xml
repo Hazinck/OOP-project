@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <divisie id="0">
   <naam>Eredivisie</naam>
-  <speeldag>2</speeldag>
+  <speeldag>33</speeldag>
   <stand>0</stand>
   <avatarPath>images/user_default.png</avatarPath>
   <team id="01">
     <naam>ADO Den Haag</naam>
-    <rank>15</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>13.6</budget>
+    <rank>8</rank>
+    <winst>8</winst>
+    <gelijkspel>17</gelijkspel>
+    <verlies>7</verlies>
+    <doelvoor>26</doelvoor>
+    <doeltegen>22</doeltegen>
+    <doelsaldo>4</doelsaldo>
+    <score>41</score>
+    <budget>73.6</budget>
     <speler id="011">
       <naam>﻿Aaron Meijers</naam>
       <type>verdediger</type>
       <uithouding>76</uithouding>
       <offense>52</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.1122</prijs>
     </speler>
     <speler id="012">
       <naam>Danny Bakker</naam>
@@ -28,6 +30,8 @@
       <uithouding>64</uithouding>
       <offense>48</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5344</prijs>
     </speler>
     <speler id="013">
       <naam>Dion Malone</naam>
@@ -35,6 +39,8 @@
       <uithouding>69</uithouding>
       <offense>44</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.4288</prijs>
     </speler>
     <speler id="014">
       <naam>Gianni Zuiverloon</naam>
@@ -42,6 +48,8 @@
       <uithouding>73</uithouding>
       <offense>48</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.847</prijs>
     </speler>
     <speler id="015">
       <naam>Kevin Jansen</naam>
@@ -49,6 +57,8 @@
       <uithouding>66</uithouding>
       <offense>54</offense>
       <defence>57</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.53935</prijs>
     </speler>
     <speler id="016">
       <naam>Mathias Gehrt</naam>
@@ -56,6 +66,8 @@
       <uithouding>79</uithouding>
       <offense>60</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.659</prijs>
     </speler>
     <speler id="017">
       <naam>Michiel Kramer</naam>
@@ -63,6 +75,8 @@
       <uithouding>63</uithouding>
       <offense>65</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.740375</prijs>
     </speler>
     <speler id="018">
       <naam>Mike van Duinen</naam>
@@ -70,6 +84,8 @@
       <uithouding>75</uithouding>
       <offense>67</offense>
       <defence>45</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.8265625</prijs>
     </speler>
     <speler id="019">
       <naam>Mitchell de Vlugt</naam>
@@ -77,6 +93,8 @@
       <uithouding>72</uithouding>
       <offense>58</offense>
       <defence>43</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.2446</prijs>
     </speler>
     <speler id="0110">
       <naam>Mitchell Schet</naam>
@@ -84,6 +102,8 @@
       <uithouding>85</uithouding>
       <offense>62</offense>
       <defence>33</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.173875</prijs>
     </speler>
     <speler id="0111">
       <naam>Richelo Fecunda</naam>
@@ -91,6 +111,8 @@
       <uithouding>70</uithouding>
       <offense>31</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.546125</prijs>
     </speler>
     <speler id="0112">
       <naam>Robin Buwalda</naam>
@@ -98,6 +120,8 @@
       <uithouding>67</uithouding>
       <offense>33</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5753375</prijs>
     </speler>
     <speler id="0113">
       <naam>Roland Alberg</naam>
@@ -105,6 +129,8 @@
       <uithouding>75</uithouding>
       <offense>66</offense>
       <defence>44</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7225</prijs>
     </speler>
     <speler id="0114">
       <naam>Thomas KriAensen</naam>
@@ -112,6 +138,8 @@
       <uithouding>63</uithouding>
       <offense>62</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9295</prijs>
     </speler>
     <speler id="0115">
       <naam>Timothy Derijck</naam>
@@ -119,6 +147,8 @@
       <uithouding>63</uithouding>
       <offense>44</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.2869</prijs>
     </speler>
     <speler id="0116">
       <naam>Tyronne Ebuehi</naam>
@@ -126,6 +156,8 @@
       <uithouding>80</uithouding>
       <offense>33</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.947</prijs>
     </speler>
     <speler id="0117">
       <naam>Vidarell Merencia</naam>
@@ -133,6 +165,8 @@
       <uithouding>64</uithouding>
       <offense>44</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0416</prijs>
     </speler>
     <speler id="0118">
       <naam>Vito Wormgoor</naam>
@@ -140,6 +174,8 @@
       <uithouding>50</uithouding>
       <offense>36</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.44</prijs>
     </speler>
     <speler id="0119">
       <naam>Wilfried Kanon</naam>
@@ -147,6 +183,8 @@
       <uithouding>60</uithouding>
       <offense>38</offense>
       <defence>66</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.881</prijs>
     </speler>
     <speler id="0120">
       <naam>Xander Houtkoop</naam>
@@ -154,6 +192,8 @@
       <uithouding>84</uithouding>
       <offense>62</offense>
       <defence>24</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5624</prijs>
     </speler>
     <speler id="0121">
       <naam>Robert Zwinkels</naam>
@@ -161,6 +201,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.625</prijs>
     </speler>
     <speler id="0122">
       <naam>Tim Coremans</naam>
@@ -168,25 +210,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.525</prijs>
     </speler>
   </team>
   <team id="02">
     <naam>Ajax</naam>
-    <rank>14</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>65.0</budget>
+    <rank>2</rank>
+    <winst>9</winst>
+    <gelijkspel>19</gelijkspel>
+    <verlies>4</verlies>
+    <doelvoor>24</doelvoor>
+    <doeltegen>21</doeltegen>
+    <doelsaldo>3</doelsaldo>
+    <score>46</score>
+    <budget>130.0</budget>
     <speler id="021">
       <naam>﻿Anwar El Ghazi</naam>
       <type>aanvaller</type>
       <uithouding>77</uithouding>
       <offense>66</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.715175</prijs>
     </speler>
     <speler id="022">
       <naam>Arkadiusz Milik</naam>
@@ -194,6 +240,8 @@
       <uithouding>74</uithouding>
       <offense>68</offense>
       <defence>37</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3273</prijs>
     </speler>
     <speler id="023">
       <naam>Davy Klaassen</naam>
@@ -201,6 +249,8 @@
       <uithouding>75</uithouding>
       <offense>77</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>4.6921875</prijs>
     </speler>
     <speler id="024">
       <naam>Jaïro Riedewald</naam>
@@ -208,6 +258,8 @@
       <uithouding>65</uithouding>
       <offense>44</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.2165</prijs>
     </speler>
     <speler id="025">
       <naam>Joël Veltman</naam>
@@ -215,6 +267,8 @@
       <uithouding>69</uithouding>
       <offense>37</offense>
       <defence>77</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.4572625</prijs>
     </speler>
     <speler id="026">
       <naam>Kenny Tete</naam>
@@ -222,6 +276,8 @@
       <uithouding>77</uithouding>
       <offense>33</offense>
       <defence>62</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.969275</prijs>
     </speler>
     <speler id="027">
       <naam>Kolbeinn Sigþórsson</naam>
@@ -229,6 +285,8 @@
       <uithouding>69</uithouding>
       <offense>72</offense>
       <defence>42</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.6082</prijs>
     </speler>
     <speler id="028">
       <naam>Lasse Schøne</naam>
@@ -236,6 +294,8 @@
       <uithouding>67</uithouding>
       <offense>77</offense>
       <defence>52</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.35335</prijs>
     </speler>
     <speler id="029">
       <naam>Lerin Duarte</naam>
@@ -243,6 +303,8 @@
       <uithouding>75</uithouding>
       <offense>68</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.825</prijs>
     </speler>
     <speler id="0210">
       <naam>Lucas Andersen</naam>
@@ -250,6 +312,8 @@
       <uithouding>71</uithouding>
       <offense>57</offense>
       <defence>33</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6693875</prijs>
     </speler>
     <speler id="0211">
       <naam>Mike van der Hoorn</naam>
@@ -257,6 +321,8 @@
       <uithouding>59</uithouding>
       <offense>29</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5399</prijs>
     </speler>
     <speler id="0212">
       <naam>Nick Viergever</naam>
@@ -264,6 +330,8 @@
       <uithouding>67</uithouding>
       <offense>50</offense>
       <defence>73</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.056875</prijs>
     </speler>
     <speler id="0213">
       <naam>Nicolai Boilesen</naam>
@@ -271,6 +339,8 @@
       <uithouding>78</uithouding>
       <offense>48</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.3696</prijs>
     </speler>
     <speler id="0214">
       <naam>Niki Zimling</naam>
@@ -278,6 +348,8 @@
       <uithouding>65</uithouding>
       <offense>66</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.861</prijs>
     </speler>
     <speler id="0215">
       <naam>Niklas Moisander</naam>
@@ -285,6 +357,8 @@
       <uithouding>67</uithouding>
       <offense>49</offense>
       <defence>76</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.11885</prijs>
     </speler>
     <speler id="0216">
       <naam>Ricardo Kishna</naam>
@@ -292,6 +366,8 @@
       <uithouding>86</uithouding>
       <offense>59</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.839325</prijs>
     </speler>
     <speler id="0217">
       <naam>Ricardo van Rhijn</naam>
@@ -299,6 +375,8 @@
       <uithouding>85</uithouding>
       <offense>52</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.8675</prijs>
     </speler>
     <speler id="0218">
       <naam>Richairo Živkovic</naam>
@@ -306,6 +384,8 @@
       <uithouding>79</uithouding>
       <offense>72</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.133</prijs>
     </speler>
     <speler id="0219">
       <naam>Riechedly Bazoer</naam>
@@ -313,6 +393,8 @@
       <uithouding>75</uithouding>
       <offense>51</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9165625</prijs>
     </speler>
     <speler id="0220">
       <naam>Robert Muric</naam>
@@ -320,6 +402,8 @@
       <uithouding>71</uithouding>
       <offense>51</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.176825</prijs>
     </speler>
     <speler id="0221">
       <naam>Ruben Ligeon</naam>
@@ -327,6 +411,8 @@
       <uithouding>89</uithouding>
       <offense>46</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.2752</prijs>
     </speler>
     <speler id="0222">
       <naam>Aefano Denswil</naam>
@@ -334,6 +420,8 @@
       <uithouding>64</uithouding>
       <offense>56</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.136</prijs>
     </speler>
     <speler id="0223">
       <naam>Thulani Serero</naam>
@@ -341,6 +429,8 @@
       <uithouding>85</uithouding>
       <offense>59</offense>
       <defence>48</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.009</prijs>
     </speler>
     <speler id="0224">
       <naam>Tobias Sana</naam>
@@ -348,6 +438,8 @@
       <uithouding>86</uithouding>
       <offense>59</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.90275</prijs>
     </speler>
     <speler id="0225">
       <naam>Viktor Fischer</naam>
@@ -355,6 +447,8 @@
       <uithouding>77</uithouding>
       <offense>71</offense>
       <defence>35</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3918125</prijs>
     </speler>
     <speler id="0226">
       <naam>Jasper Cillessen</naam>
@@ -362,6 +456,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>79</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.975</prijs>
     </speler>
     <speler id="0227">
       <naam>Diederik Boer</naam>
@@ -369,6 +465,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.75</prijs>
     </speler>
     <speler id="0228">
       <naam>Peter Leeuwenburgh</naam>
@@ -376,25 +474,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6</prijs>
     </speler>
   </team>
   <team id="03">
     <naam>AZ</naam>
-    <rank>13</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
+    <rank>15</rank>
+    <winst>4</winst>
+    <gelijkspel>23</gelijkspel>
+    <verlies>5</verlies>
+    <doelvoor>20</doelvoor>
+    <doeltegen>20</doeltegen>
     <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>28.0</budget>
+    <score>35</score>
+    <budget>71.0</budget>
     <speler id="031">
       <naam>﻿Aron Jóhannsson</naam>
       <type>aanvaller</type>
       <uithouding>78</uithouding>
       <offense>77</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.177175</prijs>
     </speler>
     <speler id="032">
       <naam>Celso Ortiz</naam>
@@ -402,6 +504,8 @@
       <uithouding>65</uithouding>
       <offense>54</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9835</prijs>
     </speler>
     <speler id="033">
       <naam>Derrick Luckassen</naam>
@@ -409,6 +513,8 @@
       <uithouding>76</uithouding>
       <offense>33</offense>
       <defence>59</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.84965</prijs>
     </speler>
     <speler id="034">
       <naam>Djavan Anderson</naam>
@@ -416,6 +522,8 @@
       <uithouding>76</uithouding>
       <offense>34</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0026</prijs>
     </speler>
     <speler id="035">
       <naam>Eli Babalj</naam>
@@ -423,6 +531,8 @@
       <uithouding>60</uithouding>
       <offense>60</offense>
       <defence>30</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.35</prijs>
     </speler>
     <speler id="036">
       <naam>EAeban Alvarado</naam>
@@ -430,6 +540,8 @@
       <uithouding>77</uithouding>
       <offense>70</offense>
       <defence>45</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.125</prijs>
     </speler>
     <speler id="037">
       <naam>Guus Hupperts</naam>
@@ -437,6 +549,8 @@
       <uithouding>84</uithouding>
       <offense>66</offense>
       <defence>42</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9106</prijs>
     </speler>
     <speler id="038">
       <naam>Jan Wuytens</naam>
@@ -444,6 +558,8 @@
       <uithouding>47</uithouding>
       <offense>46</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.89175</prijs>
     </speler>
     <speler id="039">
       <naam>Jeffrey Gouweleeuw</naam>
@@ -451,6 +567,8 @@
       <uithouding>75</uithouding>
       <offense>54</offense>
       <defence>73</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.695625</prijs>
     </speler>
     <speler id="0310">
       <naam>Markus Henriksen</naam>
@@ -458,6 +576,8 @@
       <uithouding>68</uithouding>
       <offense>68</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.6992</prijs>
     </speler>
     <speler id="0311">
       <naam>Mattias Johansson</naam>
@@ -465,6 +585,8 @@
       <uithouding>85</uithouding>
       <offense>46</offense>
       <defence>66</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>3.22575</prijs>
     </speler>
     <speler id="0312">
       <naam>Mikhail Rosheuvel</naam>
@@ -472,6 +594,8 @@
       <uithouding>86</uithouding>
       <offense>59</offense>
       <defence>25</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.585625</prijs>
     </speler>
     <speler id="0313">
       <naam>Muamer Tankovic</naam>
@@ -479,6 +603,8 @@
       <uithouding>71</uithouding>
       <offense>63</offense>
       <defence>28</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.56555</prijs>
     </speler>
     <speler id="0314">
       <naam>Nemanja Gudelj</naam>
@@ -486,6 +612,8 @@
       <uithouding>67</uithouding>
       <offense>65</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.70175</prijs>
     </speler>
     <speler id="0315">
       <naam>Sergio Rochet</naam>
@@ -493,6 +621,8 @@
       <uithouding>68</uithouding>
       <offense>59</offense>
       <defence>49</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.225</prijs>
     </speler>
     <speler id="0316">
       <naam>Simon Poulsen</naam>
@@ -500,6 +630,8 @@
       <uithouding>76</uithouding>
       <offense>58</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.5264</prijs>
     </speler>
     <speler id="0317">
       <naam>Aeven Berghuis</naam>
@@ -507,6 +639,8 @@
       <uithouding>75</uithouding>
       <offense>74</offense>
       <defence>37</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.566875</prijs>
     </speler>
     <speler id="0318">
       <naam>Thom Haye</naam>
@@ -514,6 +648,8 @@
       <uithouding>72</uithouding>
       <offense>56</offense>
       <defence>55</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.772</prijs>
     </speler>
     <speler id="0319">
       <naam>Viktor EM</naam>
@@ -521,6 +657,8 @@
       <uithouding>34</uithouding>
       <offense>70</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.904</prijs>
     </speler>
     <speler id="0320">
       <naam>Wesley Hoedt</naam>
@@ -528,6 +666,8 @@
       <uithouding>53</uithouding>
       <offense>34</offense>
       <defence>61</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.374025</prijs>
     </speler>
     <speler id="0321">
       <naam>Yves De Winter</naam>
@@ -535,6 +675,8 @@
       <uithouding>71</uithouding>
       <offense>65</offense>
       <defence>48</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.2</prijs>
     </speler>
     <speler id="0322">
       <naam>Ridgeciano Haps</naam>
@@ -542,6 +684,8 @@
       <uithouding>84</uithouding>
       <offense>48</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.1752</prijs>
     </speler>
     <speler id="0323">
       <naam>Martin Hansen</naam>
@@ -549,25 +693,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5</prijs>
     </speler>
   </team>
   <team id="04">
     <naam>Excelsior</naam>
-    <rank>16</rank>
-    <winst>0</winst>
-    <gelijkspel>0</gelijkspel>
-    <verlies>1</verlies>
-    <doelvoor>2</doelvoor>
-    <doeltegen>3</doeltegen>
-    <doelsaldo>-1</doelsaldo>
-    <score>0</score>
-    <budget>2.7</budget>
+    <rank>1</rank>
+    <winst>30</winst>
+    <gelijkspel>10</gelijkspel>
+    <verlies>17</verlies>
+    <doelvoor>8</doelvoor>
+    <doeltegen>37</doeltegen>
+    <doelsaldo>-29</doelsaldo>
+    <score>100</score>
+    <budget>23.23128750000001</budget>
     <speler id="041">
       <naam>Adil Auassar</naam>
       <type>middenvelder</type>
       <uithouding>45</uithouding>
       <offense>55</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.918125</prijs>
     </speler>
     <speler id="042">
       <naam>Bas Kuipers</naam>
@@ -575,6 +723,8 @@
       <uithouding>65</uithouding>
       <offense>38</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8525</prijs>
     </speler>
     <speler id="043">
       <naam>Carlo de Reuver</naam>
@@ -582,6 +732,8 @@
       <uithouding>65</uithouding>
       <offense>59</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.34225</prijs>
     </speler>
     <speler id="044">
       <naam>Daan Blij</naam>
@@ -589,6 +741,8 @@
       <uithouding>68</uithouding>
       <offense>63</offense>
       <defence>51</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.73105</prijs>
     </speler>
     <speler id="045">
       <naam>Daan Bovenberg</naam>
@@ -596,6 +750,8 @@
       <uithouding>56</uithouding>
       <offense>48</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1504</prijs>
     </speler>
     <speler id="046">
       <naam>Daan Smith</naam>
@@ -603,6 +759,8 @@
       <uithouding>53</uithouding>
       <offense>37</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4952625</prijs>
     </speler>
     <speler id="047">
       <naam>Daryl van Mieghem</naam>
@@ -610,6 +768,8 @@
       <uithouding>86</uithouding>
       <offense>54</offense>
       <defence>25</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.45125</prijs>
     </speler>
     <speler id="048">
       <naam>Elso Brito</naam>
@@ -617,6 +777,8 @@
       <uithouding>70</uithouding>
       <offense>48</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.436</prijs>
     </speler>
     <speler id="049">
       <naam>Jeff Aans</naam>
@@ -624,6 +786,8 @@
       <uithouding>63</uithouding>
       <offense>56</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.8224</prijs>
     </speler>
     <speler id="0410">
       <naam>Jordan Botaka</naam>
@@ -631,69 +795,8 @@
       <uithouding>86</uithouding>
       <offense>62</offense>
       <defence>27</defence>
-    </speler>
-    <speler id="0411">
-      <naam>Jurgen Mattheij</naam>
-      <type>verdediger</type>
-      <uithouding>54</uithouding>
-      <offense>43</offense>
-      <defence>57</defence>
-    </speler>
-    <speler id="0412">
-      <naam>Kevin Vermeulen</naam>
-      <type>middenvelder</type>
-      <uithouding>65</uithouding>
-      <offense>56</offense>
-      <defence>56</defence>
-    </speler>
-    <speler id="0413">
-      <naam>Khalid Karami</naam>
-      <type>verdediger</type>
-      <uithouding>70</uithouding>
-      <offense>38</offense>
-      <defence>61</defence>
-    </speler>
-    <speler id="0414">
-      <naam>Lars Hutten</naam>
-      <type>middenvelder</type>
-      <uithouding>69</uithouding>
-      <offense>66</offense>
-      <defence>36</defence>
-    </speler>
-    <speler id="0415">
-      <naam>Marko Maletic</naam>
-      <type>aanvaller</type>
-      <uithouding>53</uithouding>
-      <offense>61</offense>
-      <defence>29</defence>
-    </speler>
-    <speler id="0416">
-      <naam>Ninos Gouriye</naam>
-      <type>aanvaller</type>
-      <uithouding>73</uithouding>
-      <offense>70</offense>
-      <defence>36</defence>
-    </speler>
-    <speler id="0417">
-      <naam>Richard Aolte</naam>
-      <type>aanvaller</type>
-      <uithouding>69</uithouding>
-      <offense>58</offense>
-      <defence>40</defence>
-    </speler>
-    <speler id="0418">
-      <naam>Rick Kruys</naam>
-      <type>middenvelder</type>
-      <uithouding>51</uithouding>
-      <offense>54</offense>
-      <defence>58</defence>
-    </speler>
-    <speler id="0419">
-      <naam>Sander Fischer</naam>
-      <type>verdediger</type>
-      <uithouding>64</uithouding>
-      <offense>36</offense>
-      <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.79955</prijs>
     </speler>
     <speler id="0420">
       <naam>Jordy Deckers</naam>
@@ -701,20 +804,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>63</defence>
-    </speler>
-    <speler id="0421">
-      <naam>Alessandro Damen</naam>
-      <type>doelman</type>
-      <uithouding>0</uithouding>
-      <offense>0</offense>
-      <defence>59</defence>
-    </speler>
-    <speler id="0422">
-      <naam>Tom van Weert</naam>
-      <type>aanvaller</type>
-      <uithouding>65</uithouding>
-      <offense>64</offense>
-      <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.575</prijs>
     </speler>
     <speler id="0423">
       <naam>Kevin van Diermen</naam>
@@ -722,25 +813,29 @@
       <uithouding>61</uithouding>
       <offense>27</offense>
       <defence>63</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.2970125</prijs>
     </speler>
   </team>
   <team id="05">
     <naam>FC Dordrecht</naam>
-    <rank>3</rank>
-    <winst>1</winst>
-    <gelijkspel>0</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>3</doelvoor>
-    <doeltegen>2</doeltegen>
-    <doelsaldo>1</doelsaldo>
-    <score>3</score>
-    <budget>2.1</budget>
+    <rank>10</rank>
+    <winst>8</winst>
+    <gelijkspel>16</gelijkspel>
+    <verlies>8</verlies>
+    <doelvoor>28</doelvoor>
+    <doeltegen>28</doeltegen>
+    <doelsaldo>0</doelsaldo>
+    <score>40</score>
+    <budget>49.2568</budget>
     <speler id="051">
       <naam>Adnan Alisic</naam>
       <type>middenvelder</type>
       <uithouding>65</uithouding>
       <offense>54</offense>
       <defence>45</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.974375</prijs>
     </speler>
     <speler id="052">
       <naam>Everon Pisas</naam>
@@ -748,6 +843,8 @@
       <uithouding>77</uithouding>
       <offense>50</offense>
       <defence>52</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5025</prijs>
     </speler>
     <speler id="053">
       <naam>Funso Ojo</naam>
@@ -755,6 +852,8 @@
       <uithouding>71</uithouding>
       <offense>63</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.6343125</prijs>
     </speler>
     <speler id="054">
       <naam>Giovanni Korte</naam>
@@ -762,6 +861,8 @@
       <uithouding>79</uithouding>
       <offense>64</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7696</prijs>
     </speler>
     <speler id="055">
       <naam>Giovanno Godeken</naam>
@@ -769,6 +870,8 @@
       <uithouding>66</uithouding>
       <offense>47</offense>
       <defence>49</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.899975</prijs>
     </speler>
     <speler id="056">
       <naam>Ilias Haddad</naam>
@@ -776,6 +879,8 @@
       <uithouding>66</uithouding>
       <offense>47</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.40405</prijs>
     </speler>
     <speler id="057">
       <naam>Javier Vet</naam>
@@ -783,6 +888,8 @@
       <uithouding>65</uithouding>
       <offense>51</offense>
       <defence>46</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.906125</prijs>
     </speler>
     <speler id="058">
       <naam>Jeffrey Fortes</naam>
@@ -790,6 +897,8 @@
       <uithouding>78</uithouding>
       <offense>45</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.676375</prijs>
     </speler>
     <speler id="059">
       <naam>Jordy van Deelen</naam>
@@ -797,6 +906,8 @@
       <uithouding>71</uithouding>
       <offense>31</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.705775</prijs>
     </speler>
     <speler id="0510">
       <naam>Joris van Overeem</naam>
@@ -804,6 +915,8 @@
       <uithouding>69</uithouding>
       <offense>53</offense>
       <defence>55</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5141875</prijs>
     </speler>
     <speler id="0511">
       <naam>Mart Lieder</naam>
@@ -811,6 +924,8 @@
       <uithouding>68</uithouding>
       <offense>66</offense>
       <defence>28</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.5708</prijs>
     </speler>
     <speler id="0512">
       <naam>Marvin Peersman</naam>
@@ -818,6 +933,8 @@
       <uithouding>73</uithouding>
       <offense>47</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7448</prijs>
     </speler>
     <speler id="0513">
       <naam>Mohamed Hamdaoui</naam>
@@ -825,6 +942,8 @@
       <uithouding>72</uithouding>
       <offense>63</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4742</prijs>
     </speler>
     <speler id="0514">
       <naam>Nando Wormgoor</naam>
@@ -832,6 +951,8 @@
       <uithouding>54</uithouding>
       <offense>32</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3176</prijs>
     </speler>
     <speler id="0515">
       <naam>Rick ten Voorde</naam>
@@ -839,6 +960,8 @@
       <uithouding>65</uithouding>
       <offense>65</offense>
       <defence>36</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.90125</prijs>
     </speler>
     <speler id="0516">
       <naam>Ricky van Haaren</naam>
@@ -846,6 +969,8 @@
       <uithouding>54</uithouding>
       <offense>55</offense>
       <defence>52</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9305</prijs>
     </speler>
     <speler id="0517">
       <naam>Rihairo Meulens</naam>
@@ -853,6 +978,8 @@
       <uithouding>86</uithouding>
       <offense>62</offense>
       <defence>22</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4663</prijs>
     </speler>
     <speler id="0518">
       <naam>Robin Gosens</naam>
@@ -860,6 +987,8 @@
       <uithouding>66</uithouding>
       <offense>47</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.24895</prijs>
     </speler>
     <speler id="0519">
       <naam>Sem de Wit</naam>
@@ -867,6 +996,8 @@
       <uithouding>64</uithouding>
       <offense>46</offense>
       <defence>54</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9872</prijs>
     </speler>
     <speler id="0520">
       <naam>William TrooA-Ekong</naam>
@@ -874,6 +1005,8 @@
       <uithouding>68</uithouding>
       <offense>26</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3481</prijs>
     </speler>
     <speler id="0521">
       <naam>Filip Kurto</naam>
@@ -881,6 +1014,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.575</prijs>
     </speler>
     <speler id="0522">
       <naam>Robbert te Loeke</naam>
@@ -888,6 +1023,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.55</prijs>
     </speler>
     <speler id="0523">
       <naam>Virgil Deen</naam>
@@ -895,25 +1032,38 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.45</prijs>
+    </speler>
+    <speler id="0419">
+      <naam>Sander Fischer</naam>
+      <type>verdediger</type>
+      <uithouding>64</uithouding>
+      <offense>36</offense>
+      <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8432</prijs>
     </speler>
   </team>
   <team id="06">
     <naam>FC Groningen</naam>
-    <rank>18</rank>
-    <winst>0</winst>
-    <gelijkspel>0</gelijkspel>
-    <verlies>1</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>2</doeltegen>
-    <doelsaldo>-2</doelsaldo>
-    <score>0</score>
-    <budget>18.0</budget>
+    <rank>12</rank>
+    <winst>7</winst>
+    <gelijkspel>17</gelijkspel>
+    <verlies>8</verlies>
+    <doelvoor>28</doelvoor>
+    <doeltegen>29</doeltegen>
+    <doelsaldo>-1</doelsaldo>
+    <score>38</score>
+    <budget>55.0</budget>
     <speler id="061">
       <naam>﻿Burak Saban</naam>
       <type>middenvelder</type>
       <uithouding>67</uithouding>
       <offense>50</offense>
       <defence>43</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.800625</prijs>
     </speler>
     <speler id="062">
       <naam>Danny Hoesen</naam>
@@ -921,6 +1071,8 @@
       <uithouding>79</uithouding>
       <offense>67</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9187125</prijs>
     </speler>
     <speler id="063">
       <naam>Dino Islamovic</naam>
@@ -928,6 +1080,8 @@
       <uithouding>50</uithouding>
       <offense>58</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.05125</prijs>
     </speler>
     <speler id="064">
       <naam>Eric Botteghin</naam>
@@ -935,6 +1089,8 @@
       <uithouding>39</uithouding>
       <offense>37</offense>
       <defence>76</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.37085</prijs>
     </speler>
     <speler id="065">
       <naam>Género Zeefuik</naam>
@@ -942,6 +1098,8 @@
       <uithouding>40</uithouding>
       <offense>67</offense>
       <defence>32</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.072</prijs>
     </speler>
     <speler id="066">
       <naam>Hans Hateboer</naam>
@@ -949,6 +1107,8 @@
       <uithouding>72</uithouding>
       <offense>41</offense>
       <defence>65</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.3985</prijs>
     </speler>
     <speler id="067">
       <naam>Henk Bos</naam>
@@ -956,6 +1116,8 @@
       <uithouding>71</uithouding>
       <offense>58</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.389825</prijs>
     </speler>
     <speler id="068">
       <naam>Hilal Ben Moussa</naam>
@@ -963,6 +1125,8 @@
       <uithouding>67</uithouding>
       <offense>54</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.35675</prijs>
     </speler>
     <speler id="069">
       <naam>Jarchinio Antonia</naam>
@@ -970,6 +1134,8 @@
       <uithouding>91</uithouding>
       <offense>56</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6562</prijs>
     </speler>
     <speler id="0610">
       <naam>Johan Kappelhof</naam>
@@ -977,6 +1143,8 @@
       <uithouding>71</uithouding>
       <offense>36</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1087</prijs>
     </speler>
     <speler id="0611">
       <naam>Lorenzo Burnet</naam>
@@ -984,6 +1152,8 @@
       <uithouding>81</uithouding>
       <offense>41</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.6568</prijs>
     </speler>
     <speler id="0612">
       <naam>Maikel Kieftenbeld</naam>
@@ -991,6 +1161,8 @@
       <uithouding>71</uithouding>
       <offense>66</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.5145</prijs>
     </speler>
     <speler id="0613">
       <naam>Martijn van der Laan</naam>
@@ -998,6 +1170,8 @@
       <uithouding>73</uithouding>
       <offense>50</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.01125</prijs>
     </speler>
     <speler id="0614">
       <naam>Michael de Leeuw</naam>
@@ -1005,6 +1179,8 @@
       <uithouding>64</uithouding>
       <offense>65</offense>
       <defence>42</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.184</prijs>
     </speler>
     <speler id="0615">
       <naam>Nick Bakker</naam>
@@ -1012,6 +1188,8 @@
       <uithouding>72</uithouding>
       <offense>33</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9008</prijs>
     </speler>
     <speler id="0616">
       <naam>Nick van der Velden</naam>
@@ -1019,6 +1197,8 @@
       <uithouding>59</uithouding>
       <offense>67</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.865925</prijs>
     </speler>
     <speler id="0617">
       <naam>Rasmus Lindgren</naam>
@@ -1026,6 +1206,8 @@
       <uithouding>45</uithouding>
       <offense>65</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.266875</prijs>
     </speler>
     <speler id="0618">
       <naam>Tjaronn Chery</naam>
@@ -1033,6 +1215,8 @@
       <uithouding>79</uithouding>
       <offense>73</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.162625</prijs>
     </speler>
     <speler id="0619">
       <naam>Tom Hiariej</naam>
@@ -1040,6 +1224,8 @@
       <uithouding>72</uithouding>
       <offense>55</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.2175</prijs>
     </speler>
     <speler id="0620">
       <naam>Yoëll van Nieff</naam>
@@ -1047,6 +1233,8 @@
       <uithouding>66</uithouding>
       <offense>63</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.3264</prijs>
     </speler>
     <speler id="0621">
       <naam>Sergio Padt</naam>
@@ -1054,25 +1242,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7</prijs>
     </speler>
   </team>
   <team id="07">
     <naam>FC Twente</naam>
-    <rank>2</rank>
-    <winst>1</winst>
-    <gelijkspel>0</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>2</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>2</doelsaldo>
-    <score>3</score>
-    <budget>45.99</budget>
+    <rank>9</rank>
+    <winst>6</winst>
+    <gelijkspel>22</gelijkspel>
+    <verlies>4</verlies>
+    <doelvoor>26</doelvoor>
+    <doeltegen>21</doeltegen>
+    <doelsaldo>5</doelsaldo>
+    <score>40</score>
+    <budget>93.989</budget>
     <speler id="071">
       <naam>﻿Andreas Bjelland</naam>
       <type>verdediger</type>
       <uithouding>54</uithouding>
       <offense>44</offense>
       <defence>76</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.2572</prijs>
     </speler>
     <speler id="072">
       <naam>Bilal Ould-Chikh</naam>
@@ -1080,6 +1272,8 @@
       <uithouding>76</uithouding>
       <offense>56</offense>
       <defence>25</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.33</prijs>
     </speler>
     <speler id="073">
       <naam>Cuco Martina</naam>
@@ -1087,6 +1281,8 @@
       <uithouding>77</uithouding>
       <offense>52</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4034</prijs>
     </speler>
     <speler id="074">
       <naam>Darryl Lachman</naam>
@@ -1094,6 +1290,8 @@
       <uithouding>70</uithouding>
       <offense>46</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.898</prijs>
     </speler>
     <speler id="075">
       <naam>Dico Koppers</naam>
@@ -1101,6 +1299,8 @@
       <uithouding>67</uithouding>
       <offense>42</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.32155</prijs>
     </speler>
     <speler id="076">
       <naam>Felipe Gutiérrez</naam>
@@ -1108,6 +1308,8 @@
       <uithouding>71</uithouding>
       <offense>68</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.5003</prijs>
     </speler>
     <speler id="077">
       <naam>Hakim Ziyech</naam>
@@ -1115,6 +1317,8 @@
       <uithouding>73</uithouding>
       <offense>73</offense>
       <defence>42</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.797725</prijs>
     </speler>
     <speler id="078">
       <naam>Jesús Corona</naam>
@@ -1122,6 +1326,8 @@
       <uithouding>78</uithouding>
       <offense>62</offense>
       <defence>45</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.72025</prijs>
     </speler>
     <speler id="079">
       <naam>Joachim Andersen</naam>
@@ -1129,6 +1335,8 @@
       <uithouding>66</uithouding>
       <offense>43</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.19945</prijs>
     </speler>
     <speler id="0710">
       <naam>Kamohelo Mokotjo</naam>
@@ -1136,6 +1344,8 @@
       <uithouding>70</uithouding>
       <offense>56</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.234</prijs>
     </speler>
     <speler id="0711">
       <naam>Kasper Kusk</naam>
@@ -1143,6 +1353,8 @@
       <uithouding>80</uithouding>
       <offense>68</offense>
       <defence>32</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.176</prijs>
     </speler>
     <speler id="0712">
       <naam>Kyle Ebecilio</naam>
@@ -1150,6 +1362,8 @@
       <uithouding>75</uithouding>
       <offense>59</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.76125</prijs>
     </speler>
     <speler id="0713">
       <naam>Luc CaAaignos</naam>
@@ -1157,6 +1371,8 @@
       <uithouding>81</uithouding>
       <offense>73</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.217375</prijs>
     </speler>
     <speler id="0714">
       <naam>Rasmus Bengtsson</naam>
@@ -1164,6 +1380,8 @@
       <uithouding>62</uithouding>
       <offense>43</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3994</prijs>
     </speler>
     <speler id="0715">
       <naam>Renato Tapia</naam>
@@ -1171,6 +1389,8 @@
       <uithouding>58</uithouding>
       <offense>54</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.349</prijs>
     </speler>
     <speler id="0716">
       <naam>Robbert Schilder</naam>
@@ -1178,6 +1398,8 @@
       <uithouding>57</uithouding>
       <offense>72</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4371</prijs>
     </speler>
     <speler id="0717">
       <naam>Ryo Miyaichi</naam>
@@ -1185,6 +1407,8 @@
       <uithouding>94</uithouding>
       <offense>55</offense>
       <defence>24</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.551</prijs>
     </speler>
     <speler id="0718">
       <naam>Shadrach Eghan</naam>
@@ -1192,6 +1416,8 @@
       <uithouding>80</uithouding>
       <offense>61</offense>
       <defence>39</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.379</prijs>
     </speler>
     <speler id="0719">
       <naam>Tim Breukers</naam>
@@ -1199,6 +1425,8 @@
       <uithouding>72</uithouding>
       <offense>48</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.8512</prijs>
     </speler>
     <speler id="0720">
       <naam>Tim Hölscher</naam>
@@ -1206,6 +1434,8 @@
       <uithouding>71</uithouding>
       <offense>60</offense>
       <defence>43</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.28975</prijs>
     </speler>
     <speler id="0721">
       <naam>Torgeir Børven</naam>
@@ -1213,6 +1443,8 @@
       <uithouding>76</uithouding>
       <offense>66</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.881</prijs>
     </speler>
     <speler id="0722">
       <naam>Youness Mokhtar</naam>
@@ -1220,6 +1452,8 @@
       <uithouding>77</uithouding>
       <offense>60</offense>
       <defence>37</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.13675</prijs>
     </speler>
     <speler id="0723">
       <naam>Nick Marsman</naam>
@@ -1227,6 +1461,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>69</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.725</prijs>
     </speler>
     <speler id="0724">
       <naam>Sonny Aevens</naam>
@@ -1234,6 +1470,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7</prijs>
     </speler>
     <speler id="0725">
       <naam>Filip Bednarek</naam>
@@ -1241,151 +1479,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>60</defence>
-    </speler>
-  </team>
-  <team id="08">
-    <naam>FC Utrecht</naam>
-    <rank>12</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>17.01</budget>
-    <speler id="081">
-      <naam>﻿Adam Sarota</naam>
-      <type>middenvelder</type>
-      <uithouding>69</uithouding>
-      <offense>58</offense>
-      <defence>59</defence>
-    </speler>
-    <speler id="082">
-      <naam>Anouar Kali</naam>
-      <type>middenvelder</type>
-      <uithouding>67</uithouding>
-      <offense>61</offense>
-      <defence>57</defence>
-    </speler>
-    <speler id="083">
-      <naam>Chris Kum</naam>
-      <type>verdediger</type>
-      <uithouding>74</uithouding>
-      <offense>42</offense>
-      <defence>66</defence>
-    </speler>
-    <speler id="084">
-      <naam>Danny Verbeek</naam>
-      <type>aanvaller</type>
-      <uithouding>84</uithouding>
-      <offense>57</offense>
-      <defence>24</defence>
-    </speler>
-    <speler id="085">
-      <naam>Edouard Duplan</naam>
-      <type>aanvaller</type>
-      <uithouding>69</uithouding>
-      <offense>61</offense>
-      <defence>36</defence>
-    </speler>
-    <speler id="086">
-      <naam>Fernando Quesada</naam>
-      <type>middenvelder</type>
-      <uithouding>64</uithouding>
-      <offense>52</offense>
-      <defence>43</defence>
-    </speler>
-    <speler id="087">
-      <naam>Gévero Markiet</naam>
-      <type>verdediger</type>
-      <uithouding>63</uithouding>
-      <offense>31</offense>
-      <defence>63</defence>
-    </speler>
-    <speler id="088">
-      <naam>Gyliano van Velzen</naam>
-      <type>aanvaller</type>
-      <uithouding>80</uithouding>
-      <offense>45</offense>
-      <defence>27</defence>
-    </speler>
-    <speler id="089">
-      <naam>Jeff Hardeveld</naam>
-      <type>verdediger</type>
-      <uithouding>63</uithouding>
-      <offense>38</offense>
-      <defence>61</defence>
-    </speler>
-    <speler id="0810">
-      <naam>Kai Heerings</naam>
-      <type>verdediger</type>
-      <uithouding>63</uithouding>
-      <offense>29</offense>
-      <defence>66</defence>
-    </speler>
-    <speler id="0811">
-      <naam>KriAoffer Peterson</naam>
-      <type>aanvaller</type>
-      <uithouding>78</uithouding>
-      <offense>60</offense>
-      <defence>33</defence>
-    </speler>
-    <speler id="0812">
-      <naam>Leon de Kogel</naam>
-      <type>aanvaller</type>
-      <uithouding>53</uithouding>
-      <offense>68</offense>
-      <defence>51</defence>
-    </speler>
-    <speler id="0813">
-      <naam>Mark Diemers</naam>
-      <type>middenvelder</type>
-      <uithouding>64</uithouding>
-      <offense>59</offense>
-      <defence>56</defence>
-    </speler>
-    <speler id="0814">
-      <naam>Mark van der Maarel</naam>
-      <type>verdediger</type>
-      <uithouding>73</uithouding>
-      <offense>41</offense>
-      <defence>67</defence>
-    </speler>
-    <speler id="0815">
-      <naam>Michael Zullo</naam>
-      <type>verdediger</type>
-      <uithouding>81</uithouding>
-      <offense>50</offense>
-      <defence>59</defence>
-    </speler>
-    <speler id="0816">
-      <naam>Nacer Barazite</naam>
-      <type>middenvelder</type>
-      <uithouding>72</uithouding>
-      <offense>66</offense>
-      <defence>30</defence>
-    </speler>
-    <speler id="0817">
-      <naam>Ramon Leeuwin</naam>
-      <type>verdediger</type>
-      <uithouding>71</uithouding>
-      <offense>45</offense>
-      <defence>69</defence>
-    </speler>
-    <speler id="0818">
-      <naam>Rodney Antwi</naam>
-      <type>aanvaller</type>
-      <uithouding>89</uithouding>
-      <offense>48</offense>
-      <defence>28</defence>
-    </speler>
-    <speler id="0819">
-      <naam>Rubio Rubin</naam>
-      <type>aanvaller</type>
-      <uithouding>69</uithouding>
-      <offense>56</offense>
-      <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5</prijs>
     </speler>
     <speler id="0820">
       <naam>Ruud Boymans</naam>
@@ -1393,6 +1488,200 @@
       <uithouding>53</uithouding>
       <offense>70</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.344875</prijs>
+    </speler>
+    <speler id="0417">
+      <naam>Richard Aolte</naam>
+      <type>aanvaller</type>
+      <uithouding>69</uithouding>
+      <offense>58</offense>
+      <defence>40</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.001</prijs>
+    </speler>
+  </team>
+  <team id="08">
+    <naam>FC Utrecht</naam>
+    <rank>3</rank>
+    <winst>9</winst>
+    <gelijkspel>17</gelijkspel>
+    <verlies>6</verlies>
+    <doelvoor>26</doelvoor>
+    <doeltegen>19</doeltegen>
+    <doelsaldo>7</doelsaldo>
+    <score>44</score>
+    <budget>68.01</budget>
+    <speler id="081">
+      <naam>﻿Adam Sarota</naam>
+      <type>middenvelder</type>
+      <uithouding>69</uithouding>
+      <offense>58</offense>
+      <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.951475</prijs>
+    </speler>
+    <speler id="082">
+      <naam>Anouar Kali</naam>
+      <type>middenvelder</type>
+      <uithouding>67</uithouding>
+      <offense>61</offense>
+      <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9119875</prijs>
+    </speler>
+    <speler id="083">
+      <naam>Chris Kum</naam>
+      <type>verdediger</type>
+      <uithouding>74</uithouding>
+      <offense>42</offense>
+      <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5641</prijs>
+    </speler>
+    <speler id="084">
+      <naam>Danny Verbeek</naam>
+      <type>aanvaller</type>
+      <uithouding>84</uithouding>
+      <offense>57</offense>
+      <defence>24</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4364</prijs>
+    </speler>
+    <speler id="085">
+      <naam>Edouard Duplan</naam>
+      <type>aanvaller</type>
+      <uithouding>69</uithouding>
+      <offense>61</offense>
+      <defence>36</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.89405</prijs>
+    </speler>
+    <speler id="086">
+      <naam>Fernando Quesada</naam>
+      <type>middenvelder</type>
+      <uithouding>64</uithouding>
+      <offense>52</offense>
+      <defence>43</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7888</prijs>
+    </speler>
+    <speler id="087">
+      <naam>Gévero Markiet</naam>
+      <type>verdediger</type>
+      <uithouding>63</uithouding>
+      <offense>31</offense>
+      <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5379875</prijs>
+    </speler>
+    <speler id="088">
+      <naam>Gyliano van Velzen</naam>
+      <type>aanvaller</type>
+      <uithouding>80</uithouding>
+      <offense>45</offense>
+      <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.215</prijs>
+    </speler>
+    <speler id="089">
+      <naam>Jeff Hardeveld</naam>
+      <type>verdediger</type>
+      <uithouding>63</uithouding>
+      <offense>38</offense>
+      <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.825425</prijs>
+    </speler>
+    <speler id="0810">
+      <naam>Kai Heerings</naam>
+      <type>verdediger</type>
+      <uithouding>63</uithouding>
+      <offense>29</offense>
+      <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.507275</prijs>
+    </speler>
+    <speler id="0811">
+      <naam>KriAoffer Peterson</naam>
+      <type>aanvaller</type>
+      <uithouding>78</uithouding>
+      <offense>60</offense>
+      <defence>33</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9305</prijs>
+    </speler>
+    <speler id="0812">
+      <naam>Leon de Kogel</naam>
+      <type>aanvaller</type>
+      <uithouding>53</uithouding>
+      <offense>68</offense>
+      <defence>51</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.29755</prijs>
+    </speler>
+    <speler id="0813">
+      <naam>Mark Diemers</naam>
+      <type>middenvelder</type>
+      <uithouding>64</uithouding>
+      <offense>59</offense>
+      <defence>56</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.6432</prijs>
+    </speler>
+    <speler id="0814">
+      <naam>Mark van der Maarel</naam>
+      <type>verdediger</type>
+      <uithouding>73</uithouding>
+      <offense>41</offense>
+      <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5066375</prijs>
+    </speler>
+    <speler id="0815">
+      <naam>Michael Zullo</naam>
+      <type>verdediger</type>
+      <uithouding>81</uithouding>
+      <offense>50</offense>
+      <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.986875</prijs>
+    </speler>
+    <speler id="0816">
+      <naam>Nacer Barazite</naam>
+      <type>middenvelder</type>
+      <uithouding>72</uithouding>
+      <offense>66</offense>
+      <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.782</prijs>
+    </speler>
+    <speler id="0817">
+      <naam>Ramon Leeuwin</naam>
+      <type>verdediger</type>
+      <uithouding>71</uithouding>
+      <offense>45</offense>
+      <defence>69</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7556875</prijs>
+    </speler>
+    <speler id="0818">
+      <naam>Rodney Antwi</naam>
+      <type>aanvaller</type>
+      <uithouding>89</uithouding>
+      <offense>48</offense>
+      <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4952</prijs>
+    </speler>
+    <speler id="0819">
+      <naam>Rubio Rubin</naam>
+      <type>aanvaller</type>
+      <uithouding>69</uithouding>
+      <offense>56</offense>
+      <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3041</prijs>
     </speler>
     <speler id="0821">
       <naam>Sean Klaiber</naam>
@@ -1400,6 +1689,8 @@
       <uithouding>72</uithouding>
       <offense>52</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7144</prijs>
     </speler>
     <speler id="0822">
       <naam>Thomas Oar</naam>
@@ -1407,6 +1698,8 @@
       <uithouding>80</uithouding>
       <offense>60</offense>
       <defence>32</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.92</prijs>
     </speler>
     <speler id="0823">
       <naam>Willem Janssen</naam>
@@ -1414,6 +1707,8 @@
       <uithouding>65</uithouding>
       <offense>70</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4125</prijs>
     </speler>
     <speler id="0824">
       <naam>Yannick Cortie</naam>
@@ -1421,6 +1716,8 @@
       <uithouding>67</uithouding>
       <offense>33</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.713525</prijs>
     </speler>
     <speler id="0825">
       <naam>Yassin Ayoub</naam>
@@ -1428,6 +1725,8 @@
       <uithouding>71</uithouding>
       <offense>56</offense>
       <defence>66</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>3.2802</prijs>
     </speler>
     <speler id="0826">
       <naam>Robbin Ruiter</naam>
@@ -1435,6 +1734,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>75</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.875</prijs>
     </speler>
     <speler id="0827">
       <naam>Jeroen Verhoeven</naam>
@@ -1442,25 +1743,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.625</prijs>
     </speler>
   </team>
   <team id="09">
     <naam>Feyenoord</naam>
-    <rank>11</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>35.0</budget>
+    <rank>13</rank>
+    <winst>7</winst>
+    <gelijkspel>17</gelijkspel>
+    <verlies>8</verlies>
+    <doelvoor>15</doelvoor>
+    <doeltegen>23</doeltegen>
+    <doelsaldo>-8</doelsaldo>
+    <score>38</score>
+    <budget>75.97175</budget>
     <speler id="091">
       <naam>﻿Anass Achahbar</naam>
       <type>aanvaller</type>
       <uithouding>71</uithouding>
       <offense>63</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6214625</prijs>
     </speler>
     <speler id="092">
       <naam>Bilal Basaçikoglu</naam>
@@ -1468,6 +1773,8 @@
       <uithouding>89</uithouding>
       <offense>65</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0970625</prijs>
     </speler>
     <speler id="093">
       <naam>Colin Kazim-Richards</naam>
@@ -1475,6 +1782,8 @@
       <uithouding>77</uithouding>
       <offense>70</offense>
       <defence>37</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.492875</prijs>
     </speler>
     <speler id="094">
       <naam>Elvis Manu</naam>
@@ -1482,6 +1791,8 @@
       <uithouding>86</uithouding>
       <offense>67</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0167</prijs>
     </speler>
     <speler id="095">
       <naam>Jean-Paul Boëtius</naam>
@@ -1489,6 +1800,8 @@
       <uithouding>88</uithouding>
       <offense>71</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0306</prijs>
     </speler>
     <speler id="096">
       <naam>Jens Toornstra</naam>
@@ -1496,6 +1809,8 @@
       <uithouding>71</uithouding>
       <offense>72</offense>
       <defence>54</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4506</prijs>
     </speler>
     <speler id="097">
       <naam>Joey Sleegers</naam>
@@ -1503,6 +1818,8 @@
       <uithouding>65</uithouding>
       <offense>54</offense>
       <defence>28</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.2285</prijs>
     </speler>
     <speler id="098">
       <naam>Jordy Clasie</naam>
@@ -1510,6 +1827,8 @@
       <uithouding>68</uithouding>
       <offense>64</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.536</prijs>
     </speler>
     <speler id="099">
       <naam>Joris Mathijsen</naam>
@@ -1517,6 +1836,8 @@
       <uithouding>32</uithouding>
       <offense>37</offense>
       <defence>77</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.1396</prijs>
     </speler>
     <speler id="0910">
       <naam>Karim El Ahmadi</naam>
@@ -1524,6 +1845,8 @@
       <uithouding>68</uithouding>
       <offense>64</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.264</prijs>
     </speler>
     <speler id="0911">
       <naam>Khalid Boulahrouz</naam>
@@ -1531,6 +1854,8 @@
       <uithouding>42</uithouding>
       <offense>41</offense>
       <defence>74</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.59285</prijs>
     </speler>
     <speler id="0912">
       <naam>Lex Immers</naam>
@@ -1538,6 +1863,8 @@
       <uithouding>56</uithouding>
       <offense>74</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.2116</prijs>
     </speler>
     <speler id="0913">
       <naam>Lucas Woudenberg</naam>
@@ -1545,6 +1872,8 @@
       <uithouding>73</uithouding>
       <offense>34</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.892525</prijs>
     </speler>
     <speler id="0914">
       <naam>Luke Wilkshire</naam>
@@ -1552,6 +1881,8 @@
       <uithouding>70</uithouding>
       <offense>61</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.6295</prijs>
     </speler>
     <speler id="0915">
       <naam>Matthew Aeenvoorden</naam>
@@ -1559,6 +1890,8 @@
       <uithouding>64</uithouding>
       <offense>43</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1328</prijs>
     </speler>
     <speler id="0916">
       <naam>Miquel Nelom</naam>
@@ -1566,6 +1899,8 @@
       <uithouding>80</uithouding>
       <offense>58</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.886</prijs>
     </speler>
     <speler id="0917">
       <naam>Mitchell te Vrede</naam>
@@ -1573,6 +1908,8 @@
       <uithouding>60</uithouding>
       <offense>65</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.365</prijs>
     </speler>
     <speler id="0918">
       <naam>Rick Karsdorp</naam>
@@ -1580,6 +1917,8 @@
       <uithouding>70</uithouding>
       <offense>66</offense>
       <defence>49</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.82975</prijs>
     </speler>
     <speler id="0919">
       <naam>Rodny Lopes Cabral</naam>
@@ -1587,6 +1926,8 @@
       <uithouding>79</uithouding>
       <offense>40</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3305</prijs>
     </speler>
     <speler id="0920">
       <naam>Ruben Schaken</naam>
@@ -1594,6 +1935,8 @@
       <uithouding>81</uithouding>
       <offense>63</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.658475</prijs>
     </speler>
     <speler id="0921">
       <naam>Sven van Beek</naam>
@@ -1601,6 +1944,8 @@
       <uithouding>66</uithouding>
       <offense>34</offense>
       <defence>68</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.9074</prijs>
     </speler>
     <speler id="0922">
       <naam>Terence Kongolo</naam>
@@ -1608,6 +1953,8 @@
       <uithouding>78</uithouding>
       <offense>42</offense>
       <defence>73</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.98935</prijs>
     </speler>
     <speler id="0923">
       <naam>Tonny Vilhena</naam>
@@ -1615,6 +1962,8 @@
       <uithouding>74</uithouding>
       <offense>72</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>4.1958</prijs>
     </speler>
     <speler id="0924">
       <naam>Wesley Verhoek</naam>
@@ -1622,6 +1971,8 @@
       <uithouding>65</uithouding>
       <offense>68</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6575</prijs>
     </speler>
     <speler id="0925">
       <naam>Wessel Dammers</naam>
@@ -1629,6 +1980,8 @@
       <uithouding>68</uithouding>
       <offense>64</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4688</prijs>
     </speler>
     <speler id="0926">
       <naam>Kenneth Vermeer</naam>
@@ -1636,6 +1989,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>77</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.925</prijs>
     </speler>
     <speler id="0927">
       <naam>Erwin Mulder</naam>
@@ -1643,6 +1998,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>71</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.775</prijs>
     </speler>
     <speler id="0928">
       <naam>Ronald Graafland</naam>
@@ -1650,6 +2007,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.55</prijs>
     </speler>
     <speler id="0929">
       <naam>Jens ToornAra</naam>
@@ -1657,25 +2016,38 @@
       <uithouding>71</uithouding>
       <offense>72</offense>
       <defence>54</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4506</prijs>
+    </speler>
+    <speler id="0413">
+      <naam>Khalid Karami</naam>
+      <type>verdediger</type>
+      <uithouding>70</uithouding>
+      <offense>38</offense>
+      <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.02825</prijs>
     </speler>
   </team>
   <team id="010">
     <naam>Go Ahead Eagles</naam>
-    <rank>10</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
+    <rank>14</rank>
+    <winst>4</winst>
+    <gelijkspel>23</gelijkspel>
+    <verlies>5</verlies>
+    <doelvoor>20</doelvoor>
+    <doeltegen>20</doeltegen>
     <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>5.2</budget>
+    <score>35</score>
+    <budget>43.2</budget>
     <speler id="0101">
       <naam>﻿Alex Schalk</naam>
       <type>aanvaller</type>
       <uithouding>73</uithouding>
       <offense>65</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7200625</prijs>
     </speler>
     <speler id="0102">
       <naam>Bart Vriends</naam>
@@ -1683,6 +2055,8 @@
       <uithouding>58</uithouding>
       <offense>31</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.370975</prijs>
     </speler>
     <speler id="0103">
       <naam>Deniz Türüç</naam>
@@ -1690,6 +2064,8 @@
       <uithouding>74</uithouding>
       <offense>65</offense>
       <defence>53</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.186625</prijs>
     </speler>
     <speler id="0104">
       <naam>Fernando Lewis</naam>
@@ -1697,6 +2073,8 @@
       <uithouding>78</uithouding>
       <offense>60</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6965</prijs>
     </speler>
     <speler id="0105">
       <naam>Giliano Wijnaldum</naam>
@@ -1704,6 +2082,8 @@
       <uithouding>74</uithouding>
       <offense>48</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.886</prijs>
     </speler>
     <speler id="0106">
       <naam>Jeffrey Rijsdijk</naam>
@@ -1711,6 +2091,8 @@
       <uithouding>74</uithouding>
       <offense>65</offense>
       <defence>39</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.344875</prijs>
     </speler>
     <speler id="0107">
       <naam>Jop van der Linden</naam>
@@ -1718,6 +2100,8 @@
       <uithouding>49</uithouding>
       <offense>45</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7915625</prijs>
     </speler>
     <speler id="0108">
       <naam>Jules Reimerink</naam>
@@ -1725,6 +2109,8 @@
       <uithouding>74</uithouding>
       <offense>51</offense>
       <defence>25</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.179375</prijs>
     </speler>
     <speler id="0109">
       <naam>Lars Lambooij</naam>
@@ -1732,6 +2118,8 @@
       <uithouding>70</uithouding>
       <offense>47</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.38525</prijs>
     </speler>
     <speler id="01010">
       <naam>Lesly de Sa</naam>
@@ -1739,6 +2127,8 @@
       <uithouding>88</uithouding>
       <offense>51</offense>
       <defence>27</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.5147</prijs>
     </speler>
     <speler id="01011">
       <naam>Marnix Kolder</naam>
@@ -1746,6 +2136,8 @@
       <uithouding>42</uithouding>
       <offense>68</offense>
       <defence>37</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.3209</prijs>
     </speler>
     <speler id="01012">
       <naam>Mawouna Amevor</naam>
@@ -1753,6 +2145,8 @@
       <uithouding>74</uithouding>
       <offense>29</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.66315</prijs>
     </speler>
     <speler id="01013">
       <naam>Nick de Bondt</naam>
@@ -1760,6 +2154,8 @@
       <uithouding>77</uithouding>
       <offense>58</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.45145</prijs>
     </speler>
     <speler id="01014">
       <naam>Peter van Ooijen</naam>
@@ -1767,6 +2163,8 @@
       <uithouding>67</uithouding>
       <offense>62</offense>
       <defence>63</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>3.271275</prijs>
     </speler>
     <speler id="01015">
       <naam>Puck PoAma</naam>
@@ -1774,6 +2172,8 @@
       <uithouding>63</uithouding>
       <offense>58</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.18755</prijs>
     </speler>
     <speler id="01016">
       <naam>Robin van der Meer</naam>
@@ -1781,6 +2181,8 @@
       <uithouding>47</uithouding>
       <offense>31</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.09275</prijs>
     </speler>
     <speler id="01017">
       <naam>Sander Duits</naam>
@@ -1788,6 +2190,8 @@
       <uithouding>51</uithouding>
       <offense>63</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5704</prijs>
     </speler>
     <speler id="01018">
       <naam>Sjoerd Overgoor</naam>
@@ -1795,6 +2199,8 @@
       <uithouding>61</uithouding>
       <offense>56</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5193</prijs>
     </speler>
     <speler id="01019">
       <naam>Sven Nieuwpoort</naam>
@@ -1802,6 +2208,8 @@
       <uithouding>74</uithouding>
       <offense>26</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4911</prijs>
     </speler>
     <speler id="01020">
       <naam>Teije ten Den</naam>
@@ -1809,6 +2217,8 @@
       <uithouding>58</uithouding>
       <offense>45</offense>
       <defence>43</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.402875</prijs>
     </speler>
     <speler id="01021">
       <naam>Xandro Schenk</naam>
@@ -1816,6 +2226,8 @@
       <uithouding>64</uithouding>
       <offense>44</offense>
       <defence>63</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>2.2176</prijs>
     </speler>
     <speler id="01022">
       <naam>Mickey van der Hart</naam>
@@ -1823,6 +2235,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.625</prijs>
     </speler>
     <speler id="01023">
       <naam>Erik Cummins</naam>
@@ -1830,6 +2244,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6</prijs>
     </speler>
     <speler id="01024">
       <naam>Ruben Lucas</naam>
@@ -1837,25 +2253,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.425</prijs>
     </speler>
   </team>
   <team id="011">
     <naam>Heracles Almelo</naam>
-    <rank>9</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>9.0</budget>
+    <rank>11</rank>
+    <winst>6</winst>
+    <gelijkspel>21</gelijkspel>
+    <verlies>5</verlies>
+    <doelvoor>20</doelvoor>
+    <doeltegen>22</doeltegen>
+    <doelsaldo>-2</doelsaldo>
+    <score>39</score>
+    <budget>58.7005</budget>
     <speler id="0111">
       <naam>Aleksei Kangaskolkka</naam>
       <type>aanvaller</type>
       <uithouding>55</uithouding>
       <offense>64</offense>
       <defence>35</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.54</prijs>
     </speler>
     <speler id="0112">
       <naam>Bart Schenkeveld</naam>
@@ -1863,6 +2283,8 @@
       <uithouding>62</uithouding>
       <offense>38</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.97315</prijs>
     </speler>
     <speler id="0113">
       <naam>Bas Sibum</naam>
@@ -1870,6 +2292,8 @@
       <uithouding>38</uithouding>
       <offense>48</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4592</prijs>
     </speler>
     <speler id="0114">
       <naam>Bryan Linssen</naam>
@@ -1877,6 +2301,8 @@
       <uithouding>81</uithouding>
       <offense>74</offense>
       <defence>40</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.997</prijs>
     </speler>
     <speler id="0115">
       <naam>Coen Gortemaker</naam>
@@ -1884,6 +2310,8 @@
       <uithouding>58</uithouding>
       <offense>34</offense>
       <defence>55</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.35575</prijs>
     </speler>
     <speler id="0116">
       <naam>Daan RienAra</naam>
@@ -1891,6 +2319,8 @@
       <uithouding>66</uithouding>
       <offense>47</offense>
       <defence>56</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1714</prijs>
     </speler>
     <speler id="0117">
       <naam>Dario Vujicevic</naam>
@@ -1898,6 +2328,8 @@
       <uithouding>66</uithouding>
       <offense>62</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7391</prijs>
     </speler>
     <speler id="0118">
       <naam>Denni Avdic</naam>
@@ -1905,6 +2337,8 @@
       <uithouding>49</uithouding>
       <offense>68</offense>
       <defence>35</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.45775</prijs>
     </speler>
     <speler id="0119">
       <naam>Dragan Paljic</naam>
@@ -1912,6 +2346,8 @@
       <uithouding>75</uithouding>
       <offense>52</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.97375</prijs>
     </speler>
     <speler id="01110">
       <naam>Edwin Gyasi</naam>
@@ -1919,6 +2355,8 @@
       <uithouding>88</uithouding>
       <offense>59</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8172</prijs>
     </speler>
     <speler id="01111">
       <naam>Fahd Aktaou</naam>
@@ -1926,6 +2364,8 @@
       <uithouding>78</uithouding>
       <offense>43</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.43165</prijs>
     </speler>
     <speler id="01112">
       <naam>Illiass Bel Hassani</naam>
@@ -1933,6 +2373,8 @@
       <uithouding>71</uithouding>
       <offense>61</offense>
       <defence>35</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8948125</prijs>
     </speler>
     <speler id="01113">
       <naam>Jaroslav Navratil</naam>
@@ -1940,6 +2382,8 @@
       <uithouding>69</uithouding>
       <offense>60</offense>
       <defence>27</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.39725</prijs>
     </speler>
     <speler id="01114">
       <naam>Jeroen Veldmate</naam>
@@ -1947,6 +2391,8 @@
       <uithouding>33</uithouding>
       <offense>48</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.2672</prijs>
     </speler>
     <speler id="01115">
       <naam>Joey Pelupessy</naam>
@@ -1954,6 +2400,8 @@
       <uithouding>69</uithouding>
       <offense>41</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.051025</prijs>
     </speler>
     <speler id="01116">
       <naam>Mark Engberink</naam>
@@ -1961,6 +2409,8 @@
       <uithouding>61</uithouding>
       <offense>31</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3946125</prijs>
     </speler>
     <speler id="01117">
       <naam>Mark-Jan Fledderus</naam>
@@ -1968,6 +2418,8 @@
       <uithouding>57</uithouding>
       <offense>70</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.842875</prijs>
     </speler>
     <speler id="01118">
       <naam>Menno Heerkes</naam>
@@ -1975,6 +2427,8 @@
       <uithouding>68</uithouding>
       <offense>54</offense>
       <defence>56</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5704</prijs>
     </speler>
     <speler id="01119">
       <naam>Mike te Wierik</naam>
@@ -1982,6 +2436,8 @@
       <uithouding>64</uithouding>
       <offense>47</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5568</prijs>
     </speler>
     <speler id="01120">
       <naam>Milano Koenders</naam>
@@ -1989,6 +2445,8 @@
       <uithouding>67</uithouding>
       <offense>32</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6884</prijs>
     </speler>
     <speler id="01121">
       <naam>Oussama Tannane</naam>
@@ -1996,6 +2454,8 @@
       <uithouding>75</uithouding>
       <offense>64</offense>
       <defence>31</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.86</prijs>
     </speler>
     <speler id="01122">
       <naam>Ramon Zomer</naam>
@@ -2003,6 +2463,8 @@
       <uithouding>52</uithouding>
       <offense>44</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.859</prijs>
     </speler>
     <speler id="01123">
       <naam>Rick Hemmink</naam>
@@ -2010,6 +2472,8 @@
       <uithouding>48</uithouding>
       <offense>42</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4364</prijs>
     </speler>
     <speler id="01124">
       <naam>Simon Cziommer</naam>
@@ -2017,6 +2481,8 @@
       <uithouding>43</uithouding>
       <offense>68</offense>
       <defence>51</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.86405</prijs>
     </speler>
     <speler id="01125">
       <naam>Thomas Bruns</naam>
@@ -2024,6 +2490,8 @@
       <uithouding>75</uithouding>
       <offense>61</offense>
       <defence>54</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.088125</prijs>
     </speler>
     <speler id="01126">
       <naam>Wout WeghorA</naam>
@@ -2031,6 +2499,8 @@
       <uithouding>47</uithouding>
       <offense>64</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.0528</prijs>
     </speler>
     <speler id="01127">
       <naam>Dennis Telgenkamp</naam>
@@ -2038,6 +2508,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.625</prijs>
     </speler>
     <speler id="01128">
       <naam>Bram CaAro</naam>
@@ -2045,6 +2517,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6</prijs>
     </speler>
     <speler id="01129">
       <naam>Renze Fij</naam>
@@ -2052,6 +2526,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.475</prijs>
     </speler>
     <speler id="01130">
       <naam>Michael Brouwer</naam>
@@ -2059,25 +2535,38 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.475</prijs>
+    </speler>
+    <speler id="0416">
+      <naam>Ninos Gouriye</naam>
+      <type>aanvaller</type>
+      <uithouding>73</uithouding>
+      <offense>70</offense>
+      <defence>36</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.2995</prijs>
     </speler>
   </team>
   <team id="012">
     <naam>NAC Breda</naam>
-    <rank>8</rank>
+    <rank>18</rank>
     <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>14.0</budget>
+    <gelijkspel>10</gelijkspel>
+    <verlies>8</verlies>
+    <doelvoor>35</doelvoor>
+    <doeltegen>28</doeltegen>
+    <doelsaldo>7</doelsaldo>
+    <score>10</score>
+    <budget>70.0</budget>
     <speler id="0121">
       <naam>﻿Adnane Tighadouini</naam>
       <type>aanvaller</type>
       <uithouding>77</uithouding>
       <offense>64</offense>
       <defence>32</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9712</prijs>
     </speler>
     <speler id="0122">
       <naam>Elson Hooi</naam>
@@ -2085,6 +2574,8 @@
       <uithouding>89</uithouding>
       <offense>58</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8067</prijs>
     </speler>
     <speler id="0123">
       <naam>Erik Falkenburg</naam>
@@ -2092,6 +2583,8 @@
       <uithouding>66</uithouding>
       <offense>69</offense>
       <defence>38</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.16315</prijs>
     </speler>
     <speler id="0124">
       <naam>Gill Swerts</naam>
@@ -2099,6 +2592,8 @@
       <uithouding>58</uithouding>
       <offense>43</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.839325</prijs>
     </speler>
     <speler id="0125">
       <naam>Henrico DroA</naam>
@@ -2106,6 +2601,8 @@
       <uithouding>44</uithouding>
       <offense>38</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4212</prijs>
     </speler>
     <speler id="0126">
       <naam>Isak Ssewankambo</naam>
@@ -2113,6 +2610,8 @@
       <uithouding>89</uithouding>
       <offense>36</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.36295</prijs>
     </speler>
     <speler id="0127">
       <naam>Jeffrey Sarpong</naam>
@@ -2120,6 +2619,8 @@
       <uithouding>76</uithouding>
       <offense>55</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.51525</prijs>
     </speler>
     <speler id="0128">
       <naam>Joeri de Kamps</naam>
@@ -2127,6 +2628,8 @@
       <uithouding>67</uithouding>
       <offense>46</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.427075</prijs>
     </speler>
     <speler id="0129">
       <naam>Joey Suk</naam>
@@ -2134,6 +2637,8 @@
       <uithouding>45</uithouding>
       <offense>65</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0840625</prijs>
     </speler>
     <speler id="01210">
       <naam>Kenny van der Weg</naam>
@@ -2141,6 +2646,8 @@
       <uithouding>61</uithouding>
       <offense>30</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.464</prijs>
     </speler>
     <speler id="01211">
       <naam>Kingsley Boateng</naam>
@@ -2148,6 +2655,8 @@
       <uithouding>82</uithouding>
       <offense>64</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7056</prijs>
     </speler>
     <speler id="01212">
       <naam>Mats Seuntjens</naam>
@@ -2155,6 +2664,8 @@
       <uithouding>67</uithouding>
       <offense>62</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.959725</prijs>
     </speler>
     <speler id="01213">
       <naam>Mounir El Allouchi</naam>
@@ -2162,6 +2673,8 @@
       <uithouding>65</uithouding>
       <offense>50</offense>
       <defence>40</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.625</prijs>
     </speler>
     <speler id="01214">
       <naam>Rémy Amieux</naam>
@@ -2169,6 +2682,8 @@
       <uithouding>76</uithouding>
       <offense>54</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.1806</prijs>
     </speler>
     <speler id="01215">
       <naam>Sepp De Roover</naam>
@@ -2176,6 +2691,8 @@
       <uithouding>70</uithouding>
       <offense>48</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.688</prijs>
     </speler>
     <speler id="01216">
       <naam>Aipe Perica</naam>
@@ -2183,6 +2700,8 @@
       <uithouding>72</uithouding>
       <offense>70</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.827</prijs>
     </speler>
     <speler id="01217">
       <naam>Uroš Matic</naam>
@@ -2190,6 +2709,8 @@
       <uithouding>71</uithouding>
       <offense>62</offense>
       <defence>52</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.8613</prijs>
     </speler>
     <speler id="01218">
       <naam>Aleksandar Damcevski</naam>
@@ -2197,6 +2718,8 @@
       <uithouding>43</uithouding>
       <offense>31</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.033075</prijs>
     </speler>
     <speler id="01219">
       <naam>Jelle ten Rouwelaar</naam>
@@ -2204,6 +2727,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.75</prijs>
     </speler>
     <speler id="01220">
       <naam>Gábor Babos</naam>
@@ -2211,6 +2736,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.65</prijs>
     </speler>
     <speler id="01221">
       <naam>Andries Noppert</naam>
@@ -2218,25 +2745,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.525</prijs>
     </speler>
   </team>
   <team id="013">
     <naam>PEC Zwolle</naam>
-    <rank>7</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>10.9</budget>
+    <rank>4</rank>
+    <winst>8</winst>
+    <gelijkspel>19</gelijkspel>
+    <verlies>5</verlies>
+    <doelvoor>23</doelvoor>
+    <doeltegen>20</doeltegen>
+    <doelsaldo>3</doelsaldo>
+    <score>43</score>
+    <budget>57.1800375</budget>
     <speler id="0131">
       <naam>﻿Tomáš Necid</naam>
       <type>aanvaller</type>
       <uithouding>72</uithouding>
       <offense>76</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3256</prijs>
     </speler>
     <speler id="0132">
       <naam>Bart van Hintum</naam>
@@ -2244,6 +2775,8 @@
       <uithouding>67</uithouding>
       <offense>50</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.721875</prijs>
     </speler>
     <speler id="0133">
       <naam>Ben RienAra</naam>
@@ -2251,6 +2784,8 @@
       <uithouding>60</uithouding>
       <offense>54</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7135</prijs>
     </speler>
     <speler id="0134">
       <naam>Bram van Polen</naam>
@@ -2258,6 +2793,8 @@
       <uithouding>74</uithouding>
       <offense>47</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.912825</prijs>
     </speler>
     <speler id="0135">
       <naam>Jesper DroA</naam>
@@ -2265,6 +2802,8 @@
       <uithouding>74</uithouding>
       <offense>64</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.6704</prijs>
     </speler>
     <speler id="0136">
       <naam>Jody Lukoki</naam>
@@ -2272,6 +2811,8 @@
       <uithouding>93</uithouding>
       <offense>51</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.541475</prijs>
     </speler>
     <speler id="0137">
       <naam>JooA Broerse</naam>
@@ -2279,6 +2820,8 @@
       <uithouding>34</uithouding>
       <offense>56</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5708</prijs>
     </speler>
     <speler id="0138">
       <naam>Leroy Labylle</naam>
@@ -2286,6 +2829,8 @@
       <uithouding>73</uithouding>
       <offense>56</offense>
       <defence>53</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.7083</prijs>
     </speler>
     <speler id="0139">
       <naam>Maikel van der Werff</naam>
@@ -2293,6 +2838,8 @@
       <uithouding>65</uithouding>
       <offense>40</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1775</prijs>
     </speler>
     <speler id="01310">
       <naam>MuAafa Saymak</naam>
@@ -2300,6 +2847,8 @@
       <uithouding>83</uithouding>
       <offense>64</offense>
       <defence>25</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.66</prijs>
     </speler>
     <speler id="01311">
       <naam>Nikolaos Ioannidis</naam>
@@ -2307,6 +2856,8 @@
       <uithouding>70</uithouding>
       <offense>61</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.441125</prijs>
     </speler>
     <speler id="01312">
       <naam>Rick Dekker</naam>
@@ -2314,6 +2865,8 @@
       <uithouding>74</uithouding>
       <offense>51</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.8305</prijs>
     </speler>
     <speler id="01313">
       <naam>Ryan Thomas</naam>
@@ -2321,6 +2874,8 @@
       <uithouding>74</uithouding>
       <offense>51</offense>
       <defence>36</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6983</prijs>
     </speler>
     <speler id="01314">
       <naam>Soufian Moro</naam>
@@ -2328,6 +2883,8 @@
       <uithouding>75</uithouding>
       <offense>59</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4934375</prijs>
     </speler>
     <speler id="01315">
       <naam>Aef Nijland</naam>
@@ -2335,6 +2892,8 @@
       <uithouding>66</uithouding>
       <offense>63</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.55925</prijs>
     </speler>
     <speler id="01316">
       <naam>Aeven Pereira</naam>
@@ -2342,6 +2901,8 @@
       <uithouding>70</uithouding>
       <offense>30</offense>
       <defence>59</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.54875</prijs>
     </speler>
     <speler id="01317">
       <naam>Thanasis Karagounis</naam>
@@ -2349,6 +2910,8 @@
       <uithouding>75</uithouding>
       <offense>59</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.4934375</prijs>
     </speler>
     <speler id="01318">
       <naam>Thomas Lam</naam>
@@ -2356,6 +2919,8 @@
       <uithouding>63</uithouding>
       <offense>44</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.18295</prijs>
     </speler>
     <speler id="01319">
       <naam>Trent Sainsbury</naam>
@@ -2363,6 +2928,8 @@
       <uithouding>73</uithouding>
       <offense>53</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.191925</prijs>
     </speler>
     <speler id="01320">
       <naam>Wouter Marinus</naam>
@@ -2370,6 +2937,8 @@
       <uithouding>76</uithouding>
       <offense>63</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0349</prijs>
     </speler>
     <speler id="01321">
       <naam>Warner Hahn</naam>
@@ -2377,6 +2946,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7</prijs>
     </speler>
     <speler id="01322">
       <naam>Kevin Begois</naam>
@@ -2384,6 +2955,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6</prijs>
     </speler>
     <speler id="01323">
       <naam>Boy de Jong</naam>
@@ -2391,25 +2964,47 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.575</prijs>
+    </speler>
+    <speler id="0415">
+      <naam>Marko Maletic</naam>
+      <type>aanvaller</type>
+      <uithouding>53</uithouding>
+      <offense>61</offense>
+      <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.1719625</prijs>
+    </speler>
+    <speler id="0412">
+      <naam>Kevin Vermeulen</naam>
+      <type>middenvelder</type>
+      <uithouding>65</uithouding>
+      <offense>56</offense>
+      <defence>56</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.548</prijs>
     </speler>
   </team>
   <team id="014">
     <naam>PSV</naam>
-    <rank>6</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>62.0</budget>
+    <rank>7</rank>
+    <winst>6</winst>
+    <gelijkspel>23</gelijkspel>
+    <verlies>3</verlies>
+    <doelvoor>19</doelvoor>
+    <doeltegen>14</doeltegen>
+    <doelsaldo>5</doelsaldo>
+    <score>41</score>
+    <budget>116.0</budget>
     <speler id="0141">
       <naam>﻿Abel Tamata</naam>
       <type>verdediger</type>
       <uithouding>71</uithouding>
       <offense>48</offense>
       <defence>66</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>2.8116</prijs>
     </speler>
     <speler id="0142">
       <naam>Adam Maher</naam>
@@ -2417,6 +3012,8 @@
       <uithouding>75</uithouding>
       <offense>70</offense>
       <defence>53</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.478125</prijs>
     </speler>
     <speler id="0143">
       <naam>Andrés Guardado</naam>
@@ -2424,6 +3021,8 @@
       <uithouding>82</uithouding>
       <offense>67</offense>
       <defence>76</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>5.2193</prijs>
     </speler>
     <speler id="0144">
       <naam>Clint Leemans</naam>
@@ -2431,6 +3030,8 @@
       <uithouding>65</uithouding>
       <offense>56</offense>
       <defence>53</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>2.4115</prijs>
     </speler>
     <speler id="0145">
       <naam>Florian Jozefzoon</naam>
@@ -2438,6 +3039,8 @@
       <uithouding>90</uithouding>
       <offense>59</offense>
       <defence>24</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.593</prijs>
     </speler>
     <speler id="0146">
       <naam>Georginio Wijnaldum</naam>
@@ -2445,6 +3048,8 @@
       <uithouding>83</uithouding>
       <offense>73</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>4.7714625</prijs>
     </speler>
     <speler id="0147">
       <naam>Jeffrey Bruma</naam>
@@ -2452,6 +3057,8 @@
       <uithouding>67</uithouding>
       <offense>53</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.107125</prijs>
     </speler>
     <speler id="0148">
       <naam>Jetro Willems</naam>
@@ -2459,6 +3066,8 @@
       <uithouding>80</uithouding>
       <offense>57</offense>
       <defence>71</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>4.047</prijs>
     </speler>
     <speler id="0149">
       <naam>Jorrit Hendrix</naam>
@@ -2466,6 +3075,8 @@
       <uithouding>71</uithouding>
       <offense>34</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0519</prijs>
     </speler>
     <speler id="01410">
       <naam>Joshua Brenet</naam>
@@ -2473,6 +3084,8 @@
       <uithouding>86</uithouding>
       <offense>32</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3048</prijs>
     </speler>
     <speler id="01411">
       <naam>Jürgen Locadia</naam>
@@ -2480,6 +3093,8 @@
       <uithouding>74</uithouding>
       <offense>74</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.3273</prijs>
     </speler>
     <speler id="01412">
       <naam>Karim Rekik</naam>
@@ -2487,6 +3102,8 @@
       <uithouding>73</uithouding>
       <offense>38</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.4966</prijs>
     </speler>
     <speler id="01413">
       <naam>Luciano Narsingh</naam>
@@ -2494,6 +3111,8 @@
       <uithouding>93</uithouding>
       <offense>62</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0181</prijs>
     </speler>
     <speler id="01414">
       <naam>Luuk de Jong</naam>
@@ -2501,6 +3120,8 @@
       <uithouding>64</uithouding>
       <offense>75</offense>
       <defence>43</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.58</prijs>
     </speler>
     <speler id="01415">
       <naam>Marcel Ritzmaier</naam>
@@ -2508,6 +3129,8 @@
       <uithouding>72</uithouding>
       <offense>65</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.3345</prijs>
     </speler>
     <speler id="01416">
       <naam>Memphis Depay</naam>
@@ -2515,6 +3138,8 @@
       <uithouding>91</uithouding>
       <offense>71</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.26135</prijs>
     </speler>
     <speler id="01417">
       <naam>Menno Koch</naam>
@@ -2522,6 +3147,8 @@
       <uithouding>65</uithouding>
       <offense>32</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.69</prijs>
     </speler>
     <speler id="01418">
       <naam>Nicolas Isimat-Mirin</naam>
@@ -2529,6 +3156,8 @@
       <uithouding>69</uithouding>
       <offense>33</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.992375</prijs>
     </speler>
     <speler id="01419">
       <naam>Oscar Hiljemark</naam>
@@ -2536,6 +3165,8 @@
       <uithouding>68</uithouding>
       <offense>58</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.2538</prijs>
     </speler>
     <speler id="01420">
       <naam>Rai Vloet</naam>
@@ -2543,6 +3174,8 @@
       <uithouding>65</uithouding>
       <offense>62</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.460875</prijs>
     </speler>
     <speler id="01421">
       <naam>Santiago Arias</naam>
@@ -2550,6 +3183,8 @@
       <uithouding>87</uithouding>
       <offense>43</offense>
       <defence>69</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.2266125</prijs>
     </speler>
     <speler id="01422">
       <naam>Aijn Schaars</naam>
@@ -2557,6 +3192,8 @@
       <uithouding>51</uithouding>
       <offense>68</offense>
       <defence>69</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.99115</prijs>
     </speler>
     <speler id="01423">
       <naam>Zakaria Bakkali</naam>
@@ -2564,6 +3201,8 @@
       <uithouding>85</uithouding>
       <offense>63</offense>
       <defence>25</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.6734375</prijs>
     </speler>
     <speler id="01424">
       <naam>Aleksandar Boljevic</naam>
@@ -2571,6 +3210,8 @@
       <uithouding>79</uithouding>
       <offense>58</offense>
       <defence>23</defence>
+      <beschikbaarheid>Niet beschikbaar - rode kaart</beschikbaarheid>
+      <prijs>1.317325</prijs>
     </speler>
     <speler id="01425">
       <naam>Jeroen Zoet</naam>
@@ -2578,6 +3219,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>77</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.925</prijs>
     </speler>
     <speler id="01426">
       <naam>Remko Pasveer</naam>
@@ -2585,6 +3228,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>71</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.775</prijs>
     </speler>
     <speler id="01427">
       <naam>Nigel Bertrams</naam>
@@ -2592,25 +3237,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>62</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.55</prijs>
     </speler>
   </team>
   <team id="015">
     <naam>SC Cambuur</naam>
     <rank>5</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>6.5</budget>
+    <winst>6</winst>
+    <gelijkspel>24</gelijkspel>
+    <verlies>2</verlies>
+    <doelvoor>18</doelvoor>
+    <doeltegen>8</doeltegen>
+    <doelsaldo>10</doelsaldo>
+    <score>42</score>
+    <budget>52.4507</budget>
     <speler id="0151">
       <naam>﻿Albert Rusnák</naam>
       <type>middenvelder</type>
       <uithouding>76</uithouding>
       <offense>53</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7119</prijs>
     </speler>
     <speler id="0152">
       <naam>Berend SchootAra</naam>
@@ -2618,6 +3267,8 @@
       <uithouding>57</uithouding>
       <offense>45</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8275625</prijs>
     </speler>
     <speler id="0153">
       <naam>Bob Schepers</naam>
@@ -2625,6 +3276,8 @@
       <uithouding>76</uithouding>
       <offense>60</offense>
       <defence>35</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.995</prijs>
     </speler>
     <speler id="0154">
       <naam>Calvin Mac-Intosh</naam>
@@ -2632,6 +3285,8 @@
       <uithouding>68</uithouding>
       <offense>38</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0995</prijs>
     </speler>
     <speler id="0155">
       <naam>Daniel de Ridder</naam>
@@ -2639,6 +3294,8 @@
       <uithouding>70</uithouding>
       <offense>63</offense>
       <defence>36</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9845</prijs>
     </speler>
     <speler id="0156">
       <naam>Dejan Meleg</naam>
@@ -2646,6 +3303,8 @@
       <uithouding>67</uithouding>
       <offense>65</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.52425</prijs>
     </speler>
     <speler id="0157">
       <naam>Erik Bakker</naam>
@@ -2653,6 +3312,8 @@
       <uithouding>72</uithouding>
       <offense>60</offense>
       <defence>48</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.592</prijs>
     </speler>
     <speler id="0158">
       <naam>Etiënne Reijnen</naam>
@@ -2660,6 +3321,8 @@
       <uithouding>42</uithouding>
       <offense>32</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.092</prijs>
     </speler>
     <speler id="0159">
       <naam>Furdjel Narsingh</naam>
@@ -2667,6 +3330,8 @@
       <uithouding>84</uithouding>
       <offense>55</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9635</prijs>
     </speler>
     <speler id="01510">
       <naam>Lucas Bijker</naam>
@@ -2674,6 +3339,8 @@
       <uithouding>75</uithouding>
       <offense>34</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.008125</prijs>
     </speler>
     <speler id="01511">
       <naam>Marlon Pereira</naam>
@@ -2681,6 +3348,8 @@
       <uithouding>69</uithouding>
       <offense>31</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.6844625</prijs>
     </speler>
     <speler id="01512">
       <naam>Mart DijkAra</naam>
@@ -2688,6 +3357,8 @@
       <uithouding>48</uithouding>
       <offense>52</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9968</prijs>
     </speler>
     <speler id="01513">
       <naam>Martijn Barto</naam>
@@ -2695,6 +3366,8 @@
       <uithouding>60</uithouding>
       <offense>65</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.41375</prijs>
     </speler>
     <speler id="01514">
       <naam>Michiel Hemmen</naam>
@@ -2702,6 +3375,8 @@
       <uithouding>42</uithouding>
       <offense>68</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.0353</prijs>
     </speler>
     <speler id="01515">
       <naam>Mohamed El Makrini</naam>
@@ -2709,6 +3384,8 @@
       <uithouding>59</uithouding>
       <offense>43</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0613125</prijs>
     </speler>
     <speler id="01516">
       <naam>Oebele Schokker</naam>
@@ -2716,6 +3393,8 @@
       <uithouding>41</uithouding>
       <offense>63</offense>
       <defence>34</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.097775</prijs>
     </speler>
     <speler id="01517">
       <naam>Ron Janzen</naam>
@@ -2723,6 +3402,8 @@
       <uithouding>54</uithouding>
       <offense>30</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.215</prijs>
     </speler>
     <speler id="01518">
       <naam>Sander van de Areek</naam>
@@ -2730,6 +3411,8 @@
       <uithouding>62</uithouding>
       <offense>59</offense>
       <defence>40</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.829</prijs>
     </speler>
     <speler id="01519">
       <naam>SebaAian Aeblecki</naam>
@@ -2737,6 +3420,8 @@
       <uithouding>69</uithouding>
       <offense>59</offense>
       <defence>44</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.23905</prijs>
     </speler>
     <speler id="01520">
       <naam>Vytautas Andriuškevicius</naam>
@@ -2744,6 +3429,8 @@
       <uithouding>67</uithouding>
       <offense>40</offense>
       <defence>62</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.077</prijs>
     </speler>
     <speler id="01521">
       <naam>Wout DroAe</naam>
@@ -2751,6 +3438,8 @@
       <uithouding>75</uithouding>
       <offense>28</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.68</prijs>
     </speler>
     <speler id="01522">
       <naam>Bartholomew Ogbeche</naam>
@@ -2758,6 +3447,8 @@
       <uithouding>81</uithouding>
       <offense>64</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7496</prijs>
     </speler>
     <speler id="01523">
       <naam>Leonard Nienhuis</naam>
@@ -2765,6 +3456,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.65</prijs>
     </speler>
     <speler id="01524">
       <naam>Harm ZeinAra</naam>
@@ -2772,6 +3465,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.525</prijs>
     </speler>
     <speler id="01525">
       <naam>Jurjan Wouda</naam>
@@ -2779,25 +3474,38 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.525</prijs>
+    </speler>
+    <speler id="0414">
+      <naam>Lars Hutten</naam>
+      <type>middenvelder</type>
+      <uithouding>69</uithouding>
+      <offense>66</offense>
+      <defence>36</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0493</prijs>
     </speler>
   </team>
   <team id="016">
     <naam>SC Heerenveen</naam>
-    <rank>4</rank>
-    <winst>0</winst>
-    <gelijkspel>1</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>0</doelvoor>
-    <doeltegen>0</doeltegen>
-    <doelsaldo>0</doelsaldo>
-    <score>1</score>
-    <budget>22.0</budget>
+    <rank>17</rank>
+    <winst>2</winst>
+    <gelijkspel>24</gelijkspel>
+    <verlies>6</verlies>
+    <doelvoor>16</doelvoor>
+    <doeltegen>20</doeltegen>
+    <doelsaldo>-4</doelsaldo>
+    <score>30</score>
+    <budget>59.0</budget>
     <speler id="0161">
       <naam>﻿Daley Sinkgraven</naam>
       <type>middenvelder</type>
       <uithouding>73</uithouding>
       <offense>48</offense>
       <defence>51</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>2.2338</prijs>
     </speler>
     <speler id="0162">
       <naam>Doke Schmidt</naam>
@@ -2805,6 +3513,8 @@
       <uithouding>67</uithouding>
       <offense>46</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.4656</prijs>
     </speler>
     <speler id="0163">
       <naam>Janio Bikel</naam>
@@ -2812,6 +3522,8 @@
       <uithouding>74</uithouding>
       <offense>35</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9425</prijs>
     </speler>
     <speler id="0164">
       <naam>Jens Jurn Areutker</naam>
@@ -2819,6 +3531,8 @@
       <uithouding>64</uithouding>
       <offense>40</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.016</prijs>
     </speler>
     <speler id="0165">
       <naam>Jeroen Lumu</naam>
@@ -2826,6 +3540,8 @@
       <uithouding>84</uithouding>
       <offense>62</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8228</prijs>
     </speler>
     <speler id="0166">
       <naam>Joey van den Berg</naam>
@@ -2833,6 +3549,8 @@
       <uithouding>61</uithouding>
       <offense>62</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.0256</prijs>
     </speler>
     <speler id="0167">
       <naam>JooA van Aken</naam>
@@ -2840,6 +3558,8 @@
       <uithouding>72</uithouding>
       <offense>31</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7856</prijs>
     </speler>
     <speler id="0168">
       <naam>Jordy Buijs</naam>
@@ -2847,6 +3567,8 @@
       <uithouding>53</uithouding>
       <offense>61</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.6268125</prijs>
     </speler>
     <speler id="0169">
       <naam>Joris VoeA</naam>
@@ -2854,6 +3576,8 @@
       <uithouding>74</uithouding>
       <offense>43</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.346725</prijs>
     </speler>
     <speler id="01610">
       <naam>Jukka Raitala</naam>
@@ -2861,6 +3585,8 @@
       <uithouding>69</uithouding>
       <offense>35</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.932</prijs>
     </speler>
     <speler id="01611">
       <naam>Kenneth Otigba</naam>
@@ -2868,6 +3594,8 @@
       <uithouding>75</uithouding>
       <offense>35</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1328125</prijs>
     </speler>
     <speler id="01612">
       <naam>Luciano Slagveer</naam>
@@ -2875,6 +3603,8 @@
       <uithouding>87</uithouding>
       <offense>60</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.9575</prijs>
     </speler>
     <speler id="01613">
       <naam>Mark Uth</naam>
@@ -2882,6 +3612,8 @@
       <uithouding>71</uithouding>
       <offense>64</offense>
       <defence>32</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8176</prijs>
     </speler>
     <speler id="01614">
       <naam>Marten de Roon</naam>
@@ -2889,6 +3621,8 @@
       <uithouding>67</uithouding>
       <offense>57</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.0074625</prijs>
     </speler>
     <speler id="01615">
       <naam>Michael Chacón</naam>
@@ -2896,6 +3630,8 @@
       <uithouding>74</uithouding>
       <offense>44</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.4013</prijs>
     </speler>
     <speler id="01616">
       <naam>Morten Thorsby</naam>
@@ -2903,6 +3639,8 @@
       <uithouding>62</uithouding>
       <offense>44</offense>
       <defence>39</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3299</prijs>
     </speler>
     <speler id="01617">
       <naam>Pascal Huser</naam>
@@ -2910,6 +3648,8 @@
       <uithouding>64</uithouding>
       <offense>56</offense>
       <defence>27</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.2096</prijs>
     </speler>
     <speler id="01618">
       <naam>Pelé van Anholt</naam>
@@ -2917,6 +3657,8 @@
       <uithouding>77</uithouding>
       <offense>53</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.4178375</prijs>
     </speler>
     <speler id="01619">
       <naam>Sam Larsson</naam>
@@ -2924,6 +3666,8 @@
       <uithouding>76</uithouding>
       <offense>58</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5979</prijs>
     </speler>
     <speler id="01620">
       <naam>Aefano Marzo</naam>
@@ -2931,6 +3675,8 @@
       <uithouding>75</uithouding>
       <offense>29</offense>
       <defence>64</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.74</prijs>
     </speler>
     <speler id="01621">
       <naam>Aephen Warmolts</naam>
@@ -2938,6 +3684,8 @@
       <uithouding>60</uithouding>
       <offense>31</offense>
       <defence>57</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.32525</prijs>
     </speler>
     <speler id="01622">
       <naam>Thomas Dalgaard</naam>
@@ -2945,6 +3693,8 @@
       <uithouding>62</uithouding>
       <offense>68</offense>
       <defence>29</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5283</prijs>
     </speler>
     <speler id="01623">
       <naam>Willem Huizing</naam>
@@ -2952,6 +3702,8 @@
       <uithouding>59</uithouding>
       <offense>29</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3046375</prijs>
     </speler>
     <speler id="01624">
       <naam>KriAoffer Nordfeldt</naam>
@@ -2959,6 +3711,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>71</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.775</prijs>
     </speler>
     <speler id="01625">
       <naam>Viktor Noring</naam>
@@ -2966,6 +3720,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.65</prijs>
     </speler>
     <speler id="01626">
       <naam>Maarten de Fockert</naam>
@@ -2973,6 +3729,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5</prijs>
     </speler>
     <speler id="01627">
       <naam>Robin KiA</naam>
@@ -2980,25 +3738,29 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.45</prijs>
     </speler>
   </team>
   <team id="017">
     <naam>Vitesse</naam>
-    <rank>17</rank>
-    <winst>0</winst>
-    <gelijkspel>0</gelijkspel>
-    <verlies>1</verlies>
-    <doelvoor>1</doelvoor>
-    <doeltegen>3</doeltegen>
-    <doelsaldo>-2</doelsaldo>
-    <score>0</score>
-    <budget>30.0</budget>
+    <rank>16</rank>
+    <winst>3</winst>
+    <gelijkspel>23</gelijkspel>
+    <verlies>6</verlies>
+    <doelvoor>18</doelvoor>
+    <doeltegen>24</doeltegen>
+    <doelsaldo>-6</doelsaldo>
+    <score>32</score>
+    <budget>59.345575</budget>
     <speler id="0171">
       <naam>﻿Arnold Kruiswijk</naam>
       <type>verdediger</type>
       <uithouding>52</uithouding>
       <offense>44</offense>
       <defence>71</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0306</prijs>
     </speler>
     <speler id="0172">
       <naam>Bertrand Traoré</naam>
@@ -3006,6 +3768,8 @@
       <uithouding>87</uithouding>
       <offense>66</offense>
       <defence>31</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.225025</prijs>
     </speler>
     <speler id="0173">
       <naam>Dan Mori</naam>
@@ -3013,6 +3777,8 @@
       <uithouding>48</uithouding>
       <offense>31</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.2276</prijs>
     </speler>
     <speler id="0174">
       <naam>Davy Pröpper</naam>
@@ -3020,6 +3786,8 @@
       <uithouding>70</uithouding>
       <offense>70</offense>
       <defence>56</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.43</prijs>
     </speler>
     <speler id="0175">
       <naam>Denys Oliynyk</naam>
@@ -3027,6 +3795,8 @@
       <uithouding>74</uithouding>
       <offense>53</offense>
       <defence>41</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.010025</prijs>
     </speler>
     <speler id="0176">
       <naam>Gino Bosz</naam>
@@ -3034,6 +3804,8 @@
       <uithouding>67</uithouding>
       <offense>53</offense>
       <defence>52</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.30815</prijs>
     </speler>
     <speler id="0177">
       <naam>Guram Kashia</naam>
@@ -3041,6 +3813,8 @@
       <uithouding>59</uithouding>
       <offense>29</offense>
       <defence>74</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.582675</prijs>
     </speler>
     <speler id="0178">
       <naam>Jan-Arie van der Heijden</naam>
@@ -3048,6 +3822,8 @@
       <uithouding>47</uithouding>
       <offense>61</offense>
       <defence>72</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.5803</prijs>
     </speler>
     <speler id="0179">
       <naam>Josh McEachran</naam>
@@ -3055,6 +3831,8 @@
       <uithouding>76</uithouding>
       <offense>66</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.6366</prijs>
     </speler>
     <speler id="01710">
       <naam>Kelvin Leerdam</naam>
@@ -3062,6 +3840,8 @@
       <uithouding>75</uithouding>
       <offense>58</offense>
       <defence>70</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.80625</prijs>
     </speler>
     <speler id="01711">
       <naam>Kevin Diks</naam>
@@ -3069,6 +3849,8 @@
       <uithouding>60</uithouding>
       <offense>35</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.60125</prijs>
     </speler>
     <speler id="01712">
       <naam>Marko Vejinovic</naam>
@@ -3076,6 +3858,8 @@
       <uithouding>61</uithouding>
       <offense>70</offense>
       <defence>68</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.6295</prijs>
     </speler>
     <speler id="01713">
       <naam>Renato Ibarra</naam>
@@ -3083,6 +3867,8 @@
       <uithouding>90</uithouding>
       <offense>64</offense>
       <defence>44</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.168</prijs>
     </speler>
     <speler id="01714">
       <naam>Rochdi Achenteh</naam>
@@ -3090,6 +3876,8 @@
       <uithouding>68</uithouding>
       <offense>52</offense>
       <defence>65</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.873</prijs>
     </speler>
     <speler id="01715">
       <naam>Uroš Ðurdevic</naam>
@@ -3097,6 +3885,8 @@
       <uithouding>69</uithouding>
       <offense>67</offense>
       <defence>30</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.733625</prijs>
     </speler>
     <speler id="01716">
       <naam>Valeri Qazaishvili</naam>
@@ -3104,6 +3894,8 @@
       <uithouding>72</uithouding>
       <offense>69</offense>
       <defence>35</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.1735</prijs>
     </speler>
     <speler id="01717">
       <naam>Wallace</naam>
@@ -3111,6 +3903,8 @@
       <uithouding>81</uithouding>
       <offense>60</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>3.82725</prijs>
     </speler>
     <speler id="01718">
       <naam>Zakaria Labyad</naam>
@@ -3118,6 +3912,8 @@
       <uithouding>78</uithouding>
       <offense>70</offense>
       <defence>31</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.11575</prijs>
     </speler>
     <speler id="01719">
       <naam>Piet Velthuizen</naam>
@@ -3125,6 +3921,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>75</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.875</prijs>
     </speler>
     <speler id="01720">
       <naam>Eloy Room</naam>
@@ -3132,6 +3930,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.675</prijs>
     </speler>
     <speler id="01721">
       <naam>Jeroen Houwen</naam>
@@ -3139,25 +3939,38 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.5</prijs>
+    </speler>
+    <speler id="0411">
+      <naam>Jurgen Mattheij</naam>
+      <type>verdediger</type>
+      <uithouding>54</uithouding>
+      <offense>43</offense>
+      <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.654425</prijs>
     </speler>
   </team>
   <team id="018">
     <naam>Willem II</naam>
-    <rank>1</rank>
-    <winst>1</winst>
-    <gelijkspel>0</gelijkspel>
-    <verlies>0</verlies>
-    <doelvoor>3</doelvoor>
-    <doeltegen>1</doeltegen>
-    <doelsaldo>2</doelsaldo>
-    <score>3</score>
-    <budget>5.6</budget>
+    <rank>6</rank>
+    <winst>6</winst>
+    <gelijkspel>23</gelijkspel>
+    <verlies>3</verlies>
+    <doelvoor>32</doelvoor>
+    <doeltegen>26</doeltegen>
+    <doelsaldo>6</doelsaldo>
+    <score>41</score>
+    <budget>51.724349999999994</budget>
     <speler id="0181">
       <naam>Ali Messaoud</naam>
       <type>middenvelder</type>
       <uithouding>65</uithouding>
       <offense>61</offense>
       <defence>26</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.288625</prijs>
     </speler>
     <speler id="0182">
       <naam>Ben Sahar</naam>
@@ -3165,6 +3978,8 @@
       <uithouding>78</uithouding>
       <offense>71</offense>
       <defence>30</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.07675</prijs>
     </speler>
     <speler id="0183">
       <naam>Bruno Andrade</naam>
@@ -3172,6 +3987,8 @@
       <uithouding>71</uithouding>
       <offense>65</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.61525</prijs>
     </speler>
     <speler id="0184">
       <naam>Charlton Vicento</naam>
@@ -3179,6 +3996,8 @@
       <uithouding>87</uithouding>
       <offense>60</offense>
       <defence>25</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.63125</prijs>
     </speler>
     <speler id="0185">
       <naam>Dries Wuytens</naam>
@@ -3186,6 +4005,8 @@
       <uithouding>64</uithouding>
       <offense>26</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3104</prijs>
     </speler>
     <speler id="0186">
       <naam>Fabian Sporkslede</naam>
@@ -3193,6 +4014,8 @@
       <uithouding>69</uithouding>
       <offense>52</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.82555</prijs>
     </speler>
     <speler id="0187">
       <naam>Frank van der Aruijk</naam>
@@ -3200,6 +4023,8 @@
       <uithouding>56</uithouding>
       <offense>38</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.7556</prijs>
     </speler>
     <speler id="0188">
       <naam>Freek Heerkens</naam>
@@ -3207,6 +4032,8 @@
       <uithouding>67</uithouding>
       <offense>27</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.3793625</prijs>
     </speler>
     <speler id="0189">
       <naam>Jerson Cabral</naam>
@@ -3214,6 +4041,8 @@
       <uithouding>81</uithouding>
       <offense>64</offense>
       <defence>32</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.0736</prijs>
     </speler>
     <speler id="01810">
       <naam>Jonas Heymans</naam>
@@ -3221,6 +4050,8 @@
       <uithouding>73</uithouding>
       <offense>43</offense>
       <defence>63</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.4719625</prijs>
     </speler>
     <speler id="01811">
       <naam>Jordens Peters</naam>
@@ -3228,6 +4059,8 @@
       <uithouding>64</uithouding>
       <offense>35</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.848</prijs>
     </speler>
     <speler id="01812">
       <naam>Mitchell Dijks</naam>
@@ -3235,6 +4068,8 @@
       <uithouding>68</uithouding>
       <offense>39</offense>
       <defence>67</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.22105</prijs>
     </speler>
     <speler id="01813">
       <naam>Niek Vossebelt</naam>
@@ -3242,6 +4077,8 @@
       <uithouding>52</uithouding>
       <offense>55</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.10925</prijs>
     </speler>
     <speler id="01814">
       <naam>Renan Zanelli</naam>
@@ -3249,6 +4086,8 @@
       <uithouding>66</uithouding>
       <offense>46</offense>
       <defence>48</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8216</prijs>
     </speler>
     <speler id="01815">
       <naam>Ricardo Ippel</naam>
@@ -3256,6 +4095,8 @@
       <uithouding>67</uithouding>
       <offense>61</offense>
       <defence>57</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9119875</prijs>
     </speler>
     <speler id="01816">
       <naam>Robbie Haemhouts</naam>
@@ -3263,6 +4104,8 @@
       <uithouding>63</uithouding>
       <offense>63</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.9271375</prijs>
     </speler>
     <speler id="01817">
       <naam>Samuel Armenteros</naam>
@@ -3270,6 +4113,8 @@
       <uithouding>68</uithouding>
       <offense>68</offense>
       <defence>32</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.8496</prijs>
     </speler>
     <speler id="01818">
       <naam>Simon van ZeelA</naam>
@@ -3277,6 +4122,8 @@
       <uithouding>64</uithouding>
       <offense>42</offense>
       <defence>60</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.016</prijs>
     </speler>
     <speler id="01819">
       <naam>Aijn Wuytens</naam>
@@ -3284,6 +4131,8 @@
       <uithouding>63</uithouding>
       <offense>49</offense>
       <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>2.2766625</prijs>
     </speler>
     <speler id="01820">
       <naam>Terell Ondaan</naam>
@@ -3291,6 +4140,8 @@
       <uithouding>89</uithouding>
       <offense>61</offense>
       <defence>28</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.90015</prijs>
     </speler>
     <speler id="01821">
       <naam>Tim Cornelisse</naam>
@@ -3298,6 +4149,8 @@
       <uithouding>37</uithouding>
       <offense>45</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.373625</prijs>
     </speler>
     <speler id="01822">
       <naam>KonAantinos Lamprou</naam>
@@ -3305,6 +4158,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>66</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.65</prijs>
     </speler>
     <speler id="01823">
       <naam>David Meul</naam>
@@ -3312,6 +4167,8 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>61</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.525</prijs>
     </speler>
     <speler id="01824">
       <naam>Mattijs BranderhorA</naam>
@@ -3319,18 +4176,47 @@
       <uithouding>0</uithouding>
       <offense>0</offense>
       <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.45</prijs>
+    </speler>
+    <speler id="0422">
+      <naam>Tom van Weert</naam>
+      <type>aanvaller</type>
+      <uithouding>65</uithouding>
+      <offense>64</offense>
+      <defence>27</defence>
+      <beschikbaarheid>Niet beschikbaar - blessure</beschikbaarheid>
+      <prijs>1.404</prijs>
+    </speler>
+    <speler id="0418">
+      <naam>Rick Kruys</naam>
+      <type>middenvelder</type>
+      <uithouding>51</uithouding>
+      <offense>54</offense>
+      <defence>58</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.99665</prijs>
+    </speler>
+    <speler id="0421">
+      <naam>Alessandro Damen</naam>
+      <type>doelman</type>
+      <uithouding>0</uithouding>
+      <offense>0</offense>
+      <defence>59</defence>
+      <beschikbaarheid>wel</beschikbaarheid>
+      <prijs>1.475</prijs>
     </speler>
   </team>
   <Wedstrijdteam>
     <naam>Wedstrijdteam</naam>
-    <offence>48</offence>
+    <offence>47</offence>
     <defence>50</defence>
-    <uithouding>64</uithouding>
+    <uithouding>60</uithouding>
     <opstelling>442</opstelling>
     <tactiek>81</tactiek>
-    <spelers>Kai Heerings,Jeff Hardeveld,Gyliano van Velzen,Gévero Markiet,Fernando Quesada,Edouard Duplan,Danny Verbeek,Chris Kum,Anouar Kali,﻿Adam Sarota,Robbin Ruiter</spelers>
-    <TeamNaam>FC Utrecht</TeamNaam>
-    <gespeeldMet>,ADO Den Haag1</gespeeldMet>
+    <spelers>Jordy Deckers,Jordan Botaka,Jeff Aans,Elso Brito,Daryl van Mieghem,Daan Smith,Daan Bovenberg,Daan Blij,Carlo de Reuver,Bas Kuipers,Adil Auassar</spelers>
+    <TeamNaam>Excelsior</TeamNaam>
+    <gespeeldMet>,ADO Den Haag1,ADO Den Haag2,Willem II1,Willem II2,Ajax1,Ajax2,PSV1,PSV2,SC Heerenveen1,SC Heerenveen2,SC Cambuur1,SC Cambuur2,Heracles Almelo1,Heracles Almelo2,FC Twente1,FC Twente2,NAC Breda1,AZ1,NAC Breda2,PEC Zwolle1,PEC Zwolle2,FC Utrecht1,FC Utrecht2,AZ2,FC Dordrecht1,FC Dordrecht2,Feyenoord1,Feyenoord2,Go Ahead Eagles1,Go Ahead Eagles2,FC Groningen1,FC Groningen2,Vitesse1</gespeeldMet>
   </Wedstrijdteam>
   <opstellingen id="99">
     <naam>opstellingen</naam>
