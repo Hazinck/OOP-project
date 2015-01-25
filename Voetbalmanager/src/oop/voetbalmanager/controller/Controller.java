@@ -762,6 +762,8 @@ public class Controller {
 		teamPanel.getMiddenvelders().clear();
 		teamPanel.getKeepers().clear();
 		vulSpelerlijst(User.getTeam());
+		comp.getTransferPane().getModel().fireTableDataChanged();
+		
 	}
 	
 	public void opstellingOpslaan(){
@@ -890,7 +892,7 @@ public class Controller {
 		Speler speler = getSpelerByName(spelerNaam);
 		Team eigenaar = getTeamBySpeler(speler);
 //		int prijs = speler.getPrijs();
-		double prijs = (double)speler.getPrijs() / (1000000.0);
+		double prijs = speler.getPrijs();// / (double)(1000000.0);
 		ArrayList<Speler> eigenaarSpelers = eigenaar.getSpelerList();
 		ArrayList<Speler> koperSpelers = koper.getSpelerList();
 		ArrayList<Team> teamList = Divisie.getTeamList();
@@ -1062,7 +1064,7 @@ public class Controller {
 						data[spIdx][0] = new ImageIcon("images/logos/"+t.getNaam()+".png");
 						data[spIdx][1] = s.getNaam()+"\nType:"+s.getType()+
 										"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
-										"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+										"\nUithouding: "+s.getUithouding()+//"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
 										"\nPrijs: "+s.getPrijs();
 						final int row = spIdx;
 						final JButton koopButton = new JButton("<html><body>"+s.getNaam());
@@ -1071,8 +1073,8 @@ public class Controller {
 						      public void actionPerformed(ActionEvent event) {
 						    	  int r = row;
 						    	  	//JOptionPane.showMessageDialog(null, s.getNaam()+" is gekocht");
-						    	  	if(User.getTeam().getBudget()*1000000<s.getPrijs()){
-						    	  		JOptionPane.showMessageDialog(null, "U heeft niet genoeg geld om speler te kopen!","",
+						    	  	if(User.getTeam().getBudget()<s.getPrijs()){
+						    	  		JOptionPane.showMessageDialog(null, "U heeft niet genoeg geld om dit speler te kopen!","",
 						    	  			    JOptionPane.ERROR_MESSAGE);
 						    	  	}else if(RNG.kans(50)){
 							    	  	spelerKopen(s.getNaam(), User.getTeam());
@@ -1087,7 +1089,7 @@ public class Controller {
 						    	  		s.setPrijs(s.getPrijs() + s.getPrijs()/10);
 						    	  		String aValue = s.getNaam()+"\nType:"+s.getType()+
 												"\nOffence: "+s.getOffense()+"\nDefence: "+s.getDefence()+
-												"\nUithouding: "+s.getUithouding()+"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
+												"\nUithouding: "+s.getUithouding()+//"\nBeschikbaarheid: "+s.getBeschikbaarheid()+
 												"\nPrijs: "+s.getPrijs();
 						    	  		JOptionPane.showMessageDialog(null, getTeamBySpeler(s).getNaam()+" accepteert bod niet\nOude prijs: "+oldPrice+"\nNieuwe prijs: "+s.getPrijs());
 						    	  		comp.getTransferPane().getTable().setValueAt(aValue, r, 1);

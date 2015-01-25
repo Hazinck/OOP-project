@@ -8,7 +8,7 @@ public class Speler {
 	private int defence;
 	private int uithouding;
 	private String beschikbaarheid;
-	private int prijs;
+	private double prijs;
 	
 	/**
 	 * 
@@ -21,7 +21,7 @@ public class Speler {
 	 * @param beschikbaarheid
 	 * @param prijs
 	 */
-	public Speler(String naam, int nummer, String type, int offense, int defence, int uithouding, String beschikbaarheid, int prijs){
+	public Speler(String naam, int nummer, String type, int offense, int defence, int uithouding, String beschikbaarheid, double prijs){
 		this.naam = naam;
 		this.nummer = nummer;
 		this.type = type;
@@ -106,11 +106,11 @@ public class Speler {
 		this.beschikbaarheid = beschikbaarheid;
 	}
 
-	public int getPrijs() {
+	public double getPrijs() {
 		return prijs;
 	}
 
-	public void setPrijs(int prijs) {
+	public void setPrijs(double prijs) {
 		this.prijs = prijs;
 	}
 	

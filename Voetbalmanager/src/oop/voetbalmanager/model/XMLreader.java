@@ -124,8 +124,8 @@ public class XMLreader {
 			int defence = Integer.parseInt(spelerEl.getChildText("defence"));
 			int uithouding = Integer.parseInt(spelerEl.getChildText("uithouding"));
 			String beschikbaarheid = spelerEl.getChildText("beschikbaarheid");
-	//		int prijs = Integer.parseInt(spelerEl.getChildText("prijs"));
-			int prijs = 10000;
+			double prijs = Double.parseDouble(spelerEl.getChildText("prijs"));
+//			int prijs = 10000;
 			
 			Speler speler = new Speler(spelerNaam, nummer, type, offense, defence, uithouding, beschikbaarheid, prijs);
 

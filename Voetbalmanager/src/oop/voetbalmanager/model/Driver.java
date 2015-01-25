@@ -75,18 +75,21 @@ public class Driver {
 		Divisie.getTeamList().get(1).setWinst(30);
 		Divisie.rankTeams();
 		System.out.println(TXTreader.listFilesForFolder(new File("teams-txt")));
-	
+	*//*
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie(path);
 		//Speler s = Divisie.getTeamList().get(0).getSpelerList().get(0);
-		double maxPrijs = 35322;
+		double maxPrijs = 0;
 		double minPrijs = 473633;
 		double maxDoelPrijs = 0;
 		double minDoelPrijs = 473633;
+		DecimalFormat df = new DecimalFormat("#.######");
 		for(Team t: Divisie.getTeamList()){
 			for(Speler s: t.getSpelerList()){
 				if(!s.getType().equals("doelman")){
 					double temp = s.getDefence()*s.getOffense()*s.getUithouding();
+					
+					temp/=80000;
 					if(maxPrijs < temp){
 						maxPrijs = temp;
 					}
@@ -104,7 +107,7 @@ public class Driver {
 				}
 			}
 		}
-		System.out.println(minPrijs/10000 +" tot " + maxPrijs/10000+"\ndoelman: "+minDoelPrijs+" tot "+maxDoelPrijs);
+		System.out.println(minPrijs +" tot " + maxPrijs+"\ndoelman: "+minDoelPrijs/40+" tot "+maxDoelPrijs/40);
 	
 		XMLreader reader = new XMLreader();
 		Divisie divisie = reader.readDivisie(path);
@@ -124,6 +127,26 @@ public class Driver {
 			writer.updaten("team" , t.getNaam(), "doelsaldo", "0");
 			writer.updaten("team" , t.getNaam(), "doeltegen", "0");
 			writer.updaten("team" , t.getNaam(), "doelvoor", "0");
+		}
+		
+		
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie(path);
+		XMLwriter writer = new XMLwriter(path);
+		
+		double prijs;
+		for(Team t: Divisie.getTeamList()){
+			for(Speler s: t.getSpelerList()){
+				
+				if(!s.getType().equals("doelman")){
+					prijs = s.getDefence()*s.getOffense()*s.getUithouding();
+					prijs/=80000;
+				}else{
+					prijs =  s.getDefence();
+					prijs /= 40;
+				}
+				writer.updaten("speler" , s.getNaam(), "prijs", prijs+"");
+			}
 		}
 		*/
 	}
