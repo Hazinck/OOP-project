@@ -569,7 +569,7 @@ public class Controller {
     	    		pauze();
     	    		veldPanel.getGp().setManualPlay(true);// pause = true;
     	    		veldPanel.getSpeelZelf().setText("AutoPlay");
-    	    		ImageIcon icon = new ImageIcon("images/manual.png");
+    	    		ImageIcon icon = new ImageIcon("images/manual_2.png");
 					int ok = JOptionPane.showConfirmDialog(
                             null,
                             "",

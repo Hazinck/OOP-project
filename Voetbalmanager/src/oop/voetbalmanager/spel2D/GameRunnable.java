@@ -171,6 +171,7 @@ public class GameRunnable implements Runnable {
 	}
 	
 	public void animatePlayer(){
+		changePlayer();
 		 ActionListener updateAnim = new ActionListener() {
 	         @Override
 	         public void actionPerformed(ActionEvent evt) {
@@ -282,6 +283,41 @@ public class GameRunnable implements Runnable {
 	                    }
 	                    if(stop){
 	                    	veldPanel.repaint();
+	                    }
+	                }
+                   return false;
+            
+            }
+            
+        });
+	}
+	
+	
+	public void changePlayer(){
+		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(new KeyEventDispatcher() {
+
+            @Override
+            public boolean dispatchKeyEvent(KeyEvent ke) {
+            	if(ke.getID() == KeyEvent.KEY_PRESSED){
+            //		System.out.println("GameRunnable: "+gp.getViewY());
+	                    switch (ke.getKeyCode()) {
+	                    case KeyEvent.VK_C:
+	                    	Player p = null;
+	                    	int c = -1;
+	                    	for(int i = 0; i<playerListAll.size(); i++){
+	                    		playerListAll.get(i).setRunsByUser(false);
+	                    		if(playerListAll.get(i).getTeam12()==1){
+	                    			if(p==null){
+	                    				p = playerListAll.get(i);
+	                    			}else if(p.ballAfstand()>playerListAll.get(i).ballAfstand()){
+	                    				p = playerListAll.get(i);
+	                    				c = i;
+	                    			}
+	                    		}
+	                    	}
+	                    	//playerListAll.get(c).setRunsByUser(true);
+	                    	gp.getBall().setLastBallOwner(playerListAll.get(c));
+	                        break;
 	                    }
 	                }
                    return false;
