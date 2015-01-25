@@ -15,6 +15,7 @@ public class Divisie {
 	private static String avatarPath;
 	private static ArrayList<Team> teamsGespeeld = new ArrayList<Team>();
 	private static String skipVerslag="";
+	private static Dimension scoreVerslag = new Dimension();
 	
 	public Divisie(String naam, ArrayList<Team> teamList, int speeldag, int stand, String avatarPath){
 		this.naam = naam;
@@ -81,7 +82,7 @@ public class Divisie {
 			tegen = (int)score.getWidth();
 		}
 
-		System.out.println("\nDivisie: score" + score.toString());
+		System.out.println("Divisie: score: " + score.toString());
 		
 		if(voor > tegen){
 			System.out.println("Divisie: " + team.getNaam() + " " + team.getWinst());
@@ -94,6 +95,7 @@ public class Divisie {
 			team.setGelijkspel(team.getGelijkspel() + 1);
 			skipVerslag = "Het is afgelopen: " + (int)score.getWidth() + "-" + (int)score.getHeight();
 		}
+		scoreVerslag.setSize(score.getWidth(), score.getHeight());
 		team.setDoelvoor(team.getDoelvoor() + voor);
 		team.setDoeltegen(team.getDoeltegen() + tegen);
 		team.setDoelsaldo(team.getDoelvoor() - team.getDoeltegen());
@@ -186,6 +188,20 @@ public class Divisie {
 	 */
 	public static void setAvatarPath(String avatarPath) {
 		Divisie.avatarPath = avatarPath;
+	}
+
+	/**
+	 * @return the scoreVerslag
+	 */
+	public static Dimension getScoreVerslag() {
+		return scoreVerslag;
+	}
+
+	/**
+	 * @param scoreVerslag the scoreVerslag to set
+	 */
+	public static void setScoreVerslag(Dimension scoreVerslag) {
+		Divisie.scoreVerslag = scoreVerslag;
 	}
 	
 }

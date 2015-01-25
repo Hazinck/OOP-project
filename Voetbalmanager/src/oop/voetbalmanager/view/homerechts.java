@@ -14,7 +14,7 @@ import javax.swing.text.StyledDocument;
 
 public class homerechts extends JPanel {
 //	private JTextPane titel;
-	private JTextPane rankings;
+	private JLabel rankings;
 	public homerechts(){
 //		GridBagLayout gl=new GridBagLayout();
 //		GridBagConstraints c= new GridBagConstraints();
@@ -47,23 +47,25 @@ public class homerechts extends JPanel {
 		rank.setForeground(Color.WHITE);
 //		titel.add(rank, BorderLayout.NORTH);
 //	    titel.setEditable(false);
-		
-	    rankings=new JTextPane();
-	    rankings.setOpaque(false);
-//	    rankings.setBorder(BorderFactory.createLineBorder(Color.WHITE));
-		StyledDocument doc=rankings.getStyledDocument();
-		Style def = StyleContext.getDefaultStyleContext().getStyle( StyleContext.DEFAULT_STYLE );
-	    Style regular = doc.addStyle( "regular", def );
-	    rankings.setFont(new Font("Arial Bold",Font.PLAIN,15));
-	    rankings.setForeground(Color.WHITE);
-		StyledDocument ranking=rankings.getStyledDocument();
-		String puntentotaal="1. Ajax 69\n2. PSV 21";
-		try{
-			ranking.insertString(doc.getLength(), puntentotaal, regular );
-		}catch(Exception e){
-			System.out.println("Something went wrong");
-		}
-		rankings.setEditable(false);
+		rankings = new JLabel();
+		rankings.setFont(new Font("Arial",Font.PLAIN,20));
+		rankings.setForeground(Color.WHITE);
+//	    rankings=new JTextPane();
+//	    rankings.setOpaque(false);
+////	    rankings.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+//		StyledDocument doc=rankings.getStyledDocument();
+//		Style def = StyleContext.getDefaultStyleContext().getStyle( StyleContext.DEFAULT_STYLE );
+//	    Style regular = doc.addStyle( "regular", def );
+//	    rankings.setFont(new Font("Arial Bold",Font.PLAIN,15));
+//	    rankings.setForeground(Color.WHITE);
+//		StyledDocument ranking=rankings.getStyledDocument();
+//		String puntentotaal="1. Ajax 69\n2. PSV 21";
+//		try{
+//			ranking.insertString(doc.getLength(), puntentotaal, regular );
+//		}catch(Exception e){
+//			System.out.println("Something went wrong");
+//		}
+//		rankings.setEditable(false);
 //		c.fill=GridBagConstraints.HORIZONTAL;
 //		c.weightx = 50;
 //		c.gridx = 0;
@@ -75,7 +77,7 @@ public class homerechts extends JPanel {
 //		c.gridx = 0;
 //		c.gridy = 1;
 		add(rankings);//, c);
-		rankings.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.10+10) ,
+		rankings.setBounds(0, (int)(ViewFrame.getFrameHeight()*0.10) ,//+10
 				(int)(ViewFrame.getFrameWidth()*0.16), (int)(ViewFrame.getFrameHeight()*0.80));
 	}
 	
@@ -89,13 +91,13 @@ public class homerechts extends JPanel {
 	/**
 	 * @return the rankings
 	 */
-	public JTextPane getRankings() {
+	public JLabel getRankings() {
 		return rankings;
 	}
 	/**
 	 * @param rankings the rankings to set
 	 */
-	public void setRankings(JTextPane rankings) {
+	public void setRankings(JLabel rankings) {
 		this.rankings = rankings;
 	}
 }

@@ -1,5 +1,6 @@
 package oop.voetbalmanager.spel2D;
 
+import java.awt.Dimension;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.Rectangle;
@@ -18,6 +19,7 @@ import javax.sound.sampled.FloatControl;
 import javax.swing.Timer;
 
 import oop.voetbalmanager.model.Bot;
+import oop.voetbalmanager.model.Divisie;
 import oop.voetbalmanager.model.User;
 import oop.voetbalmanager.view.ViewFrame;
 
@@ -121,18 +123,18 @@ public class GameRunnable implements Runnable {
 	}
 	
 	public void endspiel(){
-		
+		 Dimension score = Divisie.getScoreVerslag();
 		 String winner = "Afgelopen! ";
-  		 if(gp.getBall().winner()==0){
+  		 if(score.getWidth() == score.getHeight()){//gp.getBall().winner()==0){
   			 winner += gp.getBall().getTeam1().getNaam()+" en "+
   					 	gp.getBall().getTeam2().getNaam()+
-  					 	" delen de punten: "+gp.getBall().getScore().width+"-"+gp.getBall().getScore().height+".";
+  					 	" delen de punten: "+(int)score.getWidth()+"-"+(int)score.getHeight()+".";
   		 }else{
-  			 if(gp.getBall().winner()==1){
-  				winner +=  gp.getBall().getTeam1().getNaam()+" wint met "+gp.getBall().getScore().width+"-"+gp.getBall().getScore().height+
+  			 if(score.getWidth() > score.getHeight()){//gp.getBall().winner()==1){gp.getBall().getScore().height
+  				winner +=  gp.getBall().getTeam1().getNaam()+" wint met "+(int)score.getWidth()+"-"+(int)score.getHeight()+
   							" van "+gp.getBall().getTeam2().getNaam()+".";
-  			 }else if(gp.getBall().winner()==2){
-  				 winner +=  gp.getBall().getTeam2().getNaam()+" wint met "+gp.getBall().getScore().width+"-"+gp.getBall().getScore().height+
+  			 }else if(score.getWidth() < score.getHeight()){//gp.getBall().winner()==2){
+  				 winner +=  gp.getBall().getTeam2().getNaam()+" wint met "+(int)score.getWidth()+"-"+(int)score.getHeight()+
   							" van "+gp.getBall().getTeam1().getNaam()+".";
   			 }
   			 

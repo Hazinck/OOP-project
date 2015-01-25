@@ -23,7 +23,7 @@ public class Sprite{
 	private boolean idle = false;
 	
     public Sprite(String imgFile, int team12){//String richting){//, int x, int y){//W, NW, N, NE, E, SE, S, SW,
-    //	this.richting =  richting;
+    	//	this.richting =  richting;
     	if(team12==1){
     		richting="E";
     	}else if(team12==2){
@@ -32,6 +32,7 @@ public class Sprite{
 //    	this.x = x;
 //    	this.y = y;
     	try {
+    		ImageIO.setUseCache(false);
     		spriteFull = ImageIO.read(new File(imgFile+"/run.png"));
     		idle_sprite = ImageIO.read(new File(imgFile+"/idle.png"));//idle_E
     		update();

@@ -105,7 +105,27 @@ public class Driver {
 			}
 		}
 		System.out.println(minPrijs/10000 +" tot " + maxPrijs/10000+"\ndoelman: "+minDoelPrijs+" tot "+maxDoelPrijs);
-	*/
+	
+		XMLreader reader = new XMLreader();
+		Divisie divisie = reader.readDivisie(path);
+		XMLwriter writer = new XMLwriter(path);
+		
+		writer.updaten("divisie" , "Eredivisie", "speeldag", "0");
+		
+		for(Team t: Divisie.getTeamList()){
+			System.out.println(t.getNaam());
+//			for(Speler s: t.getSpelerList()){
+//				writer.updaten("speler" , s.getNaam(), "beschikbaarheid", "wel");
+//			}
+			writer.updaten("team" , t.getNaam(), "score", "0");
+			writer.updaten("team" , t.getNaam(), "winst", "0");
+			writer.updaten("team" , t.getNaam(), "verlies", "0");
+			writer.updaten("team" , t.getNaam(), "gelijkspel", "0");
+			writer.updaten("team" , t.getNaam(), "doelsaldo", "0");
+			writer.updaten("team" , t.getNaam(), "doeltegen", "0");
+			writer.updaten("team" , t.getNaam(), "doelvoor", "0");
+		}
+		*/
 	}
 	
 
