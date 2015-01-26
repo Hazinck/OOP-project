@@ -23,8 +23,8 @@ public class ViewFrame extends JFrame{
 	
 	 
 	//neem scherm breedte en hoogte
-	private static int frameWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();//1000;//
-	private static int frameHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-30;//600;//
+	private static int frameWidth = 1366;//(int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();//1000;//
+	private static int frameHeight = 738;//(int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()-30;//600;//
 	
 	public ViewFrame(){
 		setUndecorated(true);

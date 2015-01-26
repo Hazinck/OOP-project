@@ -4,6 +4,8 @@ package oop.voetbalmanager.spel2D;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 
+import oop.voetbalmanager.model.RNG;
+
 public class Collision{
 	
 	private static ArrayList<Player> players = new ArrayList<Player>();
@@ -49,14 +51,31 @@ public class Collision{
 		            	p1.setX((int)newXp1);
 		            }		       
 		            
+		            ArrayList<String> zin = new ArrayList<String>();
+		            zin.add("Ten hoogte van de middenlijn probeert hij de bal al voor het doel te brengen.\n");
+		            zin.add("De bal eindigt bijna in het uitvak, zo hard schiet "+p1.getSpeler().getNaam()+" de bal voor.");
+		            zin.add(p2.getSpeler().getNaam()+" creëert goed ruimte voor zichzelf in het strafschopgebied.");
+		            zin.add("De thuisploeg slaagt er niet in om gevaarlijk te worden.");
+		            zin.add(p1.getSpeler().getNaam()+" duikt naar de goede hoek, maar is kansloos op het krachtige schot.");
+		            zin.add(p1.getSpeler().getNaam()+" verschijnt voor de neus van "+p2.getSpeler().getNaam()+"!");
+		            zin.add("De wedstrijd kan wel een opleving gebruiken om de spelers wakker te krijgen.");
+		            
 		            //kick the ball
 					if(p1.isBallOwner()){
 						System.out.println("Collision: "+p1.getSpeler().getNaam() + " kick it    t=" + p1.getBall().getT() + " ball: " + p2.getBall().getX() + "," + p2.getBall().getY());
-						toVerslag = "Nu probeert "+p1.getSpeler().getNaam()+" langs "+p2.getSpeler().getNaam()+" te gaan met een vloeiende beweging, maar hij speelt de bal te ver voor zich uit.";
+						if(RNG.kans(30)){
+							toVerslag = "Nu probeert "+p1.getSpeler().getNaam()+" langs "+p2.getSpeler().getNaam()+" te gaan met een vloeiende beweging, maar hij speelt de bal te ver voor zich uit.";
+						}else{
+							toVerslag = zin.get(RNG.getalTot(zin.size()));
+						}
 						Controller2D.kickBal(p1);
 					}else if(p2.isBallOwner()){
 						System.out.println("Collision: "+p2.getSpeler().getNaam() + " kick it    t=" + p2.getBall().getT() + " ball: " + p2.getBall().getX() + "," + p2.getBall().getY());
-						toVerslag = "Nu probeert "+p2.getSpeler().getNaam()+" langs "+p1.getSpeler().getNaam()+" te gaan met een vloeiende beweging, maar hij speelt de bal te ver voor zich uit.";
+						if(RNG.kans(30)){
+							toVerslag = "Nu probeert "+p2.getSpeler().getNaam()+" langs "+p1.getSpeler().getNaam()+" te gaan met een vloeiende beweging, maar hij speelt de bal te ver voor zich uit.";
+						}else{
+							toVerslag = zin.get(RNG.getalTot(zin.size()));
+						}
 						Controller2D.kickBal(p2);
 					}
 					
